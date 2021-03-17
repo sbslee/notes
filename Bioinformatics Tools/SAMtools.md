@@ -1,5 +1,7 @@
 # SAMtools
 
+## Frequently used commands
+
 To extract the sequence reads of a BAM file:
 
 ```
