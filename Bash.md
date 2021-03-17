@@ -22,6 +22,20 @@ To determine MD5 checksum (macOS):
 md5 test.txt
 ```
 
+### Zipped files
+
+To create a .tar.gz file:
+
+```
+tar -czvf dir.tar.gz dir
+```
+
+To unzip a .tar.gz file:
+
+```
+tar -xf dir.tar.gz
+```
+
 ### Comparison
 
 To find difference between two directories:
