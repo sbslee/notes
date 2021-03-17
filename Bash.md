@@ -36,6 +36,32 @@ To unzip a .tar.gz file:
 tar -xf dir.tar.gz
 ```
 
+### Count things or estimate size
+
+To count unique lines in a file:
+
+```
+sort test.txt | uniq -c | sort -bgr
+```
+
+To count files in a directory:
+
+```
+find . | wc -l
+```
+
+To estimate storage size:
+
+```
+df -h
+```
+
+To estimate directory size:
+
+```
+$ du -sh dir
+```
+
 ### Comparison
 
 To find difference between two directories:
