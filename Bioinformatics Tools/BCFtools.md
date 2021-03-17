@@ -1,6 +1,6 @@
 # BCFtools
 
-# Variant calling pipeline
+## Variant calling pipeline
 
 1. Calculate genotype likelihoods at each genomic position with coverage. Note that the reference FASTA file and the input BAM file(s) must have the same chromosome string style.
 
