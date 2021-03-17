@@ -8,11 +8,16 @@ To extract the header of a BAM file:
 
 ```samtools view -H sample.bam```
 
+To index a BAM file:
 
+```samtools index sample.bam```
+
+To index a FASTA file:
+
+```samtools faidx ref.fa -o ref.fa.fai```
 
 ```
-View a BAM file.
-$ samtools view IA_1.bam | less
+
 
 Slice a BAM file.
 $ samtools view -b CYP2D6.NWD100436.bam "chr22:42116498-42135906" > CYP2D6.sliced.NWD100436.bam
@@ -23,11 +28,7 @@ $ samtools merge NWD100436.merged.bam CYP2D6.sliced.NWD100436.bam CYP2D7.sliced.
 Get sample ID from BAM file.
 $ samtools view -H $bam | grep "@RG" | head -1 | awk '{print $8}' | sed 's/SM://
 
-Index a BAM file.
-$ samtools index IA_1.bam
 
-Index a FASTA file.
-$ samtools faidx hs37d5.fa -o hs37d5.fa.fai
 
 Index a VCF file.
 $ bgzip -c file.vcf > file.vcf.gz # keeps the original file
