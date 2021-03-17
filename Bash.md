@@ -59,7 +59,7 @@ df -h
 To estimate directory size:
 
 ```
-$ du -sh dir
+du -sh dir
 ```
 
 ### Comparison
