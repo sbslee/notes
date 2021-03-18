@@ -50,7 +50,7 @@ First, set up a channel with password as described above. Then, run the followin
 ssh-keygen -t rsa -b 4096 -C "host_id"
 ```
 
-Save the private key as `host_id_rsa` and the public key as `host_id_rsa.pub`. Next, add the private key to the authentication agent:
+Save the private key as `host_id_rsa` and the public key as `host_id_rsa.pub`. Add the private key to the authentication agent:
 
 ```
 ssh-add ~/.ssh/host_id_rsa
