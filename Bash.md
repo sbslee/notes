@@ -1,8 +1,16 @@
 # Bash
 
-## Frequently used commands
+## Table of Contents
 
-### Checksum
+* [Frequently used commands](#Frequently-used-commands)
+    * [Checksum](#Checksum)
+    * [Zipped files](#Zipped-files)
+    * [Count things or estimate size](#Count-things-or-estimate-size)
+    * [Comparison](#Comparison)
+
+## Frequently used commands <a name="Frequently-used-commands"></a>
+
+### Checksum <a name="Checksum"></a>
 
 To determine SHA-512 checksum:
 
@@ -22,7 +30,7 @@ To determine MD5 checksum (macOS):
 md5 test.txt
 ```
 
-### Zipped files
+### Zipped files <a name="Zipped-files"></a>
 
 To create a .tar.gz file:
 
@@ -36,7 +44,7 @@ To unzip a .tar.gz file:
 tar -xf dir.tar.gz
 ```
 
-### Count things or estimate size
+### Count things or estimate size <a name="Count-things-or-estimate-size"></a>
 
 To count unique lines in a file:
 
@@ -62,7 +70,7 @@ To estimate directory size:
 du -sh dir
 ```
 
-### Comparison
+### Comparison <a name="Comparison"></a>
 
 To find difference between two directories:
 
