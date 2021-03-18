@@ -36,7 +36,7 @@ Host host_id
     User user_name
 ```
 
-You can now access the server by:
+You can now access the server by (you still need to enter your password):
 
 ```
 ssh host_id
@@ -50,9 +50,7 @@ First, run the following:
 ssh-keygen -t rsa -b 4096 -C "host_id"
 ```
 
-Save the private key as `host_id_rsa` and the public key as `host_id_rsa.pub`.
-
-Next, add the private key to the authentication agent:
+Save the private key as `host_id_rsa` and the public key as `host_id_rsa.pub`. Next, add the private key to the authentication agent:
 
 ```
 ssh-add ~/.ssh/host_id_rsa
@@ -63,3 +61,5 @@ Add the public key to the server:
 ```
 cat ~/.ssh/host_id_rsa.pub | ssh host_id 'cat >> ~/.ssh/authorized_keys'
 ```
+
+Now, you shouldn't need to enter the password when logging in.
