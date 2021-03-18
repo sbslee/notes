@@ -44,7 +44,7 @@ ssh host_id
 
 ## Creating a channel without password <a name="Creating-a-channel-without-password"></a>
 
-First, run the following:
+First, set up a channel with password as described above. Then, run the following:
 
 ```
 ssh-keygen -t rsa -b 4096 -C "host_id"
