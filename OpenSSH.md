@@ -8,6 +8,12 @@
 
 ## Frequently used commands <a name="Frequently-used-commands"></a>
 
+To list all identities represented by the authentication agent:
+
+```
+ssh-add -L
+```
+
 To remove all keys belonging to a host name:
 
 ```
@@ -25,15 +31,35 @@ vi ~/.ssh/config
 Next, add the following:
 
 ```
-Host host_nickname
+Host host_id
     HostName host_name
     User user_name
 ```
 
-You can now access the server:
+You can now access the server by:
 
 ```
-ssh host_nickname
+ssh host_id
 ```
 
 ## Creating a channel without password <a name="Creating-a-channel-without-password"></a>
+
+First, run the following:
+
+```
+ssh-keygen -t rsa -b 4096 -C "host_id"
+```
+
+Save the private key as `host_id_rsa` and the public key as `host_id_rsa.pub`.
+
+Next, add the private key to the authentication agent:
+
+```
+ssh-add ~/.ssh/host_id_rsa
+```
+
+Add the public key to the server:
+
+```
+cat ~/.ssh/host_id_rsa.pub | ssh host_id 'cat >> ~/.ssh/authorized_keys'
+```
