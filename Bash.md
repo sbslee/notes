@@ -92,3 +92,9 @@ diff -qr dir1 dir2
 ```
 
 ## Neat tricks <a name="Neat-tricks"></a>
+
+To extract lines repeated at least three times:
+
+```
+awk '++a[$0] == 3 { print $0 }' example.txt
+```
