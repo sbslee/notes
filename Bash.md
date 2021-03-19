@@ -60,24 +60,7 @@ tar -xf dir.tar.gz
 To count unique lines in a file:
 
 ```
-cat example.txt
-```
-
-```
-A
-B
-C
-B
-```
-
-```
 sort example.txt | uniq -c | sort -bgr
-```
-
-```
-2 B
-1 C
-1 A
 ```
 
 To count files in a directory:
