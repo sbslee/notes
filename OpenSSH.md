@@ -39,7 +39,7 @@ Host host_id
     User user_name
 ```
 
-You can now access the server by (you still need to enter your password):
+Here, `host_id` is the nickname that will be used for `ssh` and `host_name` can be an IP address or an actual host name in the server. Lastly, `user_name` is your user ID for the server. After the configuration file is saved, you can access the server by (you still need to enter your password):
 
 ```
 ssh host_id
