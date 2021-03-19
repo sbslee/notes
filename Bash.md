@@ -4,8 +4,10 @@
 
 * [Frequently used commands](#Frequently-used-commands)
     * [Checksum](#Checksum)
+    * [List things](#List-things)
     * [Zipped files](#Zipped-files)
-    * [Count things or estimate size](#Count-things-or-estimate-size)
+    * [Count things](#Count-things)
+    * [Estimate size](#Estimate-size)
     * [Comparison](#Comparison)
 
 ## Frequently used commands <a name="Frequently-used-commands"></a>
@@ -30,6 +32,14 @@ To determine MD5 checksum (macOS):
 md5 test.txt
 ```
 
+### List things <a name="List-things"></a>
+
+To list one file per line:
+
+```
+ls -1 dir
+```
+
 ### Zipped files <a name="Zipped-files"></a>
 
 To create a .tar.gz file:
@@ -44,7 +54,7 @@ To unzip a .tar.gz file:
 tar -xf dir.tar.gz
 ```
 
-### Count things or estimate size <a name="Count-things-or-estimate-size"></a>
+### Count things <a name="Count-things"></a>
 
 To count unique lines in a file:
 
@@ -57,6 +67,8 @@ To count files in a directory:
 ```
 find . | wc -l
 ```
+
+### Estimate size <a name="Estimate-size"></a>
 
 To estimate storage size:
 
