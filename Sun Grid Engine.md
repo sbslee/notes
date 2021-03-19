@@ -10,10 +10,20 @@
 To request a specific node:
 
 ```
-qsub -l h=node_name
+qsub -l h=node_name example.sh
 ```
 
+To request multiple nodes:
 
+```
+qsub -l h='node_name_1|node_name_2' example.sh
+```
+
+To request 20 threads with a node:
+
+```
+$ qsub -l h=node_name -pe pe_name 20 example.sh
+```
 
 
 
@@ -23,12 +33,6 @@ qsub -l h=node_name
 
 ```
 # -- Submitting jobs ---------------------------------------------------------
-
-Request multiple nodes.
-$ qsub -l h='cm445|cm466'
-
-Request multiple threads within a node.
-$ qsub -S /bin/sh -cwd -l h=cm476 -V -pe pePAC 20 command.sh
 
 Delete existing jobs from a user (e.g. sbslee).
 $ qdel -u <user_name>
