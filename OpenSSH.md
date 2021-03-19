@@ -62,4 +62,13 @@ Add the public key to the server:
 cat ~/.ssh/host_id_rsa.pub | ssh host_id 'cat >> ~/.ssh/authorized_keys'
 ```
 
+Finally, update the configuration:
+
+```
+Host host_id
+    HostName host_name
+    User user_name
+    IdentityFile ~/.ssh/host_id_rsa
+```
+
 Now, you shouldn't need to enter the password when logging in.
