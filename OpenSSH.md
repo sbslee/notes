@@ -15,7 +15,7 @@ To remove all keys belonging to a host name:
 ssh-keygen -R host_name
 ```
 
-To delete a key from the authentication agent:
+To delete a select key from the authentication agent:
 
 ```
 ssh-add -d ~/.ssh/host_id_rsa.pub
@@ -84,23 +84,29 @@ Now, you shouldn't need to enter the password when logging in.
 
 ## Channeling through multiple servers <a name="Channeling-through-multiple-servers"></a>
 
-Imagine the server you work on everyday (`host_C`) can only be accessed through another server (`host_B`). Inconveniently, Server B can only be accessed through `host_A`. So, your task is to set up a channel that looks like this: `local` > `host_A`> `host_B` > `host_C`. To do this, you need to set up the configuration file as follows:
+Imagine the server you work on everyday (server C) can only be accessed through another server (server B). Inconveniently, server B can only be accessed through server A. So, your task is to set up a channel that looks like this: local > server A > server B > server C. To do this, you need to set up the SSH configuration as follows:
 
 ```
-Host <host_id_for_server_a>
-    HostName <host_name_for_server_a>
-    User <user_name_for_server_a>
-    IdentityFile ~/.ssh/<host_id_for_server_a>_rsa
+Host host_id_A
+    HostName host_name_A
+    User user_name_A
+    IdentityFile ~/.ssh/host_id_A_rsa
 
-Host <host_id_for_server_b>
-    HostName <host_name_for_server_b>
-    User <user_name_for_server_b>
-    ProxyCommand ssh <host_id_for_server_a> nc %h %p 2> /dev/null
-    IdentityFile ~/.ssh/<host_id_for_server_b>_rsa
+Host host_id_B
+    HostName host_name_B
+    User user_name_B
+    ProxyCommand ssh host_id_A nc %h %p 2> /dev/null
+    IdentityFile ~/.ssh/host_id_B_rsa
 
-Host <host_id_for_server_c>
-    HostName <host_name_for_server_c>
-    User <user_name_for_server_c>
-    ProxyCommand ssh <host_id_for_server_b> nc %h %p 2> /dev/null
-    IdentityFile ~/.ssh/<host_id_for_server_c>_rsa
+Host host_id_C
+    HostName host_name_C
+    User user_name_C
+    ProxyCommand ssh host_id_B nc %h %p 2> /dev/null
+    IdentityFile ~/.ssh/host_id_C_rsa
+```
+
+You can now access server C directly by:
+
+```
+ssh host_id_C
 ```
