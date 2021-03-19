@@ -8,16 +8,18 @@
 
 ## Frequently used commands <a name="Frequently-used-commands"></a>
 
-To list all identities represented by the authentication agent:
-
-```
-ssh-add -L
-```
-
 To remove all keys belonging to a host name:
 
 ```
 ssh-keygen -R host_name
+```
+
+To delete a key from the authentication agent:
+
+```
+ssh-add -d ~/.ssh/host_id_rsa.pub
+rm ~/.ssh/host_id_rsa
+rm ~/.ssh/host_id_rsa.pub
 ```
 
 ## Creating a channel with password <a name="Creating-a-channel-with-password"></a>
@@ -54,6 +56,12 @@ Save the private key as `host_id_rsa` and the public key as `host_id_rsa.pub`. A
 
 ```
 ssh-add ~/.ssh/host_id_rsa
+```
+
+Check whether the addition was successful:
+
+```
+ssh-add -L
 ```
 
 Add the public key to the server:
