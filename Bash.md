@@ -9,6 +9,7 @@
     * [Count things](#Count-things)
     * [Estimate size](#Estimate-size)
     * [Comparison](#Comparison)
+* [Neat tricks](#Neat-tricks)
 
 ## Frequently used commands <a name="Frequently-used-commands"></a>
 
@@ -17,19 +18,19 @@
 To determine SHA-512 checksum:
 
 ```
-shasum -a 256 test.txt
+shasum -a 256 example.txt
 ```
 
 To determine MD5 checksum:
 
 ```
-md5sum test.txt
+md5sum example.txt
 ```
 
 To determine MD5 checksum (macOS):
 
 ```
-md5 test.txt
+md5 example.txt
 ```
 
 ### List things <a name="List-things"></a>
@@ -59,7 +60,24 @@ tar -xf dir.tar.gz
 To count unique lines in a file:
 
 ```
-sort test.txt | uniq -c | sort -bgr
+cat example.txt
+```
+
+```
+A
+B
+C
+B
+```
+
+```
+sort example.txt | uniq -c | sort -bgr
+```
+
+```
+2 B
+1 C
+1 A
 ```
 
 To count files in a directory:
@@ -89,3 +107,5 @@ To find difference between two directories:
 ```
 diff -qr dir1 dir2
 ```
+
+## Neat tricks <a name="Neat-tricks"></a>
