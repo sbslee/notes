@@ -1,7 +1,7 @@
 # Sun Grid Engine
 
 * [Frequently used commands](#Frequently-used-commands)
-    * [Submit-jobs](#Submit-jobs)
+    * [Submit jobs](#Submit-jobs)
 
 ## Frequently used commands <a name="Frequently-used-commands"></a>
 
