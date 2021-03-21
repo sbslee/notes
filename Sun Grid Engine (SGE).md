@@ -4,6 +4,7 @@
     * [Submit jobs](#Submit-jobs)
     * [Parallel environment](#Parallel-environment)
     * [Queue configuration](#Queue-configuration)
+    * [Queue status](#Queue-status)
 
 ## Frequently used commands <a name="Frequently-used-commands"></a>
 
@@ -85,35 +86,37 @@ To list all execution hosts (i.e. nodes for running jobs):
 qconf -sel
 ```
 
+### Queue status <a name="Queue-status"></a>
 
-
+To print the status of all queues:
 
 ```
-# -- Queue status ------------------------------------------------------------
-
-Print the status of all queues.
-$ qstat -g c
-
-Print the availability of all queues.
-$ qstat -f
-
-Print the availability of a queue (e.g. biall.q).
-$ qstat -f -q <queue_name>
-
-Print all jobs currently occupying a queue (e.g. biall.q).
-$ qstat -u "*" | grep "<queue_name>"
-
-Print the status of a host (e.g. grc145).
-$ qhost -h <host_name>
+qstat -g c
 ```
 
+To print the availability of all queues:
 
+```
+qstat -f
+```
 
+To print the availability of a queue:
 
+```
+qstat -f -q queue_name
+```
 
+To print all jobs currently occupying a queue:
 
+```
+qstat -u "*" | grep "queue_name"
+```
 
+To print the status of a host:
 
+```
+qhost -h host_name
+```
 
 
 ## Command not found error <a name="Command-not-found-error"></a>
