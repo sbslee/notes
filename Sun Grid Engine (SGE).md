@@ -1,4 +1,4 @@
-# Sun Grid Engine
+# Sun Grid Engine (SGE)
 
 * [Frequently used commands](#Frequently-used-commands)
     * [Submit jobs](#Submit-jobs)
@@ -13,13 +13,13 @@ To request a specific node:
 qsub -l h=node_name example.sh
 ```
 
-To request multiple nodes:
+To request node A or node B:
 
 ```
-qsub -l h='node_name_1|node_name_2' example.sh
+qsub -l h='node_name_A|node_name_B' example.sh
 ```
 
-To request 20 threads with a node:
+To request 20 threads (cores) within a specific node using the parallel environment:
 
 ```
 $ qsub -l h=node_name -pe pe_name 20 example.sh
