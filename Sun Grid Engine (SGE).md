@@ -2,6 +2,8 @@
 
 * [Frequently used commands](#Frequently-used-commands)
     * [Submit jobs](#Submit-jobs)
+    * [Parallel environment](#Parallel-environment)
+    * [Queue configuration](#Queue-configuration)
 
 ## Frequently used commands <a name="Frequently-used-commands"></a>
 
@@ -25,31 +27,45 @@ To request 20 threads (cores) within a specific node using the parallel environm
 $ qsub -l h=node_name -pe pe_name 20 example.sh
 ```
 
-
-
-
-
-## FUCs for Sun Grid Engine <a name="FUCs-for-Sun-Grid-Engine"></a>
+To delete all jobs from a user:
 
 ```
-# -- Submitting jobs ---------------------------------------------------------
+qdel -u user_name
+```
 
-Delete existing jobs from a user (e.g. sbslee).
-$ qdel -u <user_name>
+To delete a specific job:
 
-Delete a specific job (e.g. 35345).
-$ qdel <job_id>
+```
+qdel job_id
+```
 
-Print error message from a job (e.g. 35345).
-$ qstat -j <job_id> | grep "error"
+To print error message from a job:
 
-# -- Parallel environment ----------------------------------------------------
+```
+qstat -j job_id | grep "error"
+```
 
-List all parallel environments.
-$ qconf -spl
+### Parallel environment <a name="Parallel-environment"></a>
 
-Print the configuration of a parallel environment (e.g. make).
-$ qconf -sp <pe_name>
+To list all parallel environments:
+
+```
+qconf -spl
+```
+
+To print the configuration of a parallel environment:
+
+```
+qconf -sp pe_name
+```
+
+### Queue configuration <a name="Queue-configuration"></a>
+
+
+```
+
+
+
 
 # -- Queue configuration -----------------------------------------------------
 
