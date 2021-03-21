@@ -61,26 +61,34 @@ qconf -sp pe_name
 
 ### Queue configuration <a name="Queue-configuration"></a>
 
+To list all queues:
 
+```
+qconf -sql
+```
+
+To print the configuration of a queue:
+
+```
+qconf -sq queue_name
+```
+
+To list all administrative hosts (i.e. nodes for submitting jobs):
+
+```
+qconf -sh
+```
+
+To list all execution hosts (i.e. nodes for running jobs):
+
+```
+qconf -sel
 ```
 
 
 
 
-# -- Queue configuration -----------------------------------------------------
-
-List all queues.
-$ qconf -sql
-
-Print the configuration of a queue (e.g. biall.q).
-$ qconf -sq <queue_name>
-
-List all administrative hosts (i.e. nodes for submitting jobs).
-$ qconf -sh
-
-List all execution hosts (i.e. nodes for running jobs).
-$ qconf -sel
-
+```
 # -- Queue status ------------------------------------------------------------
 
 Print the status of all queues.
