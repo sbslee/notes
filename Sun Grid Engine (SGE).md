@@ -5,6 +5,7 @@
     * [Parallel environment](#Parallel-environment)
     * [Queue configuration](#Queue-configuration)
     * [Queue status](#Queue-status)
+* [Command not found error](#Command-not-found-error)
 
 ## Frequently used commands <a name="Frequently-used-commands"></a>
 
@@ -121,10 +122,8 @@ qhost -h host_name
 
 ## Command not found error <a name="Command-not-found-error"></a>
 
-A Stack Overflow user mentioned:
+In some servers, even when a user submits a simple script to SGE, as simple as defining an environment variable, it returns an error complaining that command could not be found. However, when the user runs the same script locally or on a different cluster, it runs just fine. According to this Stack Overflow [post](https://stackoverflow.com/questions/17271931/sge-command-not-found-undefined-variable), the issue is "most likely the queues on your cluster are set to posix_compliant mode with a default shell of /bin/csh. The posix_compliant setting means your #! line is ignored. You can either change the queues to unix_behavior or specify the required shell using qsub's -S option":
 
-> Most likely the queues on your cluster are set to posix_compliant mode with a default shell of /bin/csh.
-
-Related posts:
-
-* https://stackoverflow.com/questions/17271931/sge-command-not-found-undefined-variable
+```
+#$ -S /bin/sh
+``` 
