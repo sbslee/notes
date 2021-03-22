@@ -93,33 +93,14 @@ To deleting a remote branch:
 git push origin --delete branch_name
 ```
 
-
-
-
+To update the email address of user:
 
 ```
+git config user.email example@gmail.com
+```
 
+To delete a remote Git tag:
 
-$ git add requirements_dev.txt
-$ git config user.email <sbstevenlee@gmail.com>
-
-
-
-
-# Delete a remote Git tag.
-$ git push --delete origin <tag_name>
-
-
-
-
-
-
-
-$ pip install -e git+https://github.com/sbslee/stargazer#egg=stargazer
-$ python -m pip install git+https://github.com/sbslee/stargazer
-$ python -m pip install git+https://github.com/sbslee/stargazer.git@1307e7094251fc8b0335ef716b4fc2be7b041658
-$ pip install sphinx
-$ pip install sphinx_rtd_theme
-$ make html
-$ make clean
+```
+git push --delete origin tag_name
 ```

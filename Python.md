@@ -253,3 +253,14 @@ while True:
   except:
     break
 ```
+
+
+```
+$ pip install -e git+https://github.com/sbslee/stargazer#egg=stargazer
+$ python -m pip install git+https://github.com/sbslee/stargazer
+$ python -m pip install git+https://github.com/sbslee/stargazer.git@1307e7094251fc8b0335ef716b4fc2be7b041658
+$ pip install sphinx
+$ pip install sphinx_rtd_theme
+$ make html
+$ make clean
+```
