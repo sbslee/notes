@@ -8,6 +8,7 @@
 * [Combining subplots](#Combining-subplots)
 * [Setting space between subplots](#Setting-space-between-subplots)
 * [Setting figure style globally](#Setting-figure-style-globally)
+* [Setting figure style temporarily](#Setting-figure-style-temporarily)
 
 ## Frequently used commands <a name="Frequently-used-commands"></a>
 
@@ -138,4 +139,27 @@ import matplotlib.pyplot as plt
 sns.set()
 
 plt.plot(np.sin(np.linspace(0, 2 * np.pi)), 'r-o')
+```
+
+## Setting figure style temporarily <a name="Setting-figure-style-temporarily"></a>
+
+```
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+with plt.style.context('ggplot'):
+    plt.plot(np.sin(np.linspace(0, 2 * np.pi)), 'r-o')
+```
+
+If you want to use the `seaborn` package's default style:
+
+```
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+with sns.axes_style('darkgrid'):
+    plt.plot(np.sin(np.linspace(0, 2 * np.pi)), 'r-o')
 ```
