@@ -1,34 +1,67 @@
-# GitHub <a name="GitHub"></a>
+# GitHub
 
-## FUCs for GitHub <a name="FUCs-for-GitHub"></a>
+## Table of Contents
+
+* [Frequently used commands](#Frequently-used-commands)
+
+## Frequently used commands <a name="Frequently-used-commands"></a>
+
+To clone a repository:
 
 ```
-Clone a repository.
-$ git clone <repository_url>
+git clone repo_url
+```
 
-Add changes to the staging area.
-$ git add -A
+To add changes to the staging area:
 
-Commit changes.
-$ git commit -m "<message>"
+```
+git add -A
+```
 
-Show the current branch.
-$ git branch
+To commit the changes:
 
-Create a new branch.
-$ git branch <name_of_brnach>
+```
+git commit -m "message"
+```
 
-Switch to a branch.
-$ git checkout <name_of_brnach>
+To show the current branch:
 
-List existing branches.
-$ git branch -a
+```
+git branch
+```
 
-Clone a specific branch.
-$ git clone <repository_url>
-$ git branch -a
-$ git checkout <name_of_branch>
+To create a new branch:
 
+```
+git branch branch_name
+```
+
+To switch to a different branch:
+
+```
+git checkout branch_name
+```
+
+To list all existing branches:
+
+```
+git branch -a
+```
+
+To clone a specific branch:
+
+```
+git clone repo_url
+git branch -a
+git checkout branch_name
+```
+
+
+
+
+
+
+```
 Push to master.
 $ git push origin master
 
