@@ -4,6 +4,8 @@
 
 * [Frequently used commands](#Frequently-used-commands)
 * [Install on Linux](#Install-on-Linux)
+* [Package management for R](#Package-management-for-R)
+* [Build a package](#Build-a-package)
 
 ## Frequently used commands <a name="Frequently-used-commands"></a>
 
@@ -78,20 +80,20 @@ conda develop .
 On the server, download the install bash script. You can see the full list of versions at the [Anaconda repo](https://repo.anaconda.com/archive/).
 
 ```
-$ curl -O https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+curl -O https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
 ```
 
 Next, check the integrity of the downloaded file.
 
 ```
-$ md5sum Anaconda3-2020.11-Linux-x86_64.sh
+md5sum Anaconda3-2020.11-Linux-x86_64.sh
 4cd48ef23a075e8555a8b6d0a8c4bae2  Anaconda3-2020.11-Linux-x86_64.sh
 ```
 
 After confirming the file is intact, run the bash script.
 
 ```
-$ bash Anaconda3-2020.11-Linux-x86_64.sh
+bash Anaconda3-2020.11-Linux-x86_64.sh
 ```
 
 Once installation is complete, you’ll receive the following output:
@@ -110,15 +112,6 @@ Related posts:
 
 [Easiest Way to Install Anaconda on Your Remote Linux Server](https://kengchichang.com/post/conda-linux/)
 
-
-
-
-
-
-
-
-
-
 ## Package management for R <a name="Package-management-for-R"></a>
 
 R package management via Anaconda can be tricky sometimes. I learned in the hard way that setting the `.condarc` file saves many troubles.
@@ -134,22 +127,12 @@ Related posts:
 * [Why not r via conda?](https://community.rstudio.com/t/why-not-r-via-conda/9438/4)
 * [Question: what is the deal with bioconda?](https://www.biostars.org/p/470291/#477472)
 
-
-
-
-
-
-
-
-
-
 ## Build a package <a name="Build-a-package"></a>
 
 A conda-build recipe is a flat directory.
 
 ```
-Build the package.
-$ conda-build pypgx .
+conda-build package_name .
 
 conda convert --platform linux-64 /Users/sbslee/opt/anaconda3/conda-bld/osx-64/pypgx-0.1.37-py38_0.tar.bz2
 
