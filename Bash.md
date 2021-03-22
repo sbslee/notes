@@ -94,6 +94,14 @@ diff -qr dir1 dir2
 
 ## Neat tricks <a name="Neat-tricks"></a>
 
+To move the cursor forward by one word:
+
+`esc` key + `F` key
+
+To move the cursor backward by one word:
+
+`esc` key + `B` key
+
 To extract lines repeated at least three times:
 
 ```
