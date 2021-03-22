@@ -3,6 +3,8 @@
 ## Table of Contents
 
 * [Frequently used commands](#Frequently-used-commands)
+    * [Virtual environment](#Virtual-environment)
+    * [Package development](#Package-development)
     * [pandas](#pandas)
     * [matplotlib](#matplotlib)
 * [Combining subplots](#Combining-subplots)
@@ -11,6 +13,64 @@
 * [Setting figure style temporarily](#Setting-figure-style-temporarily)
 
 ## Frequently used commands <a name="Frequently-used-commands"></a>
+
+### Virtual environment <a name="Virtual-environment"></a>
+
+To create a virtual environment:
+
+```
+python3 -m venv ve_name
+```
+
+To activate a virtual environment:
+
+```
+source ve_name/bin/activate
+```
+
+### Package development <a name="Package-development"></a>
+
+To install a package:
+
+```
+pip install package_name
+
+python setup.py install
+python setup.py develop
+```
+
+To install a package in the development mode:
+
+```
+pip install -e .
+```
+
+To build the distribution files:
+
+```
+pip install -r requirements_dev.txt
+pip install setuptools -U
+python3 setup.py install
+python3 setup.py sdist bdist_wheel
+```
+
+To check the distribution files before uploading to PyPi:
+
+```
+twine check dist/*
+```
+
+To upload the distribution files to Test PyPi:
+
+```
+twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+```
+
+To upload the distribution files to PyPi:
+
+```
+twine upload dist/*
+```
 
 ### pandas <a name="pandas"></a>
 
