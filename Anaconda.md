@@ -1,51 +1,79 @@
-# Anaconda <a name="Anaconda"></a>
+# Anaconda
 
-## FUCs for Anaconda <a name="FUCs-for-Anaconda"></a>
+## Table of Contents
+
+* [Frequently used commands](#Frequently-used-commands)
+* [Install on Linux](#Install-on-Linux)
+
+## Frequently used commands <a name="Frequently-used-commands"></a>
+
+To create a new blank environment:
 
 ```
-# Create a new blank environment.
-$ conda create --name <environment_name>
+conda create --name env_name
+```
 
-# Create a new environment and install a package simultaneously.
-$ conda create --name <environment_name> -c <channel_name> <package_name>
+To create a new environment and install a package simultaneously:
 
-# Createa new environment based on file.
-conda env create -n qiime2-2020.8 --file qiime2-2020.8-py36-osx-conda.yml
+```
+conda create --name env_name -c channel_name package_name
+```
 
-# Create new environment with specific Python version.
-$ conda create -n <environment_name> python=3.7 anaconda
+To create a new environment based on .yml file:
 
-# Create new environment with R.
-$ conda create -n <environment_name> r-essentials r-base
+```
+conda env create -n env_name --file conda.yml
+```
 
-# Activate environment.
-$ conda activate <environment_name>
+To create a new environment with specific Python version:
 
-# Deactivate current environment.
-$ conda deactivate
+```
+conda create -n env_name python=3.7 anaconda
+```
 
-# List existing environments.
-$ conda info --envs
+To create a new environment with R:
 
-# Remove environment.
-$ conda env remove -n <environment_name>
+```
+conda create -n env_name r-essentials r-base
+```
 
-# Search available Python versions.
-$ conda search "^python$"
+To activate an environment:
 
+```
+conda activate env_name
+```
+
+To deactivate the current environment:
+
+```
+conda deactivate
+```
+
+To list all existing environments:
+
+```
+conda info --envs
+```
+
+To remove an environment:
+
+```
+conda env remove -n env_name
+```
+
+To search available Python versions:
+
+```
+conda search "^python$"
+```
+
+To install a Python package in the development mode:
+
+```
 conda develop .
 ```
 
-
-
-
-
-
-
-
-
-
-## Installing on Linux <a name="Installing-on-Linux"></a>
+## Install on Linux <a name="Install-on-Linux"></a>
 
 On the server, download the install bash script. You can see the full list of versions at the [Anaconda repo](https://repo.anaconda.com/archive/).
 
