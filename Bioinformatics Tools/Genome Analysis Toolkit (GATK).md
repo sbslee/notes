@@ -1,5 +1,10 @@
 # Genome Analysis Toolkit
 
+## Table of Contents
+
+* [GATK resource bundle](#GATK-resource-bundle)
+* [Process the reference genome](#Process-the-reference-genome)
+
 ## GATK resource bundle <a name="GATK-resource-bundle"></a>
 
 The GATK resource bundle is a collection of standard files for working with human resequencing data with the GATK. For example, it can be used for Base Quality Score Recalibration (BQSR). See this [page](https://gatk.broadinstitute.org/hc/en-us/articles/360035890811-Resource-bundle) for more details.
