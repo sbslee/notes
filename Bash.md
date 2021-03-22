@@ -108,6 +108,18 @@ To extract lines repeated at least three times:
 awk '++a[$0] == 3 { print $0 }' example.txt
 ```
 
+To print every fifth line:
+
+```
+awk 'NR % 5 == 0' example.txt
+```
+
+To skip the first two lines when priting a file:
+
+```
+tail -n +3 example.txt
+```
+
 ## Bash configuration <a name="Bash-configuration"></a>
 
 The `.bashrc` file is used to provide a place where you can set up variables, functions and aliases, define your (PS1) prompt and define other settings that you want to use every time you open a new terminal window. The following command will activate the configuration:
