@@ -1,0 +1,130 @@
+# Anaconda <a name="Anaconda"></a>
+
+## FUCs for Anaconda <a name="FUCs-for-Anaconda"></a>
+
+```
+# Create a new blank environment.
+$ conda create --name <environment_name>
+
+# Create a new environment and install a package simultaneously.
+$ conda create --name <environment_name> -c <channel_name> <package_name>
+
+# Createa new environment based on file.
+conda env create -n qiime2-2020.8 --file qiime2-2020.8-py36-osx-conda.yml
+
+# Create new environment with specific Python version.
+$ conda create -n <environment_name> python=3.7 anaconda
+
+# Create new environment with R.
+$ conda create -n <environment_name> r-essentials r-base
+
+# Activate environment.
+$ conda activate <environment_name>
+
+# Deactivate current environment.
+$ conda deactivate
+
+# List existing environments.
+$ conda info --envs
+
+# Remove environment.
+$ conda env remove -n <environment_name>
+
+# Search available Python versions.
+$ conda search "^python$"
+
+conda develop .
+```
+
+
+
+
+
+
+
+
+
+
+## Installing on Linux <a name="Installing-on-Linux"></a>
+
+On the server, download the install bash script. You can see the full list of versions at the [Anaconda repo](https://repo.anaconda.com/archive/).
+
+```
+$ curl -O https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+```
+
+Next, check the integrity of the downloaded file.
+
+```
+$ md5sum Anaconda3-2020.11-Linux-x86_64.sh
+4cd48ef23a075e8555a8b6d0a8c4bae2  Anaconda3-2020.11-Linux-x86_64.sh
+```
+
+After confirming the file is intact, run the bash script.
+
+```
+$ bash Anaconda3-2020.11-Linux-x86_64.sh
+```
+
+Once installation is complete, you’ll receive the following output:
+
+```
+...
+installation finished.
+Do you wish the installer to initialize Anaconda3
+by running conda init? [yes|no]
+[no] >>>
+```
+
+Type yes.
+
+Related posts:
+
+[Easiest Way to Install Anaconda on Your Remote Linux Server](https://kengchichang.com/post/conda-linux/)
+
+
+
+
+
+
+
+
+
+
+## Package management for R <a name="Package-management-for-R"></a>
+
+R package management via Anaconda can be tricky sometimes. I learned in the hard way that setting the `.condarc` file saves many troubles.
+
+```
+conda config --add channels defaults
+conda config --add channels bioconda
+conda config --add channels conda-forge
+```
+
+Related posts:
+
+* [Why not r via conda?](https://community.rstudio.com/t/why-not-r-via-conda/9438/4)
+* [Question: what is the deal with bioconda?](https://www.biostars.org/p/470291/#477472)
+
+
+
+
+
+
+
+
+
+
+## Build a package <a name="Build-a-package"></a>
+
+A conda-build recipe is a flat directory.
+
+```
+Build the package.
+$ conda-build pypgx .
+
+conda convert --platform linux-64 /Users/sbslee/opt/anaconda3/conda-bld/osx-64/pypgx-0.1.37-py38_0.tar.bz2
+
+anaconda upload /Users/sbslee/opt/anaconda3/conda-bld/osx-64/pypgx-0.1.37-py38_0.tar.bz2
+anaconda upload linux-64/pypgx-0.1.37-py38_0.tar.bz2
+```
