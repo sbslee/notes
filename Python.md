@@ -11,6 +11,7 @@
 * [Setting space between subplots](#Setting-space-between-subplots)
 * [Setting figure style globally](#Setting-figure-style-globally)
 * [Setting figure style temporarily](#Setting-figure-style-temporarily)
+* [Pipe through Python script](#Pipe-through-Python-script)
 
 ## Frequently used commands <a name="Frequently-used-commands"></a>
 
@@ -52,6 +53,8 @@ pip install -r requirements_dev.txt
 pip install setuptools -U
 python3 setup.py install
 python3 setup.py sdist bdist_wheel
+
+# Recommended read: https://towardsdatascience.com/build-your-first-open-source-python-project-53471c9942a7
 ```
 
 To check the distribution files before uploading to PyPi:
@@ -222,4 +225,31 @@ import matplotlib.pyplot as plt
 
 with sns.axes_style('darkgrid'):
     plt.plot(np.sin(np.linspace(0, 2 * np.pi)), 'r-o')
+```
+
+## Pipe through Python script <a name="Pipe-through-Python-script"></a>
+
+If you saved that as foo.py, then you'd run it with `zcat sample_R1.fastq.gz | ./foo.py | gzip -c > sample_R1.filtered.gz`.
+
+```
+#File: foo.py
+#!/usr/bin/env python
+import sys
+
+while True:
+  try:
+    # Read in an entry
+    l1 = sys.stdin.next()
+    l2 = sys.stdin.next()
+    l3 = sys.stdin.next()
+    l4 = sys.stdin.next()
+
+    # check the length of the index
+    if len(l1.split(" ")[1].split(":")[-1]) == 6:
+      sys.stdout.write(l1)
+      sys.stdout.write(l2)
+      sys.stdout.write(l3)
+      sys.stdout.write(l4)
+  except:
+    break
 ```
