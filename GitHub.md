@@ -56,30 +56,49 @@ git branch -a
 git checkout branch_name
 ```
 
+To push to master:
+
+```
+git push origin master
+```
+
+To push to a specific branch:
+
+```
+git push origin branch_name
+```
+
+To update the local repo:
+
+```
+git pull
+```
+
+To merge a branch into master:
+
+```
+git checkout master
+git merge branch_name
+```
+
+To delete a local branche:
+
+```
+git branch -d branch_name
+```
+
+To deleting a remote branch:
+
+```
+git push origin --delete branch_name
+```
 
 
 
 
 
 ```
-Push to master.
-$ git push origin master
 
-Push to a specific branch.
-$ git push origin <name_of_branch>
-
-Update the local repo.
-$ git pull
-
-Merge a branch into master.
-$ git checkout master
-$ git merge <name_of_branch>
-
-Delete a local branche.
-$ git branch -d <name_of_branch>
-
-Deleting a remote branche.
-$ git push origin --delete <name_of_branch>
 
 $ git add requirements_dev.txt
 $ git config user.email <sbstevenlee@gmail.com>
