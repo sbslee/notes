@@ -38,6 +38,13 @@ To count the number of sequence reads in a zipped FASTQ file (macOS):
 echo $(zcat < sample.fastq | wc -l) / 4 | bc
 ```
 
+To extract only sequence reads from a zipped FASTQ file:
+
+```
+zcat sample.fastq.gz | awk '{if (NR% 4 == 2) print $0}'
+```
+
+
 
 
 
