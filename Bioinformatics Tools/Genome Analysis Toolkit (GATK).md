@@ -1,12 +1,16 @@
 # Genome Analysis Toolkit
 
-```
-I accessed to GATK Resource Bundle to download some files necessary for GATK's Base Quality Score Recalibration (BQSR).
+## GATK resource bundle <a name="GATK-resource-bundle"></a>
 
-				SEUNGs-MacBook-Pro-2:~ seungbeenlee$ ftp ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/
-				ftp> cd /bundle/b37
-				ftp> mget 1000G_phase1.indels.b37.*
-				ftp> ls Mills_and_1000G_gold_standard.indels.b37.vcf*
+The GATK resource bundle is a collection of standard files for working with human resequencing data with the GATK. For example, it can be used for Base Quality Score Recalibration (BQSR).
+
+**FTP server access was disabled on June 1, 2020.**
+
+```
+ftp ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/
+ftp> cd /bundle/b37
+ftp> mget 1000G_phase1.indels.b37.*
+ftp> ls Mills_and_1000G_gold_standard.indels.b37.vcf*
 ```
 
 ## Process the reference genome <a name="Process-the-reference-genome"></a>
