@@ -216,10 +216,7 @@ Length: 24694164973 (23G) (unauthoritative)
  0% [                                                                                                             ] 7,006,872   1.65M/s  eta 5h 0m   ^C
 C
 
-# Download BAMs from the University of Michigan server
-ssh weasel.gs.washington.edu
-lftp sftp://sftp-topmed55k-cyp2d6:MptW2CzA9RZ7rWUT@share.sph.umich.edu
-mirror -c /data /net/grc/vol5/home/sbslee/fhs
+
 
 # -- Globus ------------------------------------------------------------------
 
