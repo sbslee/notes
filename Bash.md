@@ -56,6 +56,19 @@ NR==1 {
 ' example.txt
 ```
 
+To list columns by header name for a .csv file:
+
+```
+awk -F "\"*,\"*" '
+NR==1 {
+    for (i=1; i<=NF; i++) {
+        f[$i] = i
+    }
+}
+{ print $(f["foo"]), $(f["baz"]) }
+' example.csv
+```
+
 ### Zipped files <a name="Zipped-files"></a>
 
 To create a .tar.gz file:
