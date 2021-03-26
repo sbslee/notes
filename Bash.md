@@ -140,9 +140,9 @@ To check whether a file exists or not:
 ```
 if test -f example.txt
 then
-	echo "Found"
+  echo "Found"
 else
-	echo "Not found"
+  echo "Not found"
 fi
 ```
 
