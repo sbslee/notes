@@ -135,6 +135,17 @@ To skip the first two lines when priting a file:
 tail -n +3 example.txt
 ```
 
+To check whether a file exists or not:
+
+```
+if test -f example.txt
+then
+	echo "Found"
+else
+	echo "Not found"
+fi
+```
+
 ## Bash configuration <a name="Bash-configuration"></a>
 
 The `.bashrc` file is used to provide a place where you can set up variables, functions and aliases, define your (PS1) prompt and define other settings that you want to use every time you open a new terminal window. The following command will activate the configuration:
@@ -144,6 +155,12 @@ source .bashrc
 ```
 
 There is also the `.bash_profile` file, which is executed for login shells, while `.bashrc` is executed for interactive non-login shells. When an installed program cannot be called from the command line, add `export PATH=~/.local/bin:$PATH` to the `.bash_profile` file.
+
+
+
+
+
+
 
 
 
@@ -281,17 +298,6 @@ for FRACTION in `cat fractions.txt`; do
   for SAMPLE in `cat samples.txt`; do
     echo /nfs/home/sbslee/projects/cyp2d6/20170405_sean_bam_downsampling/$FRACTION/$SAMPLE/$SAMPLE.merged.sorted.markeddups.realigned.recal.$FRACTION.sorted.bam;
   done > $FRACTION.list;
-done
-
-# Check File Exists or Not
-for FILE in `cat weiss_bai.list`;
-do
-  if test -f $FILE
-  then
-  	echo "$FILE found."
-  else
-  	echo "$FILE not found."
-  fi
 done
 
 # Find a file.
