@@ -9,6 +9,7 @@
     * [Count things](#Count-things)
     * [Estimate size](#Estimate-size)
     * [Comparison](#Comparison)
+    * [Text manipulation](#Text-manipulation)
 * [Neat tricks](#Neat-tricks)
 * [Bash configuration](#Bash-configuration)
 
@@ -90,6 +91,14 @@ To find difference between two directories:
 
 ```
 diff -qr dir1 dir2
+```
+
+### Text manipulation <a name="Text-manipulation"></a>
+
+To search and remove a specific word from a line:
+
+```
+echo "exampleword" | sed 's/word//g'
 ```
 
 ## Neat tricks <a name="Neat-tricks"></a>
