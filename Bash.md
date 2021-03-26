@@ -43,7 +43,7 @@ To list one file per line:
 ls -1 dir
 ```
 
-To list columns by header name:
+To list columns by header name for a tab-delimited file:
 
 ```
 awk '
