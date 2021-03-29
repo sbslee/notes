@@ -14,6 +14,7 @@
 * [Neat tricks](#Neat-tricks)
 * [Bash configuration](#Bash-configuration)
 * [System permission](#System-permission)
+* [File transfer](#File-transfer)
 
 ## Frequently used commands <a name="Frequently-used-commands"></a>
 
@@ -232,10 +233,6 @@ There is also the `.bash_profile` file, which is executed for login shells, whil
 # Change group ownership.
 chgrp -R shendure-pipeline *
 
-chmod 775 -R 0.13
-
-chmod 777 slice_bams.pl
-
 ln -s original-fn new-fn
 
 
@@ -393,4 +390,17 @@ For example, to give read, write, and execute permissions for everyone:
 
 ```
 chmod 777 dir
+```
+
+To give permissions for all files inside the directory:
+
+```
+chmod 777 -R dir
+```
+
+## File transfer <a name="File-transfer"></a>
+
+```
+lftp sftp://user_id:user_pw.@host_name:port_number
+mirror -c target_dir destination_dir
 ```
