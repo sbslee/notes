@@ -10,6 +10,7 @@
     * [Estimate size](#Estimate-size)
     * [Comparison](#Comparison)
     * [Text manipulation](#Text-manipulation)
+    * [Check-things](#Check-things)
 * [Neat tricks](#Neat-tricks)
 * [Bash configuration](#Bash-configuration)
 * [System permission](#System-permission)
@@ -42,6 +43,12 @@ To list one file per line:
 
 ```
 ls -1 dir
+```
+
+To list files in a space-separated view:
+
+```
+ls | tr '\n' ' '
 ```
 
 To list columns by header name for a tab-delimited file:
@@ -134,6 +141,19 @@ To search and remove a specific word from a line:
 echo "exampleword" | sed 's/word//g'
 ```
 
+### Check things <a name="Check-things"></a>
+
+To check whether a file exists or not:
+
+```
+if test -f example.txt
+then
+  echo "Found"
+else
+  echo "Not found"
+fi
+```
+
 ## Neat tricks <a name="Neat-tricks"></a>
 
 To move the cursor forward by one word:
@@ -160,17 +180,6 @@ To skip the first two lines when priting a file:
 
 ```
 tail -n +3 example.txt
-```
-
-To check whether a file exists or not:
-
-```
-if test -f example.txt
-then
-  echo "Found"
-else
-  echo "Not found"
-fi
 ```
 
 ## Bash configuration <a name="Bash-configuration"></a>

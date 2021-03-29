@@ -20,6 +20,12 @@ To slice a VCF file:
 tabix -h sample.vcf.gz chr1:1000-2000 > sliced.vcf.gz
 ```
 
+To slice a VCF file without using tabix:
+
+```
+zcat sample.vcf.gz | awk '{OFS="\t"; if ($2 > 1000 && $2 < 2000){ print }}'
+```
+
 To count the number of sequence reads in a FASTQ file:
 
 ```
@@ -46,6 +52,10 @@ zcat sample.fastq.gz | awk '{if (NR% 4 == 2) print $0}'
 
 
 
+
+Illumina' sequences:
+
+https://www.eurofinsgenomics.eu/media/1610545/illumina-adapter-sequences.pdf
 
 
 ```
