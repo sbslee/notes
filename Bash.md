@@ -362,3 +362,9 @@ Related posts:
 | 2 |	write only	            | -w- |	010    |     
 | 1 |	execute only	          | --x |	001    |
 | 0 |	none	                  | --- |	000    |
+
+For example, to give read, write, and execute permissions for everyone:
+
+```
+chmod 777 dir
+```
