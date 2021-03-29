@@ -10,7 +10,7 @@
     * [Estimate size](#Estimate-size)
     * [Comparison](#Comparison)
     * [Text manipulation](#Text-manipulation)
-    * [Check-things](#Check-things)
+    * [Check things](#Check-things)
 * [Neat tricks](#Neat-tricks)
 * [Bash configuration](#Bash-configuration)
 * [System permission](#System-permission)
@@ -75,6 +75,12 @@ NR==1 {
 }
 { print $(f["foo"]), $(f["baz"]) }
 ' example.csv
+```
+
+To display all the variables:
+
+```
+set
 ```
 
 ### Zipped files <a name="Zipped-files"></a>
@@ -151,6 +157,17 @@ then
   echo "Found"
 else
   echo "Not found"
+fi
+```
+
+To check whether a variable exists or not:
+
+```
+if [ -z ${LC_ALL+x} ]
+then
+  echo "LC_ALL is unset"
+else
+  echo "LC_ALL is set to '$LC_ALL'"
 fi
 ```
 
