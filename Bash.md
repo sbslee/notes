@@ -12,6 +12,7 @@
     * [Text manipulation](#Text-manipulation)
 * [Neat tricks](#Neat-tricks)
 * [Bash configuration](#Bash-configuration)
+* [System permission](#System-permission)
 
 ## Frequently used commands <a name="Frequently-used-commands"></a>
 
@@ -347,3 +348,17 @@ awk 'NR==FNR{a[$0];next} !($0 in a)' weiss_bams_truncated.list weiss_bams_all.li
 Related posts:
 
 * [Search and replace](https://vim.fandom.com/wiki/Search_and_replace)
+
+
+## System permission <a name="System-permission"></a>
+
+| # | Permission              | rwx | Binary |
+| - | ----------------------- | --- | ------ |
+| 7 |	read, write and execute |	rwx |	111    |
+| 6 |	read and write          | rw- |	110    |
+| 5 |	read and execute	      | r-x |	101    |
+| 4 |	read only	              | r-- |	100    |
+| 3 |	write and execute	      | -wx |	011    |
+| 2 |	write only	            | -w- |	010    |     
+| 1 |	execute only	          | --x |	001    |
+| 0 |	none	                  | --- |	000    |
