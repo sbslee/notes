@@ -79,7 +79,7 @@ To access a directory containing Python scripts:
 
 ```
 import sys
-sys.path.append(package_name)
+sys.path.append(dir)
 ```
 
 ### pandas <a name="pandas"></a>
