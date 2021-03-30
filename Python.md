@@ -75,6 +75,13 @@ To upload the distribution files to PyPi:
 twine upload dist/*
 ```
 
+To access a directory containing Python scripts:
+
+```
+import sys
+sys.path.append(package_name)
+```
+
 ### pandas <a name="pandas"></a>
 
 To set a new column:
