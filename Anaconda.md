@@ -6,6 +6,7 @@
 * [Install on Linux](#Install-on-Linux)
 * [Package management for R](#Package-management-for-R)
 * [Build a package](#Build-a-package)
+* [CondaHTTPError](#CondaHTTPError)
 
 ## Frequently used commands <a name="Frequently-used-commands"></a>
 
@@ -138,4 +139,25 @@ conda convert --platform linux-64 /Users/sbslee/opt/anaconda3/conda-bld/osx-64/p
 
 anaconda upload /Users/sbslee/opt/anaconda3/conda-bld/osx-64/pypgx-0.1.37-py38_0.tar.bz2
 anaconda upload linux-64/pypgx-0.1.37-py38_0.tar.bz2
+```
+
+## CondaHTTPError <a name="CondaHTTPError"></a>
+
+When installing a new package using `conda install`, if you get the `CondaHTTPError` error that looks similar to:
+
+```
+Collecting package metadata (current_repodata.json): failed
+
+CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://conda.anaconda.org/bioconda/osx-64/current_repodata.json>
+Elapsed: -
+
+An HTTP error occurred when trying to retrieve this URL.
+HTTP errors are often intermittent, and a simple retry will get you on your way.
+'https://conda.anaconda.org/bioconda/osx-64'
+```
+
+you can easily fix the issue by entering:
+
+```
+conda config --set ssl_verify no
 ```
