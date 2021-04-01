@@ -143,7 +143,7 @@ anaconda upload linux-64/pypgx-0.1.37-py38_0.tar.bz2
 
 ## CondaHTTPError <a name="CondaHTTPError"></a>
 
-When installing a new package using `conda install`, if you get the `CondaHTTPError` error that looks similar to:
+When installing a new package via `conda install`, if you get `CondaHTTPError` with the message that looks:
 
 ```
 Collecting package metadata (current_repodata.json): failed
