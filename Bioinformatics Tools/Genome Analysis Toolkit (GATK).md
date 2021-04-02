@@ -3,6 +3,7 @@
 ## Table of Contents
 
 * [Pipeline for germline short variant discovery](#Pipeline-for-germline-short-variant-discovery)
+* [Pipeline for somatic short variant discovery](#Pipeline-for-somatic-short-variant-discovery)
 * [GATK resource bundle](#GATK-resource-bundle)
 * [Process the reference genome](#Process-the-reference-genome)
 
@@ -61,6 +62,11 @@ gatk VariantFiltration \
 --QUIET \
 --java-options "-Xmx4G"
 ```
+
+## Pipeline for somatic short variant discovery <a name="Pipeline-for-somatic-short-variant-discovery"></a>
+
+This pipeline is based on GATK Team's Best Practices Workflows for [Somatic short variant discovery (SNVs + Indels)](https://gatk.broadinstitute.org/hc/en-us/articles/360035894731).
+
 
 ## GATK resource bundle <a name="GATK-resource-bundle"></a>
 
