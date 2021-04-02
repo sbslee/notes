@@ -8,14 +8,50 @@
 
 ## Pipeline for germline short variant discovery <a name="Pipeline-for-germline-short-variant-discovery"></a>
 
-This pipeline is based on GATK Team's Best Practices Workflows for [Germline short variant discovery (SNPs + Indels)](https://gatk.broadinstitute.org/hc/en-us/articles/360035535932-Germline-short-variant-discovery-SNPs-Indels-)
+This pipeline is based on GATK Team's Best Practices Workflows for [Germline short variant discovery (SNPs + Indels)](https://gatk.broadinstitute.org/hc/en-us/articles/360035535932-Germline-short-variant-discovery-SNPs-Indels-).
 
 ```
-HaplotypeCaller
+gatk HaplotypeCaller \
+-R ref.fa \
+--emit-ref-confidence GVCF \
+-I sample.bam \
+-O sample.g.vcf
+-L chr5:500-1000 \
+--QUIET \
+--java-options "-Xmx4G"
 ```
 
 ```
-gatk GenomicsDBImport
+gatk GenomicsDBImport \
+--intervals chr5:500-1000 \
+--genomicsdb-workspace-path output_dir/temp/datastore \
+--merge-input-intervals \
+--QUIET \
+--java-options "-Xmx4G" \
+-V sample1.g.vcf \
+-V sample2.g.vcf
+```
+
+```
+gatk GenotypeGVCFs \
+-R ref.fa \
+-V gendb://output_dir/temp/datastore \
+-O output_dir/temp/germline.joint.vcf \
+--QUIET \
+--java-options "-Xmx4G" \
+-D dbsnp.vcf
+```
+
+```
+gatk VariantFiltration \
+-R ref.fa \
+-L chr5:500-1000 \
+-O germline.joint.filtered.vcf \
+--variant $output_dir/temp/germline.joint.vcf \
+--filter-expression 'QUAL <= 50.0' \
+--filter-name QUALFilter \
+--QUIET \
+--java-options "-Xmx4G"
 ```
 
 ## GATK resource bundle <a name="GATK-resource-bundle"></a>
