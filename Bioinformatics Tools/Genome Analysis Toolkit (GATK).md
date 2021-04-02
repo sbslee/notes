@@ -2,8 +2,21 @@
 
 ## Table of Contents
 
+* [Pipeline for germline short variant discovery](#Pipeline-for-germline-short-variant-discovery)
 * [GATK resource bundle](#GATK-resource-bundle)
 * [Process the reference genome](#Process-the-reference-genome)
+
+## Pipeline for germline short variant discovery <a name="Pipeline-for-germline-short-variant-discovery"></a>
+
+This pipeline is based on GATK Team's Best Practices Workflows for [Germline short variant discovery (SNPs + Indels)](https://gatk.broadinstitute.org/hc/en-us/articles/360035535932-Germline-short-variant-discovery-SNPs-Indels-)
+
+```
+HaplotypeCaller
+```
+
+```
+gatk GenomicsDBImport
+```
 
 ## GATK resource bundle <a name="GATK-resource-bundle"></a>
 
