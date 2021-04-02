@@ -10,6 +10,8 @@
 
 This pipeline is based on GATK Team's Best Practices Workflows for [Germline short variant discovery (SNPs + Indels)](https://gatk.broadinstitute.org/hc/en-us/articles/360035535932-Germline-short-variant-discovery-SNPs-Indels-).
 
+### Call variants per-sample
+
 ```
 gatk HaplotypeCaller \
 -R ref.fa \
@@ -20,6 +22,8 @@ gatk HaplotypeCaller \
 --QUIET \
 --java-options "-Xmx4G"
 ```
+
+### Consolidate GVCFs
 
 ```
 gatk GenomicsDBImport \
@@ -32,6 +36,8 @@ gatk GenomicsDBImport \
 -V sample2.g.vcf
 ```
 
+### Joint-Call Cohort
+
 ```
 gatk GenotypeGVCFs \
 -R ref.fa \
@@ -41,6 +47,8 @@ gatk GenotypeGVCFs \
 --java-options "-Xmx4G" \
 -D dbsnp.vcf
 ```
+
+### Filter variants
 
 ```
 gatk VariantFiltration \
