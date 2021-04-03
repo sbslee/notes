@@ -123,6 +123,14 @@ samtools faidx ref.fasta
 
 ## Mutect2 filters <a name="Mutect2-filters"></a>
 
+| ID     | Description        |
+| ------ | ------------------ |
+| PASS   | All filters passed |
+
+
+
+
+
 ##FILTER=<ID=PASS,Description="All filters passed">
 ##FILTER=<ID=FAIL,Description="Fail the site if all alleles fail but for different reasons.">
 ##FILTER=<ID=base_qual,Description="alt median base quality">
