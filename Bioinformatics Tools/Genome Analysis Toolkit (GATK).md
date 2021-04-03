@@ -123,33 +123,27 @@ samtools faidx ref.fasta
 
 ## Mutect2 filters <a name="Mutect2-filters"></a>
 
-| ID     | Description        |
-| ------ | ------------------ |
-| PASS   | All filters passed |
-
-
-
-
-
-##FILTER=<ID=PASS,Description="All filters passed">
-##FILTER=<ID=FAIL,Description="Fail the site if all alleles fail but for different reasons.">
-##FILTER=<ID=base_qual,Description="alt median base quality">
-##FILTER=<ID=clustered_events,Description="Clustered events observed in the tumor">
-##FILTER=<ID=contamination,Description="contamination">
-##FILTER=<ID=duplicate,Description="evidence for alt allele is overrepresented by apparent duplicates">
-##FILTER=<ID=fragment,Description="abs(ref - alt) median fragment length">
-##FILTER=<ID=germline,Description="Evidence indicates this site is germline, not somatic">
-##FILTER=<ID=haplotype,Description="Variant near filtered variant on same haplotype.">
-##FILTER=<ID=low_allele_frac,Description="Allele fraction is below specified threshold">
-##FILTER=<ID=map_qual,Description="ref - alt median mapping quality">
-##FILTER=<ID=multiallelic,Description="Site filtered because too many alt alleles pass tumor LOD">
-##FILTER=<ID=n_ratio,Description="Ratio of N to alt exceeds specified ratio">
-##FILTER=<ID=normal_artifact,Description="artifact_in_normal">
-##FILTER=<ID=orientation,Description="orientation bias detected by the orientation bias mixture model">
-##FILTER=<ID=panel_of_normals,Description="Blacklisted site in panel of normals">
-##FILTER=<ID=position,Description="median distance of alt variants from end of reads">
-##FILTER=<ID=possible_numt,Description="Allele depth is below expected coverage of NuMT in autosome">
-##FILTER=<ID=slippage,Description="Site filtered due to contraction of short tandem repeat region">
-##FILTER=<ID=strand_bias,Description="Evidence for alt allele comes from one read direction only">
-##FILTER=<ID=strict_strand,Description="Evidence for alt allele is not represented in both directions">
-##FILTER=<ID=weak_evidence,Description="Mutation does not meet likelihood threshold">
+| ID               | Description                                                       |
+| ---------------- | ----------------------------------------------------------------- |
+| PASS             | All filters passed                                                |
+| FAIL             | Fail the site if all alleles fail but for different reasons.      |
+| base_qual        | alt median base quality                                           |
+| clustered_events | Clustered events observed in the tumor                            |
+| contamination    | contamination                                                     |
+| duplicate        | evidence for alt allele is overrepresented by apparent duplicates |
+| fragment         | abs(ref - alt) median fragment length                             |
+| germline         | Evidence indicates this site is germline, not somatic             |
+| haplotype        | Variant near filtered variant on same haplotype.                  |
+| low_allele_frac  | Allele fraction is below specified threshold                      |
+| map_qual         | ref - alt median mapping quality                                  |
+| multiallelic     | Site filtered because too many alt alleles pass tumor LOD         |
+| n_ratio          | Ratio of N to alt exceeds specified ratio                         |
+| normal_artifact  | artifact_in_normal                                                |
+| orientation      | orientation bias detected by the orientation bias mixture model   |
+| panel_of_normals | Blacklisted site in panel of normals                              |
+| position         | median distance of alt variants from end of reads                 |
+| possible_numt    | Allele depth is below expected coverage of NuMT in autosome       |
+| slippage         | Site filtered due to contraction of short tandem repeat region    |
+| strand_bias      | Evidence for alt allele comes from one read direction only        |
+| strict_strand    | Evidence for alt allele is not represented in both directions     |
+| weak_evidence    | Mutation does not meet likelihood threshold                       |
