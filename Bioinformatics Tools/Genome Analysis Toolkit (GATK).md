@@ -67,6 +67,29 @@ gatk VariantFiltration \
 
 This pipeline is based on GATK Team's Best Practices Workflows for [Somatic short variant discovery (SNVs + Indels)](https://gatk.broadinstitute.org/hc/en-us/articles/360035894731).
 
+### Tumor with matched normal
+
+```
+gatk Mutect2 \
+-R reference.fa \
+-I tumor.bam \
+-I normal.bam \
+-normal normal_sample_name \
+--germline-resource af-only-gnomad.vcf.gz \
+--panel-of-normals pon.vcf.gz \
+-O somatic.vcf.gz
+```
+
+### Filter variants in a Mutect2 VCF callset
+
+```
+gatk FilterMutectCalls \
+-R reference.fasta \
+-V somatic.vcf.gz \
+--contamination-table contamination.table \
+--tumor-segmentation segments.tsv \
+-O filtered.vcf.gz
+```
 
 ## GATK resource bundle <a name="GATK-resource-bundle"></a>
 
