@@ -10,3 +10,9 @@ ps <- qza_to_phyloseq(
   metadata=metadata_file
 )
 ```
+
+To subset some samples that meet certain criteria:
+
+```
+ps <- subset_samples(ps, subsetting_expression)
+```
