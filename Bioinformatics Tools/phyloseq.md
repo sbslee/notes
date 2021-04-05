@@ -20,5 +20,11 @@ ps <- qza_to_phyloseq(
 To subset some samples that meet certain criteria:
 
 ```
-ps <- subset_samples(ps, subsetting_expression)
+ps <- subset_samples(ps, subset_exp)
+```
+
+To filter out taxa whose combined read count is less than 10:
+
+```
+ps <- filter_taxa(ps, sum(x) >= 10, TRUE)
 ```
