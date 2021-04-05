@@ -1,5 +1,7 @@
 # phyloseq
 
+* [Frequently used commands](#Frequently-used-commands)
+
 To create a phyloseq object from a .qza file:
 
 ```
