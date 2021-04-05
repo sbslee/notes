@@ -1,6 +1,10 @@
 # phyloseq
 
+## Table of Contents
+
 * [Frequently used commands](#Frequently-used-commands)
+
+## Frequently used commands <a name="Frequently-used-commands"></a>
 
 To create a phyloseq object from a .qza file:
 
