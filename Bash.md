@@ -178,7 +178,13 @@ fi
 To set an array:
 
 ```
-a=(1,2,3)
+a=(1 2 3)
+```
+
+To print an array:
+
+```
+echo "${a[@]}"
 ```
 
 ## Neat tricks <a name="Neat-tricks"></a>
