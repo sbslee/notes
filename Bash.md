@@ -187,6 +187,12 @@ To print an array:
 echo "${a[@]}"
 ```
 
+To print elements on separate lines:
+
+```
+printf '%s\n' "${a[@]}"
+```
+
 ## Neat tricks <a name="Neat-tricks"></a>
 
 To move the cursor forward by one word:
