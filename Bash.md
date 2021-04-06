@@ -11,6 +11,7 @@
     * [Comparison](#Comparison)
     * [Text manipulation](#Text-manipulation)
     * [Check things](#Check-things)
+    * [Array](#Array)
 * [Neat tricks](#Neat-tricks)
 * [Bash configuration](#Bash-configuration)
 * [System permission](#System-permission)
@@ -170,6 +171,14 @@ then
 else
   echo "LC_ALL is set to '$LC_ALL'"
 fi
+```
+
+### Array <a name="Array"></a>
+
+To set an array:
+
+```
+a=(1,2,3)
 ```
 
 ## Neat tricks <a name="Neat-tricks"></a>
