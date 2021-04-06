@@ -56,6 +56,8 @@ Related posts:
 
 * [Difference between binomial, negative binomial and Poisson regression](https://stats.stackexchange.com/questions/60643/difference-between-binomial-negative-binomial-and-poisson-regression)
 
+**Pro tip:** The RNAseq field uses negative binomial, the 16S microbiome field uses rarefying plus proportions, and the ChIP-seq field uses Poisson-based models.
+
 ## Dirichlet distribution <a name="Dirichlet-distribution"></a>
 
 The Dirichlet distribution is a generalization of the Beta distribution for multiple random variables. It is over vectors whose values are all in the interval [0,1] and the sum of values in the vector is 1. In other words, the vectors in the sample space of the Dirichlet have the same properties as probability distribtutions. Therefore, the Dirichlet distribution can be thought of as a "distribution over distributions".
