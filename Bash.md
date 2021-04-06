@@ -227,6 +227,13 @@ To skip the first two lines when priting a file:
 tail -n +3 example.txt
 ```
 
+To concatenate a string to each line of ls command output:
+
+```
+ls | xargs -i echo "Hello World {}"
+```
+
+
 ## Bash configuration <a name="Bash-configuration"></a>
 
 The `.bashrc` file is used to provide a place where you can set up variables, functions and aliases, define your (PS1) prompt and define other settings that you want to use every time you open a new terminal window. The following command will activate the configuration:
