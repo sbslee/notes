@@ -241,6 +241,12 @@ b=(1 2 3)
 paste <(printf "%s\n" "${a[@]}") <(printf "%s\n" "${b[@]}")
 ```
 
+To echo tab characters:
+
+```
+echo Hello$'\t'World
+```
+
 ## Bash configuration <a name="Bash-configuration"></a>
 
 The `.bashrc` file is used to provide a place where you can set up variables, functions and aliases, define your (PS1) prompt and define other settings that you want to use every time you open a new terminal window. The following command will activate the configuration:
