@@ -193,6 +193,12 @@ To print elements on separate lines:
 printf '%s\n' "${a[@]}"
 ```
 
+To read file names in the current directory into an array:
+
+```
+a=(*)
+```
+
 ## Neat tricks <a name="Neat-tricks"></a>
 
 To move the cursor forward by one word:
