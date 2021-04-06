@@ -233,6 +233,13 @@ To concatenate a string to each line of ls command output:
 ls | xargs -i echo "Hello World {}"
 ```
 
+To combine arrays as columns:
+
+```
+a=(A B C)
+b=(1 2 3)
+paste <(printf "%s\n" "${a[@]}") <(printf "%s\n" "${b[@]}")
+```
 
 ## Bash configuration <a name="Bash-configuration"></a>
 
