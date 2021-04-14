@@ -95,6 +95,6 @@ According to the Wikipedia page:
 
 ## ROC curve and PR curve <a name="ROC-curve-and-PR-curve"></a>
 
-The receiver operating characteristic (ROC) curve is created by plotting the true positive rate (TPR) against the false positive rate (FPR) at various threshold settings. The precision-recall (PR) curve shows the tradeoff between precision (PPV) and recall (which is equivalent to TPR) for different threshold. Therefore, both ROC curves and PR curves share the TPR term. According to this SE [post](https://stats.stackexchange.com/questions/7207/roc-vs-precision-and-recall-curves), the key difference between the two is that:
+The receiver operating characteristic (ROC) curve is created by plotting the true positive rate (TPR) against the false positive rate (FPR) at various threshold settings. The precision-recall (PR) curve shows the tradeoff between precision (PPV) and recall (which is equivalent to TPR) for different threshold. Therefore, both ROC curves and PR curves share the TPR term. According to this Cross Validated [post](https://stats.stackexchange.com/questions/7207/roc-vs-precision-and-recall-curves), the key difference between the two is that:
 
 > ROC curves will be the same no matter what the baseline probability is, but PR curves may be more useful in practice for needle-in-haystack type problems or problems where the "positive" class is more interesting than the negative class.
