@@ -2,6 +2,7 @@
 
 ## Table of Contents
 
+* [Terminology](#Terminology)
 * [Student's t-test](#Student's-t-test)
 * [Paired Samples t-test](#Paired-Samples-t-test)
 * [One-way ANOVA](#One-way-ANOVA)
@@ -12,7 +13,17 @@
 * [Poisson distribution](#Poisson-distribution)
 * [Dirichlet distribution](#Dirichlet-distribution)
 * [Fisher's method](#Fisher's-method)
-* [ROC curve and Precision-Recall curve](#ROC-curve-and-Precision-Recall-curve)
+* [ROC curve and PR curve](#ROC-curve-and-PR-curve)
+
+## Terminology <a name="Terminology"></a>
+
+| Terminology                                                | Derivation                              |
+| ---------------------------------------------------------- | --------------------------------------  |
+| true positive (TP)                                         |                                         |
+| true negative (NP)                                         |                                         |
+| false positive (FP)                                        |                                         |
+| false negative (FN)                                        |                                         |
+| sensitivity, recall, hit rate, or true positive rate (TPR) | TPR = TP / P = TP / (FP + FN) = 1 - FNR |
 
 ## Student's t-test <a name="Student's-t-test"></a>
 
@@ -75,4 +86,4 @@ According to the Wikipedia page:
 
 "Under Fisher's method, two small p-values P1 and P2 combine to form a smaller p-value. The yellow-green boundary defines the region where the meta-analysis p-value is below 0.05. For example, if both p-values are around 0.10, or if one is around 0.04 and one is around 0.25, the meta-analysis p-value is around 0.05."
 
-## ROC curve and Precision-Recall curve <a name="ROC-curve-and-Precision-Recall-curve"></a>
+## ROC curve and PR curve <a name="ROC-curve-and-PR-curve"></a>
