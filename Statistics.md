@@ -23,7 +23,7 @@
 | true negative (NP)                                         |                                         |
 | false positive (FP)                                        |                                         |
 | false negative (FN)                                        |                                         |
-| sensitivity, recall, hit rate, or true positive rate (TPR) | TPR = TP / P <br />= TP / (TP + FN) = 1 - FNR |
+| sensitivity, recall, hit rate, or true positive rate (TPR) | TPR = TP / P <br />= TP / (TP + FN) <br />= 1 - FNR |
 
 ## Student's t-test <a name="Student's-t-test"></a>
 
