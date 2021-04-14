@@ -12,6 +12,7 @@
 * [Poisson distribution](#Poisson-distribution)
 * [Dirichlet distribution](#Dirichlet-distribution)
 * [Fisher's method](#Fisher's-method)
+* [ROC curve and Precision-Recall curve](#ROC-curve-and-Precision-Recall-curve)
 
 ## Student's t-test <a name="Student's-t-test"></a>
 
@@ -73,3 +74,5 @@ According to the Wikipedia page:
 "In statistics, Fisher's method, also known as Fisher's combined probability test, is a technique for data fusion or "meta-analysis" (analysis of analyses). It was developed by and named for Ronald Fisher. In its basic form, it is used to combine the results from several independence tests bearing upon the same overall hypothesis (H0)."
 
 "Under Fisher's method, two small p-values P1 and P2 combine to form a smaller p-value. The yellow-green boundary defines the region where the meta-analysis p-value is below 0.05. For example, if both p-values are around 0.10, or if one is around 0.04 and one is around 0.25, the meta-analysis p-value is around 0.05."
+
+## ROC curve and Precision-Recall curve <a name="ROC-curve-and-Precision-Recall-curve"></a>
