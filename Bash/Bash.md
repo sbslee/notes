@@ -85,6 +85,16 @@ To display all the variables:
 set
 ```
 
+To list all currently running processes:
+
+```
+a = show processes for all users
+u = display the process's user/owner
+x = also show processes not attached to a terminal
+
+ps aux
+```
+
 ### Zipped files <a name="Zipped-files"></a>
 
 To create a .tar.gz file:
@@ -281,16 +291,6 @@ There is also the `.bash_profile` file, which is executed for login shells, whil
 chgrp -R shendure-pipeline *
 
 ln -s original-fn new-fn
-
-
-
-# Check the activity of a stuck program (e.g. Beagle).
-
-$ ps aux | head -n 1
-USER              PID  %CPU %MEM      VSZ    RSS   TT  STAT STARTED      TIME COMMAND
-$ ps aux | grep "beagle"
-seungbeenlee    41423 396.6  4.5  6038932 376420 s000  R+    3:03PM   0:42.54 /usr/bin/java -Xmx2g -jar /Users/seungbeenlee/Desktop/Stargazer_v1.0.8/beagle.25Nov19.28d.jar gt=2kkD_RM.cyp2a13.egfr.stargazer-genotype.project/phaseme.vcf chrom=19:41591355-41605100 ref=/Users/seungbeenlee/Desktop/Stargazer_v1.0.8/1kgp_vcf/cyp2a13.vcf.gz out=2kkD_RM.cyp2a13.egfr.stargazer-genotype.project/phased impute=false
-seungbeenlee    41437   0.0  0.0  2432792    596 s001  R+    3:03PM   0:00.00 grep beagle
 
 # -- Output files ------------------------------------------------------------
 
