@@ -94,3 +94,5 @@ According to the Wikipedia page:
 "Under Fisher's method, two small p-values P1 and P2 combine to form a smaller p-value. The yellow-green boundary defines the region where the meta-analysis p-value is below 0.05. For example, if both p-values are around 0.10, or if one is around 0.04 and one is around 0.25, the meta-analysis p-value is around 0.05."
 
 ## ROC curve and PR curve <a name="ROC-curve-and-PR-curve"></a>
+
+The receiver operating characteristic (ROC) curve is created by plotting the true positive rate (TPR) against the false positive rate (FPR) at various threshold settings. The precision-recall (PR) curve shows the tradeoff between precision and recall for different threshold.
