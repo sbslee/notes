@@ -23,7 +23,14 @@
 | true negative (NP)                                         |                                         |
 | false positive (FP)                                        |                                         |
 | false negative (FN)                                        |                                         |
-| sensitivity, recall, hit rate, or true positive rate (TPR) | TPR = TP / P <br />= TP / (TP + FN) <br />= 1 - FNR |
+| sensitivity, recall, hit rate, or true positive rate (TPR) | TPR = TP / P = TP / (TP + FN) = 1 - FNR |
+| specificity, selectivity or true negative rate (TNR)       | TNR = TN / N = TN / (TN + FP) = 1 - FPR |
+| precision or positive predictive value (PPV)               | PPV = TP / (TP + FP) = 1 - FDR          |
+| negative predictive value (NPV)                            | NPV = TN / (TN + FN) = 1 - FOR          |
+| miss rate or false negative rate (FNR)                     | FNR = FN / P = FN / (FN + TP) = 1 - TPR |
+| fall-out or false positive rate (FPR)                      | FPR = FP / N = FP / (FP + TN) = 1 - TNR |
+| false discovery rate (FDR)                                 | FDR = FP / (FP + TP) = 1 - PPV          |
+| false omission rate (FOR)                                  | FOR = FN / (FN + TN) = 1 - NPV          |
 
 ## Student's t-test <a name="Student's-t-test"></a>
 
