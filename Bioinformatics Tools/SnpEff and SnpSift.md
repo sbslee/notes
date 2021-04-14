@@ -1,4 +1,4 @@
-# SnpEff
+# SnpEff and SnpSift
 
 To download the pre-built human database (GRCh37.75):
 
