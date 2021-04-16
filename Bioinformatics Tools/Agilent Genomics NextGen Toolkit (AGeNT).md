@@ -15,9 +15,24 @@ Developed by Agilent Technologies, Inc., the AGeNT tool is a Java-based software
 
 The Trimmer utility of the AGeNT module processes the read sequences to identify and remove the adaptor sequences and extracts dual molecular barcodes (for SureSelect XT HS2).
 
+```
+java -jar trimmer-<version>.jar \
+-fq1 ./ICCG-repl1_S1_L001_R1_001.fastq.gz,./ICCG-repl1_S1_L001_R1_002.fastq.gz \
+-fq2 ./ICCG-repl1_S1_L001_R2_001.fastq.gz,./ICCG-repl1_S1_L001_R2_002.fastq.gz \
+-halo -minFractionRead 50 -idee_fixe \
+-out_loc result/outputFastqs/
+```
+
 ## LocatIt <a name="LocatIt"></a>
 
 The LocatIt utility of the AGeNT module processes the Molecular Barcode (MBC) information from HaloPlex HS, SureSelect XT HS, and SureSelect XT HS2 Illumina sequencing runs with options to either mark or merge duplicate reads and output in BAM file format.
+
+```
+java -Xmx12G -jar locatit-<version>.jar \
+-S -v2Duplex -d 1 -m 3 -q 25 -Q 25 \
+-l Covered.bed -o test_output.bam \
+test_input.bam
+```
 
 ## References <a name="References"></a>
 
