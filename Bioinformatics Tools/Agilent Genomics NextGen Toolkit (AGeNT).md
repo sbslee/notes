@@ -23,6 +23,12 @@ java -jar trimmer-<version>.jar \
 -out_loc result/outputFastqs/
 ```
 
+In SureSelect XT HS2 mode (-v2), for every two FASTQ files (read 1 FASTQ file and read 2 FASTQ file) the program outputs three compressed files:
+
+- trimmed read 1 FASTQ file (.fastq.gz)
+- trimmed read 2 FASTQ file (.fastq.gz)
+- MBC sequence file (.txt.gz).
+
 ## LocatIt <a name="LocatIt"></a>
 
 The LocatIt utility of the AGeNT module processes the Molecular Barcode (MBC) information from HaloPlex HS, SureSelect XT HS, and SureSelect XT HS2 Illumina sequencing runs with options to either mark or merge duplicate reads and output in BAM file format.
