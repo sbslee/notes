@@ -1,4 +1,4 @@
-# Genome Analysis Toolkit
+# Genome Analysis Toolkit (GATK)
 
 ## Table of Contents
 
