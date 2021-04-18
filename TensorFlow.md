@@ -27,3 +27,4 @@ References:
 
 * [Python kernel dies on Jupyter Notebook with tensorflow 2](https://stackoverflow.com/questions/59576397/python-kernel-dies-on-jupyter-notebook-with-tensorflow-2)
 * [MKL Optimizations](https://docs.anaconda.com/mkl-optimizations/#mkl-optimizations)
+* [What is the “nomkl” Python package used for?](https://stackoverflow.com/questions/66224879/what-is-the-nomkl-python-package-used-for)
