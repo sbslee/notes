@@ -21,7 +21,7 @@ In case your Jupyter Notebook kernel dies while running TensorFlow, without any 
 conda install nomkl
 ```
 
-Developed specifically for science, engineering, and financial computations, Intel™ Math Kernel Library (MKL) is a set of threaded and vectorized math routines that work to accelerate various math functions and applications. Anaconda has packaged MKL-powered binary versions of some of the most popular numerical/scientific Python libraries into MKL Optimizations for improved performance.
+Intel™ Math Kernel Library (MKL) is a set of threaded and vectorized math routines that work to accelerate various math functions and applications. MKL is activated by Anaconda as default, but you can opt out by installing `nomkl`. This will allow certain packages (e.g. `numpy`) to use other math library than MKL (e.g. OpenBLAS).
 
 References:
 
