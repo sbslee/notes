@@ -21,6 +21,9 @@ In case your Jupyter Notebook kernel dies while running TensorFlow, without any 
 conda install nomkl
 ```
 
+Developed specifically for science, engineering, and financial computations, Intel™ Math Kernel Library (MKL) is a set of threaded and vectorized math routines that work to accelerate various math functions and applications. Anaconda has packaged MKL-powered binary versions of some of the most popular numerical/scientific Python libraries into MKL Optimizations for improved performance.
+
 References:
 
 * [Python kernel dies on Jupyter Notebook with tensorflow 2](https://stackoverflow.com/questions/59576397/python-kernel-dies-on-jupyter-notebook-with-tensorflow-2)
+* [MKL Optimizations](https://docs.anaconda.com/mkl-optimizations/#mkl-optimizations)
