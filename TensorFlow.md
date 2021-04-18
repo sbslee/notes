@@ -4,6 +4,7 @@
 
 * [Installation](#Installation)
 * [Dead Jupyter Notebook kernel](#Dead-Jupyter-Notebook-kernel)
+* [Sequential model versus functional model](#Sequential-model-versus-functional-model)
 
 ## Installation <a name="Installation"></a>
 
