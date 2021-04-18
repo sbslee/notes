@@ -24,20 +24,18 @@ pip install notebook
 In the remote server, activate a conda environment with Jupyter Notebook and then run the following command.
 
 ```
-$ jupyter notebook --no-browser --port=8080
+jupyter notebook --no-browser --port=8080
 ```
 
 Next, from the local machine, run the following command (cm401 is the name of the remote server).
 
 ```
-$ ssh -L 8080:localhost:8080 cm401
+ssh -L 8080:localhost:8080 cm401
 ```
 
 Finally, navigate to http://localhost:8080/.
 
-**Update 1**
-
-If you get an error that says:
+In case you get an error like this:
 
 ```
 ...
@@ -45,15 +43,13 @@ channel 3: open failed: connect failed: Connection refused
 ...
 ```
 
-Then run the following:
+Run the following:
 
 ```
 ssh -L 8080:127.0.0.1:8080 cm401
 ```
 
-**Update 2**
-
-If you need to run Jupyter Notebook in an interactive session (i.e. `qlogin`) because you are in a login node as opposed to a computing node, you have to do the port forwarding twice. To do this, follow these instructions:
+In case you need to run Jupyter Notebook in an interactive session (i.e. `qlogin`) because you are in a login node as opposed to a computing node, you have to do the port forwarding twice. To do this, follow these instructions:
 
 1. Start an interactive session in the remote server. Take a note of the node name (e.g. grc141) because you will need this later.
 2. Activate a conda environment with Jupyter Notebook.
