@@ -1,6 +1,6 @@
 # Anaconda
 
-## Table of Contents
+## Table of contents
 
 * [Frequently used commands](#Frequently-used-commands)
 * [Install on Linux](#Install-on-Linux)

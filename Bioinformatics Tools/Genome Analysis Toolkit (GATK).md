@@ -1,6 +1,6 @@
 # Genome Analysis Toolkit (GATK)
 
-## Table of Contents
+## Table of contents
 
 * [Pipeline for germline short variant discovery](#Pipeline-for-germline-short-variant-discovery)
 * [Pipeline for somatic short variant discovery](#Pipeline-for-somatic-short-variant-discovery)

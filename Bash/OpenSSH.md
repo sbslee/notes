@@ -1,6 +1,6 @@
 # OpenSSH
 
-## Table of Contents
+## Table of contents
 
 * [Frequently used commands](#Frequently-used-commands)
 * [Creating a channel with password](#Creating-a-channel-with-password)

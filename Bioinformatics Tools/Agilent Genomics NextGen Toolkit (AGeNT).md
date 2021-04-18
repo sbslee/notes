@@ -1,6 +1,6 @@
 # Agilent Genomics NextGen Toolkit (AGeNT)
 
-## Table of Contents
+## Table of contents
 
 * [Introduction](#Introduction)
 * [Trimmer](#Trimmer)

@@ -1,6 +1,6 @@
 # Python
 
-## Table of Contents
+## Table of contents
 
 * [Frequently used commands](#Frequently-used-commands)
     * [Virtual environment](#Virtual-environment)

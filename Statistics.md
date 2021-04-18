@@ -1,6 +1,6 @@
 # Statistics
 
-## Table of Contents
+## Table of contents
 
 * [Terminology](#Terminology)
 * [Student's t-test](#Student's-t-test)

@@ -1,5 +1,24 @@
 # Jupyter Notebook <a name="Jupyter-Notebook"></a>
 
+## Table of contents
+
+* [Installation](#Installation)
+* [Running in server](#Running-in-server)
+
+## Installation <a name="Installation"></a>
+
+To install with `conda`:
+
+```
+conda install -c conda-forge notebook
+```
+
+To install with `pip`:
+
+```
+pip install notebook
+```
+
 ## Running in server <a name="Running-in-server"></a>
 
 In the remote server, activate a conda environment with Jupyter Notebook and then run the following command.

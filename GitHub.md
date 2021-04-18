@@ -1,6 +1,6 @@
 # GitHub
 
-## Table of Contents
+## Table of contents
 
 * [Frequently used commands](#Frequently-used-commands)
 
