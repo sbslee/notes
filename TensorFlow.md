@@ -28,3 +28,14 @@ References:
 * [Python kernel dies on Jupyter Notebook with tensorflow 2](https://stackoverflow.com/questions/59576397/python-kernel-dies-on-jupyter-notebook-with-tensorflow-2)
 * [MKL Optimizations](https://docs.anaconda.com/mkl-optimizations/#mkl-optimizations)
 * [What is the “nomkl” Python package used for?](https://stackoverflow.com/questions/66224879/what-is-the-nomkl-python-package-used-for)
+
+
+
+## Sequential model versus functional model <a name="Sequential-model-versus-functional-model"></a>
+
+A Sequential model is appropriate for a plain stack of layers where each layer has exactly one input tensor and one output tensor. The functional API can handle models with non-linear topology, shared layers, and even multiple inputs or outputs. The main idea is that a deep learning model is usually a directed acyclic graph (DAG) of layers. So the functional API is a way to build graphs of layers.
+
+References:
+
+* [The Sequential model](https://www.tensorflow.org/guide/keras/sequential_model)
+* [The Functional API](https://www.tensorflow.org/guide/keras/functional)
