@@ -12,7 +12,12 @@
 To install with `conda`:
 
 ```
-conda create -n tensorflow -c anaconda tensorflow
+conda create -n tensorflow -c anaconda tensor
+conda activate tensorflow
+conda install -c conda-forge notebookflow
+conda install nomkl
+conda install pydot
+conda install graphviz
 ```
 
 ## Frequently used commands <a name="Frequently-used-commands"></a>
@@ -21,6 +26,13 @@ To summarize a model:
 
 ```
 model.summary()
+```
+
+To plot a model:
+
+```
+from tensorflow.keras.utils import plot_model
+plot_model(model, 'model.png', show_shapes=True, show_layer_names=True)
 ```
 
 ## Dead Jupyter Notebook kernel <a name="Dead-Jupyter-Notebook-kernel"></a>
