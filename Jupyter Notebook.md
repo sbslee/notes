@@ -4,6 +4,7 @@
 
 * [Installation](#Installation)
 * [Running in server](#Running-in-server)
+* [Creating notebook programmatically](#Creating-notebook-programmatically)
 
 ## Installation <a name="Installation"></a>
 
@@ -63,16 +64,7 @@ Related posts:
 * [SSH -L connection successful, but localhost port forwarding not working “channel 3: open failed: connect failed: Connection refused”](https://stackoverflow.com/questions/18705453/ssh-l-connection-successful-but-localhost-port-forwarding-not-working-channel)
 * [Jupyter Notebook on UIowa's HPCs: An Example of Using Argon](https://zhiyzuo.github.io/Argon-Jupyter/)
 
-
-
-
-
-
-
-
-
-
-## Creating a notebook programmatically <a name="Creating-a-notebook-programmatically"></a>
+## Creating notebook programmatically <a name="Creating-notebook-programmatically"></a>
 
 We can create a notebook via Python scripting as follows.
 
