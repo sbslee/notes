@@ -12,9 +12,9 @@
 To install with `conda`:
 
 ```
-conda create -n tensorflow -c anaconda tensor
+conda create -n tensorflow -c anaconda tensorflow
 conda activate tensorflow
-conda install -c conda-forge notebookflow
+conda install -c conda-forge notebook
 conda install nomkl
 conda install pydot
 conda install graphviz
