@@ -3,6 +3,7 @@
 ## Table of contents
 
 * [Installation](#Installation)
+* [Frequently used commands](#Frequently-used-commands)
 * [Dead Jupyter Notebook kernel](#Dead-Jupyter-Notebook-kernel)
 * [Sequential model versus functional model](#Sequential-model-versus-functional-model)
 
@@ -12,6 +13,14 @@ To install with `conda`:
 
 ```
 conda create -n tensorflow -c anaconda tensorflow
+```
+
+## Frequently used commands <a name="Frequently-used-commands"></a>
+
+To summarize a model:
+
+```
+model.summary()
 ```
 
 ## Dead Jupyter Notebook kernel <a name="Dead-Jupyter-Notebook-kernel"></a>
