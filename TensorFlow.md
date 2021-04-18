@@ -15,7 +15,7 @@ conda create -n tensorflow -c anaconda tensorflow
 
 ## Dead Jupyter Notebook kernel <a name="Dead-Jupyter-Notebook-kernel"></a>
 
-In case your Jupyter Notebook kernel dies, without apparent cause, while running TensorFlow, try installing the `nomkl` mutex metapackage:
+In case your Jupyter Notebook kernel dies while running TensorFlow, without any apparent cause, try installing the `nomkl` mutex metapackage:
 
 ```
 conda install nomkl
