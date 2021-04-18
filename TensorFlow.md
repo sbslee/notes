@@ -6,6 +6,7 @@
 * [Frequently used commands](#Frequently-used-commands)
 * [Dead Jupyter Notebook kernel](#Dead-Jupyter-Notebook-kernel)
 * [Sequential model versus functional model](#Sequential-model-versus-functional-model)
+* [Adam optimization](#Adam-optimization)
 
 ## Installation <a name="Installation"></a>
 
@@ -51,8 +52,6 @@ References:
 * [MKL Optimizations](https://docs.anaconda.com/mkl-optimizations/#mkl-optimizations)
 * [What is the “nomkl” Python package used for?](https://stackoverflow.com/questions/66224879/what-is-the-nomkl-python-package-used-for)
 
-
-
 ## Sequential model versus functional model <a name="Sequential-model-versus-functional-model"></a>
 
 A Sequential model is appropriate for a plain stack of layers where each layer has exactly one input tensor and one output tensor. The functional API can handle models with non-linear topology, shared layers, and even multiple inputs or outputs. The main idea is that a deep learning model is usually a directed acyclic graph (DAG) of layers. So the functional API is a way to build graphs of layers.
@@ -61,3 +60,11 @@ References:
 
 * [The Sequential model](https://www.tensorflow.org/guide/keras/sequential_model)
 * [The Functional API](https://www.tensorflow.org/guide/keras/functional)
+
+## Adam optimization <a name="Adam-optimization"></a>
+
+Adam optimization is a stochastic gradient descent method that is based on adaptive estimation of first-order and second-order moments. According to Kingma et al., 2014, the method is "computationally efficient, has little memory requirement, invariant to diagonal rescaling of gradients, and is well suited for problems that are large in terms of data/parameters".
+
+References:
+
+* [tf.keras.optimizers.Adam](https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/Adam)
