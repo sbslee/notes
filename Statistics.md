@@ -31,6 +31,7 @@
 | fall-out or false positive rate (FPR)                      | FPR = FP / N = FP / (FP + TN) = 1 - TNR |
 | false discovery rate (FDR)                                 | FDR = FP / (FP + TP) = 1 - PPV          |
 | false omission rate (FOR)                                  | FOR = FN / (FN + TN) = 1 - NPV          |
+| accuracy                                                   | (TP + TN)/(TP + TN + FP + FN)           |
 
 ## Student's t-test <a name="Student's-t-test"></a>
 
