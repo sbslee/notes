@@ -12,6 +12,7 @@
 * [Setting figure style globally](#Setting-figure-style-globally)
 * [Setting figure style temporarily](#Setting-figure-style-temporarily)
 * [Pipe through Python script](#Pipe-through-Python-script)
+* [Read the Docs](#Read-the-Docs)
 
 ## Frequently used commands <a name="Frequently-used-commands"></a>
 
@@ -270,4 +271,44 @@ $ pip install sphinx
 $ pip install sphinx_rtd_theme
 $ make html
 $ make clean
+```
+
+## Read the Docs <a name="Read-the-Docs"></a>
+
+Read the Docs (RTD) simplifies software documentation by automating building, versioning, and hosting of your docs for you.
+
+To make a RTD, first install the following packages:
+
+```
+conda install sphinx
+conda install sphinx_rtd_theme
+```
+
+Next, configure your documentation structure:
+
+```
+cd /path/to/project
+mkdir docs
+cd docs
+sphinx-quickstart
+```
+
+This will create the following files and directories:
+
+```
+conf.py
+index.rst
+Makefile
+make.bat
+_build
+_static
+_templates
+```
+
+Make any necessary changes in the `docs` directory including the `conf.py` file.
+
+Finally, render the documentation as HTML:
+
+```
+make html
 ```
