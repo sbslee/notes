@@ -4,7 +4,6 @@
 
 * [Frequently used commands](#Frequently-used-commands)
     * [Virtual environment](#Virtual-environment)
-    * [Package development](#Package-development)
     * [pandas](#pandas)
     * [matplotlib](#matplotlib)
 * [Combining subplots](#Combining-subplots)
@@ -12,6 +11,7 @@
 * [Setting figure style globally](#Setting-figure-style-globally)
 * [Setting figure style temporarily](#Setting-figure-style-temporarily)
 * [Pipe through Python script](#Pipe-through-Python-script)
+* [Package development](#Package-development)
 * [Read the Docs](#Read-the-Docs)
 
 ## Frequently used commands <a name="Frequently-used-commands"></a>
@@ -28,59 +28,6 @@ To activate a virtual environment:
 
 ```
 source ve_name/bin/activate
-```
-
-### Package development <a name="Package-development"></a>
-
-To install a package:
-
-```
-pip install package_name
-
-python setup.py install
-python setup.py develop
-```
-
-To install a package in the development mode:
-
-```
-pip install -e .
-```
-
-To build the distribution files:
-
-```
-pip install -r requirements_dev.txt
-pip install setuptools -U
-python3 setup.py install
-python3 setup.py sdist bdist_wheel
-
-# Recommended read: https://towardsdatascience.com/build-your-first-open-source-python-project-53471c9942a7
-```
-
-To check the distribution files before uploading to PyPi:
-
-```
-twine check dist/*
-```
-
-To upload the distribution files to Test PyPi:
-
-```
-twine upload --repository-url https://test.pypi.org/legacy/ dist/*
-```
-
-To upload the distribution files to PyPi:
-
-```
-twine upload dist/*
-```
-
-To access a directory containing Python scripts:
-
-```
-import sys
-sys.path.append(dir)
 ```
 
 ### pandas <a name="pandas"></a>
@@ -268,6 +215,64 @@ $ pip install -e git+https://github.com/sbslee/stargazer#egg=stargazer
 $ python -m pip install git+https://github.com/sbslee/stargazer
 $ python -m pip install git+https://github.com/sbslee/stargazer.git@1307e7094251fc8b0335ef716b4fc2be7b041658
 ```
+
+## Package development <a name="Package-development"></a>
+
+First, set up the working environment:
+
+```
+conda install wheel
+conda install twine
+conda install setuptools
+```
+
+To build the distribution files:
+
+```
+python3 setup.py sdist bdist_wheel
+```
+
+To check the distribution files before uploading to PyPi:
+
+```
+twine check dist/*
+```
+
+To upload the distribution files to Test PyPi:
+
+```
+twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+```
+
+To upload the distribution files to PyPi:
+
+```
+twine upload dist/*
+```
+
+
+To install a package:
+
+```
+pip install package_name
+
+python setup.py install
+python setup.py develop
+```
+
+To install a package in the development mode:
+
+```
+pip install -e .
+```
+
+To access a directory containing Python scripts:
+
+```
+import sys
+sys.path.append(dir)
+```
+
 
 ## Read the Docs <a name="Read-the-Docs"></a>
 
