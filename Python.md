@@ -303,6 +303,10 @@ _templates
 
 Make any necessary changes in the `docs` directory including the `conf.py` file.
 
+In the `conf.py` file, I usually make the following changes:
+
+1. Set `html_static_path = ['_static']` to `html_static_path = []` because otherwise `shpinx` will endlessly return an annoying error that says something like `WARNING: html_static_path entry '_static' does not exist`.
+
 Finally, render the documentation as HTML:
 
 ```
