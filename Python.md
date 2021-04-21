@@ -305,7 +305,7 @@ Make any necessary changes in the `docs` directory including the `conf.py` file.
 
 In the `conf.py` file, I usually make the following changes:
 
-1. Set `extensions = []` to `extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon', 'sphinx_rtd_theme',]`.
+1. Set `extensions = []` to `extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon', 'sphinx_rtd_theme']`.
 2. Set `html_theme = 'alabaster'` to `html_theme = 'sphinx_rtd_theme'`.
 3. Set `html_static_path = ['_static']` to `html_static_path = []` because otherwise `shpinx` will endlessly return an annoying warning that says something like `WARNING: html_static_path entry '_static' does not exist`.
 
