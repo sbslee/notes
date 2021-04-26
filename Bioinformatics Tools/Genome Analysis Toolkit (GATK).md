@@ -147,4 +147,7 @@ samtools faidx ref.fasta
 | Mutect2                 | strand_bias      | Evidence for alt allele comes from one read direction only                                            |
 | Mutect2                 | strict_strand    | Evidence for alt allele is not represented in both directions                                         |
 | Mutect2                 | weak_evidence    | Mutation does not meet likelihood threshold                                                           |
+| FilterMutectCalls       | t_lod            | Tumor does not meet likelihood threshold                                                              |
+| Unknown                 | read_position    | median distance of alt variants from end of reads                                                     |
+| Unknown                 | strand_artifact  | Evidence for alt allele comes from one read direction only                                            |
 | FilterByOrientationBias | orientation_bias | Orientation bias (in one of the specified artifact mode(s) or complement) seen in one or more samples |
