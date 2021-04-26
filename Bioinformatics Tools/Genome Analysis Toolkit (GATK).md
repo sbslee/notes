@@ -150,4 +150,5 @@ samtools faidx ref.fasta
 | FilterMutectCalls       | t_lod            | Tumor does not meet likelihood threshold                                                              |
 | Unknown                 | read_position    | median distance of alt variants from end of reads                                                     |
 | Unknown                 | strand_artifact  | Evidence for alt allele comes from one read direction only                                            |
+| Unknown                 | str_contraction  | Site filtered due to contraction of short tandem repeat region                                        |
 | FilterByOrientationBias | orientation_bias | Orientation bias (in one of the specified artifact mode(s) or complement) seen in one or more samples |
