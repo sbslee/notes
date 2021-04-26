@@ -6,7 +6,7 @@
 * [Pipeline for somatic short variant discovery](#Pipeline-for-somatic-short-variant-discovery)
 * [GATK resource bundle](#GATK-resource-bundle)
 * [Process the reference genome](#Process-the-reference-genome)
-* [Mutect2 filters](#Mutect2-filters)
+* [VCF filters](#VCF-filters)
 
 ## Pipeline for germline short variant discovery <a name="Pipeline-for-germline-short-variant-discovery"></a>
 
@@ -121,29 +121,30 @@ To create a `.fai` file:
 samtools faidx ref.fasta
 ```
 
-## Mutect2 filters <a name="Mutect2-filters"></a>
+## VCF filters <a name="VCF-filters"></a>
 
-| ID               | Description                                                       |
-| ---------------- | ----------------------------------------------------------------- |
-| PASS             | All filters passed                                                |
-| FAIL             | Fail the site if all alleles fail but for different reasons.      |
-| base_qual        | alt median base quality                                           |
-| clustered_events | Clustered events observed in the tumor                            |
-| contamination    | contamination                                                     |
-| duplicate        | evidence for alt allele is overrepresented by apparent duplicates |
-| fragment         | abs(ref - alt) median fragment length                             |
-| germline         | Evidence indicates this site is germline, not somatic             |
-| haplotype        | Variant near filtered variant on same haplotype.                  |
-| low_allele_frac  | Allele fraction is below specified threshold                      |
-| map_qual         | ref - alt median mapping quality                                  |
-| multiallelic     | Site filtered because too many alt alleles pass tumor LOD         |
-| n_ratio          | Ratio of N to alt exceeds specified ratio                         |
-| normal_artifact  | artifact_in_normal                                                |
-| orientation      | orientation bias detected by the orientation bias mixture model   |
-| panel_of_normals | Blacklisted site in panel of normals                              |
-| position         | median distance of alt variants from end of reads                 |
-| possible_numt    | Allele depth is below expected coverage of NuMT in autosome       |
-| slippage         | Site filtered due to contraction of short tandem repeat region    |
-| strand_bias      | Evidence for alt allele comes from one read direction only        |
-| strict_strand    | Evidence for alt allele is not represented in both directions     |
-| weak_evidence    | Mutation does not meet likelihood threshold                       |
+| Tool                    | ID               | Description                                                                                           |
+| ------------------------| ---------------- | ----------------------------------------------------------------------------------------------------- |
+| N/A                     | PASS             | All filters passed                                                                                    |
+| N/A                     | FAIL             | Fail the site if all alleles fail but for different reasons.                                          |
+| Mutect2                 | base_qual        | alt median base quality                                                                               |
+| Mutect2                 | clustered_events | Clustered events observed in the tumor                                                                |
+| Mutect2                 | contamination    | contamination                                                                                         |
+| Mutect2                 | duplicate        | evidence for alt allele is overrepresented by apparent duplicates                                     |
+| Mutect2                 | fragment         | abs(ref - alt) median fragment length                                                                 |
+| Mutect2                 | germline         | Evidence indicates this site is germline, not somatic                                                 |
+| Mutect2                 | haplotype        | Variant near filtered variant on same haplotype.                                                      |
+| Mutect2                 | low_allele_frac  | Allele fraction is below specified threshold                                                          |
+| Mutect2                 | map_qual         | ref - alt median mapping quality                                                                      |
+| Mutect2                 | multiallelic     | Site filtered because too many alt alleles pass tumor LOD                                             |
+| Mutect2                 | n_ratio          | Ratio of N to alt exceeds specified ratio                                                             |
+| Mutect2                 | normal_artifact  | artifact_in_normal                                                                                    |
+| Mutect2                 | orientation      | orientation bias detected by the orientation bias mixture model                                       |
+| Mutect2                 | panel_of_normals | Blacklisted site in panel of normals                                                                  |
+| Mutect2                 | position         | median distance of alt variants from end of reads                                                     |
+| Mutect2                 | possible_numt    | Allele depth is below expected coverage of NuMT in autosome                                           |
+| Mutect2                 | slippage         | Site filtered due to contraction of short tandem repeat region                                        |
+| Mutect2                 | strand_bias      | Evidence for alt allele comes from one read direction only                                            |
+| Mutect2                 | strict_strand    | Evidence for alt allele is not represented in both directions                                         |
+| Mutect2                 | weak_evidence    | Mutation does not meet likelihood threshold                                                           |
+| FilterByOrientationBias | orientation_bias | Orientation bias (in one of the specified artifact mode(s) or complement) seen in one or more samples |
