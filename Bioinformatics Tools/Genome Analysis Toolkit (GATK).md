@@ -7,6 +7,7 @@
 * [GATK resource bundle](#GATK-resource-bundle)
 * [Process the reference genome](#Process-the-reference-genome)
 * [VCF filters](#VCF-filters)
+* [Mutect2 AD does not match AF](#Mutect2-AD-does-not-match-AF)
 
 ## Pipeline for germline short variant discovery <a name="Pipeline-for-germline-short-variant-discovery"></a>
 
@@ -152,3 +153,8 @@ samtools faidx ref.fasta
 | Unknown                 | strand_artifact  | Evidence for alt allele comes from one read direction only                                            |
 | Unknown                 | str_contraction  | Site filtered due to contraction of short tandem repeat region                                        |
 | FilterByOrientationBias | orientation_bias | Orientation bias (in one of the specified artifact mode(s) or complement) seen in one or more samples |
+
+## Mutect2 AD does not match AF <a name="Mutect2-AD-does-not-match-AF"></a>
+
+Sometimes, Mutect2 produces a variant call where AD does not match AF. For example, I once had sample genotype `0|1:765,0:0.001813:765` for `GT:AD:AF:DP` which, at the first glance, does not make any sense because AD is 0 while AF is greater than 0. Then I found this [post](https://sites.google.com/a/broadinstitute.org/legacy-gatk-forum-discussions/2019-02-11-2018-08-12/23408-MuTect2-AD-does-not-match-AF) that explained the discrepancy. Basically, it was Mutect2's "probabilistic guesses about AF. If, for example, the normal has 100 ref reads, each of which has a 1% chance of actually being alt, the AF will be reported as 0.01."
+
