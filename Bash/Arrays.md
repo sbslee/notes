@@ -23,7 +23,8 @@ printf '%s\n' "${a[@]}"
 To loop through an array:
 
 ```
-for x in ${a[@]}; do
+for x in ${a[@]}
+do
   echo $x
 done
 ```
