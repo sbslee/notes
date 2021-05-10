@@ -189,7 +189,8 @@ To set an array:
 
 ```
 a=(1 2 3)
-a=('A' 'B' 'C')
+a=(A B C)
+a=('A 1' 'B 2' 'C 3')
 ```
 
 To print an array:
