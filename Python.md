@@ -80,6 +80,12 @@ To set default figure style:
 matplotlib.rc_file_defaults()
 ```
 
+To remove gaps between subplots:
+
+```
+plt.subplots_adjust(wspace=0, hspace=0)
+```
+
 ## Combining subplots <a name="Combining-subplots"></a>
 
 ```
