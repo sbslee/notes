@@ -11,7 +11,6 @@
     * [Comparison](#Comparison)
     * [Text manipulation](#Text-manipulation)
     * [Check things](#Check-things)
-    * [Array](#Array)
 * [Neat tricks](#Neat-tricks)
 * [Bash configuration](#Bash-configuration)
 * [System permission](#System-permission)
@@ -183,34 +182,6 @@ else
 fi
 ```
 
-### Array <a name="Array"></a>
-
-To set an array:
-
-```
-a=(1 2 3)
-a=(A B C)
-a=('A 1' 'B 2' 'C 3')
-```
-
-To print an array:
-
-```
-echo "${a[@]}"
-```
-
-To print elements on separate lines:
-
-```
-printf '%s\n' "${a[@]}"
-```
-
-To read file names in the current directory into an array:
-
-```
-a=(*)
-```
-
 ## Neat tricks <a name="Neat-tricks"></a>
 
 To move the cursor forward by one word:
@@ -257,6 +228,12 @@ To echo tab characters:
 
 ```
 echo Hello$'\t'World
+```
+
+To read file names in the current directory into an array:
+
+```
+a=(*)
 ```
 
 ## Bash configuration <a name="Bash-configuration"></a>
