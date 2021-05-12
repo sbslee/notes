@@ -92,9 +92,9 @@ $ ps aux
 
 The `aux` means:
 
-- `a` = show processes for all users
-- `u` = display the process's user/owner
-- `x` = also show processes not attached to a terminal
+- `a` show processes for all users
+- `u` show the process's owner
+- `x` show processes not attached to a terminal
 
 ### Zipped files <a name="Zipped-files"></a>
 
