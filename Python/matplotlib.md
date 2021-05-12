@@ -56,6 +56,17 @@ To remove gaps between subplots:
 plt.subplots_adjust(wspace=0, hspace=0)
 ```
 
+To set font sizes:
+
+```
+ax.xaxis.label.set_size(20)
+ax.xaxis.label.set_size(20)
+ax.tick_params(axis='x', which='major', labelsize=15)
+ax.tick_params(axis='y', which='major', labelsize=15)
+ax.tick_params(axis='both', which='major', labelsize=15)
+ax.set_title('My subplot title', fontsize=25)
+```
+
 ## Combining subplots <a name="Combining-subplots"></a>
 
 ```
