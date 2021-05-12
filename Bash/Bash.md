@@ -78,10 +78,10 @@ NR==1 {
 ' example.csv
 ```
 
-To display all the variables:
+To list all environment variables:
 
 ```
-set
+$ set
 ```
 
 To list all currently running processes:
@@ -185,6 +185,19 @@ fi
 ```
 
 ## Neat tricks <a name="Neat-tricks"></a>
+
+To copy a directory:
+
+```
+rsync -avzP source destination
+```
+
+The `-avzP` means:
+
+* `a` - use archive mode
+* `v` - be verbose
+* `z` - compress file data during the transfer
+* `P` - display progress and preserve partial files
 
 To move the cursor forward by one word:
 
