@@ -60,11 +60,12 @@ To set font sizes:
 
 ```
 ax.xaxis.label.set_size(20)
-ax.xaxis.label.set_size(20)
+ax.yaxis.label.set_size(20)
 ax.tick_params(axis='x', which='major', labelsize=15)
 ax.tick_params(axis='y', which='major', labelsize=15)
 ax.tick_params(axis='both', which='major', labelsize=15)
-ax.set_title('My subplot title', fontsize=25)
+ax.set_title('My subplot title', fontsize=30)
+ax.legend(handles, labels, fontsize=20, title=title, title_fontsize=25)
 ```
 
 ## Combining subplots <a name="Combining-subplots"></a>
