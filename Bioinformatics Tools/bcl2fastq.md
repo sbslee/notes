@@ -9,7 +9,7 @@
 
 ## Introduction <a name="Introduction"></a>
 
-bcl2fastq is a software tool developed by Illumina Inc. for demultiplexing sequence read data.
+bcl2fastq is a software tool developed by Illumina Inc. for demultiplexing sequence read data. The official documentation is available [here](https://sapac.support.illumina.com/content/dam/illumina-support/documents/documentation/software_documentation/bcl2fastq/bcl2fastq2-v2-20-software-guide-15051736-03.pdf).
 
 ## Platforms <a name="Platforms"></a>
 
