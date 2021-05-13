@@ -1,6 +1,6 @@
 # bcl2fastq
 
-# Table of contents
+## Table of contents
 
 * [Introduction](#Introduction)
 * [Platforms](#Platforms)
