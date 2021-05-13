@@ -39,7 +39,7 @@ bcl2fastq is a software tool developed by Illumina Inc. for demultiplexing seque
     * A number - Repeat the previous character the indicated number of times.
     * \* - Repeat the previous character until the end of the read or index (length per `RunInfo.xml`).
     
-    Commas separate read masks. The format for dual indexing is the following syntax or specified variations: `--use-bases-mask Y*,I*,I*,Y*`
+    Commas separate read masks. The format for dual indexing is the following syntax or specified variations:<br/>`--use-bases-mask Y*,I*,I*,Y*`
 
 * `--tiles`
 
