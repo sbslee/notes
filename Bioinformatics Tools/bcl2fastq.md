@@ -40,7 +40,15 @@ bcl2fastq is a software tool developed by Illumina Inc. for demultiplexing seque
     * \* - Repeat the previous character until the end of the read or index (length per `RunInfo.xml`).
     
     Commas separate read masks. The format for dual indexing is the following syntax or specified variations:
+    
     `--use-bases-mask Y*,I*,I*,Y*`
+
+    You can also specify `--use-bases-mask` multiple times for separate lanes. In the following example, `1:` indicates that the setting applies to lane 1. The second `--use-bases-mask` parameter applies to all other lanes.
+
+    `--use-bases-mask 1:y*,i*,i*,y* --use-bases-mask y*,n*,n*,y*`
+
+If this option is not specified, RunInfo.xml determines the mask. If it cannot determine the mask, specify the --use-bases-mask option. When specified, the number of index cycles and the index length in the sample sheet must match.
+
 
 * `--tiles`
 
