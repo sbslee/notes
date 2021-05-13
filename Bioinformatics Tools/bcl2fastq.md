@@ -4,7 +4,7 @@
 
 * [Introduction](#Introduction)
 * [Platforms](#Platforms)
-* [Options](#Options)
+* [Commonly used options](#Commonly-used-options)
 * [Running](#Running)
 
 ## Introduction <a name="Introduction"></a>
@@ -23,13 +23,23 @@ bcl2fastq is a software tool developed by Illumina Inc. for demultiplexing seque
 | NovaSeq S1, S2           | 2               | Yes with XP protocol |
 | NovaSeq S3, S4           | 4               | Yes with XP protocol |
 
-## Options <a name="Options"></a>
+## Commonly used options <a name="Commonly-used-options"></a>
 
 * `--no-lane-splitting`
 
     Do not split FASTQ files by lane.
 
 * `--barcode-mismatches`
+
+    Specifies how to process each cycle:
+    
+    * n - Ignore the cycle.
+    * Y (or y) - Use the cycle.
+    * I - Use the cycle for an Index Read.
+    * A number - Repeat the previous character the indicated number of times.
+    * * - Repeat the previous character until the end of the read or index.
+    
+    Commas separate read masks. The format for dual indexing is the following syntax or specified variations: `use-bases-mask Y*,I*,I*,Y*`
 
 ## Running <a name="Running"></a>
 
