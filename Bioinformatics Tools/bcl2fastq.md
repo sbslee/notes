@@ -41,6 +41,10 @@ bcl2fastq is a software tool developed by Illumina Inc. for demultiplexing seque
     
     Commas separate read masks. The format for dual indexing is the following syntax or specified variations: `--use-bases-mask Y*,I*,I*,Y*`
 
+* `--tiles`
+
+    Selects a subset of available tiles for processing. To make multiple selections, separate the regular expressions with commas.
+
 ## Running <a name="Running"></a>
 
 **Case 1. MiSeq, 2x300 bp reads, dual indexing**
