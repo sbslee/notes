@@ -47,7 +47,7 @@ bcl2fastq is a software tool developed by Illumina Inc. for demultiplexing seque
 
     `--use-bases-mask 1:y*,i*,i*,y* --use-bases-mask y*,n*,n*,y*`
 
-    If this option is not specified, `RunInfo.xml` determines the mask. If it cannot determine the mask, specify the --use-bases-mask option. When specified, the number of index cycles and the index length in the sample sheet must match.
+    If this option is not specified, `RunInfo.xml` determines the mask. If it cannot determine the mask, specify the `--use-bases-mask` option. When specified, the number of index cycles and the index length in the sample sheet must match.
 
 
 * `--tiles`
