@@ -45,6 +45,16 @@ bcl2fastq is a software tool developed by Illumina Inc. for demultiplexing seque
 
     Selects a subset of available tiles for processing. To make multiple selections, separate the regular expressions with commas.
 
+    For example:
+    
+    To select all tiles ending with 5 in all lanes:
+    
+    `--tiles [0–9][0–9][0–9]5`
+    
+    To select tile 2 in lane 1 and all the tiles in the other lanes:
+    
+    `--tiles s_1_0002,s_[2-8]`
+
 ## Running <a name="Running"></a>
 
 **Case 1. MiSeq, 2x300 bp reads, dual indexing**
