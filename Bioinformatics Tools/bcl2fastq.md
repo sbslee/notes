@@ -1,7 +1,14 @@
 # bcl2fastq
 
+# Table of contents
+
+* [Introduction](#Introduction)
+* [Platforms](#Platforms)
+* [Running](#Running)
+
 bcl2fastq is a software tool developed by Illumina Inc. for demultiplexing sequence read data.
 
+## Platforms <a name="Platforms"></a>
 
 | Platform                 | Number of lanes | Fluidically distinct |
 | -----------------------  | --------------- | -------------------- |
@@ -13,7 +20,9 @@ bcl2fastq is a software tool developed by Illumina Inc. for demultiplexing seque
 | NovaSeq S1, S2           | 2               | Yes with XP protocol |
 | NovaSeq S3, S4           | 4               | Yes with XP protocol |
 
-## Case 1. MiSeq, 2x300 bp reads, single indexing
+## Running <a name="Running"></a>
+
+**Case 1. MiSeq, 2x300 bp reads, dual indexing**
 
 ```
 bcl2fastq \
@@ -30,7 +39,7 @@ bcl2fastq \
 --processing-threads 10
 ```
 
-## Case 2. NextSeq, 2x150 bp reads, dual indexing
+**Case 2. NextSeq, 2x150 bp reads, dual indexing**
 
 ```
 bcl2fastq \
