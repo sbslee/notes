@@ -33,11 +33,11 @@ bcl2fastq is a software tool developed by Illumina Inc. for demultiplexing seque
 
     Specifies how to process each cycle:
     
-    * n - Ignore the cycle.
-    * Y (or y) - Use the cycle.
-    * I - Use the cycle for an Index Read.
+    * `n` - Ignore the cycle.
+    * `Y` (or `y`) - Use the cycle.
+    * `I` - Use the cycle for an Index Read.
     * A number - Repeat the previous character the indicated number of times.
-    * \* - Repeat the previous character until the end of the read or index (length per `RunInfo.xml`).
+    * `*` - Repeat the previous character until the end of the read or index (length per `RunInfo.xml`).
     
     Commas separate read masks. The format for dual indexing is the following syntax or specified variations:
     
