@@ -25,9 +25,11 @@ bcl2fastq is a software tool developed by Illumina Inc. for demultiplexing seque
 
 ## Options <a name="Options"></a>
 
-`--no-lane-splitting`
+* `--no-lane-splitting`
 
-Do not split FASTQ files by lane.
+    Do not split FASTQ files by lane.
+
+* `--barcode-mismatches`
 
 ## Running <a name="Running"></a>
 
