@@ -58,7 +58,6 @@ bcl2fastq \
 --stats-dir $OUTPUT_DIR/Stats \
 --reports-dir $OUTPUT_DIR/Reports \
 --no-lane-splitting \
---tiles s_1 \
 --use-bases-mask Y301,I8,I8,Y301 \
 --barcode-mismatches 0 \
 --processing-threads 10
