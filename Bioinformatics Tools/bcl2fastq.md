@@ -64,7 +64,7 @@ bcl2fastq \
 --processing-threads 10
 ```
 
-**Case 2. NextSeq, 2x150 bp reads, dual indexing**
+**Case 2. NextSeq, 2x150 bp reads, single indexing**
 
 ```
 bcl2fastq \
