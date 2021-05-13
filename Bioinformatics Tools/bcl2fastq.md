@@ -25,11 +25,11 @@ bcl2fastq is a software tool developed by Illumina Inc. for demultiplexing seque
 
 ## Commonly used options <a name="Commonly-used-options"></a>
 
-* `--no-lane-splitting`
+### `--no-lane-splitting`
 
     Do not split FASTQ files by lane.
 
-* `--barcode-mismatches`
+### `--barcode-mismatches`
 
     Specifies how to process each cycle:
     
@@ -50,7 +50,7 @@ bcl2fastq is a software tool developed by Illumina Inc. for demultiplexing seque
 If this option is not specified, RunInfo.xml determines the mask. If it cannot determine the mask, specify the --use-bases-mask option. When specified, the number of index cycles and the index length in the sample sheet must match.
 
 
-* `--tiles`
+### `--tiles`
 
     Selects a subset of available tiles for processing. To make multiple selections, separate the regular expressions with commas.
 
