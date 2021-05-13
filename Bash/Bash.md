@@ -186,6 +186,14 @@ fi
 
 ## Neat tricks <a name="Neat-tricks"></a>
 
+To access hard drives:
+
+```
+$ cd /
+$ cd Volumes
+$ cd ls
+```
+
 To copy a directory:
 
 ```
