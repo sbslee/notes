@@ -4,6 +4,7 @@
 
 * [Introduction](#Introduction)
 * [Platforms](#Platforms)
+* [Options](#Options)
 * [Running](#Running)
 
 ## Introduction <a name="Introduction"></a>
@@ -21,6 +22,12 @@ bcl2fastq is a software tool developed by Illumina Inc. for demultiplexing seque
 | NextSeq                  | 4               | No                   |
 | NovaSeq S1, S2           | 2               | Yes with XP protocol |
 | NovaSeq S3, S4           | 4               | Yes with XP protocol |
+
+## Options <a name="Options"></a>
+
+`--no-lane-splitting`
+
+Do not split FASTQ files by lane.
 
 ## Running <a name="Running"></a>
 
