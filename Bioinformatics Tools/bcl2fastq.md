@@ -6,6 +6,8 @@
 * [Platforms](#Platforms)
 * [Running](#Running)
 
+## Introduction <a name="Introduction"></a>
+
 bcl2fastq is a software tool developed by Illumina Inc. for demultiplexing sequence read data.
 
 ## Platforms <a name="Platforms"></a>
