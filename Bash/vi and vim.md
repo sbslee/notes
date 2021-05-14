@@ -1,5 +1,12 @@
 # vi and vim
 
+To search a pattern:
+
+* Press `/`.
+* Type the search pattern.
+* Press `Enter` to perform the search.
+* Press `n` to find the next occurrence or `N` to find the previous occurrence.
+
 To search and replace in the entire file:
 
 ```
