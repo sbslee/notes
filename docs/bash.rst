@@ -52,7 +52,7 @@ List things
 
         $ ps aux
 
-    Here, the ``aux`` means:
+    Here, the ``aux`` option means:
 
     * ``a`` - show processes for all users
     * ``u`` - show the process's owner
@@ -137,7 +137,7 @@ Check things
           echo "LC_ALL is set to '$LC_ALL'"
         fi
 
-module
+Module
 ------
 
 * To list currently loaded modules:
@@ -148,9 +148,9 @@ module
 
 * To load the latest version of a tool:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ module load tool_name/latest
+        $ module load tool_name/latest
 
 * To list available modules:
 
@@ -164,6 +164,52 @@ module
 
         $ module load modulefile
 
+File transfer
+-------------
+
+* To copy a file from server to local:
+
+    .. code-block:: console
+
+        $ scp user_name@host_name:/path/to/server/source /path/to/local/destination
+
+* To copy all files in a directory from server to local:
+
+    .. code-block:: console
+
+        $ wget -r --no-parent /path/to/server/dir_name/
+
+    Here, the ``-r --no-parent`` option means:
+
+        * ``-r`` - turn on recursive retrieving
+        * ``--no-parent`` - do not ever ascend to the parent directory when retrieving recursively
+
+* To copy a directory:
+
+      .. code-block:: console
+
+          $ rsync -avzP source destination
+
+      Here, the ``-avzP`` option means:
+
+      * ``a`` - use archive mode
+      * ``v`` - be verbose
+      * ``z`` - compress file data during the transfer
+      * ``P`` - display progress and preserve partial files
+
+* To only move files, and not directories, within the current directory to another:
+
+    .. code-block:: console
+
+        $ find . -maxdepth 1 -type f -exec mv {} dir_name \;
+
+* To access a server and copy files:
+
+    .. code-block:: console
+
+        $ lftp sftp://user_id:user_pw.@host_name:port_number
+        $ mirror -c target_dir destination_dir
+
 Miscellaneous
 -------------
 
@@ -174,19 +220,6 @@ Miscellaneous
         $ cd /
         $ cd Volumes
         $ cd ls
-
-* To copy a directory:
-
-      .. code-block:: console
-
-          $ rsync -avzP source destination
-
-      Here, the ``-avzP`` means:
-
-      * ``a`` - use archive mode
-      * ``v`` - be verbose
-      * ``z`` - compress file data during the transfer
-      * ``P`` - display progress and preserve partial files
 
 * To move the cursor forward by one word:
 
@@ -239,6 +272,24 @@ Miscellaneous
     .. code-block:: console
 
         $ a=(*)
+
+* To redirect stdout and stderr:
+
+    .. code-block:: console
+
+        $ some_command > out_file 2>error_file
+
+To create a hard link or a symbolic link to an existing file or directory:
+
+    .. code-block:: console
+
+        $ ln -s original_file new_file
+
+To change group ownership:
+
+    .. code-block:: console
+
+        $ chgrp -R group_name *
 
 awk
 ===

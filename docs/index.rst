@@ -12,6 +12,7 @@ Welcome to notes's documentation!
 
    readme
    bash
+   bioinformatics
    statistics
 
 
