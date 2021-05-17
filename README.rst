@@ -5,4 +5,4 @@ README
    :target: https://sbslee-notes.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
-This repository is Seung-been "Steven" Lee's personal notes.
+This Read the Docs contains Seung-been "Steven" Lee's personal notes.
