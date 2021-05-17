@@ -320,6 +320,18 @@ awk
         { print $(f["foo"]), $(f["baz"]) }
         ' example.csv
 
+* To print lines that are both in file1.txt and file2.txt (intersection):
+
+    .. code-block:: console
+
+        $ awk 'NR == FNR{a[$0];next} $0 in a' file1.txt file2.txt
+
+* To print lines that are only in file1.txt and not in file2.txt:
+
+    .. code-block:: console
+
+        $ awk 'NR == FNR{a[$0];next} !($0 in a)' file2.txt file1.txt
+
 sed
 ===
 
@@ -335,6 +347,56 @@ sed
     .. code-block:: console
 
         $ echo "exampleword" | sed 's/word//g'
+
+vi and vim
+==========
+
+Frequently used commands for vi and vim
+---------------------------------------
+
+* To search a pattern:
+
+    * Press ``/``.
+    * Type the search pattern.
+    * Press ``Enter`` to perform the search.
+    * Press ``n`` to find the next occurrence or ``N`` to find the previous occurrence.
+
+* To search and replace in the entire file:
+
+    .. code-block:: console
+
+        :%s/foo/bar/g
+
+* To search and replace a pattern involving the ``/`` character:
+
+    .. code-block:: console
+
+        :%s#/foo#/bar#g
+
+* To move the cursor to end of the file:
+
+    Press the ``Esc`` key and then press the ``Shift`` and ``G`` keys together.
+
+For loop
+========
+
+* To print every line of a file:
+
+    .. code-block:: console
+
+        for x in `cat example.txt`
+        do
+          echo "$x"
+        done
+
+* To print the second column:
+
+    .. code-block:: console
+
+        for x in `awk '{print $2}' example.txt`
+        do
+          echo "$x"
+        done
 
 Arrays
 ======
@@ -659,32 +721,3 @@ In some servers, even when a user submits a simple script to SGE, as simple as d
 .. code-block:: console
 
     #$ -S /bin/sh
-
-vi and vim
-==========
-
-Frequently used commands for vi and vim
----------------------------------------
-
-* To search a pattern:
-
-    * Press ``/``.
-    * Type the search pattern.
-    * Press ``Enter`` to perform the search.
-    * Press ``n`` to find the next occurrence or ``N`` to find the previous occurrence.
-
-* To search and replace in the entire file:
-
-    .. code-block:: console
-
-        :%s/foo/bar/g
-
-* To search and replace a pattern involving the ``/`` character:
-
-    .. code-block:: console
-
-        :%s#/foo#/bar#g
-
-* To move the cursor to end of the file:
-
-    Press the ``Esc`` key and then press the ``Shift`` and ``G`` keys together.
