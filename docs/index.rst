@@ -10,6 +10,7 @@ Welcome to notes's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   bash/bash
    statistics
 
 
