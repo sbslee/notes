@@ -33,31 +33,7 @@
 | false omission rate (FOR)                                  | FOR = FN / (FN + TN) = 1 - NPV          |
 | accuracy (ACC)                                             | ACC = (TP + TN)/(TP + TN + FP + FN)     |
 
-## Student's t-test <a name="Student's-t-test"></a>
 
-This is a parametric test. Use the `scipy.stats.ttest_ind()` method. Be careful with the `equal_var` option (i.e. Welch's t-test).
-
-## Paired Samples t-test <a name="Paired-Samples-t-test"></a>
-
-This is a parametric test for paired samples.
-
-## One-way ANOVA <a name="One-way-ANOVA"></a>
-
-This is the generalization of t-test.
-
-## Wilcoxon Rank-sum Test / Mann–Whitney U Test <a name="Wilcoxon-Rank-sum-Test-/-Mann–Whitney-U-Test"></a>
-
-This is a non-parametric test. Here, you have two possibile methods: `scipy.stats.mannwhitneyu` and `scipy.stats.ranksums`. I recommend the former.
-
-## Wilcoxon Signed-rank Test <a name="Wilcoxon-Signed-rank-Test"></a>
-
-This is a non-parametric test for paired samples. Use the `scipy.stats.wilcoxon()` method.
-
-## Kruskal-Wallis Test / One-way ANOVA on Rank <a name="Kruskal-Wallis-Test-/-One-way-ANOVA-on-Rank"></a>
-
-This is a non-parametric version of the one-way ANOVA test. Just as ANOVA can be applied to more than two groups and is a generalization of the t-test (which works with 2 groups only), Kruskal-Wallis can be applied to 2+ groups and is a generalization of the Mann-Whitney U test.
-
-Note that the results of Kruskal-Wallis and Mann-Whitney U test may differ because 1) the ranks used for the Mann-Whitney U test are not the ranks used by the Kruskal-Wallis test; and 2) the rank sum tests do not use the pooled variance implied by the Kruskal-Wallis null hypothesis. Hence, it is not recommended to use Mann-whitney U test as a post hoc test after Kruskal-Wallis test.
 
 ## Common sampling distributions <a name="Common-sampling-distributions"></a>
 
