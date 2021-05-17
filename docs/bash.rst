@@ -84,3 +84,114 @@ To give permissions for all files inside the directory:
 .. code-block:: console
 
     $ chmod 777 -R dir_name
+
+OpenSSH
+=======
+
+Frequently used commands
+------------------------
+
+To remove all keys belonging to a host name:
+
+.. code-block:: console
+
+    $ ssh-keygen -R host_name
+
+To delete a select key from the authentication agent:
+
+.. code-block:: console
+
+    $ ssh-add -d ~/.ssh/host_id_rsa.pub
+    $ rm ~/.ssh/host_id_rsa
+    $ rm ~/.ssh/host_id_rsa.pub
+
+Creating a channel with password
+--------------------------------
+
+First, open your SSH configuration file:
+
+.. code-block:: console
+
+    $ vi ~/.ssh/config
+
+Next, add the following:
+
+.. parsed-literal::
+
+    Host host_id
+        HostName host_name
+        User user_name
+
+Here, ``host_id`` is the nickname that will be used for the ``ssh`` command and ``host_name`` can be an IP address or an actual host name in the server. Lastly, ``user_name`` is your user ID for the server. After the configuration file is saved, you can access the server by (you still need to enter your password):
+
+.. code-block:: console
+
+    $ ssh host_id
+
+Creating a channel without password
+-----------------------------------
+
+First, set up a channel with password as described above. Then, run the following:
+
+.. code-block:: console
+
+    $ ssh-keygen -t rsa -b 4096 -C "host_id"
+
+Save the private key as ``host_id_rsa`` and the public key as ``host_id_rsa.pub``. Add the private key to the authentication agent:
+
+.. code-block:: console
+
+    $ ssh-add ~/.ssh/host_id_rsa
+
+Check whether the addition was successful:
+
+.. code-block:: console
+
+    $ ssh-add -L
+
+Add the public key to the server:
+
+.. code-block:: console
+
+    $ cat ~/.ssh/host_id_rsa.pub | ssh host_id 'cat >> ~/.ssh/authorized_keys'
+
+Finally, update the configuration:
+
+.. parsed-literal::
+
+    Host host_id
+        HostName host_name
+        User user_name
+        IdentityFile ~/.ssh/host_id_rsa
+
+Now, you shouldn't need to enter the password when logging in.
+
+Channeling through multiple servers
+-----------------------------------
+
+Imagine the server you work on everyday (server C) can only be accessed through another server (server B). Inconveniently, server B can only be accessed through server A. So, your task is to set up a channel that looks like this: local > server A > server B > server C. To do this, you need to set up the SSH configuration as follows:
+
+.. parsed-literal::
+
+    Host host_id_A
+        HostName host_name_A
+        User user_name_A
+        IdentityFile ~/.ssh/host_id_A_rsa
+
+    Host host_id_B
+        HostName host_name_B
+        User user_name_B
+        ProxyCommand ssh host_id_A nc %h %p 2> /dev/null
+        IdentityFile ~/.ssh/host_id_B_rsa
+
+    Host host_id_C
+        HostName host_name_C
+        User user_name_C
+        ProxyCommand ssh host_id_B nc %h %p 2> /dev/null
+        IdentityFile ~/.ssh/host_id_C_rsa
+
+You can now access server C directly by:
+
+.. code-block:: console
+
+    $ ssh host_id_C
