@@ -39,10 +39,10 @@ For example, to give read, write, and execute permissions for everyone:
 
 .. code-block:: console
 
-   $ chmod 777 dir
+   $ chmod 777 dir_name
 
 To give permissions for all files inside the directory:
 
 .. code-block:: console
 
-   $ chmod 777 -R dir
+   $ chmod 777 -R dir_name
