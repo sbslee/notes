@@ -1,43 +1,224 @@
 Bash
 ****
 
+Frequently used commands for Bash
+=================================
+
+Checksum
+--------
+
+* To determine SHA-512 checksum:
+
+    .. code-block:: console
+
+        $ shasum -a 256 example.txt
+
+* To determine MD5 checksum:
+
+    .. code-block:: console
+
+        $ md5sum example.txt
+
+* To determine MD5 checksum in macOS:
+
+    .. code-block:: console
+
+        $ md5 example.txt
+
+List things
+-----------
+
+* To list one file per line:
+
+    .. code-block:: console
+
+        $ ls -1 dir_name
+
+* To list files in a space-separated view:
+
+    .. code-block:: console
+
+        $ ls dir_name | tr '\n' ' '
+
+* To list all environment variables:
+
+    .. code-block:: console
+
+        $ set
+
+* To list all currently running processes:
+
+    .. code-block:: console
+
+        $ ps aux
+
+    Here, the ``aux`` means:
+
+    * ``a`` - show processes for all users
+    * ``u`` - show the process's owner
+    * ``x`` - show processes not attached to a terminal
+
+Zipped files
+------------
+
+* To create a .tar.gz file:
+
+    .. code-block:: console
+
+        $ tar -czvf dir.tar.gz dir_name
+
+* To unzip a .tar.gz file:
+
+    .. code-block:: console
+
+        $ tar -xf dir_name.tar.gz
+
+Count things
+------------
+
+* To count unique lines in a file:
+
+    .. code-block:: console
+
+        $ sort example.txt | uniq -c | sort -bgr
+
+* To count files in a directory:
+
+    .. code-block:: console
+
+        $ find dir_name | wc -l
+
+Estimate size
+-------------
+
+* To estimate storage size:
+
+    .. code-block:: console
+
+        $ df -h
+
+* To estimate directory size:
+
+    .. code-block:: console
+
+        $ du -sh dir_name
+
+Comparison
+----------
+
+* To find difference between two directories:
+
+    .. code-block:: console
+
+        $ diff -qr dir_name1 dir_name2
+
+Check things
+------------
+
+* To check whether a file exists or not:
+
+    .. code-block:: console
+
+        if test -f example.txt
+        then
+          echo "Found"
+        else
+          echo "Not found"
+        fi
+
+* To check whether a variable exists or not:
+
+    .. code-block:: console
+
+        if [ -z ${LC_ALL+x} ]
+        then
+          echo "LC_ALL is unset"
+        else
+          echo "LC_ALL is set to '$LC_ALL'"
+        fi
+
+awk
+===
+
+* To list columns by header name for a tab-delimited file:
+
+    .. code-block:: console
+
+        awk '
+        NR==1 {
+            for (i=1; i<=NF; i++) {
+                f[$i] = i
+            }
+        }
+        { print $(f["foo"]), $(f["baz"]) }
+        ' example.txt
+
+* To list columns by header name for a .csv file:
+
+    .. code-block:: console
+
+        awk -F "\"*,\"*" '
+        NR==1 {
+            for (i=1; i<=NF; i++) {
+                f[$i] = i
+            }
+        }
+        { print $(f["foo"]), $(f["baz"]) }
+        ' example.csv
+
+sed
+===
+
+* To search and replace a specific word from a line:
+
+    .. code-block:: console
+
+        $ echo "exampleword" | sed 's/word/new/g'
+
+
+* To search and remove a specific word from a line:
+
+    .. code-block:: console
+
+        $ echo "exampleword" | sed 's/word//g'
+
 Arrays
 ======
 
-To create an array:
+* To create an array:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ a=(1 2 3)
-    $ a=(A B C)
-    $ a=('A 1' 'B 2' 'C 3')
+        $ a=(1 2 3)
+        $ a=(A B C)
+        $ a=('A 1' 'B 2' 'C 3')
 
-To print an array:
+* To print an array:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ echo "${a[@]}"
+        $ echo "${a[@]}"
 
-To print elements on separate lines:
+* To print elements on separate lines:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ printf '%s\n' "${a[@]}"
+        $ printf '%s\n' "${a[@]}"
 
-To loop through an array:
+* To loop through an array:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ cat example.sh
-    a=(1 2 3)
-    for x in ${a[@]}
-    do
-      echo $x
-    done
-    $ sh example.sh
-    1
-    2
-    3
+        $ cat example.sh
+        a=(1 2 3)
+        for x in ${a[@]}
+        do
+          echo $x
+        done
+        $ sh example.sh
+        1
+        2
+        3
 
 Bash configuration
 ==================
@@ -91,19 +272,19 @@ OpenSSH
 Frequently used commands for OpenSSH
 ------------------------------------
 
-To remove all keys belonging to a host name:
+* To remove all keys belonging to a host name:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ ssh-keygen -R host_name
+        $ ssh-keygen -R host_name
 
-To delete a select key from the authentication agent:
+* To delete a select key from the authentication agent:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ ssh-add -d ~/.ssh/host_id_rsa.pub
-    $ rm ~/.ssh/host_id_rsa
-    $ rm ~/.ssh/host_id_rsa.pub
+        $ ssh-add -d ~/.ssh/host_id_rsa.pub
+        $ rm ~/.ssh/host_id_rsa
+        $ rm ~/.ssh/host_id_rsa.pub
 
 Creating a channel with password
 --------------------------------
@@ -116,7 +297,7 @@ First, open your SSH configuration file:
 
 Next, add the following:
 
-.. parsed-literal::
+.. code-block:: console
 
     Host host_id
         HostName host_name
@@ -157,7 +338,7 @@ Add the public key to the server:
 
 Finally, update the configuration:
 
-.. parsed-literal::
+.. code-block:: console
 
     Host host_id
         HostName host_name
@@ -171,7 +352,7 @@ Channeling through multiple servers
 
 Imagine the server you work on everyday (server C) can only be accessed through another server (server B). Inconveniently, server B can only be accessed through server A. So, your task is to set up a channel that looks like this: local > server A > server B > server C. To do this, you need to set up the SSH configuration as follows:
 
-.. parsed-literal::
+.. code-block:: console
 
     Host host_id_A
         HostName host_name_A
@@ -205,148 +386,151 @@ Frequently used commands for SGE
 Submit jobs
 ^^^^^^^^^^^
 
-To request a specific node:
+* To request a specific node:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ qsub -l h=node_name example.sh
+        $ qsub -l h=node_name example.sh
 
-To request node A or node B:
+* To request node A or node B:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ qsub -l h='node_name_A|node_name_B' example.sh
+        $ qsub -l h='node_name_A|node_name_B' example.sh
 
-To request 20 threads (cores) within a specific node using the parallel environment:
+* To request 20 threads (cores) within a specific node using the parallel environment:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ qsub -l h=node_name -pe pe_name 20 example.sh
+        $ qsub -l h=node_name -pe pe_name 20 example.sh
 
-To delete all jobs from a user:
+* To delete all jobs from a user:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ qdel -u user_name
+        $ qdel -u user_name
 
-To delete a specific job:
+* To delete a specific job:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ qdel job_id
+        $ qdel job_id
 
-To print error message from a job:
+* To print error message from a job:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ qstat -j job_id | grep "error"
+        $ qstat -j job_id | grep "error"
 
 Parallel environment
 ^^^^^^^^^^^^^^^^^^^^
 
-To list all parallel environments:
+* To list all parallel environments:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ qconf -spl
+        $ qconf -spl
 
-To print the configuration of a parallel environment:
+* To print the configuration of a parallel environment:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ qconf -sp pe_name
+        $ qconf -sp pe_name
 
 Queue configuration
 ^^^^^^^^^^^^^^^^^^^
 
-To list all queues:
+* To list all queues:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ qconf -sql
+        $ qconf -sql
 
-To print the configuration of a queue:
+* To print the configuration of a queue:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ qconf -sq queue_name
+        $ qconf -sq queue_name
 
-To list all administrative hosts (i.e. nodes for submitting jobs):
+* To list all administrative hosts (i.e. nodes for submitting jobs):
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ qconf -sh
+        $ qconf -sh
 
-To list all execution hosts (i.e. nodes for running jobs):
+* To list all execution hosts (i.e. nodes for running jobs):
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ qconf -sel
+        $ qconf -sel
 
 Queue status
 ^^^^^^^^^^^^
 
-To print the status of all queues:
+* To print the status of all queues:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ qstat -g c
+        $ qstat -g c
 
-To print the availability of all queues:
+* To print the availability of all queues:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ qstat -f
+        $ qstat -f
 
-To print the availability of a queue:
+* To print the availability of a queue:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ qstat -f -q queue_name
+        $ qstat -f -q queue_name
 
-To print all jobs currently occupying a queue:
+* To print all jobs currently occupying a queue:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ qstat -u "*" | grep "queue_name"
+        $ qstat -u "*" | grep "queue_name"
 
-To print the status of a host:
+* To print the status of a host:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ qhost -h host_name
+        $ qhost -h host_name
 
 Command not found error
 -----------------------
 
 In some servers, even when a user submits a simple script to SGE, as simple as defining an environment variable, it returns an error complaining that command could not be found. However, when the user runs the same script locally or on a different cluster, it runs just fine. According to this Stack Overflow `post <https://stackoverflow.com/questions/17271931/sge-command-not-found-undefined-variable>`__, the issue is most likely the queues on your cluster are set to ``posix_compliant`` mode with a default shell of ``/bin/csh``. The ``posix_compliant`` setting means your ``#!`` line is ignored. You can either change the queues to ``unix_behavior`` or specify the required shell using the ``qsub -S`` option:
 
-.. parsed-literal::
+.. code-block:: console
 
     #$ -S /bin/sh
 
 vi and vim
 ==========
 
-To search a pattern:
+Frequently used commands for vi and vim
+---------------------------------------
 
-* Press ``/``.
-* Type the search pattern.
-* Press ``Enter`` to perform the search.
-* Press ``n`` to find the next occurrence or ``N`` to find the previous occurrence.
+* To search a pattern:
 
-To search and replace in the entire file:
+    * Press ``/``.
+    * Type the search pattern.
+    * Press ``Enter`` to perform the search.
+    * Press ``n`` to find the next occurrence or ``N`` to find the previous occurrence.
 
-.. parsed-literal::
+* To search and replace in the entire file:
 
-    :%s/foo/bar/g
+    .. code-block:: console
 
-To search and replace a pattern involving the ``/`` character:
+        :%s/foo/bar/g
 
-.. parsed-literal::
+* To search and replace a pattern involving the ``/`` character:
 
-    :%s#/foo#/bar#g
+    .. code-block:: console
 
-To move the cursor to end of the file:
+        :%s#/foo#/bar#g
 
-Press the ``Esc`` key and then press the ``Shift`` and ``G`` keys together
+* To move the cursor to end of the file:
+
+    Press the ``Esc`` key and then press the ``Shift`` and ``G`` keys together.

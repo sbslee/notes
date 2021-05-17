@@ -9,7 +9,7 @@ Student's t-test
 
 This is a parametric test. Use the ``scipy.stats.ttest_ind`` method. Be careful with the ``equal_var`` option (i.e. Welch's t-test).
 
-Paired Samples t-test
+Paired samples t-test
 ---------------------
 
 This is a parametric test for paired samples.
