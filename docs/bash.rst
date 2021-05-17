@@ -88,8 +88,8 @@ To give permissions for all files inside the directory:
 OpenSSH
 =======
 
-Frequently used commands
-------------------------
+Frequently used commands for OpenSSH
+------------------------------------
 
 To remove all keys belonging to a host name:
 
@@ -195,3 +195,132 @@ You can now access server C directly by:
 .. code-block:: console
 
     $ ssh host_id_C
+
+Sun Grid Engine (SGE)
+=====================
+
+Frequently used commands for SGE
+--------------------------------
+
+Submit jobs
+^^^^^^^^^^^
+
+To request a specific node:
+
+.. code-block:: console
+
+    $ qsub -l h=node_name example.sh
+
+To request node A or node B:
+
+.. code-block:: console
+
+    $ qsub -l h='node_name_A|node_name_B' example.sh
+
+To request 20 threads (cores) within a specific node using the parallel environment:
+
+.. code-block:: console
+
+    $ qsub -l h=node_name -pe pe_name 20 example.sh
+
+To delete all jobs from a user:
+
+.. code-block:: console
+
+    $ qdel -u user_name
+
+To delete a specific job:
+
+.. code-block:: console
+
+    $ qdel job_id
+
+To print error message from a job:
+
+.. code-block:: console
+
+    $ qstat -j job_id | grep "error"
+
+Parallel environment
+^^^^^^^^^^^^^^^^^^^^
+
+To list all parallel environments:
+
+.. code-block:: console
+
+    $ qconf -spl
+
+To print the configuration of a parallel environment:
+
+.. code-block:: console
+
+    $ qconf -sp pe_name
+
+Queue configuration
+^^^^^^^^^^^^^^^^^^^
+
+To list all queues:
+
+.. code-block:: console
+
+    $ qconf -sql
+
+To print the configuration of a queue:
+
+.. code-block:: console
+
+    $ qconf -sq queue_name
+
+To list all administrative hosts (i.e. nodes for submitting jobs):
+
+.. code-block:: console
+
+    $ qconf -sh
+
+To list all execution hosts (i.e. nodes for running jobs):
+
+.. code-block:: console
+
+    $ qconf -sel
+
+Queue status
+^^^^^^^^^^^^
+
+To print the status of all queues:
+
+.. code-block:: console
+
+    $ qstat -g c
+
+To print the availability of all queues:
+
+.. code-block:: console
+
+    $ qstat -f
+
+To print the availability of a queue:
+
+.. code-block:: console
+
+    $ qstat -f -q queue_name
+
+To print all jobs currently occupying a queue:
+
+.. code-block:: console
+
+    $ qstat -u "*" | grep "queue_name"
+
+To print the status of a host:
+
+.. code-block:: console
+
+    $ qhost -h host_name
+
+Command not found error
+-----------------------
+
+In some servers, even when a user submits a simple script to SGE, as simple as defining an environment variable, it returns an error complaining that command could not be found. However, when the user runs the same script locally or on a different cluster, it runs just fine. According to this Stack Overflow `post <https://stackoverflow.com/questions/17271931/sge-command-not-found-undefined-variable>`__, the issue is most likely the queues on your cluster are set to ``posix_compliant`` mode with a default shell of ``/bin/csh``. The ``posix_compliant`` setting means your ``#!`` line is ignored. You can either change the queues to ``unix_behavior`` or specify the required shell using the ``qsub -S`` option:
+
+.. parsed-literal::
+
+    #$ -S /bin/sh
