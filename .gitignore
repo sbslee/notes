@@ -1,1 +1,4 @@
 .DS_Store
+
+# Sphinx documentation
+docs/_build/
