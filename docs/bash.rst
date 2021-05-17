@@ -137,6 +137,109 @@ Check things
           echo "LC_ALL is set to '$LC_ALL'"
         fi
 
+module
+------
+
+* To list currently loaded modules:
+
+    .. code-block:: console
+
+        $ module list
+
+* To load the latest version of a tool:
+
+.. code-block:: console
+
+    $ module load tool_name/latest
+
+* To list available modules:
+
+    .. code-block:: console
+
+        $ module avail
+
+* To load module or specify which dependencies have not been loaded:
+
+    .. code-block:: console
+
+        $ module load modulefile
+
+Miscellaneous
+-------------
+
+* To access hard drives:
+
+    .. code-block:: console
+
+        $ cd /
+        $ cd Volumes
+        $ cd ls
+
+* To copy a directory:
+
+      .. code-block:: console
+
+          $ rsync -avzP source destination
+
+      Here, the ``-avzP`` means:
+
+      * ``a`` - use archive mode
+      * ``v`` - be verbose
+      * ``z`` - compress file data during the transfer
+      * ``P`` - display progress and preserve partial files
+
+* To move the cursor forward by one word:
+
+    Press ``Esc`` and ``F`` together.
+
+* To move the cursor backward by one word:
+
+    Press ``Esc`` and ``B`` together.
+
+* To extract lines repeated at least three times:
+
+    .. code-block:: console
+
+        $ awk '++a[$0] == 3 { print $0 }' example.txt
+
+* To print every fifth line:
+
+    .. code-block:: console
+
+        $ awk 'NR % 5 == 0' example.txt
+
+* To skip the first two lines of a file:
+
+    .. code-block:: console
+
+        $ tail -n +3 example.txt
+
+* To concatenate a string to each line of the ``ls`` command output:
+
+    .. code-block:: console
+
+        $ ls | xargs -i echo "Hello World {}"
+
+* To combine arrays as columns:
+
+    .. code-block:: console
+
+        $ a=(A B C)
+        $ b=(1 2 3)
+        $ paste <(printf "%s\n" "${a[@]}") <(printf "%s\n" "${b[@]}")
+
+* To echo tab characters:
+
+    .. code-block:: console
+
+        $ echo Hello$'\t'World
+
+* To read file names in the current directory into an array:
+
+    .. code-block:: console
+
+        $ a=(*)
+
 awk
 ===
 

@@ -18,97 +18,6 @@
 
 
 
-## Neat tricks <a name="Neat-tricks"></a>
-
-To access hard drives:
-
-```
-$ cd /
-$ cd Volumes
-$ cd ls
-```
-
-To copy a directory:
-
-```
-rsync -avzP source destination
-```
-
-The `-avzP` means:
-
-* `a` - use archive mode
-* `v` - be verbose
-* `z` - compress file data during the transfer
-* `P` - display progress and preserve partial files
-
-To move the cursor forward by one word:
-
-`esc` key + `F` key
-
-To move the cursor backward by one word:
-
-`esc` key + `B` key
-
-To extract lines repeated at least three times:
-
-```
-awk '++a[$0] == 3 { print $0 }' example.txt
-```
-
-To print every fifth line:
-
-```
-awk 'NR % 5 == 0' example.txt
-```
-
-To skip the first two lines when priting a file:
-
-```
-tail -n +3 example.txt
-```
-
-To concatenate a string to each line of ls command output:
-
-```
-ls | xargs -i echo "Hello World {}"
-```
-
-To combine arrays as columns:
-
-```
-a=(A B C)
-b=(1 2 3)
-paste <(printf "%s\n" "${a[@]}") <(printf "%s\n" "${b[@]}")
-```
-
-To echo tab characters:
-
-```
-echo Hello$'\t'World
-```
-
-To read file names in the current directory into an array:
-
-```
-a=(*)
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## FUCs for Bash <a name="FUCs-for-Bash"></a>
 
@@ -129,19 +38,6 @@ $ command > <out_file> 2><error_file>
 
 # Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
 :%s/foo/bar/g
-
-# -- module ------------------------------------------------------------------
-
-# List all available modules.
-$ module list
-
-# Load the latest version of <tool_name>
-$ module load <tool_name>/latest
-
-# Load all the available modules from the GS server.
-$ module load modules modules-init modules-gs
-
-$ module avail
 
 # -- File transfer -----------------------------------------------------------
 
