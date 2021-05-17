@@ -11,7 +11,7 @@ Welcome to notes's documentation!
    :caption: Contents:
 
    readme
-   bash/bash
+   bash
    statistics
 
 
