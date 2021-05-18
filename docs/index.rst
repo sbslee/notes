@@ -17,6 +17,8 @@ Welcome to notes's documentation!
    anaconda
    jupyter_notebook
    github
+   python
+   excel
    machine_learning
    tensorflow
    miscellaneous
