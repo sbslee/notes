@@ -6,12 +6,23 @@ Frequently used commands for statistics
 
 * To calculate a 95% confidence interval from a 1D array:
 
+    Here is how we can calculate the interval using the ``scipy.stats.t.interval`` method:
+
     .. code:: python3
 
-        >>> mu, sigma = 6, 0.1
+        >>> mu, sigma, alpha = 6, 0.1, 0.95
         >>> s = np.random.normal(mu, sigma, 1000)
-        >>> stats.t.interval(alpha=0.95, df=len(s), loc=np.mean(s), scale=stats.sem(s))
-        (5.9938752656199155, 6.006221096693827)
+        >>> n, loc, scale = len(s), np.mean(s), stats.sem(s)
+        >>> stats.t.interval(alpha=alpha, df=n, loc=loc, scale=scale)
+        (5.998481753893311, 6.010448176896994)
+
+    We can also calculate the interval manually:
+
+    .. code:: python3
+
+        >>> h = scale * stats.t.ppf((1 + alpha) / 2., n-1)
+        >>> print((loc-h, loc+h))
+        (5.998481746635707, 6.0104481841545985)
 
 Statistical tests
 =================
