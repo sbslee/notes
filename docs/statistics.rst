@@ -13,7 +13,7 @@ Frequently used commands for statistics
         >>> mu, sigma, alpha = 6, 0.1, 0.95
         >>> s = np.random.normal(mu, sigma, 1000)
         >>> n, loc, scale = len(s), np.mean(s), stats.sem(s)
-        >>> stats.t.interval(alpha=alpha, df=n, loc=loc, scale=scale)
+        >>> stats.t.interval(alpha=alpha, df=n-1, loc=loc, scale=scale)
         (5.998481753893311, 6.010448176896994)
 
     We can also calculate the interval manually:
