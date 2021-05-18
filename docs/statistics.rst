@@ -1,6 +1,18 @@
 Statistics
 **********
 
+Frequently used commands for statistics
+=======================================
+
+* To calculate a 95% confidence interval from a 1D array:
+
+    .. code:: python3
+
+        >>> mu, sigma = 6, 0.1
+        >>> s = np.random.normal(mu, sigma, 1000)
+        >>> stats.t.interval(alpha=0.95, df=len(s), loc=np.mean(s), scale=stats.sem(s))
+        (5.9938752656199155, 6.006221096693827)
+
 Statistical tests
 =================
 
