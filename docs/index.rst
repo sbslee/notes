@@ -14,6 +14,12 @@ Welcome to notes's documentation!
    bash
    bioinformatics
    statistics
+   anaconda
+   jupyter_notebook
+   github
+   machine_learning
+   tensorflow
+   miscellaneous
 
 
 
