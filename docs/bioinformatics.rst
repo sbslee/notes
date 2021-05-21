@@ -568,3 +568,4 @@ References:
 
 - `Order of annotation <https://github.com/Ensembl/ensembl-vep/issues/193>`__
 - `Ensembl Variation - Calculated variant consequences <https://m.ensembl.org/info/genome/variation/prediction/predicted_data.html>`__
+- `Cool stuff the Ensembl VEP can do: take your pick <https://www.ensembl.info/2019/03/22/cool-stuff-the-ensembl-vep-can-do-take-your-pick/>`__
