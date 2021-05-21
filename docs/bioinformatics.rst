@@ -542,3 +542,29 @@ Adapter sequences
 -----------------
 
 Here's the `link <https://www.eurofinsgenomics.eu/media/1610545/illumina-adapter-sequences.pdf>`__ to Illumina's adapter sequences.
+
+Ensembl
+=======
+
+Variant Effect Predictor (VEP)
+------------------------------
+
+Order of annotations
+^^^^^^^^^^^^^^^^^^^^
+
+The ordering of the results per line simply uses the ENST IDs. For example:
+
+- ENST00000572062
+- ENST00000572573
+- ENST00000572608
+- ENST00000575820
+
+Within a result, the consequences are ordered by severity. For example:
+
+intron_variant&non_coding_transcript_variant
+
+
+References:
+
+- `Order of annotation <https://github.com/Ensembl/ensembl-vep/issues/193>`__
+- `Ensembl Variation - Calculated variant consequences <https://m.ensembl.org/info/genome/variation/prediction/predicted_data.html>`__
