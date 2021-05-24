@@ -50,5 +50,5 @@ Frequently used commands for Excel
 
 References:
 
-- `How to calculate age in Excel: from date of birth, between two dates, and more <https://www.ablebits.com/office-addins-blog/2016/10/19/calculate-age-excel/#:~:text=Simply%20by%20subtracting%20the%20birth,also%20be%20used%20in%20Excel.&text=The%20first%20part%20of%20the,get%20the%20numbers%20of%20years.>`__
-- `How To Highlight/Find And Remove Duplicates In Google Sheets <https://www.alphr.com/highlight-duplicates-google-sheets/>`__
+  - `How to calculate age in Excel: from date of birth, between two dates, and more <https://www.ablebits.com/office-addins-blog/2016/10/19/calculate-age-excel/#:~:text=Simply%20by%20subtracting%20the%20birth,also%20be%20used%20in%20Excel.&text=The%20first%20part%20of%20the,get%20the%20numbers%20of%20years.>`__
+  - `How To Highlight/Find And Remove Duplicates In Google Sheets <https://www.alphr.com/highlight-duplicates-google-sheets/>`__

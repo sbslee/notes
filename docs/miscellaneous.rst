@@ -8,4 +8,4 @@ Google Chrome will throw this error if the website uses https which you haven’
 
 References:
 
-* `Chrome: Bypass NET::ERR_CERT_INVALID for development <https://medium.com/@dblazeski/chrome-bypass-net-err-cert-invalid-for-development-daefae43eb12>`__
+  - `Chrome: Bypass NET::ERR_CERT_INVALID for development <https://medium.com/@dblazeski/chrome-bypass-net-err-cert-invalid-for-development-daefae43eb12>`__

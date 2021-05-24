@@ -55,8 +55,8 @@ A Sequential model is appropriate for a plain stack of layers where each layer h
 
 References:
 
-- `The Sequential model <https://www.tensorflow.org/guide/keras/sequential_model>`__
-- `The Functional API <https://www.tensorflow.org/guide/keras/functional>`__
+  - `The Sequential model <https://www.tensorflow.org/guide/keras/sequential_model>`__
+  - `The Functional API <https://www.tensorflow.org/guide/keras/functional>`__
 
 Adam optimization
 =================
@@ -65,4 +65,4 @@ Adam optimization is a stochastic gradient descent method that is based on adapt
 
 References:
 
-* `tf.keras.optimizers.Adam <https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/Adam>`__
+  - `tf.keras.optimizers.Adam <https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/Adam>`__

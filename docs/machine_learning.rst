@@ -8,4 +8,4 @@ The rectified linear activation function or ReLU for short is a piecewise linear
 
 References:
 
-- `A Gentle Introduction to the Rectified Linear Unit (ReLU) <https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/>`__
+  - `A Gentle Introduction to the Rectified Linear Unit (ReLU) <https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/>`__

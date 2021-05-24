@@ -58,8 +58,8 @@ In case you need to run Jupyter Notebook in an interactive session (i.e. ``qlogi
 
 References:
 
-- `SSH -L connection successful, but localhost port forwarding not working “channel 3: open failed: connect failed: Connection refused <https://stackoverflow.com/questions/18705453/ssh-l-connection-successful-but-localhost-port-forwarding-not-working-channel>`__
-- `Jupyter Notebook on UIowa's HPCs: An Example of Using Argon <https://zhiyzuo.github.io/Argon-Jupyter/>`__
+  - `SSH -L connection successful, but localhost port forwarding not working “channel 3: open failed: connect failed: Connection refused <https://stackoverflow.com/questions/18705453/ssh-l-connection-successful-but-localhost-port-forwarding-not-working-channel>`__
+  - `Jupyter Notebook on UIowa's HPCs: An Example of Using Argon <https://zhiyzuo.github.io/Argon-Jupyter/>`__
 
 Creating notebook programmatically
 ==================================
@@ -88,4 +88,4 @@ We can create a notebook via Python scripting as follows.
 
 References:
 
-- `How to create/modify a jupyter notebook from code (python)? <https://stackoverflow.com/questions/38193878/how-to-create-modify-a-jupyter-notebook-from-code-python>`__
+  - `How to create/modify a jupyter notebook from code (python)? <https://stackoverflow.com/questions/38193878/how-to-create-modify-a-jupyter-notebook-from-code-python>`__

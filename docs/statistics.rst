@@ -59,6 +59,15 @@ This is a non-parametric version of the one-way ANOVA test (i.e. one-way ANOVA o
 
 Note that the results of Kruskal-Wallis and Mann-Whitney U test may differ because 1) the ranks used for the Mann-Whitney U test are not the ranks used by the Kruskal-Wallis test; and 2) the rank sum tests do not use the pooled variance implied by the Kruskal-Wallis null hypothesis. Hence, it is not recommended to use Mann-whitney U test as a post hoc test after Kruskal-Wallis test.
 
+Fisher's exact test
+-------------------
+
+Fisher's exact test is a statistical significance test used in the analysis of contingency tables. Although in practice it is employed when sample sizes are small, it is valid for all sample sizes. It is named after its inventor, Ronald Fisher, and is one of a class of exact tests, so called because the significance of the deviation from a null hypothesis (e.g., P-value) can be calculated exactly, rather than relying on an approximation that becomes exact in the limit as the sample size grows to infinity, as with many statistical tests.
+
+References:
+
+  - `Fisher's exact test <https://en.wikipedia.org/wiki/Fisher%27s_exact_test>`__
+
 Confusing concepts
 ==================
 
@@ -131,7 +140,7 @@ The Poisson distribution assumes that the mean and variance are the same. The ne
 
 References:
 
-- `Difference between binomial, negative binomial and Poisson regression <https://stats.stackexchange.com/questions/60643/difference-between-binomial-negative-binomial-and-poisson-regression>`__
+  - `Difference between binomial, negative binomial and Poisson regression <https://stats.stackexchange.com/questions/60643/difference-between-binomial-negative-binomial-and-poisson-regression>`__
 
 **Pro tip:** The RNAseq field uses negative binomial, the 16S microbiome field uses rarefying plus proportions, and the ChIP-seq field uses Poisson-based models.
 
@@ -142,7 +151,7 @@ The Dirichlet distribution is a generalization of the Beta distribution for mult
 
 References:
 
-- `Continuous Distributions: Beta and Dirichlet Distributions <https://www.youtube.com/watch?v=CEVELIz4WXM>`__
+  - `Continuous Distributions: Beta and Dirichlet Distributions <https://www.youtube.com/watch?v=CEVELIz4WXM>`__
 
 Fisher's method
 ===============

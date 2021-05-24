@@ -63,49 +63,52 @@ If you saved that as foo.py, then you'd run it with:
 Package development
 ===================
 
-First, set up the working environment:
+Frequently used commands for package development
+------------------------------------------------
 
-.. code-block:: console
+* To set up the working environment:
 
-    $ conda install wheel
-    $ conda install twine
-    $ conda install setuptools
+    .. code-block:: console
 
-To build the distribution files:
+        $ conda install wheel
+        $ conda install twine
+        $ conda install setuptools
 
-.. code-block:: console
+* To build the distribution files:
 
-    $ python3 setup.py sdist bdist_wheel
+    .. code-block:: console
 
-To check the distribution files before uploading to PyPi:
+        $ python3 setup.py sdist bdist_wheel
 
-.. code-block:: console
+* To check the distribution files before uploading to PyPi:
 
-    $ twine check dist/*
+    .. code-block:: console
 
-To upload the distribution files to Test PyPi:
+        $ twine check dist/*
 
-.. code-block:: console
+* To upload the distribution files to Test PyPi:
 
-    $ twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+    .. code-block:: console
 
-To upload the distribution files to PyPi:
+        $ twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
-.. code-block:: console
+* To upload the distribution files to PyPi:
 
-    $ twine upload dist/*
+    .. code-block:: console
 
-To install a package:
+        $ twine upload dist/*
 
-.. code-block:: console
+* To install a package:
 
-    $ pip install package_name
+    .. code-block:: console
 
-To install a package in the development mode:
+        $ pip install package_name
 
-.. code-block:: console
+* To install a package in the development mode:
 
-    $ pip install -e .
+    .. code-block:: console
+
+        $ pip install -e .
 
 Some commands worth to remember:
 

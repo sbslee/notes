@@ -106,7 +106,7 @@ Type yes.
 
 References:
 
-- `Easiest Way to Install Anaconda on Your Remote Linux Server <https://kengchichang.com/post/conda-linux/>`__
+  - `Easiest Way to Install Anaconda on Your Remote Linux Server <https://kengchichang.com/post/conda-linux/>`__
 
 Package management for R
 ========================
@@ -121,8 +121,8 @@ R package management via Anaconda can be tricky sometimes. I learned in the hard
 
 References:
 
-- `Why not r via conda? <https://community.rstudio.com/t/why-not-r-via-conda/9438/4>`__
-- `Question: what is the deal with bioconda? <https://www.biostars.org/p/470291/#477472>`__
+  - `Why not r via conda? <https://community.rstudio.com/t/why-not-r-via-conda/9438/4>`__
+  - `Question: what is the deal with bioconda? <https://www.biostars.org/p/470291/#477472>`__
 
 Build a package
 ===============
