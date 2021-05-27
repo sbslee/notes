@@ -584,4 +584,9 @@ References:
 Catalogue Of Somatic Mutations In Cancer (COSMIC)
 =================================================
 
-COSMIC, the Catalogue Of Somatic Mutations In Cancer, is the world's largest and most comprehensive resource for exploring the impact of somatic mutations in human cancer.
+`COSMIC <https://cancer.sanger.ac.uk/cosmic>`__, the Catalogue Of Somatic Mutations In Cancer, is the world's largest and most comprehensive resource for exploring the impact of somatic mutations in human cancer.
+
+maftools
+========
+
+This `package <http://bioconductor.org/packages/release/bioc/html/maftools.html>`__ provides various functions to perform most commonly used analyses in cancer genomics and to create feature rich customizable visualzations with minimal effort. This nice `tutorial <http://bioconductor.org/packages/devel/bioc/vignettes/maftools/inst/doc/maftools.html>`__ provides some good examples.
