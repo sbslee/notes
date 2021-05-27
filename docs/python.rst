@@ -244,6 +244,12 @@ Frequently used commands for matplotlib
         ax.set_title('My subplot title', fontsize=30)
         ax.legend(handles, labels, fontsize=20, title=title, title_fontsize=25)
 
+* To add a vertical line:
+
+    .. code:: python3
+
+        ax.axvline(x=5, color='red')
+
 Combining subplots
 ------------------
 
