@@ -579,3 +579,9 @@ References:
 
   - `Data Slicer <https://www.internationalgenome.org/data-slicer>`__
   - `How do I get a sub-section of a VCF file? <https://www.internationalgenome.org/faq/how-do-i-get-sub-section-vcf-file/>`__
+
+
+Catalogue Of Somatic Mutations In Cancer (COSMIC)
+=================================================
+
+COSMIC, the Catalogue Of Somatic Mutations In Cancer, is the world's largest and most comprehensive resource for exploring the impact of somatic mutations in human cancer.
