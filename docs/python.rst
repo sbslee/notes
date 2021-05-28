@@ -250,6 +250,13 @@ Frequently used commands for matplotlib
 
         ax.axvline(x=5, color='red')
 
+* To remove labels:
+
+    .. code:: python3
+
+        ax.set_xticks([])
+        ax.set_yticks([])
+
 Combining subplots
 ------------------
 
