@@ -206,7 +206,6 @@ Frequently used commands for matplotlib
         ax.clear()
         ax.axis('off')
         ax.set_visible(False)
-        ax.remove()
 
 * To set widths and heights of suplots:
 
@@ -250,12 +249,17 @@ Frequently used commands for matplotlib
 
         ax.axvline(x=5, color='red')
 
-* To remove labels:
+* To remove things:
 
     .. code:: python3
 
-        ax.set_xticks([])
-        ax.set_yticks([])
+        ax.remove()                            # entire subplot
+        ax.set_xticks([])                      # xticklabels
+        ax.set_yticks([])                      # yticklabels
+        ax.spines['right'].set_visible(False)  # right spine
+        ax.spines['left'].set_visible(False)   # left spine
+        ax.spines['top'].set_visible(False)    # top spine
+        ax.spines['bottom'].set_visible(False) # right spine
 
 Combining subplots
 ------------------
