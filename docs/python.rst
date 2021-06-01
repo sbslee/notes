@@ -257,6 +257,13 @@ Frequently used commands for matplotlib
         ax.xaxis.set_label_position('top')                    # move xlabel to top
         ax.set_xticklabels(ax.get_xticklabels(), rotation=90) # rotate xticklabels 90 degrees
 
+* To add/change things:
+
+    .. code:: python3
+
+        ax.set_title('My title')      # add subplot title
+        ax.set_xticks([0, 5, 10])     # change xticks
+
 * To remove things:
 
     .. code:: python3
