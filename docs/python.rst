@@ -253,8 +253,9 @@ Frequently used commands for matplotlib
 
     .. code:: python3
 
-        ax.xaxis.tick_top()                # move xticks to top
-        ax.xaxis.set_label_position('top') # move xlabel to top
+        ax.xaxis.tick_top()                                   # move xticks to top
+        ax.xaxis.set_label_position('top')                    # move xlabel to top
+        ax.set_xticklabels(ax.get_xticklabels(), rotation=90) # rotate xticklabels 90 degrees
 
 * To remove things:
 
