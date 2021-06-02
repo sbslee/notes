@@ -39,6 +39,7 @@ List things
     .. code-block:: console
 
         $ ls dir_name | tr '\n' ' '
+        $ tr '\n' ' ' < list.txt
 
 * To list all environment variables:
 
