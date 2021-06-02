@@ -168,19 +168,19 @@ Module
 File transfer
 -------------
 
-* To upload files from local to server:
+* From local to server:
 
     .. code-block:: console
 
-        $ scp file.txt user_name@host_name:/path/to/local/destination
-        $ scp file1.txt file2.sh user_name@host_name:/path/to/local/destination
+        $ scp file.txt user_name@host_name:/path/to/destination
+        $ scp file1.txt file2.txt user_name@host_name:/path/to/destination
 
-* To copy files from server to local:
+* From server to local:
 
     .. code-block:: console
 
-        $ scp user_name@host_name:/path/to/server/file.txt /path/to/local/destination
-        $ scp -T user_name@host_name:"file1.txt file2.txt" "/path/to/local/destination"
+        $ scp user_name@host_name:/path/to/server/file.txt /path/to/destination
+        $ scp -T user_name@host_name:"file1.txt file2.txt" "/path/to/destination"
 
 * To copy all files in a directory from server to local:
 
