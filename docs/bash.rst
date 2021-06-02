@@ -66,7 +66,7 @@ Zipped files
 
     .. code-block:: console
 
-        $ tar -czvf dir.tar.gz dir_name
+        $ tar -czvf dir_name.tar.gz dir_name
 
 * To unzip a .tar.gz file:
 
