@@ -242,6 +242,8 @@ Frequently used commands for matplotlib
         ax.tick_params(axis='both', which='major', labelsize=15)
         ax.set_title('My subplot title', fontsize=30)
         ax.legend(handles, labels, fontsize=20, title=title, title_fontsize=25)
+        plt.setp(ax.get_legend().get_texts(), fontsize='20')
+        plt.setp(ax.get_legend().get_title(), fontsize='25')
 
 * To move things:
 
