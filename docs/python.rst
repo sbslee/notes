@@ -379,3 +379,15 @@ If you want to use the ``seaborn`` package's default style:
 
     with sns.axes_style('darkgrid'):
         plt.plot(np.sin(np.linspace(0, 2 * np.pi)), 'r-o')
+
+plotly
+======
+
+conda install -c plotly plotly
+conda install -c anaconda psutil
+conda install -c plotly plotly-orca
+
+Sankey diagram
+--------------
+
+https://plotly.com/python/sankey-diagram/
