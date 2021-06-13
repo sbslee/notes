@@ -186,12 +186,14 @@ File transfer
 
     .. code-block:: console
 
-        $ wget -r --no-parent /path/to/server/dir_name/
+        $ wget -r -c --no-parent --retry-connrefused /path/to/server/dir_name/
 
-    Here, the ``-r --no-parent`` option means:
+    Here, the options mean:
 
         * ``-r`` - turn on recursive retrieving
+        * ``-c`` - continue getting a partially-downloaded file
         * ``--no-parent`` - do not ever ascend to the parent directory when retrieving recursively
+        * ``--retry-connrefused`` - consider "connection refused" a transient error and try again
 
 * To copy a directory:
 
