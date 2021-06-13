@@ -71,11 +71,11 @@ Frequently used commands for Bioinformatics
         $ printf "`echo $sample`\t`grep -w "CYP2A7" /net/grc/vol6/data/processed/samples/$sample/RNA_SEQ/qc/genes.rpkm.gct`\n"
 
 
-To extract sequence headers from a FASTA file:
+* To extract sequence headers from a FASTA file:
 
     .. code-block:: console
 
-        grep -e ">" example.fasta
+        $ grep -e ">" example.fasta
 
 GTCtoVCF
 ========
