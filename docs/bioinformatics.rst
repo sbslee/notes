@@ -604,4 +604,6 @@ Resources
 Reference genome sequence
 -------------------------
 
+:strike:`This will be crossed out.`
+
 ~~According to `this <https://www.biostars.org/p/338914/>`__ Biostars post, you can download the reference FASTA file for GRCh37.p13 from `this <https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.25>`__ NCBI website.~~ When I tried this, it did give me a FASTA file ("GCF_000001405.25_GRCh37.p13_genomic.fna" with 943.9 MB when zipped and 3.28 GB when unzipped). However, the sequences were divided into primiary assemblies, not by chromosomes.
