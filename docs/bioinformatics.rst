@@ -590,3 +590,12 @@ maftools
 ========
 
 This `package <http://bioconductor.org/packages/release/bioc/html/maftools.html>`__ provides various functions to perform most commonly used analyses in cancer genomics and to create feature rich customizable visualzations with minimal effort. This nice `tutorial <http://bioconductor.org/packages/devel/bioc/vignettes/maftools/inst/doc/maftools.html>`__ provides some good examples.
+
+Resources
+=========
+
+To download the reference FASTA file for GRCh37.p13, go to [this NCBI website](https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.25) and click Download Assembly.
+
+References:
+
+  - [GRCh37.p13 download at NCBI FTP?](https://www.biostars.org/p/338914/)
