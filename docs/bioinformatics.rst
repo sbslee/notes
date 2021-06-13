@@ -50,7 +50,7 @@ Frequently used commands for Bioinformatics
 
     .. code-block:: console
 
-        $ echo $(zcat < sample.fastq | wc -l) / 4 | bc
+        $ echo $(zcat < sample.fastq.gz | wc -l) / 4 | bc
 
 * To extract only sequence reads from a zipped FASTQ file:
 
@@ -604,4 +604,6 @@ Resources
 Reference genome sequence
 -------------------------
 
-According to `this <https://www.biostars.org/p/338914/>`__ Biostars post, you can download a reference FASTA file for GRCh37 from `this <https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.25>`__ NCBI website. When I tried this, it did give me a FASTA file (GCF_000001405.25_GRCh37.p13_genomic.fna) which had a size of 943.9 MB when zipped and 3.28 GB when unzipped. However, the sequences were divided into primary assemblies (e.g. NC_000004.11 and NT_113901.1), and not by chromosomes (e.g. chr1 and chr4). I also found `this <https://www.ncbi.nlm.nih.gov/genome/guide/human/>`__ NCBI website and downloaded a reference FASTA file from there (GRCh37_latest_genomic.fna), but it was essentially the same as above.
+**Failed attempt 1:** According to `this <https://www.biostars.org/p/338914/>`__ Biostars post, you can download a reference FASTA file for GRCh37 from `this <https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.25>`__ NCBI website. When I tried this, it did give me a FASTA file (GCF_000001405.25_GRCh37.p13_genomic.fna) which had a size of 943.9 MB when zipped and 3.28 GB when unzipped. However, the sequences were divided into primary assemblies (e.g. NC_000004.11 and NT_113901.1), and not by chromosomes (e.g. chr1 and chr4). I also found `this <https://www.ncbi.nlm.nih.gov/genome/guide/human/>`__ NCBI website and downloaded a reference FASTA file from there (GRCh37_latest_genomic.fna), but it was essentially the same as above.
+
+**Failed attempt 2:** I finally found the FASTA file I want (hs37d5.fa.gz from the 1000 Genomes Project) from Heng Li's `blog <https://lh3.github.io/2017/11/13/which-human-reference-genome-to-use>`__. I confirmed that the sequences were divided by chromosomes (e.g. 1 and 5). The problem was, whenever I tried downloading the file with ``wget -c --retry-connrefused ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz``, the FTP transfer would be interrupted. Even though the download gets restarted automatically, the final file is always corrupted and cannot be unzipped.
