@@ -241,9 +241,6 @@ Frequently used commands for matplotlib
         ax.tick_params(axis='y', which='major', labelsize=15)
         ax.tick_params(axis='both', which='major', labelsize=15)
         ax.set_title('My subplot title', fontsize=30)
-        ax.legend(handles, labels, fontsize=20, title=title, title_fontsize=25)
-        plt.setp(ax.get_legend().get_texts(), fontsize='20')
-        plt.setp(ax.get_legend().get_title(), fontsize='25')
 
 * To move things:
 
@@ -273,6 +270,39 @@ Frequently used commands for matplotlib
         ax.spines['left'].set_visible(False)   # remove left spine
         ax.spines['top'].set_visible(False)    # remove top spine
         ax.spines['bottom'].set_visible(False) # remove right spine
+
+Legend
+------
+
+To update labels:
+
+.. code:: python3
+
+    l = ax.legend()
+    l.get_texts()[0].set_text('First label')
+    l.get_texts()[0].set_text('Second label')
+
+To update font size:
+
+.. code:: python3
+
+    # Method 1
+    ax.legend(fontsize=20)
+    ax.legend(fontsize='x-large')
+    ax.legend(title_fontsize=20)
+
+    # Method 2
+    ax.legend(prop={'size': 20})
+
+    # Method 3
+    plt.setp(ax.get_legend().get_texts(), fontsize='20')
+    plt.setp(ax.get_legend().get_title(), fontsize='20')
+
+To update marker scale:
+
+.. code:: python3
+
+    ax.legend(markerscale=2)
 
 Combining subplots
 ------------------
