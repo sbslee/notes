@@ -257,7 +257,7 @@ Frequently used commands for matplotlib
         ax.set_title('My title')      # add subplot title
         ax.set_xticks([0, 5, 10])     # add custom xticks
         ax.axvline(x=5, color='red')  # add vertical line
-        ax.axyline(y=5, color='red')  # add horizontal line
+        ax.axhline(y=5, color='red')  # add horizontal line
 
 * To remove things:
 
