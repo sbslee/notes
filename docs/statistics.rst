@@ -123,13 +123,19 @@ Terminology
 Common sampling distributions
 =============================
 
-+--------------------------------+---------------------------------------------------------------+--------------------------------------------------------------+
-|                                | Draw with replacement (probability of success is constant)    | Draw without replacement    (probability of success changes) |
-+================================+===============================================================+==============================================================+
-| Fixed number of trials (*n*)   | Binomial (Bernoulli is special case when *n* = 1)             | Hypergeometric                                               |
-+--------------------------------+---------------------------------------------------------------+--------------------------------------------------------------+
-| Draw until *k* successes       | Negative Binomial<br>(Geometric is special case when *k* = 1) | Negative Hypergeometric                                      |
-+--------------------------------+---------------------------------------------------------------+--------------------------------------------------------------+
++-----------------------+--------------------------------------+----------------------------------+
+|                       | Draw with replacement                | Draw without replacement         |
+|                       |                                      |                                  |
+|                       | (probability of success is constant) | (probability of success changes) |
++=======================+======================================+==================================+
+| Fixed number          | Binomial (Bernoulli is               | Hypergeometric                   |
+|                       |                                      |                                  |
+| of trials (:math:`n`) | special case when :math:`n=1`)       |                                  |
++-----------------------+--------------------------------------+----------------------------------+
+| Draw until            | Negative Binomial (Geometric is      | Negative Hypergeometric          |
+|                       |                                      |                                  |
+| :math:`k` successes   | special case when :math:`k=1`)       |                                  |
++-----------------------+--------------------------------------+----------------------------------+
 
 Poisson distribution
 ====================
