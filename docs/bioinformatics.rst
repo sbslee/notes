@@ -598,6 +598,11 @@ maftools
 
 This `package <http://bioconductor.org/packages/release/bioc/html/maftools.html>`__ provides various functions to perform most commonly used analyses in cancer genomics and to create feature rich customizable visualzations with minimal effort. This nice `tutorial <http://bioconductor.org/packages/devel/bioc/vignettes/maftools/inst/doc/maftools.html>`__ provides some good examples.
 
+LaTeX editor
+============
+
+`Online LaTeX Equation Editor <https://latex.codecogs.com/legacy/eqneditor/editor.php>`__
+
 Resources
 =========
 
