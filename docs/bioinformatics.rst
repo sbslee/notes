@@ -593,6 +593,15 @@ Catalogue Of Somatic Mutations In Cancer (COSMIC)
 
 `COSMIC <https://cancer.sanger.ac.uk/cosmic>`__, the Catalogue Of Somatic Mutations In Cancer, is the world's largest and most comprehensive resource for exploring the impact of somatic mutations in human cancer.
 
+Single Base Substitution (SBS) Signatures
+-----------------------------------------
+
+https://cancer.sanger.ac.uk/signatures/sbs/
+
+Single base substitutions (SBS), also known as single nucleotide variants, are defined as a replacement of a certain nucleotide base. Considering the pyrimidines of the Watson-Crick base pairs, there are only six different possible substitutions: C>A, C>G, C>T, T>A, T>C, and T>G. These SBS classes can be further expanded considering the nucleotide context.
+
+Current SBS signatures have been identified using 96 different contexts, considering not only the mutated base, but also the bases immediately 5’ and 3’.
+
 maftools
 ========
 
