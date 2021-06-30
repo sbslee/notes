@@ -304,6 +304,12 @@ To update marker scale:
 
     ax.legend(markerscale=2)
 
+To remove legend:
+
+.. code:: python3
+
+    ax.get_legend().remove()
+
 Combining subplots
 ------------------
 
