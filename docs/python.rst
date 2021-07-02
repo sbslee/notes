@@ -271,6 +271,16 @@ Frequently used commands for matplotlib
         ax.spines['top'].set_visible(False)    # remove top spine
         ax.spines['bottom'].set_visible(False) # remove right spine
 
+* To rotate tick labels:
+
+.. code:: python3
+
+    for ticklabel in ax.get_xticklabels():
+        ticklabel.set_rotation(45)
+
+    for ticklabel in ax.get_yticklabels():
+        ticklabel.set_rotation(45)
+
 Legend
 ------
 
