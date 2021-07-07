@@ -614,6 +614,13 @@ https://software.broadinstitute.org/cancer/cga/mutsig
 
 MutSig stands for "Mutation Significance".  MutSig analyzes lists of mutations discovered in DNA sequencing, to identify genes that were mutated more often than expected by chance given background mutation processes.
 
+UniProt
+=======
+
+https://www.uniprot.org/
+
+The mission of UniProt is to provide the scientific community with a comprehensive, high-quality and freely accessible resource of protein sequence and functional information.
+
 LaTeX editor
 ============
 
