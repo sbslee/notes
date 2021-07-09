@@ -622,11 +622,22 @@ https://www.uniprot.org/
 The mission of UniProt is to provide the scientific community with a comprehensive, high-quality and freely accessible resource of protein sequence and functional information.
 
 cBioPortal
-----------
+==========
 
 https://www.cbioportal.org/
 
 The cBioPortal for Cancer Genomics was originally developed at Memorial Sloan Kettering Cancer Center (MSK). The public cBioPortal site is hosted by the Center for Molecular Oncology at MSK. The cBioPortal software is now available under an open source license via GitHub. The software is now developed and maintained by a multi-institutional team, consisting of MSK, the Dana Farber Cancer Institute, Princess Margaret Cancer Centre in Toronto, Children's Hospital of Philadelphia, The Hyve in the Netherlands, and Bilkent University in Ankara, Turkey.
+
+bwa
+===
+
+BWA is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome. Click `here <http://bio-bwa.sourceforge.net/bwa.shtml>`__ to visit the official documentation page.
+
+To output a sorted BAM file using multiple threads:
+
+.. code-block::
+
+    bwa mem -t 8 ref.fa read1.fq read2.fq | samtools sort -@8 -o out.bam -
 
 LaTeX editor
 ============
