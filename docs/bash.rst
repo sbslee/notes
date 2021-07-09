@@ -613,41 +613,41 @@ Frequently used commands for SGE
 Submit jobs
 ^^^^^^^^^^^
 
-* To request a specific node:
+To request a specific node:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ qsub -l h=node_name example.sh
+    $ qsub -l h=node_name example.sh
 
-* To request node A or node B:
+To request node A or node B:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ qsub -l h='node_name_A|node_name_B' example.sh
+    $ qsub -l h='node_A|node_B' example.sh
 
-* To request 20 threads (cores) within a specific node using the parallel environment:
+To request 20 slots within a specific node using the parallel environment:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ qsub -l h=node_name -pe pe_name 20 example.sh
+    $ qsub -l h=node_name -pe pe_name 20 example.sh
 
-* To delete all jobs from a user:
+To delete all jobs from a user:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ qdel -u user_name
+    $ qdel -u user_name
 
-* To delete a specific job:
+To delete a specific job:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ qdel job_id
+    $ qdel job_id
 
-* To print error message from a job:
+To print error message from a job:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ qstat -j job_id | grep "error"
+    $ qstat -j job_id | grep "error"
 
 Parallel environment
 ^^^^^^^^^^^^^^^^^^^^
