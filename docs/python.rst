@@ -186,100 +186,100 @@ matplotlib
 Frequently used commands for matplotlib
 ---------------------------------------
 
-* To set figure title:
-
-    .. code:: python3
-
-        fig.suptitle('This is a somewhat long figure title')
-
-* To set figure title in tight layout:
-
-    .. code:: python3
-
-        fig.suptitle('This is a somewhat long figure title')
-        fig.tight_layout(rect=[0, 0.03, 1, 0.95])
-
-* To remove a subplot:
-
-    .. code:: python3
-
-        ax.clear()
-        ax.axis('off')
-        ax.set_visible(False)
-
-* To set widths and heights of suplots:
-
-    .. code:: python3
-
-        fig, [ax1, ax2] = plt.subplots(1, 2, gridspec_kw={'width_ratios': [9, 1], 'height_ratios': [1, 3]})
-
-* To remove legend title:
-
-    .. code:: python3
-
-        plt.gca().legend().set_title('')
-
-* To set default figure style:
-
-    .. code:: python3
-
-        matplotlib.rc_file_defaults()
-
-* To remove gaps between subplots:
-
-    .. code:: python3
-
-        plt.subplots_adjust(wspace=0, hspace=0)
-
-* To set font sizes:
-
-    .. code:: python3
-
-        ax.xaxis.label.set_size(20)
-        ax.yaxis.label.set_size(20)
-        ax.tick_params(axis='x', which='major', labelsize=15)
-        ax.tick_params(axis='y', which='major', labelsize=15)
-        ax.tick_params(axis='both', which='major', labelsize=15)
-        ax.set_title('My subplot title', fontsize=30)
-
-* To move things:
-
-    .. code:: python3
-
-        ax.xaxis.tick_top()                                   # move xticks to top
-        ax.xaxis.set_label_position('top')                    # move xlabel to top
-        ax.set_xticklabels(ax.get_xticklabels(), rotation=90) # rotate xticklabels 90 degrees
-
-* To add things:
-
-    .. code:: python3
-
-        ax.set_title('My title')      # add subplot title
-        ax.set_xticks([0, 5, 10])     # add custom xticks
-        ax.axvline(x=5, color='red')  # add vertical line
-        ax.axhline(y=5, color='red')  # add horizontal line
-
-* To remove things:
-
-    .. code:: python3
-
-        ax.remove()                            # remove entire subplot
-        ax.set_xticks([])                      # remove xticklabels
-        ax.set_yticks([])                      # remove yticklabels
-        ax.spines['right'].set_visible(False)  # remove right spine
-        ax.spines['left'].set_visible(False)   # remove left spine
-        ax.spines['top'].set_visible(False)    # remove top spine
-        ax.spines['bottom'].set_visible(False) # remove right spine
-
-* To rotate tick labels:
+To set figure title:
 
 .. code:: python3
 
+    fig.suptitle('This is a somewhat long figure title')
+
+To set figure title in tight layout:
+
+.. code:: python3
+
+    fig.suptitle('This is a somewhat long figure title')
+    fig.tight_layout(rect=[0, 0.03, 1, 0.95])
+
+To remove a subplot:
+
+.. code:: python3
+
+    ax.clear()
+    ax.axis('off')
+    ax.set_visible(False)
+
+To set widths and heights of suplots:
+
+.. code:: python3
+
+    fig, [ax1, ax2] = plt.subplots(1, 2, gridspec_kw={'width_ratios': [9, 1], 'height_ratios': [1, 3]})
+
+To remove legend title:
+
+.. code:: python3
+
+    plt.gca().legend().set_title('')
+
+To set default figure style:
+
+.. code:: python3
+
+    matplotlib.rc_file_defaults()
+
+To remove gaps between subplots:
+
+.. code:: python3
+
+    plt.subplots_adjust(wspace=0, hspace=0)
+
+To set font size:
+
+.. code:: python3
+
+    ax.xaxis.label.set_size(20)
+    ax.yaxis.label.set_size(20)
+    ax.tick_params(axis='x', which='major', labelsize=15)
+    ax.tick_params(axis='y', which='major', labelsize=15)
+    ax.tick_params(axis='both', which='major', labelsize=15)
+    ax.set_title('My subplot title', fontsize=30)
+
+To move things:
+
+.. code:: python3
+
+    ax.xaxis.tick_top()                # move xticks to top
+    ax.xaxis.set_label_position('top') # move xlabel to top
+
+To add things:
+
+.. code:: python3
+
+    ax.set_title('My title')      # add subplot title
+    ax.set_xticks([0, 5, 10])     # add custom xticks
+    ax.axvline(x=5, color='red')  # add vertical line
+    ax.axhline(y=5, color='red')  # add horizontal line
+
+To remove things:
+
+.. code:: python3
+
+    ax.remove()                            # remove entire subplot
+    ax.set_xticks([])                      # remove xticklabels
+    ax.set_yticks([])                      # remove yticklabels
+    ax.spines['right'].set_visible(False)  # remove right spine
+    ax.spines['left'].set_visible(False)   # remove left spine
+    ax.spines['top'].set_visible(False)    # remove top spine
+    ax.spines['bottom'].set_visible(False) # remove right spine
+
+To rotate tick labels:
+
+.. code:: python3
+
+    # Method 1
     for ticklabel in ax.get_xticklabels():
         ticklabel.set_rotation(45)
 
-    for ticklabel in ax.get_yticklabels():
-        ticklabel.set_rotation(45)
+    # Method 2
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=45)
 
 Legend
 ------
