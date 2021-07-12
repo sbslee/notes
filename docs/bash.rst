@@ -625,6 +625,12 @@ To request node A or node B:
 
     $ qsub -l h='node_A|node_B' example.sh
 
+To request nodes in a specific queue:
+
+.. code-block:: console
+
+    $ qsub -q queue_name example.sh
+
 To request 20 slots within a specific node using the parallel environment:
 
 .. code-block:: console

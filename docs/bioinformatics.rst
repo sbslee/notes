@@ -412,20 +412,24 @@ The GATK resource bundle is a collection of standard files for working with huma
 Process the reference genome
 ----------------------------
 
-According to this `post <https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format>`__ by GATK Team: "Most GATK tools additionally require that the main FASTA file be accompanied by a dictionary file ending in `.dict` and an index file ending in `.fai`, because it allows efficient random access to the reference bases. GATK will look for these index files based on their name, so it is important that they have the same basename as the FASTA file. If you do not have these files available for your organism's reference file, you can generate them very easily; instructions are included below."
+Most GATK tools require that the main FASTA file be accompanied by a dictionary file ending in ``.dict`` and an index file ending in ``.fai``, because it allows efficient random access to the reference bases. GATK will look for these index files based on their name, so it is important that they have the same basename as the FASTA file.
 
-To create to create a `.dict` file:
+To create to create a ``.dict`` file:
 
 .. code-block:: console
 
     $ gatk CreateSequenceDictionary -R ref.fasta
 
 
-To create a `.fai` file:
+To create a ``.fai`` file:
 
 .. code-block:: console
 
     $ samtools faidx ref.fasta
+
+References:
+
+   - `FASTA - Reference genome format <https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format>`__
 
 VCF filters
 -----------
@@ -493,6 +497,43 @@ Mutect2 AD does not match AF
 
 Sometimes, Mutect2 produces a variant call where AD does not match AF. For example, I once had sample genotype ``0|1:765,0:0.001813:765`` for ``GT:AD:AF:DP`` which, at the first glance, does not make any sense because AD is 0 while AF is greater than 0. Then I found this `post <https://sites.google.com/a/broadinstitute.org/legacy-gatk-forum-discussions/2019-02-11-2018-08-12/23408-MuTect2-AD-does-not-match-AF>`__ that explained the discrepancy. Basically, it was Mutect2's "probabilistic guesses about AF. If, for example, the normal has 100 ref reads, each of which has a 1% chance of actually being alt, the AF will be reported as 0.01."
 
+Create a panel of normals (PoN)
+-------------------------------
+
+Step 1. Run Mutect2 in tumor-only mode for each normal sample.
+
+.. code-block:: text
+
+    gatk Mutect2 \
+    -R ref.fa \
+    -I normal1.bam \
+    -O normal1.vcf.gz \
+
+Step 2. Create a GenomicsDB from the normal Mutect2 calls.
+
+.. code-block:: text
+
+    gatk GenomicsDBImport \
+    -R ref.fa \
+    -L intervals.interval_list \
+    --genomicsdb-workspace-path pon_db \
+    -V normal1.vcf.gz \
+    -V normal2.vcf.gz \
+    -V normal3.vcf.gz
+
+Step 3. Combine the normal calls using CreateSomaticPanelOfNormals.
+
+.. code-block:: text
+
+    gatk CreateSomaticPanelOfNormals \
+    -R ref.fa \
+    -V gendb://pon_db \
+    -O pon.vcf.gz
+
+References:
+
+    - `CreateSomaticPanelOfNormals (BETA) <https://gatk.broadinstitute.org/hc/en-us/articles/360037227652-CreateSomaticPanelOfNormals-BETA->`__
+
 Agilent Genomics NextGen Toolkit (AGeNT)
 ========================================
 
@@ -529,12 +570,19 @@ LocatIt requires that the input bam file has already been annotated with the MBC
 
 Usage example:
 
-.. code-block:: console
+.. code-block::
 
     $ java -Xmx12G -jar locatit-<version>.jar \
       -S -v2Duplex -d 1 -m 3 -q 25 -Q 25 \
       -l Covered.bed -o test_output.bam \
       test_input.bam
+
+.. code-block::
+
+    $ java -Xmx12G -jar locatit-<version>.jar \
+      -U -X CRC133_gDNAv1_deduptemp -N 200000 -IB -OB -C -i \
+      -l panel.bed \
+      -o CRC133_gDNAv1.prededup.bam CRC133_gDNAv1.sam CRC133_gDNAv1_UMI.fastq.gz
 
 References
 ----------
