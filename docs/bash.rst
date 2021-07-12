@@ -230,83 +230,75 @@ File transfer
 Miscellaneous
 -------------
 
-* To access hard drives:
+To access hard drives:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ cd /
-        $ cd Volumes
-        $ cd ls
+    $ cd /
+    $ cd Volumes
+    $ cd ls
 
-* To move the cursor forward by one word:
+To extract lines repeated at least three times:
 
-    Press ``Esc`` and ``F`` together.
+.. code-block:: console
 
-* To move the cursor backward by one word:
+    $ awk '++a[$0] == 3 { print $0 }' example.txt
 
-    Press ``Esc`` and ``B`` together.
+To print every fifth line:
 
-* To extract lines repeated at least three times:
+.. code-block:: console
 
-    .. code-block:: console
+    $ awk 'NR % 5 == 0' example.txt
 
-        $ awk '++a[$0] == 3 { print $0 }' example.txt
+To skip the first two lines of a file:
 
-* To print every fifth line:
+.. code-block:: console
 
-    .. code-block:: console
+    $ tail -n +3 example.txt
 
-        $ awk 'NR % 5 == 0' example.txt
+To concatenate a string to each line of the ``ls`` command output:
 
-* To skip the first two lines of a file:
+.. code-block:: console
 
-    .. code-block:: console
+    $ ls | xargs -i echo "Hello World {}"
 
-        $ tail -n +3 example.txt
+To combine arrays as columns:
 
-* To concatenate a string to each line of the ``ls`` command output:
+.. code-block:: console
 
-    .. code-block:: console
+    $ a=(A B C)
+    $ b=(1 2 3)
+    $ paste <(printf "%s\n" "${a[@]}") <(printf "%s\n" "${b[@]}")
 
-        $ ls | xargs -i echo "Hello World {}"
+To echo tab characters:
 
-* To combine arrays as columns:
+.. code-block:: console
 
-    .. code-block:: console
+    $ echo Hello$'\t'World
 
-        $ a=(A B C)
-        $ b=(1 2 3)
-        $ paste <(printf "%s\n" "${a[@]}") <(printf "%s\n" "${b[@]}")
+To read file names in the current directory into an array:
 
-* To echo tab characters:
+.. code-block:: console
 
-    .. code-block:: console
+    $ a=(*)
 
-        $ echo Hello$'\t'World
+To redirect stdout and stderr:
 
-* To read file names in the current directory into an array:
+.. code-block:: console
 
-    .. code-block:: console
-
-        $ a=(*)
-
-* To redirect stdout and stderr:
-
-    .. code-block:: console
-
-        $ some_command > out_file 2>error_file
+    $ some_command > out_file 2>error_file
 
 To create a hard link or a symbolic link to an existing file or directory:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ ln -s original_file new_file
+    $ ln -s original_file new_file
 
 To change group ownership:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ chgrp -R group_name *
+    $ chgrp -R group_name *
 
 awk
 ===
