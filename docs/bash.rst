@@ -7,57 +7,57 @@ Frequently used commands for Bash
 Checksum
 --------
 
-* To determine SHA-512 checksum:
+To determine SHA-512 checksum:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ shasum -a 256 example.txt
+    $ shasum -a 256 example.txt
 
-* To determine MD5 checksum:
+To determine MD5 checksum:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ md5sum example.txt
+    $ md5sum example.txt
 
-* To determine MD5 checksum in macOS:
+To determine MD5 checksum in macOS:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ md5 example.txt
+    $ md5 example.txt
 
 List things
 -----------
 
-* To list one file per line:
+To list one file per line:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ ls -1 dir_name
+    $ ls -1 dir_name
 
-* To list files in a space-separated view:
+To list files in a space-separated view:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ ls dir_name | tr '\n' ' '
-        $ tr '\n' ' ' < list.txt
+    $ ls dir_name | tr '\n' ' '
+    $ tr '\n' ' ' < list.txt
 
-* To list all environment variables:
+To list all environment variables:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ set
+    $ set
 
-* To list all currently running processes:
+To list all currently running processes:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ ps aux
+    $ ps aux
 
-    Here, the ``aux`` option means:
+Here, the ``aux`` option means:
 
-    * ``a`` - show processes for all users
-    * ``u`` - show the process's owner
-    * ``x`` - show processes not attached to a terminal
+* ``a`` - show processes for all users
+* ``u`` - show the process's owner
+* ``x`` - show processes not attached to a terminal
 
 Zipped files
 ------------
@@ -92,17 +92,23 @@ Count things
 Estimate size
 -------------
 
-* To estimate storage size:
+To estimate storage size:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ df -h
+    $ df -h
 
-* To estimate directory size:
+To estimate directory size:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ du -sh dir_name
+    $ du -sh dir_name
+
+To estimate a server's memory usage
+
+.. code-block:: console
+
+    $ free -m
 
 Comparison
 ----------
@@ -658,77 +664,84 @@ To print error message from a job:
 Parallel environment
 ^^^^^^^^^^^^^^^^^^^^
 
-* To list all parallel environments:
+To list all parallel environments:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ qconf -spl
+    $ qconf -spl
 
-* To print the configuration of a parallel environment:
+To print the configuration of a parallel environment:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ qconf -sp pe_name
+    $ qconf -sp pe_name
 
 Queue configuration
 ^^^^^^^^^^^^^^^^^^^
 
-* To list all queues:
+To list all queues:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ qconf -sql
+    $ qconf -sql
 
-* To print the configuration of a queue:
+To print the configuration of a queue:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ qconf -sq queue_name
+    $ qconf -sq queue_name
 
-* To list all administrative hosts (i.e. nodes for submitting jobs):
+To list all administrative hosts (i.e. nodes for submitting jobs):
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ qconf -sh
+    $ qconf -sh
 
-* To list all execution hosts (i.e. nodes for running jobs):
+To list all execution hosts (i.e. nodes for running jobs):
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ qconf -sel
+    $ qconf -sel
+
+To show the resources available for each node:
+
+.. code-block:: console
+
+    $ qhost -F
+    $ qhost -F -h node_name
 
 Queue status
 ^^^^^^^^^^^^
 
-* To print the status of all queues:
+To print the status of all queues:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ qstat -g c
+    $ qstat -g c
 
-* To print the availability of all queues:
+To print the availability of all queues:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ qstat -f
+    $ qstat -f
 
-* To print the availability of a queue:
+To print the availability of a queue:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ qstat -f -q queue_name
+    $ qstat -f -q queue_name
 
-* To print all jobs currently occupying a queue:
+To print all jobs currently occupying a queue:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ qstat -u "*" | grep "queue_name"
+    $ qstat -u "*" | grep "queue_name"
 
-* To print the status of a host:
+To print the status of a host:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ qhost -h host_name
+    $ qhost -h host_name
 
 Command not found error
 -----------------------

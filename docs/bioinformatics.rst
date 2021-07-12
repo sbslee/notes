@@ -502,10 +502,13 @@ Create a panel of normals (PoN)
 
 Step 1. Run Mutect2 in tumor-only mode for each normal sample.
 
+Note that as of May, 2019 -max-mnp-distance must be set to zero to avoid a bug in GenomicsDBImport.
+
 .. code-block:: text
 
     gatk Mutect2 \
     -R ref.fa \
+    -max-mnp-distance 0 \
     -I normal1.bam \
     -O normal1.vcf.gz \
 
@@ -533,6 +536,17 @@ Step 3. Combine the normal calls using CreateSomaticPanelOfNormals.
 References:
 
     - `CreateSomaticPanelOfNormals (BETA) <https://gatk.broadinstitute.org/hc/en-us/articles/360037227652-CreateSomaticPanelOfNormals-BETA->`__
+
+Java options
+------------
+
+.. code-block:: text
+
+    gatk --java-options "-Xmx4g -Xms4g"
+
+The flag ``-Xmx`` specifies the maximum memory allocation pool for a Java Virtual Machine (JVM), while ``-Xms`` specifies the initial memory allocation pool.
+
+The ``-Xmx`` value the tool is run with should be less than the total amount of physical memory available by at least a few GB, as the native TileDB library requires additional memory on top of the Java memory. Failure to leave enough memory for the native code can result in confusing error messages!
 
 Agilent Genomics NextGen Toolkit (AGeNT)
 ========================================
