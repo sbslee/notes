@@ -409,6 +409,14 @@ The GATK resource bundle is a collection of standard files for working with huma
     $ ftp> mget 1000G_phase1.indels.b37.*
     $ ftp> ls Mills_and_1000G_gold_standard.indels.b37.vcf*
 
++-----------------------------------------+-----------+---------------+---------------------------------------------------------------------------------------------------------+
+| File                                    | File size | Last accessed | URL                                                                                                     |
++=========================================+===========+================+========================================================================================================+
+| af-only-gnomad.raw.sites.b37.vcf.gz     | 3.33 GB   | 2021-07-13    | ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/Mutect2/af-only-gnomad.raw.sites.b37.vcf.gz     |
++-----------------------------------------+-----------+---------------+---------------------------------------------------------------------------------------------------------+
+| af-only-gnomad.raw.sites.b37.vcf.gz.tbi | 2.5 MB    | 2021-07-13    | ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/Mutect2/af-only-gnomad.raw.sites.b37.vcf.gz.tbi |
++-----------------------------------------+-----------+---------------+---------------------------------------------------------------------------------------------------------+
+
 Process the reference genome
 ----------------------------
 
