@@ -4,78 +4,85 @@ Bioinformatics
 Frequently used commands for Bioinformatics
 ===========================================
 
-* To extract regions from a BED file:
+To extract regions from a BED file:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ awk '{print $1":"$2"-"$3}' example.bed | sed 's/chr//g' > regions.list
+    $ awk '{print $1":"$2"-"$3}' example.bed | sed 's/chr//g' > regions.list
 
-* To zip a VCF file:
+To zip a VCF file:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ bgzip -c sample.vcf > sample.vcf.gz
+    $ bgzip -c sample.vcf > sample.vcf.gz
 
-* To index a VCF file:
+To index a VCF file:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ tabix -p vcf sample.vcf.gz
+    $ tabix -p vcf sample.vcf.gz
 
-* To slice a VCF file:
+To rename the ``chr`` string in a VCF file:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ tabix -h sample.vcf.gz chr1:1000-2000 > sliced.vcf.gz
+    $ echo "1 chr1" >> chr_name_conv.txt
+    $ echo "2 chr2" >> chr_name_conv.txt
+    $ bcftools annotate --rename-chrs chr_name_conv.txt original.vcf.gz | bgzip > rename.vcf.gz
 
-* To slice a VCF file without using tabix:
+To slice a VCF file:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ zcat sample.vcf.gz | awk '{OFS="\t"; if ($2 > 1000 && $2 < 2000){ print }}'
+    $ tabix -h sample.vcf.gz chr1:1000-2000 > sliced.vcf.gz
 
-* To count the number of sequence reads in a FASTQ file:
+To slice a VCF file without using tabix:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ echo $(cat sample.fastq | wc -l) / 4 | bc
+    $ zcat sample.vcf.gz | awk '{OFS="\t"; if ($2 > 1000 && $2 < 2000){ print }}'
 
-* To count the number of sequence reads in a zipped FASTQ file:
+To count the number of sequence reads in a FASTQ file:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ echo $(zcat sample.fastq | wc -l) / 4 | bc
+    $ echo $(cat sample.fastq | wc -l) / 4 | bc
 
-* To count the number of sequence reads in a zipped FASTQ file (macOS):
+To count the number of sequence reads in a zipped FASTQ file:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ echo $(zcat < sample.fastq.gz | wc -l) / 4 | bc
+    $ echo $(zcat sample.fastq | wc -l) / 4 | bc
 
-* To extract only sequence reads from a zipped FASTQ file:
+To count the number of sequence reads in a zipped FASTQ file (macOS):
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ zcat sample.fastq.gz | awk '{if (NR% 4 == 2) print $0}'
+    $ echo $(zcat < sample.fastq.gz | wc -l) / 4 | bc
 
-* To extract exon coordinates for a gene:
+To extract only sequence reads from a zipped FASTQ file:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ grep -w "CYP2A6" Homo_sapiens.GRCh37.75.gtf | grep "CYP2A6-001" | grep -w "exon" | cut -f 1,4,5,9 -d$'\t' | cut -f 1,3 -d';' | sed 's/gene_id "ENSG00000255974"; //g'
+    $ zcat sample.fastq.gz | awk '{if (NR% 4 == 2) print $0}'
 
-* To extract rpkm values from a .gct file:
+To extract exon coordinates for a gene:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ printf "`echo $sample`\t`grep -w "CYP2A7" /net/grc/vol6/data/processed/samples/$sample/RNA_SEQ/qc/genes.rpkm.gct`\n"
+    $ grep -w "CYP2A6" Homo_sapiens.GRCh37.75.gtf | grep "CYP2A6-001" | grep -w "exon" | cut -f 1,4,5,9 -d$'\t' | cut -f 1,3 -d';' | sed 's/gene_id "ENSG00000255974"; //g'
 
+To extract rpkm values from a .gct file:
 
-* To extract sequence headers from a FASTA file:
+.. code-block:: console
 
-    .. code-block:: console
+    $ printf "`echo $sample`\t`grep -w "CYP2A7" /net/grc/vol6/data/processed/samples/$sample/RNA_SEQ/qc/genes.rpkm.gct`\n"
 
-        $ grep -e ">" example.fasta
+To extract sequence headers from a FASTA file:
+
+.. code-block:: console
+
+    $ grep -e ">" example.fasta
 
 GTCtoVCF
 ========
