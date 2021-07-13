@@ -647,11 +647,23 @@ To delete a specific job:
 
     $ qdel job_id
 
-To print error message from a job:
+To monitor resuource usage:
+
+.. code-block:: console
+
+    $ qstat -j job_id
+
+To print error message from a running job:
 
 .. code-block:: console
 
     $ qstat -j job_id | grep "error"
+
+To print error message from a finished job:
+
+.. code-block:: console
+
+    $ qacct -j job_id | grep "error"
 
 Parallel environment
 ^^^^^^^^^^^^^^^^^^^^
@@ -743,3 +755,24 @@ In some servers, even when a user submits a simple script to SGE, as simple as d
 .. code-block:: console
 
     #$ -S /bin/sh
+
+Usage monitoring
+----------------
+
+.. code-block:: console
+
+    $ qstat -j job_id
+
++---------+----------------------------------------------+----------------+
+| Key     | Description                                  | Examples       |
++=========+==============================================+================+
+| cpu     | Total processing time                        | '00:00:08'     |
++---------+----------------------------------------------+----------------+
+| mem     | Accumulated RAM of the job in Gbytes seconds | '80.89515 GBs' |
++---------+----------------------------------------------+----------------+
+| io      | Total I/O usage                              | '0.07841'      |
++---------+----------------------------------------------+----------------+
+| vmem    | Currently available RAM for the job          | '9.633G'       |
++---------+----------------------------------------------+----------------+
+| maxvmem | Maximum RAM of the job when it was running   | '9.633G'       |
++---------+----------------------------------------------+----------------+
