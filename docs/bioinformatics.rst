@@ -512,6 +512,14 @@ Mutect2 AD does not match AF
 
 Sometimes, Mutect2 produces a variant call where AD does not match AF. For example, I once had sample genotype ``0|1:765,0:0.001813:765`` for ``GT:AD:AF:DP`` which, at the first glance, does not make any sense because AD is 0 while AF is greater than 0. Then I found this `post <https://sites.google.com/a/broadinstitute.org/legacy-gatk-forum-discussions/2019-02-11-2018-08-12/23408-MuTect2-AD-does-not-match-AF>`__ that explained the discrepancy. Basically, it was Mutect2's "probabilistic guesses about AF. If, for example, the normal has 100 ref reads, each of which has a 1% chance of actually being alt, the AF will be reported as 0.01."
 
+According to this GATK `post <https://gatk.broadinstitute.org/hc/en-us/community/posts/360057612291-calculateContamination-step-with-multi-tumor-samples>`__:
+
+  jungmin choi Yes, the GT field is Mutect2 output is not meaningful.
+
+According to this GATK `post <https://gatk.broadinstitute.org/hc/en-us/community/posts/360062528691-mutect2-multi-sample->`__:
+
+  Tumor samples are assumed to be from the same patient, all normal samples are pooled into a single matched normal (it's as if all normal samples were merged into a single read group), and each tumor is called against this pooled normal.  The effect of joint calling is to combine the local assembly of all tumors and to increase statistical power to find variants with low allele fraction.
+
 Create a panel of normals (PoN)
 -------------------------------
 
