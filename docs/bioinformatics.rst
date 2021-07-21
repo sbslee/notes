@@ -315,6 +315,10 @@ Pipeline for germline short variant discovery
 
 This pipeline is based on GATK Team's Best Practices Workflows for `Germline short variant discovery (SNPs + Indels) <https://gatk.broadinstitute.org/hc/en-us/articles/360035535932-Germline-short-variant-discovery-SNPs-Indels->`__.
 
+Official documentation page for Mutect2:
+
+https://github.com/broadinstitute/gatk/blob/master/docs/mutect/mutect.pdf
+
 Call variants per-sample
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
