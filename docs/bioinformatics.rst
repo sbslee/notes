@@ -629,14 +629,6 @@ References
 - https://www.agilent.com/en/product/next-generation-sequencing/hybridization-based-next-generation-sequencing-ngs/ngs-software/agent-232879
 - https://www.agilent.com/cs/library/software/Public/AGeNT%20ReadMe.pdf
 
-Illumina
-========
-
-Adapter sequences
------------------
-
-Here's the `link <https://www.eurofinsgenomics.eu/media/1610545/illumina-adapter-sequences.pdf>`__ to Illumina's adapter sequences.
-
 Ensembl
 =======
 
@@ -750,3 +742,22 @@ I finally found the FASTA file I want (hs37d5.fa.gz from the 1000 Genomes Projec
     $ wget -c --retry-connrefused ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz
 
 the FTP transfer would be interrupted. Even though the download gets restarted automatically, the final file is always corrupted and cannot be unzipped.
+
+Adapter sequences
+=================
+
+Here's the `link <https://www.eurofinsgenomics.eu/media/1610545/illumina-adapter-sequences.pdf>`__ to Illumina's adapter sequences.
+
+When read length exceeds DNA insert size, a run can sequence beyond the DNA insert and read bases from the sequencing adapter. To prevent these bases from appearing in FASTQ files, the adapter sequence is trimmed from the 3′ ends of reads. Trimming the adapter sequence improves alignment accuracy and performance in Illumina FASTQ generation pipelines.
+
+Illumina makes their adapter sequences available in the `Illumina Adapter Sequences Document <https://support.illumina.com/downloads/illumina-adapter-sequences-document-1000000002694.html>`__.
+
+Examples:
+
+  - `TruSeq DNA and RNA CD Indexes <https://support-docs.illumina.com/SHARE/AdapterSeq/Content/SHARE/AdapterSeq/TruSeq/CDIndexes.htm>`__
+
+.. image:: images/AdapterTrimming.png
+
+References:
+
+  - `Illumina Adapter Sequences <https://support-docs.illumina.com/SHARE/AdapterSeq/Content/SHARE/AdapterSeq/AdapterSequencesIntro.htm>`__
