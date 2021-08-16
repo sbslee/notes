@@ -761,3 +761,34 @@ Examples:
 References:
 
   - `Illumina Adapter Sequences <https://support-docs.illumina.com/SHARE/AdapterSeq/Content/SHARE/AdapterSeq/AdapterSequencesIntro.htm>`__
+
+pysam
+=====
+
+https://pysam.readthedocs.io/en/latest/usage.html#creating-bam-cram-sam-files-from-scratch
+
+.. code:: python3
+
+    import pysam
+    header = {
+        'HD': {'VN': '1.0'},
+        'SQ': [{'LN': 1575, 'SN': 'chr1'}, {'LN': 1584, 'SN': 'chr2'}],
+        'RG': [{'SM': 'A'}]
+    }
+
+    with pysam.AlignmentFile('A.bam', "wb", header=header) as outf:
+        a = pysam.AlignedSegment()
+        a.query_name = "read_28833_29006_6945"
+        a.query_sequence="AGCTTAGCTAGCTACCTATATCTTGGTCTTGGCCG"
+        a.flag = 99
+        a.reference_id = 0
+        a.reference_start = 32
+        a.mapping_quality = 20
+        a.cigar = ((0,10), (2,1), (0,25))
+        a.next_reference_id = 0
+        a.next_reference_start=199
+        a.template_length=167
+        a.query_qualities = pysam.qualitystring_to_array("<<<<<<<<<<<<<<<<<<<<<:<9/,&,22;;<<<")
+        a.tags = (("NM", 1),
+                  ("RG", "L1"))
+        outf.write(a)
