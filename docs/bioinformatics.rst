@@ -762,6 +762,15 @@ References:
 
   - `Illumina Adapter Sequences <https://support-docs.illumina.com/SHARE/AdapterSeq/Content/SHARE/AdapterSeq/AdapterSequencesIntro.htm>`__
 
+TOPMed Imputation Server
+========================
+
+https://imputation.biodatacatalyst.nhlbi.nih.gov
+
+Login is required.
+
+The input VCF file must be compressed and indexed (.vcf.gz). When uploading the VCF file, you must upload the index file (.vcf.gz.tbi) as well.
+
 pysam
 =====
 
