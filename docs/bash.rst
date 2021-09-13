@@ -605,6 +605,8 @@ You can now access server C directly by:
 Sun Grid Engine (SGE)
 =====================
 
+[This](https://bioinformatics.mdc-berlin.de/intro2UnixandSGE/sun_grid_engine_for_beginners/how_to_submit_a_job_using_qsub.html) website has good overview on how to submit a job using qsub.
+
 Frequently used commands for SGE
 --------------------------------
 
