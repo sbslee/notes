@@ -4,101 +4,107 @@ GitHub
 Frequently used commands for GitHub
 ===================================
 
-* To clone a repository:
+Clone a repository:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ git clone repo_url
+    $ git clone repo_url
 
-* To add changes to the staging area:
+Add all changes to the staging area:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ git add -A
+    $ git add -A
 
-* To commit the changes:
+Commit changes:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ git commit -m "message"
+    $ git commit -m "put message here"
 
-* To show the current branch:
+Show current branch:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ git branch
+    $ git branch
 
-* To create a new branch:
+Create a new branch:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ git branch branch_name
+    $ git branch branch_name
 
-* To switch to a different branch:
+Switch to an existing branch:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ git checkout branch_name
+    $ git checkout branch_name
 
-* To list all existing branches:
+Create and switch to a new branch simultaneously:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ git branch -a
+    $ git checkout -b branch_name
 
-* To clone a specific branch:
+List all existing branches:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ git clone repo_url
-        $ git branch -a
-        $ git checkout branch_name
+    $ git branch -a
 
-* To push to master:
+Clone a specific branch:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ git push origin master
+    $ git clone repo_url
+    $ git branch -a
+    $ git checkout branch_name
 
-* To push to a specific branch:
+Push commits to master:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ git push origin branch_name
+    $ git push origin master
 
-* To update the local repo:
+Push commits to a specific branch:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ git pull
+    $ git push origin branch_name
 
-* To merge a branch into master:
+Update the local repo:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ git checkout master
-        $ git merge branch_name
+    $ git pull
 
-* To delete a local branche:
+Merge a branch into master:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ git branch -d branch_name
+    $ git checkout master
+    $ git merge branch_name
 
-* To delete a remote branch:
+Delete a local branche:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ git push origin --delete branch_name
+    $ git branch -d branch_name
 
-* To update the email address of user:
+Delete a remote branch:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ git config user.email example@gmail.com
+    $ git push origin --delete branch_name
 
-* To delete a remote Git tag:
+Update email address of user:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ git push --delete origin tag_name
+    $ git config user.email example@gmail.com
+
+Delete a remote Git tag:
+
+.. code-block:: console
+
+    $ git push --delete origin tag_name
