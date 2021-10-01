@@ -122,6 +122,12 @@ Comparison
 Check things
 ------------
 
+Check if the system has a proxy server:
+
+.. code-block:: text
+
+    $ env | grep "proxy"
+
 Check if the system is running a 32-bit or 64-bit OS:
 
 .. code-block:: text
