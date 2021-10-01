@@ -122,6 +122,12 @@ Comparison
 Check things
 ------------
 
+Check if the system is running a 32-bit or 64-bit OS?
+
+.. code-block:: console
+
+    $ uname -a
+
 * To check whether a file exists or not:
 
     .. code-block:: console
