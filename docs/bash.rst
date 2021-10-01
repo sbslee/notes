@@ -122,33 +122,33 @@ Comparison
 Check things
 ------------
 
-Check if the system is running a 32-bit or 64-bit OS?
+Check if the system is running a 32-bit or 64-bit OS:
 
-.. code-block:: console
+.. code-block:: text
 
     $ uname -a
 
-* To check whether a file exists or not:
+Check whether a file exists or not:
 
-    .. code-block:: console
+.. code-block:: text
 
-        if test -f example.txt
-        then
-          echo "Found"
-        else
-          echo "Not found"
-        fi
+    if test -f example.txt
+    then
+      echo "Found"
+    else
+      echo "Not found"
+    fi
 
-* To check whether a variable exists or not:
+Check whether a variable exists or not:
 
-    .. code-block:: console
+.. code-block:: text
 
-        if [ -z ${LC_ALL+x} ]
-        then
-          echo "LC_ALL is unset"
-        else
-          echo "LC_ALL is set to '$LC_ALL'"
-        fi
+    if [ -z ${LC_ALL+x} ]
+    then
+      echo "LC_ALL is unset"
+    else
+      echo "LC_ALL is set to '$LC_ALL'"
+    fi
 
 Module
 ------
