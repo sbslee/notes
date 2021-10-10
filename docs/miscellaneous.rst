@@ -168,7 +168,7 @@ Fuel Injection Perfection
     print(solution("15")) # 5
     
 Free the Bunny Workers
-======================
+----------------------
 
 `Reference <https://vitaminac.github.io/Google-Foobar-Free-the-Bunny-Prisoners/>`__
 
