@@ -129,3 +129,65 @@ Bomb, Baby!
     print solution('2', '1')         # 1
     print solution('2', '4')         # 'impossible'
     print solution('54000', '30000') # 'impossible'
+
+Fuel Injection Perfection
+-------------------------
+
+`Reference <https://gist.github.com/thorstenhirsch/f14842aaeb2d2073e18ec91211ec3875>`__
+
+.. code-block:: note
+
+    def solution(n):
+        n = int(n)
+
+        counter = 0
+
+        while n > 3:
+            if n & 1:
+                if n & 2:
+                    n = (n + 1) >> 2
+                    counter += 3
+                else:
+                    n = (n - 1) >> 1
+                    counter += 2
+            else:
+                n = n >> 1
+                counter += 1
+
+        if n == 3:
+            n = n - 1
+            counter += 1
+
+        if n == 2:
+            n = n - 1
+            counter += 1
+
+        return counter
+
+    print(solution("4"))  # 2
+    print(solution("15")) # 5
+    
+Free the Bunny Workers
+======================
+
+`Reference <https://vitaminac.github.io/Google-Foobar-Free-the-Bunny-Prisoners/>`__
+
+.. code-block:: note
+
+    from itertools import combinations
+
+    def solution(num_buns, num_required):
+        keyrings = [[] for num in range(num_buns)]
+        copies_per_key = num_buns - num_required + 1
+        for key, bunnies in enumerate(combinations(range(num_buns), copies_per_key)):
+            for bunny in bunnies:
+                keyrings[bunny].append(key)
+
+        return keyrings
+
+    print solution(2, 1)
+    print solution(4, 4)
+    print solution(5, 3)
+    print solution(3, 1)
+    print solution(2, 2)
+    print solution(3, 2)
