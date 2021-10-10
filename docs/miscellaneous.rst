@@ -105,3 +105,27 @@ Find the Access Codes
     print solution([1, 1, 1])              # Gives 1 - [1, 1, 1]
     print solution([1, 2, 3, 4, 5, 6])     # Gives 3 - [1, 2, 4], [1, 2, 6], [1, 3, 6]
     print solution([1, 2, 3, 4, 5, 6, 10]) # Gives 5 - [1, 2, 4], [1, 2, 6], [1, 2, 10], [1, 3, 6], [1, 5, 10]
+
+Bomb, Baby!
+-----------
+
+`Reference <https://dev.to/itepsilon/foobar-bomb-baby-3l1>`__
+
+`Reference <https://github.com/ivanseed/google-foobar-help/blob/master/challenges/bomb_baby/bomb_baby.md>`__
+
+.. code-block:: note
+
+    def solution(x, y):
+        M, F = max(int(x), int(y)), min(int(x), int(y))
+        res = 0
+        while F > 0:
+            res += M // F
+            M, F = F, M % F
+        if M != 1:
+            return 'impossible'
+        return str(res - 1)
+
+    print solution('4', '7')         # 4
+    print solution('2', '1')         # 1
+    print solution('2', '4')         # 'impossible'
+    print solution('54000', '30000') # 'impossible'
