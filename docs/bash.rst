@@ -398,26 +398,35 @@ Frequently used commands for vi and vim
 
     Press the ``Esc`` key and then press the ``Shift`` and ``G`` keys together.
 
-For loop
-========
+Looping through
+===============
 
-* To print every line of a file:
+Print every line of a file:
 
-    .. code-block:: console
+.. code-block:: console
 
-        for x in `cat example.txt`
-        do
-          echo "$x"
-        done
+    for x in `cat example.txt`
+    do
+      echo "$x"
+    done
 
-* To print the second column:
+Print only the second column:
 
-    .. code-block:: console
+.. code-block:: console
 
-        for x in `awk '{print $2}' example.txt`
-        do
-          echo "$x"
-        done
+    for x in `awk '{print $2}' example.txt`
+    do
+      echo "$x"
+    done
+
+Print multiple columns:
+
+.. code-block:: console
+
+    while read -r first second
+    do 
+      echo "$first and $second"
+    done < input.txt
 
 Arrays
 ======
