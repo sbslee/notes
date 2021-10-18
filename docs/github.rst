@@ -108,3 +108,27 @@ Delete a remote Git tag:
 .. code-block:: console
 
     $ git push --delete origin tag_name
+
+Problem with the SSL CA cert
+============================
+
+I encountered below error in the company's server:
+
+.. code-block:: text
+
+    $ git clone https://github.com/sbslee/dokdo
+    Cloning into 'dokdo'...
+    fatal: unable to access 'https://github.com/sbslee/dokdo': Problem with the SSL CA cert (path? access rights?)
+
+I solved it with:
+
+.. code-block:: text
+
+    $ git config --global http.sslVerify false
+    $ git clone https://github.com/sbslee/dokdo
+    
+I then restored the verification setting:
+    
+.. code-block:: text
+
+    $ git config --global http.sslVerify true
