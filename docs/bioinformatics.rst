@@ -208,53 +208,59 @@ SAMtools
 Frequently used commands for SAMtools
 -------------------------------------
 
-* To extract the sequence reads of a BAM file:
+Extract sequence reads of a BAM file:
 
-    .. code-block:: console
+.. code-block:: text
 
-        $ samtools view sample.bam
+    $ samtools view in.bam
 
-* To extract the header of a BAM file:
+Extract the header of a BAM file:
 
-    .. code-block:: console
+.. code-block:: text
 
-        $ samtools view -H sample.bam
+    $ samtools view -H in.bam
 
-* To index a BAM file:
+Index a BAM file:
 
-    .. code-block:: console
+.. code-block:: text
 
-        $ samtools index sample.bam
+    $ samtools index in.bam
 
-* To index a FASTA file:
+Index a FASTA file:
 
-    .. code-block:: console
+.. code-block:: text
 
-        $ samtools faidx ref.fa -o ref.fa.fai
+    $ samtools faidx ref.fa -o ref.fa.fai
 
-* To slice a BAM file:
+Slice a BAM file:
 
-    .. code-block:: console
+.. code-block:: text
 
-        $ samtools view -b sample.bam "chr1:1000-2000" > sliced.bam
+    $ samtools view -b in.bam "chr1:10-20" > out.bam
 
-* To merge two BAM files:
+Merge two BAM files:
 
-    .. code-block:: console
+.. code-block:: text
 
-        $ samtools merge merged.bam run1.bam run2.bam
+    $ samtools merge -o out.bam in1.bam in2.bam
 
-* To extract the sample ID from a BAM file:
+Get sample ID for a BAM file:
 
-    .. code-block:: console
+.. code-block:: text
 
-        $ samtools view -H sample.bam | grep "^@RG" | sed "s/.*SM:\([^\t]*\).*/\1/g" | uniq
+    $ samtools view -H sample.bam | grep "^@RG" | sed "s/.*SM:\([^\t]*\).*/\1/g" | uniq
 
-* To estimate the read length of a BAM file:
+Get read length for a BAM file:
 
-    .. code-block:: console
+.. code-block:: text
 
-        $ samtools view sample.bam | head -n 1000000 | cut -f 10 | perl -ne 'chomp;print length($_) . "\n"' | sort | uniq -c
+    $ samtools view in.bam | head -n 1000000 | cut -f 10 | perl -ne 'chomp;print length($_) . "\n"' | sort | uniq -c
+
+Get coverage over regions from multiple BAM files:
+
+.. code-block:: text
+
+    $ xargs -a bam.list samtools bedcov in.bed > out.txt
 
 BCFtools
 ========
