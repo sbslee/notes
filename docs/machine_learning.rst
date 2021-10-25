@@ -22,3 +22,22 @@ Multiclass and multioutput algorithms
 References:
 
   - `scikit-learn: Multiclass and multioutput algorithms <https://scikit-learn.org/stable/modules/multiclass.html>`__
+
+One-hot encoding
+================
+
+Many machine learning algorithms cannot operate on label data directly. They require all input variables and output variables to be numeric. For categorical variables where no such ordinal relationship exists, the one-hot encoding is necessary.
+
++-----+-------+------+
+| red | green | blue |
++=====+=======+======+
+| 1   | 0     | 0    |
++-----+-------+------+
+| 0   | 1     | 0    |
++-----+-------+------+
+| 0   | 0     | 1    |
++-----+-------+------+
+
+References:
+
+  - `Why One-Hot Encode Data in Machine Learning? <https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/>`__
