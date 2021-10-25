@@ -7,26 +7,26 @@ Frequently used commands for Python
 Virtual environment
 -------------------
 
-* To create a virtual environment:
+Create a virtual environment:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ python3 -m venv ve_name
+    $ python3 -m venv ve_name
 
-* To activate a virtual environment:
+Activate a virtual environment:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ source ve_name/bin/activate
+    $ source ve_name/bin/activate
 
 pandas
 ------
 
-* To set a new column:
+Assign data to a new column:
 
-    .. code:: python3
+.. code:: python3
 
-        df = df.assign(new_column=new_column)
+    df = df.assign(new_column=new_column)
 
 Pipe through Python script
 ==========================
@@ -66,49 +66,49 @@ Package development
 Frequently used commands for package development
 ------------------------------------------------
 
-* To set up the working environment:
+Set up a working environment:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ conda install wheel
-        $ conda install twine
-        $ conda install setuptools
+    $ conda install wheel
+    $ conda install twine
+    $ conda install setuptools
 
-* To build the distribution files:
+Build package distribution files:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ python3 setup.py sdist bdist_wheel
+    $ python3 setup.py sdist bdist_wheel
 
-* To check the distribution files before uploading to PyPi:
+Check distribution files before uploading to PyPI:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ twine check dist/*
+    $ twine check dist/*
 
-* To upload the distribution files to Test PyPi:
+Upload distribution files to PyPI:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+    $ twine upload dist/*
 
-* To upload the distribution files to PyPi:
+Upload distribution files to Test PyPI:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ twine upload dist/*
+    $ twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
-* To install a package:
+Install a package:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ pip install package_name
+    $ pip install package_name
 
-* To install a package in the development mode:
+Install a package in the development mode:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ pip install -e .
+    $ pip install -e .
 
 Some commands worth to remember:
 
