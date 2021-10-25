@@ -63,9 +63,6 @@ If you saved that as foo.py, then you'd run it with:
 Package development
 ===================
 
-Frequently used commands for package development
-------------------------------------------------
-
 Set up a working environment:
 
 .. code-block:: console
