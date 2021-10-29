@@ -45,7 +45,7 @@ This is the generalization of t-test.
 Wilcoxon Rank-sum test
 ----------------------
 
-This is a non-parametric test. It's also called Wilcoxon rank-sum test. Here, you have two possibile methods: ``scipy.stats.mannwhitneyu`` and ``scipy.stats.ranksums``. I recommend the former.
+This is a non-parametric test. It's also called Mann–Whitney U test. Here, you have two possibile methods: ``scipy.stats.mannwhitneyu`` and ``scipy.stats.ranksums``. Note that ``scipy.stats.ranksums`` should be used to compare two samples from continuous distributions. It does not handle ties between measurements in x and y. Therefore, I recommend using ``scipy.stats.mannwhitneyu`` for all cases because of its tie-handling and an optional continuity correction.
 
 Wilcoxon Signed-rank test
 -------------------------
@@ -67,6 +67,16 @@ Fisher's exact test is a statistical significance test used in the analysis of c
 References:
 
   - `Fisher's exact test <https://en.wikipedia.org/wiki/Fisher%27s_exact_test>`__
+
+Levene's test
+-------------
+
+It is an inferential statistic used to assess the equality of variances for a variable calculated for two or more groups. Some common statistical procedures assume that variances of the populations from which different samples are drawn are equal. Levene's test assesses this assumption. It tests the null hypothesis that the population variances are equal (called homogeneity of variance or homoscedasticity). If the resulting p-value of Levene's test is less than some significance level (typically 0.05), the obtained differences in sample variances are unlikely to have occurred based on random sampling from a population with equal variances. Thus, the null hypothesis of equal variances is rejected and it is concluded that there is a difference between the variances in the population. Levene's test is implemented in the method ``scipy.stats.levene``. Some of the procedures typically assuming homoscedasticity, for which one can use Levene's tests, include analysis of variance and t-tests.
+
+Shapiro-Wilk test
+-----------------
+
+The Shapiro-Wilk test (``scipy.stats.shapiro``) tests the null hypothesis that the data was drawn from a normal distribution.
 
 Confusing concepts
 ==================
