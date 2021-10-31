@@ -234,9 +234,6 @@ To set font size:
 
     ax.xaxis.label.set_size(20)
     ax.yaxis.label.set_size(20)
-    ax.tick_params(axis='x', which='major', labelsize=15)
-    ax.tick_params(axis='y', which='major', labelsize=15)
-    ax.tick_params(axis='both', which='major', labelsize=15)
     ax.set_title('My subplot title', fontsize=30)
 
 To move things:
@@ -267,6 +264,9 @@ To remove things:
     ax.spines['top'].set_visible(False)    # remove top spine
     ax.spines['bottom'].set_visible(False) # remove right spine
 
+Tick labels
+-----------
+
 To rotate tick labels:
 
 .. code:: python3
@@ -277,6 +277,20 @@ To rotate tick labels:
 
     # Method 2
     ax.set_xticklabels(ax.get_xticklabels(), rotation=45)
+
+To update text format:
+
+.. code:: python3
+
+    # Font style and weight
+    for ticklabel in ax.get_xticklabels():
+        ticklabel.set_fontstyle('italic')
+        ticklabel.set_fontweight('bold')
+
+    # Font size
+    ax.tick_params(axis='x', which='major', labelsize=15)
+    ax.tick_params(axis='y', which='major', labelsize=15)
+    ax.tick_params(axis='both', which='major', labelsize=15)
 
 Legend
 ------
