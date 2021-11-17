@@ -857,4 +857,27 @@ The main problem I had during installation was that I kept getting the following
                                               ^
     SyntaxError: invalid syntax
 
-It turns out the problem was caused because conda installed an incorrect version of the `decorator` package (v5.1.0). When I downgraded it to v4.4.1, it finally worked.
+It turns out the problem was caused because conda installed an incorrect version of the ``decorator`` package (v5.1.0). When I downgraded it to v4.4.1, it finally worked.
+
+But then I also ran into the following error:
+
+.. code-block:: text
+
+    (citup) [sbslee@cm401 site-packages]$ run_citup_iter.py freq.txt results.h5
+    min_nodes: 1, max_nodes: 4
+    Traceback (most recent call last):
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/bin/run_citup_iter.py", line 4, in <module>
+        __import__('pkg_resources').run_script('citup==0.1.0', 'run_citup_iter.py')
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pkg_resources/__init__.py", line 666, in run_script
+        self.require(requires)[0].run_script(script_name, ns)
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pkg_resources/__init__.py", line 1469, in run_script
+        exec(script_code, namespace, namespace)
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/citup-0.1.0-py2.7.egg/EGG-INFO/scripts/run_citup_iter.py", line 45, in <module>
+
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pypeliner/app.py", line 214, in __init__
+        config_filename=self.config['submit_config'])
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pypeliner/execqueue/factory.py", line 6, in create
+        raise Exception('No submit queue specified')
+    Exception: No submit queue specified
+
+This error was fixed by adding ``--submit local`` in the command.
