@@ -812,3 +812,49 @@ Illumina Sequencing Analysis Viewer
 ===================================
 
 https://sapac.support.illumina.com/sequencing/sequencing_software/sequencing_analysis_viewer_sav.html
+
+Citup
+=====
+
+Citup (clonality inference in tumors using phylogeny) is a tool for inferring tumor heterogeneity using multiple samples from a single patient. Given mutational frequencies for each sample, Citup uses an optimization based algorithm to find the evolutionary tree best explaining the data.
+
+There are currently two GitHub repositories that host the Citup code, `amcpherson/citup <https://github.com/amcpherson/citup>`__ and `sfu-compbio/citup <https://github.com/sfu-compbio/citup>`__, but I ended up using the former. Installation of Citup was not easy; its documentation is terriably outdated and there are not much help out in the Internet either. Also, it only support Linux.
+
+After a stuggle, I finally managed to install Citup using below:
+
+.. code-block:: text
+
+    (base) [sbslee@cm401 ~]$ conda create -n citup -c dranew citup
+
+The main problem I had during installation was that I kept getting the following error:
+
+.. code-block:: text
+
+    (citup) [sbslee@cm401 ~]$ run_citup_iter.py --help
+    Traceback (most recent call last):
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/bin/run_citup_iter.py", line 4, in <module>
+        __import__('pkg_resources').run_script('citup==0.1.0', 'run_citup_iter.py')
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pkg_resources/__init__.py", line 666, in run_script
+        self.require(requires)[0].run_script(script_name, ns)
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pkg_resources/__init__.py", line 1469, in run_script
+        exec(script_code, namespace, namespace)
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/citup-0.1.0-py2.7.egg/EGG-INFO/scripts/run_citup_iter.py", line 3, in <module>
+        __requires__ = 'citup==0.1.0'
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pypeliner/__init__.py", line 3, in <module>
+        import scheduler
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pypeliner/scheduler.py", line 10, in <module>
+        import pypeliner.graph
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pypeliner/graph.py", line 2, in <module>
+        import networkx
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/networkx/__init__.py", line 98, in <module>
+        import networkx.utils
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/networkx/utils/__init__.py", line 2, in <module>
+        from networkx.utils.decorators import *
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/networkx/utils/decorators.py", line 14, in <module>
+        from decorator import decorator
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/decorator.py", line 162
+        print('Error in generated code:', file=sys.stderr)
+                                              ^
+    SyntaxError: invalid syntax
+
+It turns out the problem was caused because conda installed an incorrect version of the `decorator` package (v5.1.0). When I downgraded it to v4.4.1, it finally worked.
