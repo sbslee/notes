@@ -7,47 +7,47 @@ Frequently used commands for Bash
 Checksum
 --------
 
-To determine SHA-512 checksum:
+Determine SHA-512 checksum:
 
-.. code-block:: console
+.. code-block:: text
 
     $ shasum -a 256 example.txt
 
-To determine MD5 checksum:
+Determine MD5 checksum:
 
-.. code-block:: console
+.. code-block:: text
 
     $ md5sum example.txt
 
-To determine MD5 checksum in macOS:
+Determine MD5 checksum in macOS:
 
-.. code-block:: console
+.. code-block:: text
 
     $ md5 example.txt
 
 List things
 -----------
 
-To list one file per line:
+List one file per line:
 
 .. code-block:: console
 
     $ ls -1 dir_name
 
-To list files in a space-separated view:
+List files in a space-separated view:
 
 .. code-block:: console
 
     $ ls dir_name | tr '\n' ' '
     $ tr '\n' ' ' < list.txt
 
-To list all environment variables:
+List all environment variables:
 
 .. code-block:: console
 
     $ set
 
-To list all currently running processes:
+List all currently running processes:
 
 .. code-block:: console
 
@@ -62,11 +62,11 @@ Here, the ``aux`` option means:
 Zipped files
 ------------
 
-* To create a .tar.gz file:
+Create a .tar.gz file:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ tar -czvf dir_name.tar.gz dir_name
+    $ tar -czvf dir_name.tar.gz dir_name
 
 * To unzip a .tar.gz file:
 
