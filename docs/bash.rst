@@ -30,26 +30,26 @@ List things
 
 List one file per line:
 
-.. code-block:: console
+.. code-block:: text
 
     $ ls -1 dir_name
 
 List files in a space-separated view:
 
-.. code-block:: console
+.. code-block:: text
 
     $ ls dir_name | tr '\n' ' '
     $ tr '\n' ' ' < list.txt
 
 List all environment variables:
 
-.. code-block:: console
+.. code-block:: text
 
     $ set
 
 List all currently running processes:
 
-.. code-block:: console
+.. code-block:: text
 
     $ ps aux
 
@@ -64,60 +64,60 @@ Zipped files
 
 Create a .tar.gz file:
 
-.. code-block:: console
+.. code-block:: text
 
     $ tar -czvf dir_name.tar.gz dir_name
 
-* To unzip a .tar.gz file:
+Unzip a .tar.gz file:
 
-    .. code-block:: console
+.. code-block:: text
 
-        $ tar -xf dir_name.tar.gz
+    $ tar -xf dir_name.tar.gz
 
 Count things
 ------------
 
-* To count unique lines in a file:
+Count unique lines in a file:
 
-    .. code-block:: console
+.. code-block:: text
 
-        $ sort example.txt | uniq -c | sort -bgr
+    $ sort example.txt | uniq -c | sort -bgr
 
-* To count files in a directory:
+Count files in a directory:
 
-    .. code-block:: console
+.. code-block:: text
 
-        $ find dir_name | wc -l
+    $ find dir_name | wc -l
 
 Estimate size
 -------------
 
-To estimate storage size:
+Estimate storage size:
 
-.. code-block:: console
+.. code-block:: text
 
     $ df -h
 
-To estimate directory size:
+Estimate directory size:
 
-.. code-block:: console
+.. code-block:: text
 
     $ du -sh dir_name
 
-To estimate a server's memory usage
+Estimate a server's memory usage
 
-.. code-block:: console
+.. code-block:: text
 
     $ free -m
 
 Comparison
 ----------
 
-* To find difference between two directories:
+Find difference between two directories:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ diff -qr dir_name1 dir_name2
+    $ diff -qr dir_name1 dir_name2
 
 Check things
 ------------
@@ -159,72 +159,72 @@ Check whether a variable exists or not:
 Module
 ------
 
-* To list currently loaded modules:
+List currently loaded modules:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ module list
+    $ module list
 
-* To load the latest version of a tool:
+Load the latest version of a tool:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ module load tool_name/latest
+    $ module load tool_name/latest
 
-* To list available modules:
+List available modules:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ module avail
+    $ module avail
 
-* To load module or specify which dependencies have not been loaded:
+Load module or specify which dependencies have not been loaded:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ module load modulefile
+    $ module load modulefile
 
 File transfer
 -------------
 
-* From local to server:
+From local to server:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ scp file.txt user_name@host_name:/path/to/destination
-        $ scp file1.txt file2.txt user_name@host_name:/path/to/destination
+    $ scp file.txt user_name@host_name:/path/to/destination
+    $ scp file1.txt file2.txt user_name@host_name:/path/to/destination
 
-* From server to local:
+From server to local:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ scp user_name@host_name:/path/to/server/file.txt /path/to/destination
-        $ scp -T user_name@host_name:"file1.txt file2.txt" "/path/to/destination"
+    $ scp user_name@host_name:/path/to/server/file.txt /path/to/destination
+    $ scp -T user_name@host_name:"file1.txt file2.txt" "/path/to/destination"
 
-* To copy all files in a directory from server to local:
+Copy all files in a directory from server to local:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ wget -r -c --no-parent --retry-connrefused /path/to/server/dir_name/
+    $ wget -r -c --no-parent --retry-connrefused /path/to/server/dir_name/
 
-    Here, the options mean:
+Here, the options mean:
 
-        * ``-r`` - turn on recursive retrieving
-        * ``-c`` - continue getting a partially-downloaded file
-        * ``--no-parent`` - do not ever ascend to the parent directory when retrieving recursively
-        * ``--retry-connrefused`` - consider "connection refused" a transient error and try again
+    * ``-r`` - turn on recursive retrieving
+    * ``-c`` - continue getting a partially-downloaded file
+    * ``--no-parent`` - do not ever ascend to the parent directory when retrieving recursively
+    * ``--retry-connrefused`` - consider "connection refused" a transient error and try again
 
-* To copy a directory:
+Copy entire directory:
 
-      .. code-block:: console
+.. code-block:: console
 
-          $ rsync -avzP source destination
+  $ rsync -avzP source destination
 
-      Here, the ``-avzP`` option means:
+Here, the ``-avzP`` option means:
 
-      * ``a`` - use archive mode
-      * ``v`` - be verbose
-      * ``z`` - compress file data during the transfer
-      * ``P`` - display progress and preserve partial files
+* ``a`` - use archive mode
+* ``v`` - be verbose
+* ``z`` - compress file data during the transfer
+* ``P`` - display progress and preserve partial files
 
 * To only move files, and not directories, within the current directory to another:
 
