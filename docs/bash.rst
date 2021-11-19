@@ -156,6 +156,18 @@ Check whether a variable exists or not:
       echo "LC_ALL is set to '$LC_ALL'"
     fi
 
+Check Linux stuff for a Debian-based system:
+
+.. code-block:: text
+
+    cat /etc/*_version
+
+Check Linux stuff for a Red Hat or CentOS-based system:
+
+.. code-block:: text
+
+    cat /etc/*-release
+
 Module
 ------
 
