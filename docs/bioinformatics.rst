@@ -720,9 +720,15 @@ BWA is a software package for mapping low-divergent sequences against a large re
 
 To output a sorted BAM file using multiple threads:
 
-.. code-block::
+.. code-block:: text
 
     bwa mem -t 8 ref.fa read1.fq read2.fq | samtools sort -@8 -o out.bam -
+
+Reference FASTA file must be indexd first before running BWA. This means creating all 6 files (``.amb``, ``.ann``, ``.bwt``, ``.fai``, ``.pac``, ``.sa``), not just the ``.fai`` file.
+
+.. code-block:: text
+
+    bwa index ref.fa
 
 LaTeX editor
 ============
