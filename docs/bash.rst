@@ -264,31 +264,31 @@ To access hard drives:
 
 To extract lines repeated at least three times:
 
-.. code-block:: console
+.. code-block:: text
 
     $ awk '++a[$0] == 3 { print $0 }' example.txt
 
 To print every fifth line:
 
-.. code-block:: console
+.. code-block:: text
 
     $ awk 'NR % 5 == 0' example.txt
 
 To skip the first two lines of a file:
 
-.. code-block:: console
+.. code-block:: text
 
     $ tail -n +3 example.txt
 
 To concatenate a string to each line of the ``ls`` command output:
 
-.. code-block:: console
+.. code-block:: text
 
     $ ls | xargs -i echo "Hello World {}"
 
 To combine arrays as columns:
 
-.. code-block:: console
+.. code-block:: text
 
     $ a=(A B C)
     $ b=(1 2 3)
@@ -296,31 +296,31 @@ To combine arrays as columns:
 
 To echo tab characters:
 
-.. code-block:: console
+.. code-block:: text
 
     $ echo Hello$'\t'World
 
 To read file names in the current directory into an array:
 
-.. code-block:: console
+.. code-block:: text
 
     $ a=(*)
 
 To redirect stdout and stderr:
 
-.. code-block:: console
+.. code-block:: text
 
     $ some_command > out_file 2>error_file
 
 To create a hard link or a symbolic link to an existing file or directory:
 
-.. code-block:: console
+.. code-block:: text
 
     $ ln -s original_file new_file
 
 To change group ownership:
 
-.. code-block:: console
+.. code-block:: text
 
     $ chgrp -R group_name *
 
@@ -329,7 +329,7 @@ awk
 
 * To list columns by header name for a tab-delimited file:
 
-    .. code-block:: console
+    .. code-block:: text
 
         awk '
         NR==1 {
@@ -342,7 +342,7 @@ awk
 
 * To list columns by header name for a .csv file:
 
-    .. code-block:: console
+    .. code-block:: text
 
         awk -F "\"*,\"*" '
         NR==1 {
@@ -355,13 +355,13 @@ awk
 
 * To print lines that are both in file1.txt and file2.txt (intersection):
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ awk 'NR == FNR{a[$0];next} $0 in a' file1.txt file2.txt
 
 * To print lines that are only in file1.txt and not in file2.txt:
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ awk 'NR == FNR{a[$0];next} !($0 in a)' file2.txt file1.txt
 
@@ -370,14 +370,14 @@ sed
 
 * To search and replace a specific word from a line:
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ echo "exampleword" | sed 's/word/new/g'
 
 
 * To search and remove a specific word from a line:
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ echo "exampleword" | sed 's/word//g'
 
@@ -396,13 +396,13 @@ Frequently used commands for vi and vim
 
 * To search and replace in the entire file:
 
-    .. code-block:: console
+    .. code-block:: text
 
         :%s/foo/bar/g
 
 * To search and replace a pattern involving the ``/`` character:
 
-    .. code-block:: console
+    .. code-block:: text
 
         :%s#/foo#/bar#g
 
@@ -415,7 +415,7 @@ Looping through
 
 Print every line of a file:
 
-.. code-block:: console
+.. code-block:: text
 
     for x in `cat example.txt`
     do
@@ -424,7 +424,7 @@ Print every line of a file:
 
 Print only the second column:
 
-.. code-block:: console
+.. code-block:: text
 
     for x in `awk '{print $2}' example.txt`
     do
@@ -433,7 +433,7 @@ Print only the second column:
 
 Print multiple columns:
 
-.. code-block:: console
+.. code-block:: text
 
     while read -r first second
     do 
@@ -445,7 +445,7 @@ Arrays
 
 * To create an array:
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ a=(1 2 3)
         $ a=(A B C)
@@ -453,13 +453,13 @@ Arrays
 
 * To print an array:
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ echo "${a[@]}"
 
 * To print elements on separate lines:
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ printf '%s\n' "${a[@]}"
 
