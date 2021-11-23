@@ -324,6 +324,12 @@ To change group ownership:
 
     $ chgrp -R group_name *
 
+To get file basename:
+
+.. code-block:: text
+
+    $ basename /path/to/file.txt
+
 awk
 ===
 
