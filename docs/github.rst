@@ -6,55 +6,61 @@ Frequently used commands for GitHub
 
 Clone a repository:
 
-.. code-block:: console
+.. code-block:: text
 
     $ git clone repo_url
 
 Add all changes to the staging area:
 
-.. code-block:: console
+.. code-block:: text
 
     $ git add -A
 
+Remove added changes from the staging area:
+
+.. code-block:: text
+
+    $ git reset
+
 Commit changes:
 
-.. code-block:: console
+.. code-block:: text
 
     $ git commit -m "put message here"
 
 Show current branch:
 
-.. code-block:: console
+.. code-block:: text
 
     $ git branch
 
 Create a new branch:
 
-.. code-block:: console
+.. code-block:: text
 
     $ git branch branch_name
 
 Switch to an existing branch:
 
-.. code-block:: console
+.. code-block:: text
 
     $ git checkout branch_name
 
 Create and switch to a new branch simultaneously:
 
-.. code-block:: console
+.. code-block:: text
 
     $ git checkout -b branch_name
 
 List all existing branches:
 
-.. code-block:: console
+.. code-block:: text
 
     $ git branch -a
 
 Clone a specific branch:
 
-.. code-block:: console
+.. code-block:: text
 
     $ git clone repo_url
     $ git branch -a
@@ -62,53 +68,53 @@ Clone a specific branch:
 
 Push commits to master:
 
-.. code-block:: console
+.. code-block:: text
 
     $ git push origin master
 
 Push commits to a specific branch:
 
-.. code-block:: console
+.. code-block:: text
 
     $ git push origin branch_name
 
 Update the local repo:
 
-.. code-block:: console
+.. code-block:: text
 
     $ git pull
 
 Merge a branch into master:
 
-.. code-block:: console
+.. code-block:: text
 
     $ git checkout master
     $ git merge branch_name
 
 Delete a local branche:
 
-.. code-block:: console
+.. code-block:: text
 
     $ git branch -d branch_name
 
 Delete a remote branch:
 
-.. code-block:: console
+.. code-block:: text
 
     $ git push origin --delete branch_name
 
 Update email address of user:
 
-.. code-block:: console
+.. code-block:: text
 
     $ git config user.email example@gmail.com
 
 Delete a remote Git tag:
 
-.. code-block:: console
+.. code-block:: text
 
     $ git push --delete origin tag_name
-
+    
 Problem with the SSL CA cert
 ============================
 
