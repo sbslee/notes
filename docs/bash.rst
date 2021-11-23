@@ -328,7 +328,10 @@ To get file basename:
 
 .. code-block:: text
 
-    $ basename /path/to/file.txt
+    $ basename /path/to/foo.txt
+    foo.txt
+    $ basename /path/to/foo.txt .txt
+    foo
 
 awk
 ===
