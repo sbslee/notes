@@ -4,27 +4,33 @@ Bioinformatics
 Frequently used commands for Bioinformatics
 ===========================================
 
+To extract read names from a FASTQ file:
+
+.. code-block:: text
+
+    $ gunzip -c sample.fastq.gz | paste - - - - | cut -f 1 | head
+
 To extract regions from a BED file:
 
-.. code-block:: console
+.. code-block:: text
 
     $ awk '{print $1":"$2"-"$3}' example.bed | sed 's/chr//g' > regions.list
 
 To zip a VCF file:
 
-.. code-block:: console
+.. code-block:: text
 
     $ bgzip -c sample.vcf > sample.vcf.gz
 
 To index a VCF file:
 
-.. code-block:: console
+.. code-block:: text
 
     $ tabix -p vcf sample.vcf.gz
 
 To rename the ``chr`` string in a VCF file:
 
-.. code-block:: console
+.. code-block:: text
 
     $ echo "1 chr1" >> chr_name_conv.txt
     $ echo "2 chr2" >> chr_name_conv.txt
@@ -32,55 +38,55 @@ To rename the ``chr`` string in a VCF file:
 
 To slice a VCF file:
 
-.. code-block:: console
+.. code-block:: text
 
     $ tabix -h sample.vcf.gz chr1:1000-2000 > sliced.vcf.gz
 
 To slice a VCF file without using tabix:
 
-.. code-block:: console
+.. code-block:: text
 
     $ zcat sample.vcf.gz | awk '{OFS="\t"; if ($2 > 1000 && $2 < 2000){ print }}'
 
 To count the number of sequence reads in a FASTQ file:
 
-.. code-block:: console
+.. code-block:: text
 
     $ echo $(cat sample.fastq | wc -l) / 4 | bc
 
 To count the number of sequence reads in a zipped FASTQ file:
 
-.. code-block:: console
+.. code-block:: text
 
     $ echo $(zcat sample.fastq | wc -l) / 4 | bc
 
 To count the number of sequence reads in a zipped FASTQ file (macOS):
 
-.. code-block:: console
+.. code-block:: text
 
     $ echo $(zcat < sample.fastq.gz | wc -l) / 4 | bc
 
 To extract only sequence reads from a zipped FASTQ file:
 
-.. code-block:: console
+.. code-block:: text
 
     $ zcat sample.fastq.gz | awk '{if (NR% 4 == 2) print $0}'
 
 To extract exon coordinates for a gene:
 
-.. code-block:: console
+.. code-block:: text
 
     $ grep -w "CYP2A6" Homo_sapiens.GRCh37.75.gtf | grep "CYP2A6-001" | grep -w "exon" | cut -f 1,4,5,9 -d$'\t' | cut -f 1,3 -d';' | sed 's/gene_id "ENSG00000255974"; //g'
 
 To extract rpkm values from a .gct file:
 
-.. code-block:: console
+.. code-block:: text
 
     $ printf "`echo $sample`\t`grep -w "CYP2A7" /net/grc/vol6/data/processed/samples/$sample/RNA_SEQ/qc/genes.rpkm.gct`\n"
 
 To extract sequence headers from a FASTA file:
 
-.. code-block:: console
+.. code-block:: text
 
     $ grep -e ">" example.fasta
 
@@ -155,7 +161,7 @@ Running
 
 **Case 1. MiSeq, 2x300 bp reads, dual indexing**
 
-.. code-block:: console
+.. code-block:: text
 
     $ bcl2fastq \
       --output-dir $OUTPUT_DIR \
@@ -172,7 +178,7 @@ Running
 
 **Case 2. NextSeq, 2x150 bp reads, single indexing**
 
-.. code-block:: console
+.. code-block:: text
 
     $ bcl2fastq \
       --output-dir $OUTPUT_DIR\
@@ -270,31 +276,31 @@ Variant calling pipeline
 
 1. Calculate genotype likelihoods at each genomic position with coverage. Note that the reference FASTA file and the input BAM file(s) must have the same chromosome string style.
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ bcftools mpileup -Ou -q 1 -a AD --max-depth 1000 -f ref.fa -r chr1:1000-2000 -o sample.bcf sample.bam
 
 2. Make variant calls.
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ bcftools call -Oz -mv -o sample.vcf.gz sample.bcf
 
 3. Index the VCF file.
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ bcftools index sample.vcf.gz
 
 4. Left-align and normalize indels.
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ bcftools norm -Ob -f ref.fa -o sample.normalized.bcf sample.vcf.gz
 
 5. Filter variants.
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ bcftools filter -Ov --IndelGap 5 -o sample.normalized.filtered.vcf sample.normalized.bcf
 
@@ -303,13 +309,13 @@ SnpEff and SnpSift
 
 * To download the pre-built human database (GRCh37.75):
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ java -jar snpEff.jar download -v GRCh37.75
 
 * To run annotation:
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ java -jar snpEff.jar eff hg19 in.vcf > ann.vcf
 
@@ -324,7 +330,7 @@ This pipeline is based on GATK Team's Best Practices Workflows for `Germline sho
 Call variants per-sample
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: console
+.. code-block:: text
 
     $ gatk HaplotypeCaller \
       -R ref.fa \
@@ -338,7 +344,7 @@ Call variants per-sample
 Consolidate GVCFs
 ^^^^^^^^^^^^^^^^^
 
-.. code-block:: console
+.. code-block:: text
 
     $ gatk GenomicsDBImport \
       --intervals chr5:500-1000 \
@@ -352,7 +358,7 @@ Consolidate GVCFs
 Joint-Call Cohort
 ^^^^^^^^^^^^^^^^^
 
-.. code-block:: console
+.. code-block:: text
 
     $ gatk GenotypeGVCFs \
       -R ref.fa \
@@ -365,7 +371,7 @@ Joint-Call Cohort
 Filter variants
 ^^^^^^^^^^^^^^^
 
-.. code-block:: console
+.. code-block:: text
 
     $ gatk VariantFiltration \
       -R ref.fa \
@@ -387,7 +393,7 @@ Click `here <https://github.com/broadinstitute/gatk/blob/master/docs/mutect/mute
 Tumor with matched normal
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: console
+.. code-block:: text
 
     $ gatk Mutect2 \
       -R reference.fa \
@@ -401,7 +407,7 @@ Tumor with matched normal
 Filter variants in a Mutect2 VCF callset
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: console
+.. code-block:: text
 
     $ gatk FilterMutectCalls \
       -R reference.fasta \
@@ -417,7 +423,7 @@ The GATK resource bundle is a collection of standard files for working with huma
 
 **FTP server access was disabled on June 1, 2020.**
 
-.. code-block:: console
+.. code-block:: text
 
     $ ftp ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/
     $ ftp> cd /bundle/b37
@@ -439,14 +445,14 @@ Most GATK tools require that the main FASTA file be accompanied by a dictionary 
 
 To create to create a ``.dict`` file:
 
-.. code-block:: console
+.. code-block:: text
 
     $ gatk CreateSequenceDictionary -R ref.fasta
 
 
 To create a ``.fai`` file:
 
-.. code-block:: console
+.. code-block:: text
 
     $ samtools faidx ref.fasta
 
@@ -591,7 +597,7 @@ The Trimmer utility of the AGeNT module processes the read sequences to identify
 
 Usage example:
 
-.. code-block:: console
+.. code-block:: text
 
     $ java -jar trimmer-<version>.jar \
       -fq1 ./ICCG-repl1_S1_L001_R1_001.fastq.gz,./ICCG-repl1_S1_L001_R1_002.fastq.gz \
@@ -749,7 +755,7 @@ According to `this <https://www.biostars.org/p/338914/>`__ Biostars post, you ca
 
 I finally found the FASTA file I want (hs37d5.fa.gz from the 1000 Genomes Project) from Heng Li's `blog <https://lh3.github.io/2017/11/13/which-human-reference-genome-to-use>`__. I confirmed that the sequences were divided by chromosomes (e.g. 1 and 5). The problem was, whenever I tried downloading the file with
 
-.. code-block:: console
+.. code-block:: text
 
     $ wget -c --retry-connrefused ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz
 
