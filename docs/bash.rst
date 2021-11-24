@@ -592,6 +592,13 @@ Here, ``host_id`` is the nickname that will be used for the ``ssh`` command and 
 
     $ ssh host_id
 
+Note that permission settings of the home directory and the ``.ssh`` directory must be satisfied in order for OpenSSH to work:
+
+.. code-block:: text
+
+    $ chmod 700 /path/to/home
+    $ chmod 700 ~/.ssh
+
 Creating a channel without password
 -----------------------------------
 
