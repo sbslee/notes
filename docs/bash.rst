@@ -592,13 +592,6 @@ Here, ``host_id`` is the nickname that will be used for the ``ssh`` command and 
 
     $ ssh host_id
 
-Note that permission settings of the home directory and the ``.ssh`` directory must be satisfied in order for OpenSSH to work:
-
-.. code-block:: text
-
-    $ chmod 700 /path/to/home
-    $ chmod 700 ~/.ssh
-
 Creating a channel without password
 -----------------------------------
 
@@ -636,6 +629,14 @@ Finally, update the configuration:
         IdentityFile ~/.ssh/host_id_rsa
 
 Now, you shouldn't need to enter the password when logging in.
+
+.. note::
+    In order to use a channel without password, you need to give appropriate perimission settings for the home directory and the ``.ssh`` directory:
+
+    .. code-block:: text
+
+        $ chmod 700 /path/to/home
+        $ chmod 700 ~/.ssh
 
 Channeling through multiple servers
 -----------------------------------
