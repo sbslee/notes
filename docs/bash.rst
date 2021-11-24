@@ -115,7 +115,7 @@ Comparison
 
 Find difference between two directories:
 
-.. code-block:: console
+.. code-block:: text
 
     $ diff -qr dir_name1 dir_name2
 
@@ -173,25 +173,25 @@ Module
 
 List currently loaded modules:
 
-.. code-block:: console
+.. code-block:: text
 
     $ module list
 
 Load the latest version of a tool:
 
-.. code-block:: console
+.. code-block:: text
 
     $ module load tool_name/latest
 
 List available modules:
 
-.. code-block:: console
+.. code-block:: text
 
     $ module avail
 
 Load module or specify which dependencies have not been loaded:
 
-.. code-block:: console
+.. code-block:: text
 
     $ module load modulefile
 
@@ -200,21 +200,21 @@ File transfer
 
 From local to server:
 
-.. code-block:: console
+.. code-block:: text
 
     $ scp file.txt user_name@host_name:/path/to/destination
     $ scp file1.txt file2.txt user_name@host_name:/path/to/destination
 
 From server to local:
 
-.. code-block:: console
+.. code-block:: text
 
     $ scp user_name@host_name:/path/to/server/file.txt /path/to/destination
     $ scp -T user_name@host_name:"file1.txt file2.txt" "/path/to/destination"
 
 Copy all files in a directory from server to local:
 
-.. code-block:: console
+.. code-block:: text
 
     $ wget -r -c --no-parent --retry-connrefused /path/to/server/dir_name/
 
@@ -227,7 +227,7 @@ Here, the options mean:
 
 Copy entire directory:
 
-.. code-block:: console
+.. code-block:: text
 
   $ rsync -avzP source destination
 
@@ -240,13 +240,13 @@ Here, the ``-avzP`` option means:
 
 * To only move files, and not directories, within the current directory to another:
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ find . -maxdepth 1 -type f -exec mv {} dir_name \;
 
 * To access a server and copy files:
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ lftp sftp://user_id:user_pw.@host_name:port_number
         $ mirror -c target_dir destination_dir
@@ -254,9 +254,15 @@ Here, the ``-avzP`` option means:
 Miscellaneous
 -------------
 
+Remove file extension (e.g. ``.gz``):
+
+.. code-block:: text
+
+    $ mv -- "$file" "${file%%.gz}"
+
 To access hard drives:
 
-.. code-block:: console
+.. code-block:: text
 
     $ cd /
     $ cd Volumes
@@ -474,7 +480,7 @@ Arrays
 
 * To loop through an array:
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ cat example.sh
         a=(1 2 3)
@@ -492,7 +498,7 @@ Bash configuration
 
 The ``.bashrc`` file is used to provide a place where you can set up variables, functions and aliases, define your (PS1) prompt and define other settings that you want to use every time you open a new terminal window. The following command will activate the configuration:
 
-.. code-block:: console
+.. code-block:: text
 
     $ source .bashrc
 
@@ -533,13 +539,13 @@ System permission
 
 For example, to give read, write, and execute permissions for everyone:
 
-.. code-block:: console
+.. code-block:: text
 
     $ chmod 777 dir_name
 
 To give permissions for all files inside the directory:
 
-.. code-block:: console
+.. code-block:: text
 
     $ chmod 777 -R dir_name
 
@@ -551,13 +557,13 @@ Frequently used commands for OpenSSH
 
 * To remove all keys belonging to a host name:
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ ssh-keygen -R host_name
 
 * To delete a select key from the authentication agent:
 
-    .. code-block:: console
+    .. code-block:: text
 
         $ ssh-add -d ~/.ssh/host_id_rsa.pub
         $ rm ~/.ssh/host_id_rsa
@@ -568,13 +574,13 @@ Creating a channel with password
 
 First, open your SSH configuration file:
 
-.. code-block:: console
+.. code-block:: text
 
     $ vi ~/.ssh/config
 
 Next, add the following:
 
-.. code-block:: console
+.. code-block:: text
 
     Host host_id
         HostName host_name
@@ -582,7 +588,7 @@ Next, add the following:
 
 Here, ``host_id`` is the nickname that will be used for the ``ssh`` command and ``host_name`` can be an IP address or an actual host name in the server. Lastly, ``user_name`` is your user ID for the server. After the configuration file is saved, you can access the server by (you still need to enter your password):
 
-.. code-block:: console
+.. code-block:: text
 
     $ ssh host_id
 
@@ -591,31 +597,31 @@ Creating a channel without password
 
 First, set up a channel with password as described above. Then, run the following:
 
-.. code-block:: console
+.. code-block:: text
 
     $ ssh-keygen -t rsa -b 4096 -C "host_id"
 
 Save the private key as ``host_id_rsa`` and the public key as ``host_id_rsa.pub``. Add the private key to the authentication agent:
 
-.. code-block:: console
+.. code-block:: text
 
     $ ssh-add ~/.ssh/host_id_rsa
 
 Check whether the addition was successful:
 
-.. code-block:: console
+.. code-block:: text
 
     $ ssh-add -L
 
 Add the public key to the server:
 
-.. code-block:: console
+.. code-block:: text
 
     $ cat ~/.ssh/host_id_rsa.pub | ssh host_id 'cat >> ~/.ssh/authorized_keys'
 
 Finally, update the configuration:
 
-.. code-block:: console
+.. code-block:: text
 
     Host host_id
         HostName host_name
@@ -629,7 +635,7 @@ Channeling through multiple servers
 
 Imagine the server you work on everyday (server C) can only be accessed through another server (server B). Inconveniently, server B can only be accessed through server A. So, your task is to set up a channel that looks like this: local > server A > server B > server C. To do this, you need to set up the SSH configuration as follows:
 
-.. code-block:: console
+.. code-block:: text
 
     Host host_id_A
         HostName host_name_A
@@ -650,7 +656,7 @@ Imagine the server you work on everyday (server C) can only be accessed through 
 
 You can now access server C directly by:
 
-.. code-block:: console
+.. code-block:: text
 
     $ ssh host_id_C
 
@@ -667,55 +673,55 @@ Submit jobs
 
 To request a specific node:
 
-.. code-block:: console
+.. code-block:: text
 
     $ qsub -l h=node_name example.sh
 
 To request node A or node B:
 
-.. code-block:: console
+.. code-block:: text
 
     $ qsub -l h='node_A|node_B' example.sh
 
 To request nodes in a specific queue:
 
-.. code-block:: console
+.. code-block:: text
 
     $ qsub -q queue_name example.sh
 
 To request 20 slots within a specific node using the parallel environment:
 
-.. code-block:: console
+.. code-block:: text
 
     $ qsub -l h=node_name -pe pe_name 20 example.sh
 
 To delete all jobs from a user:
 
-.. code-block:: console
+.. code-block:: text
 
     $ qdel -u user_name
 
 To delete a specific job:
 
-.. code-block:: console
+.. code-block:: text
 
     $ qdel job_id
 
 To monitor resuource usage:
 
-.. code-block:: console
+.. code-block:: text
 
     $ qstat -j job_id
 
 To print error message from a running job:
 
-.. code-block:: console
+.. code-block:: text
 
     $ qstat -j job_id | grep "error"
 
 To print error message from a finished job:
 
-.. code-block:: console
+.. code-block:: text
 
     $ qacct -j job_id | grep "error"
 
