@@ -555,19 +555,19 @@ OpenSSH
 Frequently used commands for OpenSSH
 ------------------------------------
 
-* To remove all keys belonging to a host name:
+Remove all keys belonging to a host name:
 
-    .. code-block:: text
+.. code-block:: text
 
-        $ ssh-keygen -R host_name
+    $ ssh-keygen -R host_name
 
-* To delete a select key from the authentication agent:
+Remove a select key from the authentication agent:
 
-    .. code-block:: text
+.. code-block:: text
 
-        $ ssh-add -d ~/.ssh/host_id_rsa.pub
-        $ rm ~/.ssh/host_id_rsa
-        $ rm ~/.ssh/host_id_rsa.pub
+    $ ssh-add -d ~/.ssh/host_id_rsa.pub
+    $ rm ~/.ssh/host_id_rsa
+    $ rm ~/.ssh/host_id_rsa.pub
 
 Creating a channel with password
 --------------------------------
@@ -631,7 +631,7 @@ Finally, update the configuration:
 Now, you shouldn't need to enter the password when logging in.
 
 .. note::
-    In order to use a channel without password, you need to give appropriate perimission settings for the home directory and the ``.ssh`` directory:
+    After creating a channel without password, if the system continues to ask for passward, you probably need to change perimission settings for the home directory and/or the ``.ssh`` directory:
 
     .. code-block:: text
 
