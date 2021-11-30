@@ -821,6 +821,35 @@ To print the status of a host:
 
     $ qhost -h host_name
 
+Queue states
+------------
+
+Queue states or combinations of states can be:
+
++-------------+--------------------------------------------+
+| Code        | Description                                |
++=============+============================================+
+| a(larm)     | Alarm by reaching the limit of load.       |
++-------------+--------------------------------------------+
+| A(larm)     | Alarm by reaching the limit of suspension. |
++-------------+--------------------------------------------+
+| s(uspended) | Suspended.                                 |
++-------------+--------------------------------------------+
+| S(uspended) | Suspended by subordination.                |
++-------------+--------------------------------------------+
+| C           | Suspended by a timetable.                  |
++-------------+--------------------------------------------+
+| d(isable)   | Execution host excluded from scheduling.   |
++-------------+--------------------------------------------+
+| D(isable)   | Queue excluded from scheduling.            |
++-------------+--------------------------------------------+
+| E(rror)     | Error state.                               |
++-------------+--------------------------------------------+
+| U           | Unreachable                                |
++-------------+--------------------------------------------+
+| au          | SGE is not running on the compute node.    |
++-------------+--------------------------------------------+
+
 Command not found error
 -----------------------
 
