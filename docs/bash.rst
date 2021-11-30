@@ -254,6 +254,12 @@ Here, the ``-avzP`` option means:
 Miscellaneous
 -------------
 
+Rename part of a filename:
+
+.. code-block:: text
+
+    $ for file in *.txt ; do mv $file ${file//ABC/XYZ} ; done
+
 Remove file extension (e.g. ``.gz``):
 
 .. code-block:: text
