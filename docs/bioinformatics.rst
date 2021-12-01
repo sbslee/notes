@@ -368,7 +368,7 @@ Joint-Call Cohort
       --java-options "-Xmx4G" \
       -D dbsnp.vcf
 
-.. note
+.. note::
     According to this `post <https://gatk.broadinstitute.org/hc/en-us/articles/360035889971--How-to-Consolidate-GVCFs-for-joint-calling-with-GenotypeGVCFs>`__, if you get an error like ``Could not open array genomicsdb_array at workspace:[...]`` from ``GenotypeGVCFs``, you need to check whether you're working on a POSIX filesystem (e.g. Lustre, NFS, xfs, ext4, etc.). If you are, then you must set the environment variable ``TILEDB_DISABLE_FILE_LOCKING=1`` before running any GenomicsDB tool.
 
 Filter variants
