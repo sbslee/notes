@@ -679,61 +679,69 @@ Sun Grid Engine (SGE)
 
 `This <https://bioinformatics.mdc-berlin.de/intro2UnixandSGE/sun_grid_engine_for_beginners/how_to_submit_a_job_using_qsub.html>`__ website has good overview on how to submit a job using qsub.
 
+Another good resource: https://info.hpc.sussex.ac.uk/hpc-guide/resource.html#memory-requests
+
 Frequently used commands for SGE
 --------------------------------
 
 Submit jobs
 ^^^^^^^^^^^
 
-To request a specific node:
+Request more memory (default is 2GB):
+
+.. code-block:: text
+
+    $ qsub -l m_hvmem=4G example.sh
+
+Request a specific node:
 
 .. code-block:: text
 
     $ qsub -l h=node_name example.sh
 
-To request node A or node B:
+Request node A or node B:
 
 .. code-block:: text
 
     $ qsub -l h='node_A|node_B' example.sh
 
-To request nodes in a specific queue:
+Request nodes in a specific queue:
 
 .. code-block:: text
 
     $ qsub -q queue_name example.sh
 
-To request 20 slots within a specific node using the parallel environment:
+Request 20 slots within a specific node using the parallel environment:
 
 .. code-block:: text
 
     $ qsub -l h=node_name -pe pe_name 20 example.sh
 
-To delete all jobs from a user:
+Delete all jobs from a user:
 
 .. code-block:: text
 
     $ qdel -u user_name
 
-To delete a specific job:
+Delete a specific job:
 
 .. code-block:: text
 
     $ qdel job_id
 
-To monitor resuource usage:
+Monitor resuource usage:
 
 .. code-block:: text
 
     $ qstat -j job_id
 
-To print error message from a running job:
+Print error message from a running job:
 
 .. code-block:: text
 
     $ qstat -j job_id | grep "error"
 
-To print error message from a finished job:
+Print error message from a finished job:
 
 .. code-block:: text
 
