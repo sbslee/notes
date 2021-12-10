@@ -850,6 +850,10 @@ Queue states or combinations of states can be:
 | au          | SGE is not running on the compute node.    |
 +-------------+--------------------------------------------+
 
+According to this `post <http://gridengine.org/pipermail/users/2011-September/001651.html>`__:
+
+> The default is np_load_avg=1.75 with is more or less useless nowadays. Problem is, that also processes in state "D" (uninterruptible kernel task" which points to "waiting for disk" are there). So, a load higher than the installed cores times 1.75 can still be fine. [Originally it was the length of the process chain, i.e. number of process which are eligible to get some cpu cycles. As long as this number is lower than the number of installed cores, all processes are running at full speed (despite any set nice values), as there is noone to be nice to. Only with more processes than cores there is something to share)]
+
 Command not found error
 -----------------------
 
