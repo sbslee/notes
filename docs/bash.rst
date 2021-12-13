@@ -687,7 +687,13 @@ Frequently used commands for SGE
 Submit jobs
 ^^^^^^^^^^^
 
-Request more memory (default is 2GB):
+Request more physical memory (default is 2 GB):
+
+.. code-block:: text
+
+    $ qsub -l m_mem_free=4G example.sh
+
+Request more virtual memory (default i 2.5 GB):
 
 .. code-block:: text
 
