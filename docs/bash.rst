@@ -723,6 +723,12 @@ Request 20 slots within a specific node using the parallel environment:
 
     $ qsub -l h=node_name -pe pe_name 20 example.sh
 
+Delete specific jobs:
+
+.. code-block:: text
+
+    $ qstat | grep "PATTERN" | awk '{print $1}' | xargs qdel
+    
 Delete all jobs from a user:
 
 .. code-block:: text
