@@ -1,6 +1,22 @@
 Miscellaneous
 *************
 
+Mount NTFS Drive on CentOS
+==========================
+
+EPEL (Extra Packages for Enterprise Linux) is a Fedora Special Interest Group that creates, maintains, and manages a set of additional high quality packages for Enterprise Linux, including, but not limited to, Red Hat Enterprise Linux (RHEL), CentOS and Scientific Linux (SL), Oracle Linux (OL).
+
+.. code-block:: text
+
+    $ yum install epel-release
+    $ yum install ntfs-3g
+    
+Now your system should be able to open the NTFS drive without issues.
+
+References:
+
+  - `How to Mount a NTFS Drive on CentOS / RHEL / Scientific Linux <https://www.howtoforge.com/tutorial/mount-ntfs-centos/>`__
+
 NET::ERR_CERT_INVALID
 =====================
 
