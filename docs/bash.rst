@@ -103,6 +103,11 @@ Estimate directory size:
 .. code-block:: text
 
     $ du -sh dir_name
+    $ du -sh dir_name --apparent-size
+
+.. note:
+
+    According to this `post <https://unix.stackexchange.com/questions/173947/du-s-apparent-size-vs-du-s>`__: The "apparent size" of a file is how much valid data is actually in the file. It is the actual amount of data that can be read from the file. Block-oriented devices can only store in terms of blocks, not bytes. As a result, the disk usage is always rounded up to the next highest block. A "block" in this case may not equate to a physical block on the storage device, either, depending on how the file system allocates space.
 
 Estimate a server's memory usage
 
