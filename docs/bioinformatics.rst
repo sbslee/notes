@@ -767,10 +767,20 @@ the FTP transfer would be interrupted. Even though the download gets restarted a
 Reference haplotype panel
 -------------------------
 
-The 1000 Genomes Project provides two panles: 
+The 1000 Genomes Project has generated the following reference haplotype panels: 
 
-- hg19: ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502
-- hg38: http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/release/20190312_biallelic_SNV_and_INDEL/
+.. list-table::
+   :header-rows: 1
+
+   * - Build
+     - Download
+     - Explanation
+   * - hg19
+     - `Link <ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502>`__
+     -
+   * - hg38
+     - `Link <http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/release/20190312_biallelic_SNV_and_INDEL/>`__
+     -
 
 Adapter sequences
 =================
