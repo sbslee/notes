@@ -775,12 +775,15 @@ The 1000 Genomes Project has generated the following reference haplotype panels:
    * - Build
      - Download
      - Explanation
+     - Reference
    * - hg19
      - `Link <ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502>`__
+     -
      -
    * - hg38
      - `Link <http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/release/20190312_biallelic_SNV_and_INDEL/>`__
      -
+     - `Lowy-Gallego et al., 2019 <https://wellcomeopenresearch.org/articles/4-50>`__
 
 Adapter sequences
 =================
