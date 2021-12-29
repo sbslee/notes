@@ -774,17 +774,21 @@ The 1000 Genomes Project has generated the following reference haplotype panels:
 
    * - Build
      - Download
+     - Size
      - Reference
      - Notes
    * - hg19
+     -
      - `Link <ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502>`__
      -
      -
    * - hg38
+     - 2548
      - `Link <http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/release/20190312_biallelic_SNV_and_INDEL/>`__
      - `Lowy-Gallego et al., 2019 <https://wellcomeopenresearch.org/articles/4-50>`__
      - The authors used the full GRCh38 reference, including ALT contigs, decoy, and EBV/IMGT/HLA sequences.
    * - hg38
+     - 3202
      - `Link <http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000G_2504_high_coverage/working/20201028_3202_phased/>`__
      -
      - 
