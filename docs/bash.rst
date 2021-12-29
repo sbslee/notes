@@ -28,6 +28,12 @@ Determine MD5 checksum in macOS:
 List things
 -----------
 
+List files that don't contain a given string:
+
+.. code-block:: text
+
+    $ ls -1 | grep -v "pattern"
+
 List one file per line:
 
 .. code-block:: text
