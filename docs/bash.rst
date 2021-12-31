@@ -938,3 +938,12 @@ Usage monitoring
 +----------+-----------------------+-------------+
 | SWAPUS   | Swap usage            | '2.3M'      |
 +----------+-----------------------+-------------+
+
+Ascp
+====
+
+`Ascp <https://www.ibm.com/docs/en/aci/3.9.2?topic=macos-ascp-transferring-from-command-line-ascp>`__ is a scriptable FASP transfer binary that enables you to transfer to and from Aspera transfer servers to which you have authentication credentials. Transfer settings are customizable and can include file manipulation on the source or destination, filtering of the source content, and client-side encryption-at-rest.
+
+.. code-block:: text
+
+    /mnt/garnet/Users/sbslee/.aspera/connect/bin/ascp -QT -l 100m -P33001 -k 1 -i /mnt/garnet/Users/sbslee/.aspera/connect/etc/asperaweb_id_dsa.openssh era-fasp@fasp.sra.ebi.ac.uk:/vol1/run/ERR323/ERR3239276/NA06985.final.cram .
