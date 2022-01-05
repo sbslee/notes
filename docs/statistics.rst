@@ -40,6 +40,10 @@ This is a parametric test for paired samples.
 One-way ANOVA
 -------------
 
+The idea behind the analysis of variance (ANOVA) test is very simple: if the average variation between groups is large enough compared to the average variation within groups, then you could conclude that at least one group mean is not equal to the others. Therefore, it’s possible to evaluate whether the differences between the group means are significant by comparing the two variance estimates. This is why the method is called analysis of variance even though the main goal is to compare the group means.
+
+.. image:: https://bookdown.org/BaktiSiregar/data-science-for-beginners-part-2/images/anova-basics.png
+
 This is the generalization of t-test.
 
 Wilcoxon Rank-sum test
