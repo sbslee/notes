@@ -73,6 +73,20 @@ Chi-squared test
 
 A chi-squared test is a statistical hypothesis test that is valid to perform when the test statistic is chi-squared distributed under the null hypothesis, specifically Pearson's chi-squared test and variants thereof. Pearson's chi-squared test is used to determine whether there is a statistically significant difference between the expected frequencies and the observed frequencies in one or more categories of a contingency table.
 
+Here's an example: Suppose there is a city of 1,000,000 residents with four neighborhoods: A, B, C, and D. A random sample of 650 residents of the city is taken and their occupation is recorded as "white collar", "blue collar", or "no collar". The null hypothesis is that each person's neighborhood of residence is independent of the person's occupational classification.
+
++--------------+-----+-----+-----+-----+-------+
+|              | A   | B   | C   | D   | Total |
++==============+=====+=====+=====+=====+=======+
+| White collar | 90  | 60  | 104 | 95  | 359   |
++--------------+-----+-----+-----+-----+-------+
+| Blue collar  | 30  | 50  | 51  | 20  | 151   | 
++--------------+-----+-----+-----+-----+-------+
+| No collar    | 30  | 40  | 45  | 35  | 150   |
++--------------+-----+-----+-----+-----+-------+
+| Total        | 150 | 150 | 200 | 150 | 650   |
++--------------+-----+-----+-----+-----+-------+
+
 The chi-squared test applies an approximation assuming the sample is large, while the Fisher's exact test runs an exact procedure especially for small-sized samples.
 
 References:
