@@ -64,6 +64,22 @@ Fisher's exact test
 
 Fisher's exact test is a statistical significance test used in the analysis of contingency tables. Although in practice it is employed when sample sizes are small, it is valid for all sample sizes. It is named after its inventor, Ronald Fisher, and is one of a class of exact tests, so called because the significance of the deviation from a null hypothesis (e.g., P-value) can be calculated exactly, rather than relying on an approximation that becomes exact in the limit as the sample size grows to infinity, as with many statistical tests.
 
+Here's an example: A sample of teenagers might be divided into male and female on the one hand, and those that are and are not currently studying for a statistics exam on the other. We hypothesize, for example, that the proportion of studying individuals is higher among the women than among the men, and we want to test whether any difference of proportions that we observe is significant.
+
++--------------+-----+-------+-------+
+|              | Men | Women | Total |
++==============+=====+=======+=======+
+| Studying     | 1   | 9     | 10    |
++--------------+-----+-------+-------+
+| Not-studying | 11  | 3     | 14    |
++--------------+-----+-------+-------+
+| Total        | 12  | 12    | 24    |
++--------------+-----+-------+-------+
+
+The probability of obtaining such set of values is given by:
+
+:math:`p=\frac{\left ( \frac{a+b}{a} \right )\left ( \frac{c+d}{c} \right )}{\left ( \frac{n}{a+c} \right )}=\frac{\left ( \frac{a+b}{b} \right )\left ( \frac{c+d}{d} \right )}{\left ( \frac{n}{b+d} \right )}=\frac{(a+b)!(c+d)!(a+c)!(b+d)!}{a!b!c!d!n!}`
+
 References:
 
   - `Fisher's exact test <https://en.wikipedia.org/wiki/Fisher%27s_exact_test>`__
