@@ -87,6 +87,8 @@ Here's an example: Suppose there is a city of 1,000,000 residents with four neig
 | Total        | 150 | 150 | 200 | 150 | 650   |
 +--------------+-----+-----+-----+-----+-------+
 
+In each cell of the table, we can calculate :math:`\frac{(observed-expected)^{2}}{expected}` and the sum of these quantities over all of the cells is the test statistic.
+
 The chi-squared test applies an approximation assuming the sample is large, while the Fisher's exact test runs an exact procedure especially for small-sized samples.
 
 References:
