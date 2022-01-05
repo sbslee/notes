@@ -68,6 +68,17 @@ References:
 
   - `Fisher's exact test <https://en.wikipedia.org/wiki/Fisher%27s_exact_test>`__
 
+Chi-squared test
+----------------
+
+A chi-squared test is a statistical hypothesis test that is valid to perform when the test statistic is chi-squared distributed under the null hypothesis, specifically Pearson's chi-squared test and variants thereof. Pearson's chi-squared test is used to determine whether there is a statistically significant difference between the expected frequencies and the observed frequencies in one or more categories of a contingency table.
+
+The chi-squared test applies an approximation assuming the sample is large, while the Fisher's exact test runs an exact procedure especially for small-sized samples.
+
+References:
+
+  - `Chi-squared test <https://en.wikipedia.org/wiki/Chi-squared_test#Fisher's_exact_test>`__
+
 Levene's test
 -------------
 
