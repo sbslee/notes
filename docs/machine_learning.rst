@@ -1,6 +1,20 @@
 Machine learning
 ****************
 
+Support Vector Machine (SVM)
+============================
+
+The main objectives of support vector machine (SVM) are:
+
+1. Set a large margin
+2. Lower misclassification rate
+
+The parameter C controls the size of a margin with a larger C value giving a smaller margin.
+
+References:
+  - `sklearn.svm.SVC <https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html>`__
+  - `What is the Significance of C value in Support Vector Machine? <https://medium.com/@pushkarmandot/what-is-the-significance-of-c-value-in-support-vector-machine-28224e852c5a>`__
+
 Rectified Linear Unit (ReLU)
 ============================
 
