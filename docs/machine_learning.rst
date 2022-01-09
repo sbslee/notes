@@ -9,7 +9,9 @@ The main objectives of support vector machine (SVM) are:
 1. Set a large margin
 2. Lower misclassification rate
 
-The parameter C controls the size of a margin with a larger C value giving a smaller margin.
+The parameter C controls the size of a margin with a larger C value meaning a smaller margin.
+
+Intuitively, the gamma parameter defines how far the influence of a single training example reaches, with low values meaning ‘far’ and high values meaning ‘close’. The gamma parameters can be seen as the inverse of the radius of influence of samples selected by the model as support vectors.
 
 References:
 
