@@ -218,6 +218,10 @@ Many RNAseq beginners get worried when they see a "per base sequence content" pl
 
 According to this `post <https://sequencing.qcfail.com/articles/positional-sequence-bias-in-random-primed-libraries/>`__, the cause of this bias is "the random priming step in library production. The priming should be driven by a selection of random hexamers which in theory should all be present with equal frequency in the priming mix and should all prime with equal efficiency.  In the real world it turns out that this isn’t the case and that certain hexamers are favoured during the priming step, resulting in the based composition over the region of the library primed by the random primers."
 
+References:
+
+   - `FastQC Tutorial & FAQ <https://rtsf.natsci.msu.edu/genomics/tech-notes/fastqc-tutorial-and-faq/>`__
+
 SAMtools
 ========
 
