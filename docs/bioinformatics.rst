@@ -206,7 +206,17 @@ Trim Galore! is a wrapper tool around Cutadapt and FastQC to consistently apply 
 FastQC
 ======
 
-FastQC is a quality control tool for high throughput sequence data.
+`FastQC <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`__ is a quality control tool for high throughput sequence data.
+
+
+Bias in per base sequence content
+---------------------------------
+
+Many RNAseq beginners get worried when they see a "per base sequence content" plot that looks like below:
+
+.. image:: https://sequencing.qcfail.com/wp-content/uploads/sites/2/2016/01/random_priming_bias.png
+
+According to this `post`__ the cause of this bias is "the random priming step in library production. The priming should be driven by a selection of random hexamers which in theory should all be present with equal frequency in the priming mix and should all prime with equal efficiency.  In the real world it turns out that this isn’t the case and that certain hexamers are favoured during the priming step, resulting in the based composition over the region of the library primed by the random primers."
 
 SAMtools
 ========
