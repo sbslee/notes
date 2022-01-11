@@ -820,6 +820,13 @@ The 1000 Genomes Project has generated the following reference haplotype panels:
      - `Byrska-Bishop et al., 2021 <https://www.biorxiv.org/content/10.1101/2021.02.06.430068v2>`__
      - The authors added 698 samples to the original cohort (N=2,504). The expanded cohort includes 602 trios.
      
+GENCODE
+-------
+
+The goal of the GENCODE project is to identify and classify all gene features in the human and mouse genomes with high accuracy based on biological evidence, and to release these annotations for the benefit of biomedical research and genome interpretation.
+
+https://www.gencodegenes.org/human/
+     
 Adapter sequences
 =================
 
