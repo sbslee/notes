@@ -198,6 +198,19 @@ Cutadapt
 
 Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your high-throughput sequencing reads.
 
+Illumina TruSeq
+---------------
+
+Run the following to trim TruSeq adapters (click `here <https://cutadapt.readthedocs.io/en/stable/guide.html#illumina-truseq>`__ for more details):
+
+.. code-block:: text
+
+    cutadapt \
+    -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA \
+    -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT \
+    -o trimmed.R1.fastq.gz -p trimmed.R2.fastq.gz \
+    reads.R1.fastq.gz reads.R2.fastq.gz
+
 Trim Galore!
 ============
 
