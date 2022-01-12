@@ -674,6 +674,8 @@ References
 Ensembl
 =======
 
+This `page <http://asia.ensembl.org/info/website/archives/index.html>`__ says: "Ensembl aims to maintain stable identifiers for genes (ENSG), transcripts (ENST), proteins (ENSP) and exons (ENSE) as long as possible. Changes within the genome sequence assembly or an updated genome annotation may dramatically change a gene model. In these cases, the old set of stable IDs is retired and a new one assigned. Gene and transcript pages both have an ID History view which maps changes in the ID from the earliest version in Ensembl."
+
 Variant Effect Predictor (VEP)
 ------------------------------
 
