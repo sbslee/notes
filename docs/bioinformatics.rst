@@ -806,21 +806,25 @@ The 1000 Genomes Project has generated the following reference haplotype panels:
      - Size
      - Reference
      - Notes
+     - ENA
    * - hg19
      - 2,504
      - `Link <ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502>`__
      - `The 1000 Genomes Project Consortium, 2015 <https://www.nature.com/articles/nature15393>`__
+     -
      -
    * - hg38
      - 2,548
      - `Link <http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/release/20190312_biallelic_SNV_and_INDEL/>`__
      - `Lowy-Gallego et al., 2019 <https://wellcomeopenresearch.org/articles/4-50>`__
      - The authors used the full GRCh38 reference, including ALT contigs, decoy, and EBV/IMGT/HLA sequences.
+     -
    * - hg38
      - 3,202
      - `Link <http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000G_2504_high_coverage/working/20201028_3202_phased/>`__
      - `Byrska-Bishop et al., 2021 <https://www.biorxiv.org/content/10.1101/2021.02.06.430068v2>`__
      - The authors added 698 samples to the original cohort (N=2,504). The expanded cohort includes 602 trios.
+     - `Link <https://www.ebi.ac.uk/ena/browser/view/PRJEB31736?show=reads>`__
      
 GENCODE
 -------
