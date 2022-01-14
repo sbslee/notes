@@ -976,3 +976,19 @@ STAR
 References:
 
   - `Introduction to RNA-Seq using high-performance computing - ARCHIVED <https://hbctraining.github.io/Intro-to-rnaseq-hpc-O2/lessons/03_alignment.html>`__
+
+Kallisto
+========
+
+Manual: https://pachterlab.github.io/kallisto/
+
+Sleuth
+======
+
+Manual: https://pachterlab.github.io/sleuth/
+
+Useful tutorials:
+
+- `Getting started with sleuth <https://pachterlab.github.io/sleuth_walkthroughs/trapnell/analysis.html>`__
+- `Using p-value aggregation to obtain gene differential expression in datasets with multiple experimental conditions <https://pachterlab.github.io/sleuth_walkthroughs/pval_agg/analysis.html>`__
+- `Differential expression of transcripts using Sleuth <https://hbctraining.github.io/DGE_workshop_salmon/lessons/09_sleuth.html>`__
