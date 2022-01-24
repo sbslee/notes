@@ -124,6 +124,12 @@ Estimate a server's memory usage
 Comparison
 ----------
 
+Find difference between two files:
+
+.. code-block:: text
+
+    $ grep -Fxvf file1 file2
+    
 Find difference between two directories:
 
 .. code-block:: text
