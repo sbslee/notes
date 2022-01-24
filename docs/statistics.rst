@@ -130,6 +130,8 @@ Wald test
 
 The Wald test assesses constraints on statistical parameters based on the weighted distance between the unrestricted estimate and its hypothesized value under the null hypothesis, where the weight is the precision of the estimate.
 
+An advantage of the Wald test is that it only requires the estimation of the unrestricted model, which lowers the computational burden as compared to the likelihood-ratio test. However, a major disadvantage is that (in finite samples) it is not invariant to changes in the representation of the null hypothesis; in other words, algebraically equivalent expressions of non-linear parameter restriction can lead to different values of the test statistic. That is because the Wald statistic is derived from a Taylor expansion, and different ways of writing equivalent nonlinear expressions lead to nontrivial differences in the corresponding Taylor coefficients.
+
 Likelihood-ratio test
 ---------------------
 
