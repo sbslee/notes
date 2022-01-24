@@ -125,6 +125,16 @@ Shapiro-Wilk test
 
 The Shapiro-Wilk test (``scipy.stats.shapiro``) tests the null hypothesis that the data was drawn from a normal distribution.
 
+Wald test
+---------
+
+The Wald test assesses constraints on statistical parameters based on the weighted distance between the unrestricted estimate and its hypothesized value under the null hypothesis, where the weight is the precision of the estimate.
+
+Likelihood-ratio test
+---------------------
+
+The likelihood-ratio test assesses the goodness of fit of two competing statistical models based on the ratio of their likelihoods, specifically one found by maximization over the entire parameter space and another found after imposing some constraint.
+
 Confusing concepts
 ==================
 
