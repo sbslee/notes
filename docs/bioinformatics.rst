@@ -992,3 +992,5 @@ Useful tutorials:
 - `Getting started with sleuth <https://pachterlab.github.io/sleuth_walkthroughs/trapnell/analysis.html>`__
 - `Using p-value aggregation to obtain gene differential expression in datasets with multiple experimental conditions <https://pachterlab.github.io/sleuth_walkthroughs/pval_agg/analysis.html>`__
 - `Differential expression of transcripts using Sleuth <https://hbctraining.github.io/DGE_workshop_salmon/lessons/09_sleuth.html>`__
+
+Depending on the filesystem, one may have to set `$ export HDF5_USE_FILE_LOCKING=FALSE` to use Sleuth ([link](https://github.com/pachterlab/kallisto/issues/197)).
