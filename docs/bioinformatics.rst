@@ -998,3 +998,8 @@ Depending on the filesystem, one may encounter a situtation where Sleuth throws 
 .. code-block:: text
 
     $ export HDF5_USE_FILE_LOCKING=FALSE
+
+STRING
+======
+
+Protein-Protein Interaction Networks Functional Enrichment Analysis (https://string-db.org/)
