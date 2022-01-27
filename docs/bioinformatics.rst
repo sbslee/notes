@@ -1011,3 +1011,4 @@ CEMitool
 CEMiTool is an easy-to-use package, automating within a single R function (cemitool) the entire module discovery process - including gene filtering and functional analyses.
 
 Manual - `CEMiTool: Co-expression Modules identification Tool <https://www.bioconductor.org/packages/devel/bioc/manuals/CEMiTool/man/CEMiTool.pdf>`__
+Reference for using DEGs for CEMitool - `https://www.thelancet.com/pdfs/journals/ebiom/PIIS2352-3964(20)30498-9.pdf <https://www.thelancet.com/pdfs/journals/ebiom/PIIS2352-3964(20)30498-9.pdf>`__
