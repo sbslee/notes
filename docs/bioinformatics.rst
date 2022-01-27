@@ -1003,3 +1003,11 @@ STRING
 ======
 
 Protein-Protein Interaction Networks Functional Enrichment Analysis (https://string-db.org/)
+
+
+CEMitool
+========
+
+CEMiTool is an easy-to-use package, automating within a single R function (cemitool) the entire module discovery process - including gene filtering and functional analyses.
+
+Manual - `CEMiTool: Co-expression Modules identification Tool <https://www.bioconductor.org/packages/devel/bioc/manuals/CEMiTool/man/CEMiTool.pdf>`__
