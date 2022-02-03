@@ -1012,3 +1012,13 @@ CEMiTool is an easy-to-use package, automating within a single R function (cemit
 
 Manual - `CEMiTool: Co-expression Modules identification Tool <https://www.bioconductor.org/packages/devel/bioc/manuals/CEMiTool/man/CEMiTool.pdf>`__
 Reference for using DEGs for CEMitool - `https://www.thelancet.com/pdfs/journals/ebiom/PIIS2352-3964(20)30498-9.pdf <https://www.thelancet.com/pdfs/journals/ebiom/PIIS2352-3964(20)30498-9.pdf>`__
+
+Mutalisk
+========
+
+Mutalisk is a free and public web service program that enables comprehensive analysis of somatic DNA mutations with genome regulation elements and DNA sequence contexts.
+
+FIREVAT
+=======
+
+FIREVAT (FInding REliable Variants without ArTifacts) is a variant refinement software which uses known spectrums of sequencing artifacts extracted from one of the largest publicly available catalogs of human tumor samples.
