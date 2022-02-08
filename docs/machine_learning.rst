@@ -58,3 +58,24 @@ Many machine learning algorithms cannot operate on label data directly. They req
 References:
 
   - `Why One-Hot Encode Data in Machine Learning? <https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/>`__
+
+Discriminative vs. generative models
+====================================
+
+Discriminative models draw boundaries in the data space, while generative models try to model how data is placed throughout the space. A generative model focuses on explaining how the data was generated, while a discriminative model focuses on predicting the labels of the data.
+
+In mathematical terms, a discriminative machine learning trains a model which is done by learning parameters that maximize the conditional probability P(Y|X), while on the other hand, a generative model learns parameters by maximizing the joint probability of P(X, Y).
+
+.. list-table::
+   :header-rows: 1
+
+   * - Model
+     - Example
+   * - Discriminative
+     - Logistic regression, Scalar Vector Machine (SVMs), Traditional neural networks, Nearest neighbor, Conditional Random Fields (CRFs), Decision Trees and Random Forest
+   * - Generative
+     - Naïve Bayes, Bayesian networks, Markov random fields, Hidden Markov Models (HMMs), Latent Dirichlet Allocation (LDA), Generative Adversarial Networks (GANs), Autoregressive Model
+     
+References:
+
+  - `Deep Understanding of Discriminative and Generative Models in Machine Learning <https://www.analyticsvidhya.com/blog/2021/07/deep-understanding-of-discriminative-and-generative-models-in-machine-learning/#:~:text=Discriminative%20models%20draw%20boundaries%20in,the%20labels%20of%20the%20data.>`__
