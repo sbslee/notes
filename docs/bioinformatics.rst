@@ -1025,3 +1025,9 @@ FIREVAT
 =======
 
 FIREVAT (FInding REliable Variants without ArTifacts) is a variant refinement software which uses known spectrums of sequencing artifacts extracted from one of the largest publicly available catalogs of human tumor samples.
+
+Scanpy
+======
+
+Webiste: https://scanpy.readthedocs.io/en/stable/
+Useful tutorial: https://scanpy-tutorials.readthedocs.io/en/latest/pbmc3k.html
