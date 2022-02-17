@@ -1030,4 +1030,15 @@ Scanpy
 ======
 
 Webiste: https://scanpy.readthedocs.io/en/stable/
+
 Useful tutorial: https://scanpy-tutorials.readthedocs.io/en/latest/pbmc3k.html
+
+Cell Ranger
+===========
+
+Website: https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger
+
+3' Gene Expression Outputs
+--------------------------
+
+https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/output/gex-outputs
