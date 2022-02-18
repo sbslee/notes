@@ -980,7 +980,8 @@ References:
 Kallisto
 ========
 
-Manual: https://pachterlab.github.io/kallisto/
+- `Official homepage <https://pachterlab.github.io/kallisto/>`__
+- Don't forget to use ``--rf-stranded``.
 
 Sleuth
 ======
