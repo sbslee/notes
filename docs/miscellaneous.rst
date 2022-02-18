@@ -1,6 +1,11 @@
 Miscellaneous
 *************
 
+Stranded vs Non-Stranded RNAseq
+===============================
+
+https://blog.genewiz.com/stranded-vs-non-stranded-rna-seq?utm_term=&utm_campaign=*APAC*+NGS&utm_source=adwords&utm_medium=ppc&hsa_tgt=dsa-460355903923&hsa_grp=93772107045&hsa_src=g&hsa_net=adwords&hsa_mt=&hsa_ver=3&hsa_ad=419449356856&hsa_acc=8363678060&hsa_kw=&hsa_cam=8160495724&gclid=CjwKCAiAgbiQBhAHEiwAuQ6BkpSeIfLXV0Ie_WRTE5Sr3PoflB_ETufbhv945KfX3g-yVb6RIfrBixoC_GIQAvD_BwE
+
 Mount NTFS Drive on CentOS
 ==========================
 
