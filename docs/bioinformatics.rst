@@ -1036,7 +1036,7 @@ Useful tutorial: https://scanpy-tutorials.readthedocs.io/en/latest/pbmc3k.html
 Cell Ranger
 ===========
 
-- `What is Cell Ranger? <https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger>`
+- `What is Cell Ranger? <https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger>`__
 - `Single-Library Analysis with cellranger count <https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count#cr-count>`__
 - `3' Gene Expression Outputs <https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/output/gex-outputs>`__
 - `V(D)J T Cell and B Cell Analysis with cellranger vdj <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/vdj#what>`__
