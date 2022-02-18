@@ -1042,3 +1042,4 @@ Cell Ranger
 - `3' Gene Expression Outputs <https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/output/gex-outputs>`__
 - `V(D)J T Cell and B Cell Analysis with cellranger vdj <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/vdj#what>`__
 - `Understanding V(D)J Output <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/output/overview>`__
+- `Cellranger aggr for V(D)J <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/aggr>`__
