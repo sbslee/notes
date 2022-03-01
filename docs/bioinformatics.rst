@@ -4,31 +4,31 @@ Bioinformatics
 Frequently used commands for Bioinformatics
 ===========================================
 
-To extract read names from a FASTQ file:
+Extract read names from a FASTQ file:
 
 .. code-block:: text
 
     $ gunzip -c sample.fastq.gz | paste - - - - | cut -f 1 | head
 
-To extract regions from a BED file:
+Extract regions from a BED file:
 
 .. code-block:: text
 
     $ awk '{print $1":"$2"-"$3}' example.bed | sed 's/chr//g' > regions.list
 
-To zip a VCF file:
+Zip a VCF file:
 
 .. code-block:: text
 
     $ bgzip -c sample.vcf > sample.vcf.gz
 
-To index a VCF file:
+Index a VCF file:
 
 .. code-block:: text
 
     $ tabix -p vcf sample.vcf.gz
 
-To rename the ``chr`` string in a VCF file:
+Rename the ``chr`` string in a VCF file:
 
 .. code-block:: text
 
@@ -36,55 +36,55 @@ To rename the ``chr`` string in a VCF file:
     $ echo "2 chr2" >> chr_name_conv.txt
     $ bcftools annotate --rename-chrs chr_name_conv.txt original.vcf.gz | bgzip > rename.vcf.gz
 
-To slice a VCF file:
+Slice a VCF file:
 
 .. code-block:: text
 
     $ tabix -h sample.vcf.gz chr1:1000-2000 > sliced.vcf.gz
 
-To slice a VCF file without using tabix:
+Slice a VCF file without using tabix:
 
 .. code-block:: text
 
     $ zcat sample.vcf.gz | awk '{OFS="\t"; if ($2 > 1000 && $2 < 2000){ print }}'
 
-To count the number of sequence reads in a FASTQ file:
+Count the number of sequence reads in a FASTQ file:
 
 .. code-block:: text
 
     $ echo $(cat sample.fastq | wc -l) / 4 | bc
 
-To count the number of sequence reads in a zipped FASTQ file:
+Count the number of sequence reads in a zipped FASTQ file:
 
 .. code-block:: text
 
     $ echo $(zcat sample.fastq | wc -l) / 4 | bc
 
-To count the number of sequence reads in a zipped FASTQ file (macOS):
+Count the number of sequence reads in a zipped FASTQ file (macOS):
 
 .. code-block:: text
 
     $ echo $(zcat < sample.fastq.gz | wc -l) / 4 | bc
 
-To extract only sequence reads from a zipped FASTQ file:
+Extract only sequence reads from a zipped FASTQ file:
 
 .. code-block:: text
 
     $ zcat sample.fastq.gz | awk '{if (NR% 4 == 2) print $0}'
 
-To extract exon coordinates for a gene:
+Extract exon coordinates for a gene:
 
 .. code-block:: text
 
     $ grep -w "CYP2A6" Homo_sapiens.GRCh37.75.gtf | grep "CYP2A6-001" | grep -w "exon" | cut -f 1,4,5,9 -d$'\t' | cut -f 1,3 -d';' | sed 's/gene_id "ENSG00000255974"; //g'
 
-To extract rpkm values from a .gct file:
+Extract rpkm values from a .gct file:
 
 .. code-block:: text
 
     $ printf "`echo $sample`\t`grep -w "CYP2A7" /net/grc/vol6/data/processed/samples/$sample/RNA_SEQ/qc/genes.rpkm.gct`\n"
 
-To extract sequence headers from a FASTA file:
+Extract sequence headers from a FASTA file:
 
 .. code-block:: text
 
