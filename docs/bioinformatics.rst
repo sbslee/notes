@@ -1032,7 +1032,8 @@ Scanpy
 
 Webiste: https://scanpy.readthedocs.io/en/stable/
 
-Useful tutorial: https://scanpy-tutorials.readthedocs.io/en/latest/pbmc3k.html
+- `[Scanpy Tutorial] Preprocessing and clustering 3k PBMCs <https://scanpy-tutorials.readthedocs.io/en/latest/pbmc3k.html>`__
+- `[Galaxy Tutorial] Clustering 3K PBMCs with Scanpy <https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/scrna-scanpy-pbmc3k/tutorial.html>`__
 
 Cell Ranger
 ===========
