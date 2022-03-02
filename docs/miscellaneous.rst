@@ -1,6 +1,11 @@
 Miscellaneous
 *************
 
+scRNAseq analysis
+=================
+
+- `[Biostars] Single cell RNA-seq: how many PCs to use for t-SNE/UMAP? <https://www.biostars.org/p/9466164/>`__
+
 Stranded vs Non-Stranded RNAseq
 ===============================
 
