@@ -1045,3 +1045,4 @@ Cell Ranger
 - `Understanding V(D)J Output <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/output/overview>`__
 - `Cellranger aggr for V(D)J <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/aggr>`__
 - `Analyzing V(D)J, Gene Expression & Feature Barcode with cellranger multi <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/multi>`__
+- `Cell Multiplexing Oligo Labeling for Single Cell RNA Sequencing Protocols <https://support.10xgenomics.com/single-cell-gene-expression/overview/doc/demonstrated-protocol-cell-multiplexing-oligo-labeling-for-single-cell-rna-sequencing-protocols>`__
