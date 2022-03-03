@@ -1047,3 +1047,13 @@ Cell Ranger
 - `Cellranger aggr for V(D)J <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/aggr>`__
 - `Analyzing V(D)J, Gene Expression & Feature Barcode with cellranger multi <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/multi>`__
 - `Cell Multiplexing Oligo Labeling for Single Cell RNA Sequencing Protocols <https://support.10xgenomics.com/single-cell-gene-expression/overview/doc/demonstrated-protocol-cell-multiplexing-oligo-labeling-for-single-cell-rna-sequencing-protocols>`__
+
+PanglaoDB
+=========
+
+`PanglaoDB <https://panglaodb.se/index.html>`__ is a database for the scientific community interested in exploration of single cell RNA sequencing experiments from mouse and human. We collect and integrate data from multiple studies and present them through a unified framework.
+
+Scrublet
+========
+
+`Scrublet <https://github.com/swolock/scrublet>`__ is Python code for identifying doublets in single-cell RNA-seq data. 
