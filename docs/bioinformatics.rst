@@ -1034,6 +1034,7 @@ Webiste: https://scanpy.readthedocs.io/en/stable/
 
 - `[Scanpy Tutorial] Preprocessing and clustering 3k PBMCs <https://scanpy-tutorials.readthedocs.io/en/latest/pbmc3k.html>`__
 - `[Galaxy Tutorial] Clustering 3K PBMCs with Scanpy <https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/scrna-scanpy-pbmc3k/tutorial.html>`__
+- `[Scanpy GitHub Issue] Limitations of regress_out as a standard processing step? <https://github.com/theislab/scanpy/issues/526>`__
 
 Cell Ranger
 ===========
