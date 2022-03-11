@@ -1058,3 +1058,16 @@ Scrublet
 ========
 
 `Scrublet <https://github.com/swolock/scrublet>`__ is Python code for identifying doublets in single-cell RNA-seq data. 
+
+Seurat
+======
+
+- `Seurat - Guided Clustering Tutorial <https://satijalab.org/seurat/articles/pbmc3k_tutorial.html>`__
+- `Introduction to scRNA-seq integration <https://satijalab.org/seurat/articles/integration_introduction.html>`__
+
+SingleR
+=======
+
+- `[Vignette] Using SingleR to annotate single-cell RNA-seq data <https://bioconductor.org/packages/devel/bioc/vignettes/SingleR/inst/doc/SingleR.html>`__
+- `[SingleRBook] Chapter 1 Introduction <http://bioconductor.org/books/release/SingleRBook/introduction.html#method-description>`__
+- `[SingleRBook] Chapter 5 Using multiple references <http://bioconductor.org/books/release/SingleRBook/using-multiple-references.html#using-reference-specific-labels>`__
