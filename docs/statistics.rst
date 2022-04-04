@@ -251,6 +251,8 @@ The receiver operating characteristic (ROC) curve is created by plotting the tru
 
 > ROC curves will be the same no matter what the baseline probability is, but PR curves may be more useful in practice for needle-in-haystack type problems or problems where the "positive" class is more interesting than the negative class.
 
+This `post <https://towardsdatascience.com/understanding-the-roc-curve-and-auc-dd4f9a192ecb>`__ gives a thorough overview on how to perform ROC.
+
 Markov chain Monte Carlo (MCMC)
 ===============================
 
