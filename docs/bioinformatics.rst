@@ -1005,7 +1005,6 @@ STRING
 
 Protein-Protein Interaction Networks Functional Enrichment Analysis (https://string-db.org/)
 
-
 CEMitool
 ========
 
@@ -1048,6 +1047,32 @@ Cell Ranger
 - `Cellranger aggr for V(D)J <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/aggr>`__
 - `Analyzing V(D)J, Gene Expression & Feature Barcode with cellranger multi <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/multi>`__
 - `Cell Multiplexing Oligo Labeling for Single Cell RNA Sequencing Protocols <https://support.10xgenomics.com/single-cell-gene-expression/overview/doc/demonstrated-protocol-cell-multiplexing-oligo-labeling-for-single-cell-rna-sequencing-protocols>`__
+
+cellranger multi
+----------------
+
+cat multi_info_14N.csv
+[gene-expression]
+expect-cells,10000
+reference,/home/sbslee/ref/10x/refdata-gex-GRCh38-2020-A
+chemistry,auto
+
+[vdj]
+reference,/home/sbslee/ref/10x/refdata-cellranger-vdj-GRCh38-alts-ensembl-5.0.0
+
+[libraries]
+fastq_id,fastqs,feature_types
+14N_5GEX,/mnt/mone/PMI/WC300/scRNAseq/HN00166176_PMI_Transfer_RawFASTQ/HN00166176_10X_RawData_Outs/14N_5GEX/HHMKCCCX2,Gene Expression
+14N_TCR,/mnt/mone/PMI/WC300/scRNAseq/HN00166176_PMI_Transfer_RawFASTQ/HN00166176_10X_RawData_Outs/14N_TCR/HHMKCCCX2,VDJ-T
+
+cat qsub_multi_14N.sh
+#!/bin/bash
+/home/sbslee/programs/cellranger-6.1.2/cellranger multi \
+--id=14N \
+--csv=/home/sbslee/scRNAseq/multi/multi_info_14N.csv \
+--jobmode=local \
+--localcores=16 \
+--localmem=196
 
 PanglaoDB
 =========
