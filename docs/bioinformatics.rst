@@ -1051,28 +1051,32 @@ Cell Ranger
 cellranger multi
 ----------------
 
-cat multi_info_14N.csv
-[gene-expression]
-expect-cells,10000
-reference,/home/sbslee/ref/10x/refdata-gex-GRCh38-2020-A
-chemistry,auto
+.. code-block:: text
 
-[vdj]
-reference,/home/sbslee/ref/10x/refdata-cellranger-vdj-GRCh38-alts-ensembl-5.0.0
+    $ cat multi_info_14N.csv
+    [gene-expression]
+    expect-cells,10000
+    reference,/home/sbslee/ref/10x/refdata-gex-GRCh38-2020-A
+    chemistry,auto
 
-[libraries]
-fastq_id,fastqs,feature_types
-14N_5GEX,/mnt/mone/PMI/WC300/scRNAseq/HN00166176_PMI_Transfer_RawFASTQ/HN00166176_10X_RawData_Outs/14N_5GEX/HHMKCCCX2,Gene Expression
-14N_TCR,/mnt/mone/PMI/WC300/scRNAseq/HN00166176_PMI_Transfer_RawFASTQ/HN00166176_10X_RawData_Outs/14N_TCR/HHMKCCCX2,VDJ-T
+    [vdj]
+    reference,/home/sbslee/ref/10x/refdata-cellranger-vdj-GRCh38-alts-ensembl-5.0.0
 
-cat qsub_multi_14N.sh
-#!/bin/bash
-/home/sbslee/programs/cellranger-6.1.2/cellranger multi \
---id=14N \
---csv=/home/sbslee/scRNAseq/multi/multi_info_14N.csv \
---jobmode=local \
---localcores=16 \
---localmem=196
+    [libraries]
+    fastq_id,fastqs,feature_types
+    14N_5GEX,/mnt/mone/PMI/WC300/scRNAseq/HN00166176_PMI_Transfer_RawFASTQ/HN00166176_10X_RawData_Outs/14N_5GEX/HHMKCCCX2,Gene Expression
+    14N_TCR,/mnt/mone/PMI/WC300/scRNAseq/HN00166176_PMI_Transfer_RawFASTQ/HN00166176_10X_RawData_Outs/14N_TCR/HHMKCCCX2,VDJ-T
+
+.. code-block:: text
+
+    $ cat qsub_multi_14N.sh
+    #!/bin/bash
+    /home/sbslee/programs/cellranger-6.1.2/cellranger multi \
+    --id=14N \
+    --csv=/home/sbslee/scRNAseq/multi/multi_info_14N.csv \
+    --jobmode=local \
+    --localcores=16 \
+    --localmem=196
 
 PanglaoDB
 =========
