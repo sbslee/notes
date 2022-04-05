@@ -1101,3 +1101,10 @@ SingleR
 - `[Vignette] Using SingleR to annotate single-cell RNA-seq data <https://bioconductor.org/packages/devel/bioc/vignettes/SingleR/inst/doc/SingleR.html>`__
 - `[SingleRBook] Chapter 1 Introduction <http://bioconductor.org/books/release/SingleRBook/introduction.html#method-description>`__
 - `[SingleRBook] Chapter 5 Using multiple references <http://bioconductor.org/books/release/SingleRBook/using-multiple-references.html#using-reference-specific-labels>`__
+
+
+scRepertoire
+============
+
+- `[GitHub] scRepertoire <https://github.com/ncborcherding/scRepertoire>`__
+- `[Vignette] Starting work with scRepertoire v1.3.5. <https://ncborcherding.github.io/vignettes/vignette.html>`__
