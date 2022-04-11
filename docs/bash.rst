@@ -129,7 +129,7 @@ Find difference between two files:
 .. code-block:: text
 
     $ grep -Fxvf file1 file2
-    
+
 Find difference between two directories:
 
 .. code-block:: text
@@ -474,7 +474,7 @@ Print multiple columns:
 .. code-block:: text
 
     while read -r first second
-    do 
+    do
       echo "$first and $second"
     done < input.txt
 
@@ -745,7 +745,7 @@ Delete specific jobs:
 .. code-block:: text
 
     $ qstat | grep "PATTERN" | awk '{print $1}' | xargs qdel
-    
+
 Delete all jobs from a user:
 
 .. code-block:: text
@@ -953,3 +953,36 @@ Ascp
 .. code-block:: text
 
     /mnt/garnet/Users/sbslee/.aspera/connect/bin/ascp -QT -l 100m -P33001 -k 1 -i /mnt/garnet/Users/sbslee/.aspera/connect/etc/asperaweb_id_dsa.openssh era-fasp@fasp.sra.ebi.ac.uk:/vol1/run/ERR323/ERR3239276/NA06985.final.cram .
+
+
+Run commands in background
+==========================
+
+To run a command in the background, add the ampersand symbol (&) at the end
+of the command:
+
+.. code-block:: text
+
+    $ command &
+
+The job ID will be printed:
+
+.. code-block:: text
+
+    [1] 25177
+
+Display the status of all background jobs:
+
+.. code-block:: text
+
+    $ jobs -l
+
+Terminate a background job:
+
+.. code-block:: text
+
+    $ kill -9 25177
+
+References:
+
+   - `How to Run Linux Commands in Background <https://linuxize.com/post/how-to-run-linux-commands-in-background/#:~:text=A%20background%20process%20is%20a,the%20background%20processes%20is%20Linux.>`__
