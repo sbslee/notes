@@ -796,7 +796,7 @@ the FTP transfer would be interrupted. Even though the download gets restarted a
 Reference haplotype panel
 -------------------------
 
-The 1000 Genomes Project has generated the following reference haplotype panels: 
+The 1000 Genomes Project has generated the following reference haplotype panels:
 
 .. list-table::
    :header-rows: 1
@@ -825,14 +825,14 @@ The 1000 Genomes Project has generated the following reference haplotype panels:
      - `Byrska-Bishop et al., 2021 <https://www.biorxiv.org/content/10.1101/2021.02.06.430068v2>`__
      - The authors added 698 samples to the original cohort (N=2,504). The expanded cohort includes 602 trios.
      - `Link <https://www.ebi.ac.uk/ena/browser/view/PRJEB31736?show=reads>`__
-     
+
 GENCODE
 -------
 
 The goal of the GENCODE project is to identify and classify all gene features in the human and mouse genomes with high accuracy based on biological evidence, and to release these annotations for the benefit of biomedical research and genome interpretation.
 
 https://www.gencodegenes.org/human/
-     
+
 Adapter sequences
 =================
 
@@ -1086,7 +1086,7 @@ PanglaoDB
 Scrublet
 ========
 
-`Scrublet <https://github.com/swolock/scrublet>`__ is Python code for identifying doublets in single-cell RNA-seq data. 
+`Scrublet <https://github.com/swolock/scrublet>`__ is Python code for identifying doublets in single-cell RNA-seq data.
 
 Seurat
 ======
@@ -1108,3 +1108,16 @@ scRepertoire
 
 - `[GitHub] scRepertoire <https://github.com/ncborcherding/scRepertoire>`__
 - `[Vignette] Starting work with scRepertoire v1.3.5. <https://ncborcherding.github.io/vignettes/vignette.html>`__
+
+SRA Toolkit
+===========
+
+The SRA Toolkit and SDK from NCBI is a collection of tools and libraries for using data in the INSDC Sequence Read Archives.
+
+Only download selected regions of a CRAM file:
+
+.. code-block:: text
+
+    $ sam-dump ERR3239276 --aligned-region chr7:99753966-99787184,chr10:95033771-95072497 | samtools view -b > out.bam
+
+- `[GitHub] sra-tools <https://github.com/ncbi/sra-tools>`__
