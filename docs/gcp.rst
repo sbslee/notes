@@ -13,7 +13,7 @@ SSH into an instance:
 
 .. code-block:: text
 
-    $ gcloud compute ssh --zone "us-west1-b" "instance-1"  --project "white-fiber-346900"
+    $ gcloud compute ssh --zone "us-west1-b" "instance-1" --project "white-fiber-346900"
 
 Transfer files to an instance:
 
