@@ -21,6 +21,7 @@ Welcome to Seung-been "Steven" Lee's notes!
    excel
    machine_learning
    tensorflow
+   gcp
    miscellaneous
 
 
