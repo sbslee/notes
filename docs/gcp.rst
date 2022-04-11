@@ -15,8 +15,14 @@ SSH into an instance:
 
     $ gcloud compute ssh --zone "us-west1-b" "instance-1" --project "white-fiber-346900"
 
-Transfer files to an instance:
+Upload files to an instance:
 
 .. code-block:: text
 
     $ gcloud compute scp test.txt "instance-1":~ --project "white-fiber-346900" --zone "us-west1-b"
+
+Download files from an instance:
+
+.. code-block:: text
+
+    $ gcloud compute scp "instance-1":~/test.txt . --project "white-fiber-346900" --zone "us-west1-b"
