@@ -13,7 +13,15 @@ SSH into VM:
 
 .. code-block:: text
 
-    $ gcloud compute ssh --zone "us-west1-b" "instance-1" --project "white-fiber-346900"
+    $ gcloud compute ssh <user>@<instance> --project <project> --zone <zone>
+    $ gcloud compute ssh "sbslee@instance-1" --project "white-fiber-346900" --zone "us-west1-b"
+
+SSH into VM (username omitted):
+
+.. code-block:: text
+
+    $ gcloud compute ssh <instance> --project <project> --zone <zone>
+    $ gcloud compute ssh "instance-1" --project "white-fiber-346900" --zone "us-west1-b"
 
 Upload files to VM:
 
