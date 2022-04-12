@@ -20,7 +20,7 @@ EPEL (Extra Packages for Enterprise Linux) is a Fedora Special Interest Group th
 
     $ yum install epel-release
     $ yum install ntfs-3g
-    
+
 Now your system should be able to open the NTFS drive without issues.
 
 References:
@@ -69,7 +69,7 @@ Lovely Lucky LAMBs
 
 `Reference <https://datanonymous.wordpress.com/foobar-level-2-lovely-lucky-lambs/>`__
 
-.. code-block:: note
+.. code-block:: text
 
     def solution(total_lambs):
 
@@ -116,7 +116,7 @@ Find the Access Codes
 
 `Reference <https://stackoverflow.com/questions/39846735/google-foobar-challenge-3-find-the-access-codes>`__
 
-.. code-block:: note
+.. code-block:: text
 
     def solution(l):
         c = [0] * len(l)
@@ -139,7 +139,7 @@ Bomb, Baby!
 
 `Reference <https://github.com/ivanseed/google-foobar-help/blob/master/challenges/bomb_baby/bomb_baby.md>`__
 
-.. code-block:: note
+.. code-block:: text
 
     def solution(x, y):
         M, F = max(int(x), int(y)), min(int(x), int(y))
@@ -161,7 +161,7 @@ Fuel Injection Perfection
 
 `Reference <https://gist.github.com/thorstenhirsch/f14842aaeb2d2073e18ec91211ec3875>`__
 
-.. code-block:: note
+.. code-block:: text
 
     def solution(n):
         n = int(n)
@@ -192,13 +192,13 @@ Fuel Injection Perfection
 
     print(solution("4"))  # 2
     print(solution("15")) # 5
-    
+
 Free the Bunny Workers
 ----------------------
 
 `Reference <https://vitaminac.github.io/Google-Foobar-Free-the-Bunny-Prisoners/>`__
 
-.. code-block:: note
+.. code-block:: text
 
     from itertools import combinations
 
