@@ -615,6 +615,13 @@ The flag ``-Xmx`` specifies the maximum memory allocation pool for a Java Virtua
 
 The ``-Xmx`` value the tool is run with should be less than the total amount of physical memory available by at least a few GB, as the native TileDB library requires additional memory on top of the Java memory. Failure to leave enough memory for the native code can result in confusing error messages!
 
+OxoG oxidative artifacts
+------------------------
+
+According to this `post <https://gatk.broadinstitute.org/hc/en-us/articles/360035890571-OxoG-oxidative-artifacts#:~:text=OxoG%20oxidative%20artifacts%20Follow&text=Oxidation%20of%20guanine%20to%208,10.1093%2Fnar%2Fgks1443>`__:
+
+    Oxidation of guanine to 8-oxoguanine is one of the most common pre-adapter artifacts associated with genomic library preparation, arising from a combination of heat, shearing, and metal contaminates in a sample (doi: 10.1093/nar/gks1443). The 8-oxoguanine base can pair with either cytosine or adenine, ultimately leading to G→T transversion mutations during PCR amplification.
+
 Agilent Genomics NextGen Toolkit (AGeNT)
 ========================================
 
