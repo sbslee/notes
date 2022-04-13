@@ -71,6 +71,12 @@ List computer resources:
 
     $ lscpu
 
+List files with 0 bytes:
+
+.. code-block:: text
+
+    find . -size 0 -type f
+
 Zipped files
 ------------
 
