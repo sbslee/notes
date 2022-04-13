@@ -65,6 +65,12 @@ Here, the ``aux`` option means:
 * ``u`` - show the process's owner
 * ``x`` - show processes not attached to a terminal
 
+List computer resources:
+
+.. code-block:: text
+
+    $ lscpu
+
 Zipped files
 ------------
 
