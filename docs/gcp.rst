@@ -42,7 +42,8 @@ Download files from Google Cloud Storage
 .. code-block:: text
 
     $ wget https://storage.googleapis.com/sbslee-bucket/ref/grch37/genome.fa
-
+    $ gsutil cp gs://sbslee-bucket/ref/grch37/genome.fa .
+    
 Create VM
 =========
 
