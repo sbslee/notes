@@ -37,6 +37,12 @@ Download files from VM:
     $ gcloud compute scp "instance-1":~/test.txt . --project "white-fiber-346900" --zone "us-west1-b"
     $ gcloud compute scp --recurse "instance-1":~/test . --project "white-fiber-346900" --zone "us-west1-b"
 
+Download files from Google Cloud Storage
+
+.. code-block:: text
+
+    $ wget https://storage.googleapis.com/sbslee-bucket/ref/grch37/genome.fa
+
 Create VM
 =========
 
