@@ -90,6 +90,133 @@ Extract sequence headers from a FASTA file:
 
     $ grep -e ">" example.fasta
 
+Cell Ranger
+===========
+
+- `What is Cell Ranger? <https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger>`__
+- `Single-Library Analysis with cellranger count <https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count#cr-count>`__
+- `3' Gene Expression Outputs <https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/output/gex-outputs>`__
+- `Cellranger aggr for GEX <https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/aggregate>`__
+- `V(D)J T Cell and B Cell Analysis with cellranger vdj <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/vdj#what>`__
+- `Understanding V(D)J Output <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/output/overview>`__
+- `Cellranger aggr for V(D)J <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/aggr>`__
+- `Analyzing V(D)J, Gene Expression & Feature Barcode with cellranger multi <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/multi>`__
+- `Cell Multiplexing Oligo Labeling for Single Cell RNA Sequencing Protocols <https://support.10xgenomics.com/single-cell-gene-expression/overview/doc/demonstrated-protocol-cell-multiplexing-oligo-labeling-for-single-cell-rna-sequencing-protocols>`__
+
+cellranger multi
+----------------
+
+.. code-block:: text
+
+    $ cat multi_info_14N.csv
+    [gene-expression]
+    expect-cells,10000
+    reference,/home/sbslee/ref/10x/refdata-gex-GRCh38-2020-A
+    chemistry,auto
+
+    [vdj]
+    reference,/home/sbslee/ref/10x/refdata-cellranger-vdj-GRCh38-alts-ensembl-5.0.0
+
+    [libraries]
+    fastq_id,fastqs,feature_types
+    14N_5GEX,/mnt/mone/PMI/WC300/scRNAseq/HN00166176_PMI_Transfer_RawFASTQ/HN00166176_10X_RawData_Outs/14N_5GEX/HHMKCCCX2,Gene Expression
+    14N_TCR,/mnt/mone/PMI/WC300/scRNAseq/HN00166176_PMI_Transfer_RawFASTQ/HN00166176_10X_RawData_Outs/14N_TCR/HHMKCCCX2,VDJ-T
+
+.. code-block:: text
+
+    $ cat qsub_multi_14N.sh
+    #!/bin/bash
+    /home/sbslee/programs/cellranger-6.1.2/cellranger multi \
+    --id=14N \
+    --csv=/home/sbslee/scRNAseq/multi/multi_info_14N.csv \
+    --jobmode=local \
+    --localcores=16 \
+    --localmem=196
+
+CEMitool
+========
+
+CEMiTool is an easy-to-use package, automating within a single R function (cemitool) the entire module discovery process - including gene filtering and functional analyses.
+
+Manual - `CEMiTool: Co-expression Modules identification Tool <https://www.bioconductor.org/packages/devel/bioc/manuals/CEMiTool/man/CEMiTool.pdf>`__
+
+Reference for using DEGs for CEMitool - `Gene expression signatures identify paediatric patients with multiple organ dysfunction who require advanced life support in the intensive care unit <https://www.thelancet.com/pdfs/journals/ebiom/PIIS2352-3964(20)30498-9.pdf>`__
+
+Must-see tutorial - `CEMiTool: Co-expression Modules Identification Tool <https://www.bioconductor.org/packages/devel/bioc/vignettes/CEMiTool/inst/doc/CEMiTool.html>`__
+
+Citup
+=====
+
+Citup (clonality inference in tumors using phylogeny) is a tool for inferring tumor heterogeneity using multiple samples from a single patient. Given mutational frequencies for each sample, Citup uses an optimization based algorithm to find the evolutionary tree best explaining the data.
+
+There are currently two GitHub repositories that host the Citup code, `amcpherson/citup <https://github.com/amcpherson/citup>`__ and `sfu-compbio/citup <https://github.com/sfu-compbio/citup>`__, but I ended up using the former. Installation of Citup was not easy; its documentation is terriably outdated and there are not much help out in the Internet either. Also, it only support Linux.
+
+After a stuggle, I finally managed to install Citup using below:
+
+.. code-block:: text
+
+    (base) [sbslee@cm401 ~]$ conda create -n citup -c dranew citup
+
+The main problem I had during installation was that I kept getting the following error:
+
+.. code-block:: text
+
+    (citup) [sbslee@cm401 ~]$ run_citup_iter.py --help
+    Traceback (most recent call last):
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/bin/run_citup_iter.py", line 4, in <module>
+        __import__('pkg_resources').run_script('citup==0.1.0', 'run_citup_iter.py')
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pkg_resources/__init__.py", line 666, in run_script
+        self.require(requires)[0].run_script(script_name, ns)
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pkg_resources/__init__.py", line 1469, in run_script
+        exec(script_code, namespace, namespace)
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/citup-0.1.0-py2.7.egg/EGG-INFO/scripts/run_citup_iter.py", line 3, in <module>
+        __requires__ = 'citup==0.1.0'
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pypeliner/__init__.py", line 3, in <module>
+        import scheduler
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pypeliner/scheduler.py", line 10, in <module>
+        import pypeliner.graph
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pypeliner/graph.py", line 2, in <module>
+        import networkx
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/networkx/__init__.py", line 98, in <module>
+        import networkx.utils
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/networkx/utils/__init__.py", line 2, in <module>
+        from networkx.utils.decorators import *
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/networkx/utils/decorators.py", line 14, in <module>
+        from decorator import decorator
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/decorator.py", line 162
+        print('Error in generated code:', file=sys.stderr)
+                                              ^
+    SyntaxError: invalid syntax
+
+It turns out the problem was caused because conda installed an incorrect version of the ``decorator`` package (v5.1.0). When I downgraded it to v4.4.1, it finally worked.
+
+But then I also ran into the following error:
+
+.. code-block:: text
+
+    (citup) [sbslee@cm401 site-packages]$ run_citup_iter.py freq.txt results.h5
+    min_nodes: 1, max_nodes: 4
+    Traceback (most recent call last):
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/bin/run_citup_iter.py", line 4, in <module>
+        __import__('pkg_resources').run_script('citup==0.1.0', 'run_citup_iter.py')
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pkg_resources/__init__.py", line 666, in run_script
+        self.require(requires)[0].run_script(script_name, ns)
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pkg_resources/__init__.py", line 1469, in run_script
+        exec(script_code, namespace, namespace)
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/citup-0.1.0-py2.7.egg/EGG-INFO/scripts/run_citup_iter.py", line 45, in <module>
+
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pypeliner/app.py", line 214, in __init__
+        config_filename=self.config['submit_config'])
+      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pypeliner/execqueue/factory.py", line 6, in create
+        raise Exception('No submit queue specified')
+    Exception: No submit queue specified
+
+This error was fixed by adding ``--submit local`` in the command.
+
+From 'Lymph Node Metastases in Colon Cancer Are Polyclonal <https://pubmed.ncbi.nlm.nih.gov/29203589/>'__:
+
+"The CITUP tool (ref. 19; v0.1.0 of the Bitbucket version, https:// bitbucket.org/dranew/citup/) was run for the assembled dataset of filtered cellular prevalence estimates for each variant in each patient generated by PyClone. CITUP enumerates all possible phylogenetic trees up to a given number of nodes, assigning variants to nodes in the tree and solving a quadratic inference problem that minimizes error in the assignment of variants to nodes in the tree. The QIP-based method of the tool was used and PyClone cluster assignments provided for each variant using 1,000 restarts and selecting the tree solution with the minimum Bayesian information criterion (BIC) score. The max number of nodes was set to eight. Higher max nodes counts were attempted for tumors for which PyClone predicted more subclones than eight but were computationally prohibitive."
+
 GTCtoVCF
 ========
 
@@ -678,6 +805,11 @@ References
 - https://www.agilent.com/en/product/next-generation-sequencing/hybridization-based-next-generation-sequencing-ngs/ngs-software/agent-232879
 - https://www.agilent.com/cs/library/software/Public/AGeNT%20ReadMe.pdf
 
+European Nucleotide Archive (ENA)
+=================================
+
+- `ENA: Guidelines and Tutorials <https://ena-docs.readthedocs.io/en/latest/>`__
+
 Ensembl
 =======
 
@@ -904,79 +1036,6 @@ Illumina Sequencing Analysis Viewer
 
 https://sapac.support.illumina.com/sequencing/sequencing_software/sequencing_analysis_viewer_sav.html
 
-Citup
-=====
-
-Citup (clonality inference in tumors using phylogeny) is a tool for inferring tumor heterogeneity using multiple samples from a single patient. Given mutational frequencies for each sample, Citup uses an optimization based algorithm to find the evolutionary tree best explaining the data.
-
-There are currently two GitHub repositories that host the Citup code, `amcpherson/citup <https://github.com/amcpherson/citup>`__ and `sfu-compbio/citup <https://github.com/sfu-compbio/citup>`__, but I ended up using the former. Installation of Citup was not easy; its documentation is terriably outdated and there are not much help out in the Internet either. Also, it only support Linux.
-
-After a stuggle, I finally managed to install Citup using below:
-
-.. code-block:: text
-
-    (base) [sbslee@cm401 ~]$ conda create -n citup -c dranew citup
-
-The main problem I had during installation was that I kept getting the following error:
-
-.. code-block:: text
-
-    (citup) [sbslee@cm401 ~]$ run_citup_iter.py --help
-    Traceback (most recent call last):
-      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/bin/run_citup_iter.py", line 4, in <module>
-        __import__('pkg_resources').run_script('citup==0.1.0', 'run_citup_iter.py')
-      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pkg_resources/__init__.py", line 666, in run_script
-        self.require(requires)[0].run_script(script_name, ns)
-      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pkg_resources/__init__.py", line 1469, in run_script
-        exec(script_code, namespace, namespace)
-      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/citup-0.1.0-py2.7.egg/EGG-INFO/scripts/run_citup_iter.py", line 3, in <module>
-        __requires__ = 'citup==0.1.0'
-      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pypeliner/__init__.py", line 3, in <module>
-        import scheduler
-      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pypeliner/scheduler.py", line 10, in <module>
-        import pypeliner.graph
-      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pypeliner/graph.py", line 2, in <module>
-        import networkx
-      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/networkx/__init__.py", line 98, in <module>
-        import networkx.utils
-      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/networkx/utils/__init__.py", line 2, in <module>
-        from networkx.utils.decorators import *
-      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/networkx/utils/decorators.py", line 14, in <module>
-        from decorator import decorator
-      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/decorator.py", line 162
-        print('Error in generated code:', file=sys.stderr)
-                                              ^
-    SyntaxError: invalid syntax
-
-It turns out the problem was caused because conda installed an incorrect version of the ``decorator`` package (v5.1.0). When I downgraded it to v4.4.1, it finally worked.
-
-But then I also ran into the following error:
-
-.. code-block:: text
-
-    (citup) [sbslee@cm401 site-packages]$ run_citup_iter.py freq.txt results.h5
-    min_nodes: 1, max_nodes: 4
-    Traceback (most recent call last):
-      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/bin/run_citup_iter.py", line 4, in <module>
-        __import__('pkg_resources').run_script('citup==0.1.0', 'run_citup_iter.py')
-      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pkg_resources/__init__.py", line 666, in run_script
-        self.require(requires)[0].run_script(script_name, ns)
-      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pkg_resources/__init__.py", line 1469, in run_script
-        exec(script_code, namespace, namespace)
-      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/citup-0.1.0-py2.7.egg/EGG-INFO/scripts/run_citup_iter.py", line 45, in <module>
-
-      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pypeliner/app.py", line 214, in __init__
-        config_filename=self.config['submit_config'])
-      File "/mnt/garnet/Users/sbslee/anaconda3/envs/citup/lib/python2.7/site-packages/pypeliner/execqueue/factory.py", line 6, in create
-        raise Exception('No submit queue specified')
-    Exception: No submit queue specified
-
-This error was fixed by adding ``--submit local`` in the command.
-
-From 'Lymph Node Metastases in Colon Cancer Are Polyclonal <https://pubmed.ncbi.nlm.nih.gov/29203589/>'__:
-
-"The CITUP tool (ref. 19; v0.1.0 of the Bitbucket version, https:// bitbucket.org/dranew/citup/) was run for the assembled dataset of filtered cellular prevalence estimates for each variant in each patient generated by PyClone. CITUP enumerates all possible phylogenetic trees up to a given number of nodes, assigning variants to nodes in the tree and solving a quadratic inference problem that minimizes error in the assignment of variants to nodes in the tree. The QIP-based method of the tool was used and PyClone cluster assignments provided for each variant using 1,000 restarts and selecting the tree solution with the minimum Bayesian information criterion (BIC) score. The max number of nodes was set to eight. Higher max nodes counts were attempted for tumors for which PyClone predicted more subclones than eight but were computationally prohibitive."
-
 STAR
 ====
 
@@ -1012,17 +1071,6 @@ STRING
 
 Protein-Protein Interaction Networks Functional Enrichment Analysis (https://string-db.org/)
 
-CEMitool
-========
-
-CEMiTool is an easy-to-use package, automating within a single R function (cemitool) the entire module discovery process - including gene filtering and functional analyses.
-
-Manual - `CEMiTool: Co-expression Modules identification Tool <https://www.bioconductor.org/packages/devel/bioc/manuals/CEMiTool/man/CEMiTool.pdf>`__
-
-Reference for using DEGs for CEMitool - `Gene expression signatures identify paediatric patients with multiple organ dysfunction who require advanced life support in the intensive care unit <https://www.thelancet.com/pdfs/journals/ebiom/PIIS2352-3964(20)30498-9.pdf>`__
-
-Must-see tutorial - `CEMiTool: Co-expression Modules Identification Tool <https://www.bioconductor.org/packages/devel/bioc/vignettes/CEMiTool/inst/doc/CEMiTool.html>`__
-
 Mutalisk
 ========
 
@@ -1041,49 +1089,6 @@ Webiste: https://scanpy.readthedocs.io/en/stable/
 - `[Scanpy Tutorial] Preprocessing and clustering 3k PBMCs <https://scanpy-tutorials.readthedocs.io/en/latest/pbmc3k.html>`__
 - `[Galaxy Tutorial] Clustering 3K PBMCs with Scanpy <https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/scrna-scanpy-pbmc3k/tutorial.html>`__
 - `[Scanpy GitHub Issue] Limitations of regress_out as a standard processing step? <https://github.com/theislab/scanpy/issues/526>`__
-
-Cell Ranger
-===========
-
-- `What is Cell Ranger? <https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger>`__
-- `Single-Library Analysis with cellranger count <https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count#cr-count>`__
-- `3' Gene Expression Outputs <https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/output/gex-outputs>`__
-- `Cellranger aggr for GEX <https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/aggregate>`__
-- `V(D)J T Cell and B Cell Analysis with cellranger vdj <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/vdj#what>`__
-- `Understanding V(D)J Output <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/output/overview>`__
-- `Cellranger aggr for V(D)J <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/aggr>`__
-- `Analyzing V(D)J, Gene Expression & Feature Barcode with cellranger multi <https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/multi>`__
-- `Cell Multiplexing Oligo Labeling for Single Cell RNA Sequencing Protocols <https://support.10xgenomics.com/single-cell-gene-expression/overview/doc/demonstrated-protocol-cell-multiplexing-oligo-labeling-for-single-cell-rna-sequencing-protocols>`__
-
-cellranger multi
-----------------
-
-.. code-block:: text
-
-    $ cat multi_info_14N.csv
-    [gene-expression]
-    expect-cells,10000
-    reference,/home/sbslee/ref/10x/refdata-gex-GRCh38-2020-A
-    chemistry,auto
-
-    [vdj]
-    reference,/home/sbslee/ref/10x/refdata-cellranger-vdj-GRCh38-alts-ensembl-5.0.0
-
-    [libraries]
-    fastq_id,fastqs,feature_types
-    14N_5GEX,/mnt/mone/PMI/WC300/scRNAseq/HN00166176_PMI_Transfer_RawFASTQ/HN00166176_10X_RawData_Outs/14N_5GEX/HHMKCCCX2,Gene Expression
-    14N_TCR,/mnt/mone/PMI/WC300/scRNAseq/HN00166176_PMI_Transfer_RawFASTQ/HN00166176_10X_RawData_Outs/14N_TCR/HHMKCCCX2,VDJ-T
-
-.. code-block:: text
-
-    $ cat qsub_multi_14N.sh
-    #!/bin/bash
-    /home/sbslee/programs/cellranger-6.1.2/cellranger multi \
-    --id=14N \
-    --csv=/home/sbslee/scRNAseq/multi/multi_info_14N.csv \
-    --jobmode=local \
-    --localcores=16 \
-    --localmem=196
 
 PanglaoDB
 =========
