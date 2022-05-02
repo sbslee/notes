@@ -1133,3 +1133,40 @@ Only download selected regions of a CRAM file:
     $ sam-dump ERR3239276 --aligned-region chr7:99753966-99787184,chr10:95033771-95072497 | samtools view -b > out.bam
 
 - `[GitHub] sra-tools <https://github.com/ncbi/sra-tools>`__
+
+sam-dump
+--------
+
+.. code-block:: text
+
+    $ cat transfer-08.sh 
+    regions=chr1:46796045-46822413,chr1:46926187-46944476,chr1:47134440-47152727,chr1:59890307-59929773,chr1:97074742-97924034,chr1:109684816-109696745,chr1:169508950-169589481,chr1:201036511-201115426,chr2:38064602-38079181,chr2:233715735-233779300,chr3:14142146-14181672,chr3:121891400-121947188,chr4:68534183-68571527,chr4:68640596-68676652,chr4:69093473-69115987,chr4:88087268-88161639,chr6:18125310-18158169,chr6:160206754-160268821,chr7:980180-992640,chr7:55016016-55214628,chr7:75912154-75989855,chr7:87500862-87716323,chr7:99645193-99682996,chr7:99702035-99738196,chr7:99753966-99787184,chr7:99825012-99869093,chr7:117477024-117671665,chr7:139826263-140023321,chr8:18207108-18226689,chr8:18388281-18404218,chr10:93070892-93080885,chr10:94759680-94858547,chr10:94935657-94993091,chr10:95033771-95072497,chr10:102827530-102840413,chr10:133517362-133549123,chr11:14875008-14895205,chr11:67580811-67589653,chr11:75148106-75209549,chr12:20807704-20919911,chr12:21128193-21242796,chr12:47838536-47907994,chr13:48034725-48050221,chr15:51205056-51341596,chr15:74716541-74728528,chr15:74745844-74759607,chr16:28590586-28625044,chr16:31087853-31097797,chr19:15863022-15913074,chr19:38430690-38590564,chr19:39240552-39248006,chr19:40833540-40890447,chr19:40921281-41028398,chr19:41068450-41131381,chr19:41190218-41210539,chr20:49500873-49571137,chr22:42116498-42155810,chr22_KI270879v1_alt:267307-281486,chrX:154528389-154550018
+
+    samples=()
+
+    for line in `cat samples-08.list`
+    do
+      samples+=("$line")
+    done
+
+    accessions=()
+
+    for line in `cat accessions-08.list`
+    do
+      accessions+=("$line")
+    done
+
+    for i in "${!samples[@]}"
+    do
+      if [ -f ${samples[$i]}.PyPGx-GRCh38.bam ]; then
+        echo "Skipping ${samples[$i]}"
+      else
+        echo "Initiating download for ${samples[$i]}..."
+        sam-dump ${accessions[$i]} --aligned-region $regions > ${samples[$i]}.PyPGx-GRCh38.sam
+        sleep 5
+        samtools view -b ${samples[$i]}.PyPGx-GRCh38.sam > ${samples[$i]}.PyPGx-GRCh38.bam
+        sleep 5
+        rm ${samples[$i]}.PyPGx-GRCh38.sam
+        echo "Download finished for ${samples[$i]}"
+      fi
+    done
