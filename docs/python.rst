@@ -276,7 +276,7 @@ To rotate tick labels:
         ticklabel.set_rotation(45)
 
     # Method 2
-    ax.set_xticklabels(ax.get_xticklabels(), rotation=45)
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right')
 
 To update text format:
 
