@@ -267,30 +267,27 @@ To remove things:
 Tick labels
 -----------
 
-To rotate tick labels:
-
 .. code:: python3
 
-    # Method 1
+    # Rotate tick labels (method 1)
     for ticklabel in ax.get_xticklabels():
         ticklabel.set_rotation(45)
 
-    # Method 2
+    # Rotate tick labels (method 2)
     ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right')
 
-To update text format:
-
-.. code:: python3
-
-    # Font style and weight
+    # Change font style and weight
     for ticklabel in ax.get_xticklabels():
         ticklabel.set_fontstyle('italic')
         ticklabel.set_fontweight('bold')
 
-    # Font size
+    # Change font size
     ax.tick_params(axis='x', which='major', labelsize=15)
     ax.tick_params(axis='y', which='major', labelsize=15)
     ax.tick_params(axis='both', which='major', labelsize=15)
+    
+    # Remove tick labels only, leaving grid lines intact
+    ax.yaxis.set_ticklabels([])
 
 Legend
 ------
