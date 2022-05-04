@@ -295,7 +295,7 @@ Remove file extension (e.g. ``.gz``):
 
     $ mv -- "$file" "${file%%.gz}"
 
-To access hard drives:
+Access hard drives:
 
 .. code-block:: text
 
@@ -303,31 +303,31 @@ To access hard drives:
     $ cd Volumes
     $ cd ls
 
-To extract lines repeated at least three times:
+Extract lines repeated at least three times:
 
 .. code-block:: text
 
     $ awk '++a[$0] == 3 { print $0 }' example.txt
 
-To print every fifth line:
+Print every fifth line:
 
 .. code-block:: text
 
     $ awk 'NR % 5 == 0' example.txt
 
-To skip the first two lines of a file:
+Skip the first two lines of a file:
 
 .. code-block:: text
 
     $ tail -n +3 example.txt
 
-To concatenate a string to each line of the ``ls`` command output:
+Concatenate a string to each line of the ``ls`` command output:
 
 .. code-block:: text
 
     $ ls | xargs -i echo "Hello World {}"
 
-To combine arrays as columns:
+Combine arrays as columns:
 
 .. code-block:: text
 
@@ -335,37 +335,37 @@ To combine arrays as columns:
     $ b=(1 2 3)
     $ paste <(printf "%s\n" "${a[@]}") <(printf "%s\n" "${b[@]}")
 
-To echo tab characters:
+Echo tab characters:
 
 .. code-block:: text
 
     $ echo Hello$'\t'World
 
-To read file names in the current directory into an array:
+Read file names in the current directory into an array:
 
 .. code-block:: text
 
     $ a=(*)
 
-To redirect stdout and stderr:
+Redirect stdout and stderr:
 
 .. code-block:: text
 
     $ some_command > out_file 2>error_file
 
-To create a hard link or a symbolic link to an existing file or directory:
+Create a hard link or a symbolic link to an existing file or directory:
 
 .. code-block:: text
 
     $ ln -s original_file new_file
 
-To change group ownership:
+Change group ownership:
 
 .. code-block:: text
 
     $ chgrp -R group_name *
 
-To get file basename:
+Get file basename:
 
 .. code-block:: text
 
@@ -373,7 +373,7 @@ To get file basename:
     foo.txt
     $ basename /path/to/foo.txt .txt
     foo
-
+    
 awk
 ===
 
@@ -578,11 +578,23 @@ For example, to give read, write, and execute permissions for everyone:
 
     $ chmod 777 dir_name
 
-To give permissions for all files inside the directory:
+Give permissions for all files inside the directory:
 
 .. code-block:: text
 
     $ chmod 777 -R dir_name
+
+Make files read-only:
+
+.. code-block:: text
+
+    $ find . -type f -exec chmod a-w '{}' \;
+    
+Restore writing permission:
+
+.. code-block:: text
+
+    $ find . -type f -exec chmod +w '{}' \;
 
 OpenSSH
 =======
