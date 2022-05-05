@@ -140,6 +140,13 @@ The likelihood-ratio test assesses the goodness of fit of two competing statisti
 Confusing concepts
 ==================
 
+Significance vs. power
+----------------------
+
+According to this `post <https://stats.stackexchange.com/questions/436226/difference-relationship-between-power-and-significance#:~:text=Significance%20(p%2Dvalue)%20is,hypothesis%20while%20it%20is%20false.>`__:
+
+    Significance (p-value) is the probability that we reject the null hypothesis while it is true. Power is the probability of rejecting the null hypothesis while it is false.
+
 Confidence intervals vs. confidence levels
 ------------------------------------------
 
