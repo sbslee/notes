@@ -90,6 +90,135 @@ Extract sequence headers from a FASTA file:
 
     $ grep -e ">" example.fasta
 
+BCFtools
+========
+
+Variant calling pipeline
+------------------------
+
+1. Calculate genotype likelihoods at each genomic position with coverage. Note that the reference FASTA file and the input BAM file(s) must have the same chromosome string style.
+
+    .. code-block:: text
+
+        $ bcftools mpileup -Ou -q 1 -a AD --max-depth 1000 -f ref.fa -r chr1:1000-2000 -o sample.bcf sample.bam
+
+2. Make variant calls.
+
+    .. code-block:: text
+
+        $ bcftools call -Oz -mv -o sample.vcf.gz sample.bcf
+
+3. Index the VCF file.
+
+    .. code-block:: text
+
+        $ bcftools index sample.vcf.gz
+
+4. Left-align and normalize indels.
+
+    .. code-block:: text
+
+        $ bcftools norm -Ob -f ref.fa -o sample.normalized.bcf sample.vcf.gz
+
+5. Filter variants.
+
+    .. code-block:: text
+
+        $ bcftools filter -Ov --IndelGap 5 -o sample.normalized.filtered.vcf sample.normalized.bcf
+
+bcl2fastq
+=========
+
+Introduction
+------------
+
+bcl2fastq is a software tool developed by Illumina Inc. for demultiplexing sequence read data. The official documentation is available `here <https://sapac.support.illumina.com/content/dam/illumina-support/documents/documentation/software_documentation/bcl2fastq/bcl2fastq2-v2-20-software-guide-15051736-03.pdf>`__.
+
++--------------------------+-------+----------------------+
+| Platform                 | Lanes | Fluidically distinct |
++==========================+=======+======================+
+| MiSeq                    | 1     | N/A                  |
++--------------------------+-------+----------------------+
+| HiSeq - Rapid Mode       | 2     | Yes                  |
++--------------------------+-------+----------------------+
+| HiSeq - High Output Mode | 8     | Yes                  |
++--------------------------+-------+----------------------+
+| HiSeq X Ten              | 8     | Yes                  |
++--------------------------+-------+----------------------+
+| NextSeq                  | 4     | No                   |
++--------------------------+-------+----------------------+
+| NovaSeq S1, S2           | 2     | Yes with XP protocol |
++--------------------------+-------+----------------------+
+| NovaSeq S3, S4           | 4     | Yes with XP protocol |
++--------------------------+-------+----------------------+
+
+Commonly used options
+---------------------
+
+* ``--no-lane-splitting``
+
+    Do not split FASTQ files by lane.
+
+* ``--barcode-mismatches``
+
+    | Specifies how to process each cycle:
+    | * ``n`` - Ignore the cycle.
+    | * ``Y`` (or ``y``) - Use the cycle.
+    | * ``I`` - Use the cycle for an Index Read.
+    | * A number - Repeat the previous character the indicated number of times.
+    | * ``*`` - Repeat the previous character until the end of the read or index (length per ``RunInfo.xml``).
+    | Commas separate read masks. The format for dual indexing is the following syntax or specified variations:
+    | ``--use-bases-mask Y*,I*,I*,Y*``
+    | You can also specify `--use-bases-mask` multiple times for separate lanes. In the following example, ``1:`` indicates that the setting applies to lane 1. The second ``--use-bases-mask`` parameter applies to all other lanes.
+    | ``--use-bases-mask 1:y*,i*,i*,y* --use-bases-mask y*,n*,n*,y*``
+    | If this option is not specified, ``RunInfo.xml`` determines the mask. If it cannot determine the mask, specify the `--use-bases-mask` option. When specified, the number of index cycles and the index length in the sample sheet must match.
+
+
+* ``--tiles``
+
+    | Selects a subset of available tiles for processing. To make multiple selections, separate the regular expressions with commas. For example:
+    | To select all tiles ending with 5 in all lanes:
+    | ``--tiles [0–9][0–9][0–9]5``
+    | To select tile 2 in lane 1 and all the tiles in the other lanes:
+    | ``--tiles s_1_0002,s_[2-8]``
+
+Running
+-------
+
+**Case 1. MiSeq, 2x300 bp reads, dual indexing**
+
+.. code-block:: text
+
+    $ bcl2fastq \
+      --output-dir $OUTPUT_DIR \
+      --sample-sheet $SAMPLE_SHEET \
+      --runfolder-dir $RUNFOLDER_DIR \
+      --interop-dir $OUTPUT_DIR/Interop \
+      --stats-dir $OUTPUT_DIR/Stats \
+      --reports-dir $OUTPUT_DIR/Reports \
+      --no-lane-splitting \
+      --use-bases-mask Y301,I8,I8,Y301 \
+      --barcode-mismatches 0 \
+      --processing-threads 10
+
+
+**Case 2. NextSeq, 2x150 bp reads, single indexing**
+
+.. code-block:: text
+
+    $ bcl2fastq \
+      --output-dir $OUTPUT_DIR\
+      --sample-sheet $SAMPLE_SHEET \
+      --runfolder-dir $RUNFOLDER_DIR \
+      --interop-dir $OUTPUT_DIR/Interop \
+      --stats-dir $OUTPUT_DIR/Stats \
+      --reports-dir $OUTPUT_DIR/Reports \
+      --no-lane-splitting \
+      --tiles s_1,s_2,s_3,s_4 \
+      --use-bases-mask Y151,I8,Y151 \
+      --barcode-mismatches 0 \
+      --processing-threads 20
+
 Cell Ranger
 ===========
 
@@ -217,109 +346,6 @@ From 'Lymph Node Metastases in Colon Cancer Are Polyclonal <https://pubmed.ncbi.
 
 "The CITUP tool (ref. 19; v0.1.0 of the Bitbucket version, https:// bitbucket.org/dranew/citup/) was run for the assembled dataset of filtered cellular prevalence estimates for each variant in each patient generated by PyClone. CITUP enumerates all possible phylogenetic trees up to a given number of nodes, assigning variants to nodes in the tree and solving a quadratic inference problem that minimizes error in the assignment of variants to nodes in the tree. The QIP-based method of the tool was used and PyClone cluster assignments provided for each variant using 1,000 restarts and selecting the tree solution with the minimum Bayesian information criterion (BIC) score. The max number of nodes was set to eight. Higher max nodes counts were attempted for tumors for which PyClone predicted more subclones than eight but were computationally prohibitive."
 
-GTCtoVCF
-========
-
-Here's the `link <https://github.com/Illumina/GTCtoVCF>`__ to the GTCtoVCF program.
-
-gtc2vcf
-=======
-
-Here's the `link <https://github.com/freeseek/gtc2vcf>`__ to the gtc2vcf program.
-
-bcl2fastq
-=========
-
-Introduction
-------------
-
-bcl2fastq is a software tool developed by Illumina Inc. for demultiplexing sequence read data. The official documentation is available `here <https://sapac.support.illumina.com/content/dam/illumina-support/documents/documentation/software_documentation/bcl2fastq/bcl2fastq2-v2-20-software-guide-15051736-03.pdf>`__.
-
-+--------------------------+-------+----------------------+
-| Platform                 | Lanes | Fluidically distinct |
-+==========================+=======+======================+
-| MiSeq                    | 1     | N/A                  |
-+--------------------------+-------+----------------------+
-| HiSeq - Rapid Mode       | 2     | Yes                  |
-+--------------------------+-------+----------------------+
-| HiSeq - High Output Mode | 8     | Yes                  |
-+--------------------------+-------+----------------------+
-| HiSeq X Ten              | 8     | Yes                  |
-+--------------------------+-------+----------------------+
-| NextSeq                  | 4     | No                   |
-+--------------------------+-------+----------------------+
-| NovaSeq S1, S2           | 2     | Yes with XP protocol |
-+--------------------------+-------+----------------------+
-| NovaSeq S3, S4           | 4     | Yes with XP protocol |
-+--------------------------+-------+----------------------+
-
-Commonly used options
----------------------
-
-* ``--no-lane-splitting``
-
-    Do not split FASTQ files by lane.
-
-* ``--barcode-mismatches``
-
-    | Specifies how to process each cycle:
-    | * ``n`` - Ignore the cycle.
-    | * ``Y`` (or ``y``) - Use the cycle.
-    | * ``I`` - Use the cycle for an Index Read.
-    | * A number - Repeat the previous character the indicated number of times.
-    | * ``*`` - Repeat the previous character until the end of the read or index (length per ``RunInfo.xml``).
-    | Commas separate read masks. The format for dual indexing is the following syntax or specified variations:
-    | ``--use-bases-mask Y*,I*,I*,Y*``
-    | You can also specify `--use-bases-mask` multiple times for separate lanes. In the following example, ``1:`` indicates that the setting applies to lane 1. The second ``--use-bases-mask`` parameter applies to all other lanes.
-    | ``--use-bases-mask 1:y*,i*,i*,y* --use-bases-mask y*,n*,n*,y*``
-    | If this option is not specified, ``RunInfo.xml`` determines the mask. If it cannot determine the mask, specify the `--use-bases-mask` option. When specified, the number of index cycles and the index length in the sample sheet must match.
-
-
-* ``--tiles``
-
-    | Selects a subset of available tiles for processing. To make multiple selections, separate the regular expressions with commas. For example:
-    | To select all tiles ending with 5 in all lanes:
-    | ``--tiles [0–9][0–9][0–9]5``
-    | To select tile 2 in lane 1 and all the tiles in the other lanes:
-    | ``--tiles s_1_0002,s_[2-8]``
-
-Running
--------
-
-**Case 1. MiSeq, 2x300 bp reads, dual indexing**
-
-.. code-block:: text
-
-    $ bcl2fastq \
-      --output-dir $OUTPUT_DIR \
-      --sample-sheet $SAMPLE_SHEET \
-      --runfolder-dir $RUNFOLDER_DIR \
-      --interop-dir $OUTPUT_DIR/Interop \
-      --stats-dir $OUTPUT_DIR/Stats \
-      --reports-dir $OUTPUT_DIR/Reports \
-      --no-lane-splitting \
-      --use-bases-mask Y301,I8,I8,Y301 \
-      --barcode-mismatches 0 \
-      --processing-threads 10
-
-
-**Case 2. NextSeq, 2x150 bp reads, single indexing**
-
-.. code-block:: text
-
-    $ bcl2fastq \
-      --output-dir $OUTPUT_DIR\
-      --sample-sheet $SAMPLE_SHEET \
-      --runfolder-dir $RUNFOLDER_DIR \
-      --interop-dir $OUTPUT_DIR/Interop \
-      --stats-dir $OUTPUT_DIR/Stats \
-      --reports-dir $OUTPUT_DIR/Reports \
-      --no-lane-splitting \
-      --tiles s_1,s_2,s_3,s_4 \
-      --use-bases-mask Y151,I8,Y151 \
-      --barcode-mismatches 0 \
-      --processing-threads 20
-
 Cutadapt
 ========
 
@@ -337,6 +363,16 @@ Run the following to trim TruSeq adapters (click `here <https://cutadapt.readthe
     -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT \
     -o trimmed.R1.fastq.gz -p trimmed.R2.fastq.gz \
     reads.R1.fastq.gz reads.R2.fastq.gz
+
+GTCtoVCF
+========
+
+Here's the `link <https://github.com/Illumina/GTCtoVCF>`__ to the GTCtoVCF program.
+
+gtc2vcf
+=======
+
+Here's the `link <https://github.com/freeseek/gtc2vcf>`__ to the gtc2vcf program.
 
 Trim Galore!
 ============
@@ -421,42 +457,6 @@ Get coverage over regions from multiple BAM files:
 .. code-block:: text
 
     $ xargs -a bam.list samtools bedcov in.bed > out.txt
-
-BCFtools
-========
-
-Variant calling pipeline
-------------------------
-
-1. Calculate genotype likelihoods at each genomic position with coverage. Note that the reference FASTA file and the input BAM file(s) must have the same chromosome string style.
-
-    .. code-block:: text
-
-        $ bcftools mpileup -Ou -q 1 -a AD --max-depth 1000 -f ref.fa -r chr1:1000-2000 -o sample.bcf sample.bam
-
-2. Make variant calls.
-
-    .. code-block:: text
-
-        $ bcftools call -Oz -mv -o sample.vcf.gz sample.bcf
-
-3. Index the VCF file.
-
-    .. code-block:: text
-
-        $ bcftools index sample.vcf.gz
-
-4. Left-align and normalize indels.
-
-    .. code-block:: text
-
-        $ bcftools norm -Ob -f ref.fa -o sample.normalized.bcf sample.vcf.gz
-
-5. Filter variants.
-
-    .. code-block:: text
-
-        $ bcftools filter -Ov --IndelGap 5 -o sample.normalized.filtered.vcf sample.normalized.bcf
 
 SnpEff and SnpSift
 ==================
@@ -1170,3 +1170,10 @@ sam-dump
         echo "Download finished for ${samples[$i]}"
       fi
     done
+
+PICRUSt
+=======
+
+Phylogenetic Investigation of Communities by Reconstruction of Unobserved States
+
+* `PICRUSt2 website <https://huttenhower.sph.harvard.edu/picrust/>`__
