@@ -219,6 +219,23 @@ Running
       --barcode-mismatches 0 \
       --processing-threads 20
 
+bwa
+===
+
+BWA is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome. Click `here <http://bio-bwa.sourceforge.net/bwa.shtml>`__ to visit the official documentation page.
+
+To output a sorted BAM file using multiple threads:
+
+.. code-block:: text
+
+    bwa mem -t 8 ref.fa read1.fq read2.fq | samtools sort -@8 -o out.bam -
+
+Reference FASTA file must be indexd first before running BWA. This means creating all 6 files (``.amb``, ``.ann``, ``.bwt``, ``.fai``, ``.pac``, ``.sa``), not just the ``.fai`` file.
+
+.. code-block:: text
+
+    bwa index ref.fa
+
 Cell Ranger
 ===========
 
@@ -805,65 +822,6 @@ References
 - https://www.agilent.com/en/product/next-generation-sequencing/hybridization-based-next-generation-sequencing-ngs/ngs-software/agent-232879
 - https://www.agilent.com/cs/library/software/Public/AGeNT%20ReadMe.pdf
 
-European Nucleotide Archive (ENA)
-=================================
-
-- `ENA: Guidelines and Tutorials <https://ena-docs.readthedocs.io/en/latest/>`__
-
-Ensembl
-=======
-
-This `page <http://asia.ensembl.org/info/website/archives/index.html>`__ says: "Ensembl aims to maintain stable identifiers for genes (ENSG), transcripts (ENST), proteins (ENSP) and exons (ENSE) as long as possible. Changes within the genome sequence assembly or an updated genome annotation may dramatically change a gene model. In these cases, the old set of stable IDs is retired and a new one assigned. Gene and transcript pages both have an ID History view which maps changes in the ID from the earliest version in Ensembl."
-
-Variant Effect Predictor (VEP)
-------------------------------
-
-Order of annotations
-^^^^^^^^^^^^^^^^^^^^
-
-The ordering of the results per line simply uses the ENST IDs. For example:
-
-- ENST00000572062
-- ENST00000572573
-- ENST00000572608
-- ENST00000575820
-
-Within a result, the consequences are ordered by severity. For example:
-
-intron_variant&non_coding_transcript_variant
-
-
-References:
-
-  - `Order of annotation <https://github.com/Ensembl/ensembl-vep/issues/193>`__
-  - `Ensembl Variation - Calculated variant consequences <https://m.ensembl.org/info/genome/variation/prediction/predicted_data.html>`__
-  - `Cool stuff the Ensembl VEP can do: take your pick <https://www.ensembl.info/2019/03/22/cool-stuff-the-ensembl-vep-can-do-take-your-pick/>`__
-
-Data Slicer
------------
-
-The `Data Slicer <http://grch37.ensembl.org/Homo_sapiens/Tools/DataSlicer?db=core;expand_form=true;tl=p4LmwgtfOgvfuAbL-7339566>`__ provides an interface which allows users to get subsections of either VCF (VCFtools) or BAM (SAMtools) files based on genomic coordinates.
-
-References:
-
-  - `Data Slicer <https://www.internationalgenome.org/data-slicer>`__
-  - `How do I get a sub-section of a VCF file? <https://www.internationalgenome.org/faq/how-do-i-get-sub-section-vcf-file/>`__
-
-
-Catalogue Of Somatic Mutations In Cancer (COSMIC)
-=================================================
-
-`COSMIC <https://cancer.sanger.ac.uk/cosmic>`__, the Catalogue Of Somatic Mutations In Cancer, is the world's largest and most comprehensive resource for exploring the impact of somatic mutations in human cancer.
-
-Single Base Substitution (SBS) Signatures
------------------------------------------
-
-https://cancer.sanger.ac.uk/signatures/sbs/
-
-Single base substitutions (SBS), also known as single nucleotide variants, are defined as a replacement of a certain nucleotide base. Considering the pyrimidines of the Watson-Crick base pairs, there are only six different possible substitutions: C>A, C>G, C>T, T>A, T>C, and T>G. These SBS classes can be further expanded considering the nucleotide context.
-
-Current SBS signatures have been identified using 96 different contexts, considering not only the mutated base, but also the bases immediately 5’ and 3’.
-
 maftools
 ========
 
@@ -882,30 +840,6 @@ UniProt
 https://www.uniprot.org/
 
 The mission of UniProt is to provide the scientific community with a comprehensive, high-quality and freely accessible resource of protein sequence and functional information.
-
-cBioPortal
-==========
-
-https://www.cbioportal.org/
-
-The cBioPortal for Cancer Genomics was originally developed at Memorial Sloan Kettering Cancer Center (MSK). The public cBioPortal site is hosted by the Center for Molecular Oncology at MSK. The cBioPortal software is now available under an open source license via GitHub. The software is now developed and maintained by a multi-institutional team, consisting of MSK, the Dana Farber Cancer Institute, Princess Margaret Cancer Centre in Toronto, Children's Hospital of Philadelphia, The Hyve in the Netherlands, and Bilkent University in Ankara, Turkey.
-
-bwa
-===
-
-BWA is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome. Click `here <http://bio-bwa.sourceforge.net/bwa.shtml>`__ to visit the official documentation page.
-
-To output a sorted BAM file using multiple threads:
-
-.. code-block:: text
-
-    bwa mem -t 8 ref.fa read1.fq read2.fq | samtools sort -@8 -o out.bam -
-
-Reference FASTA file must be indexd first before running BWA. This means creating all 6 files (``.amb``, ``.ann``, ``.bwt``, ``.fai``, ``.pac``, ``.sa``), not just the ``.fai`` file.
-
-.. code-block:: text
-
-    bwa index ref.fa
 
 LaTeX editor
 ============
@@ -1095,6 +1029,18 @@ PanglaoDB
 
 `PanglaoDB <https://panglaodb.se/index.html>`__ is a database for the scientific community interested in exploration of single cell RNA sequencing experiments from mouse and human. We collect and integrate data from multiple studies and present them through a unified framework.
 
+PICRUSt
+=======
+
+Phylogenetic Investigation of Communities by Reconstruction of Unobserved States
+
+According to Langille et al., 2013:
+
+    The number of copies of the 16S gene in each of these genomes was also obtained from IMG.
+
+* `PICRUSt2 website <https://huttenhower.sph.harvard.edu/picrust/>`__
+* `Predictive functional profiling of microbial communities using 16S rRNA marker gene sequences by Langille et al., 2013 <https://www.nature.com/articles/nbt.2676>`__
+
 Scrublet
 ========
 
@@ -1139,7 +1085,7 @@ sam-dump
 
 .. code-block:: text
 
-    $ cat transfer-08.sh 
+    $ cat transfer-08.sh
     regions=chr1:46796045-46822413,chr1:46926187-46944476,chr1:47134440-47152727,chr1:59890307-59929773,chr1:97074742-97924034,chr1:109684816-109696745,chr1:169508950-169589481,chr1:201036511-201115426,chr2:38064602-38079181,chr2:233715735-233779300,chr3:14142146-14181672,chr3:121891400-121947188,chr4:68534183-68571527,chr4:68640596-68676652,chr4:69093473-69115987,chr4:88087268-88161639,chr6:18125310-18158169,chr6:160206754-160268821,chr7:980180-992640,chr7:55016016-55214628,chr7:75912154-75989855,chr7:87500862-87716323,chr7:99645193-99682996,chr7:99702035-99738196,chr7:99753966-99787184,chr7:99825012-99869093,chr7:117477024-117671665,chr7:139826263-140023321,chr8:18207108-18226689,chr8:18388281-18404218,chr10:93070892-93080885,chr10:94759680-94858547,chr10:94935657-94993091,chr10:95033771-95072497,chr10:102827530-102840413,chr10:133517362-133549123,chr11:14875008-14895205,chr11:67580811-67589653,chr11:75148106-75209549,chr12:20807704-20919911,chr12:21128193-21242796,chr12:47838536-47907994,chr13:48034725-48050221,chr15:51205056-51341596,chr15:74716541-74728528,chr15:74745844-74759607,chr16:28590586-28625044,chr16:31087853-31097797,chr19:15863022-15913074,chr19:38430690-38590564,chr19:39240552-39248006,chr19:40833540-40890447,chr19:40921281-41028398,chr19:41068450-41131381,chr19:41190218-41210539,chr20:49500873-49571137,chr22:42116498-42155810,chr22_KI270879v1_alt:267307-281486,chrX:154528389-154550018
 
     samples=()
@@ -1170,10 +1116,3 @@ sam-dump
         echo "Download finished for ${samples[$i]}"
       fi
     done
-
-PICRUSt
-=======
-
-Phylogenetic Investigation of Communities by Reconstruction of Unobserved States
-
-* `PICRUSt2 website <https://huttenhower.sph.harvard.edu/picrust/>`__

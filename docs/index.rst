@@ -13,6 +13,7 @@ Welcome to Seung-been "Steven" Lee's notes!
    readme
    bash
    bioinformatics
+   databases
    statistics
    anaconda
    jupyter_notebook
