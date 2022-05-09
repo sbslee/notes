@@ -1010,3 +1010,16 @@ Terminate a background job:
 References:
 
    - `How to Run Linux Commands in Background <https://linuxize.com/post/how-to-run-linux-commands-in-background/#:~:text=A%20background%20process%20is%20a,the%20background%20processes%20is%20Linux.>`__
+   
+Connecting to a proxy server
+============================
+
+.. code-block:: text
+
+    $ export http_proxy=http://129.156.243.243:3128
+    $ export https_proxy=http://129.156.243.243:3128
+
+Quick links:
+
+- `Overriding system-repository Proxies by Using https_proxy and http_proxy
+ <https://docs.oracle.com/cd/E36784_01/html/E37628/gmgas.html>`__
