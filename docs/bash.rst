@@ -493,40 +493,46 @@ Print multiple columns:
 Arrays
 ======
 
-* To create an array:
+Create an array:
 
-    .. code-block:: text
+.. code-block:: text
 
-        $ a=(1 2 3)
-        $ a=(A B C)
-        $ a=('A 1' 'B 2' 'C 3')
+    $ a=(1 2 3)
+    $ a=(A B C)
+    $ a=('A 1' 'B 2' 'C 3')
 
-* To print an array:
+Print the contents of an array, all at once:
 
-    .. code-block:: text
+.. code-block:: text
 
-        $ echo "${a[@]}"
+    $ a=(1 2 3)
+    $ echo "${a[@]}"
+    1 2 3
 
-* To print elements on separate lines:
+Print the contents of an array, one element per line:
 
-    .. code-block:: text
+.. code-block:: text
 
-        $ printf '%s\n' "${a[@]}"
+    $ a=(1 2 3)
+    $ printf '%s\n' "${a[@]}"
+    1
+    2
+    3
 
-* To loop through an array:
+Loop through an array:
 
-    .. code-block:: text
+.. code-block:: text
 
-        $ cat example.sh
-        a=(1 2 3)
-        for x in ${a[@]}
-        do
-          echo $x
-        done
-        $ sh example.sh
-        1
-        2
-        3
+    $ cat example.sh
+    a=(1 2 3)
+    for x in ${a[@]}
+    do
+      echo $x
+    done
+    $ sh example.sh
+    1
+    2
+    3
 
 Bash configuration
 ==================
@@ -1022,3 +1028,8 @@ Connecting to a proxy server
 Quick links:
 
 - `Overriding system-repository Proxies by Using https_proxy and http_proxy <https://docs.oracle.com/cd/E36784_01/html/E37628/gmgas.html>`__
+
+Miscellaneous
+=============
+
+A shebang is the character sequence consisting of the characters number sign and exclamation mark (#!) at the beginning of a script (``#!/bin/bash``).
