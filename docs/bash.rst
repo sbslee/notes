@@ -280,100 +280,6 @@ Here, the ``-avzP`` option means:
         $ lftp sftp://user_id:user_pw.@host_name:port_number
         $ mirror -c target_dir destination_dir
 
-Miscellaneous
--------------
-
-Rename part of a filename:
-
-.. code-block:: text
-
-    $ for file in *.txt ; do mv $file ${file//ABC/XYZ} ; done
-
-Remove file extension (e.g. ``.gz``):
-
-.. code-block:: text
-
-    $ mv -- "$file" "${file%%.gz}"
-
-Access hard drives:
-
-.. code-block:: text
-
-    $ cd /
-    $ cd Volumes
-    $ cd ls
-
-Extract lines repeated at least three times:
-
-.. code-block:: text
-
-    $ awk '++a[$0] == 3 { print $0 }' example.txt
-
-Print every fifth line:
-
-.. code-block:: text
-
-    $ awk 'NR % 5 == 0' example.txt
-
-Skip the first two lines of a file:
-
-.. code-block:: text
-
-    $ tail -n +3 example.txt
-
-Concatenate a string to each line of the ``ls`` command output:
-
-.. code-block:: text
-
-    $ ls | xargs -i echo "Hello World {}"
-
-Combine arrays as columns:
-
-.. code-block:: text
-
-    $ a=(A B C)
-    $ b=(1 2 3)
-    $ paste <(printf "%s\n" "${a[@]}") <(printf "%s\n" "${b[@]}")
-
-Echo tab characters:
-
-.. code-block:: text
-
-    $ echo Hello$'\t'World
-
-Read file names in the current directory into an array:
-
-.. code-block:: text
-
-    $ a=(*)
-
-Redirect stdout and stderr:
-
-.. code-block:: text
-
-    $ some_command > out_file 2>error_file
-
-Create a hard link or a symbolic link to an existing file or directory:
-
-.. code-block:: text
-
-    $ ln -s original_file new_file
-
-Change group ownership:
-
-.. code-block:: text
-
-    $ chgrp -R group_name *
-
-Get file basename:
-
-.. code-block:: text
-
-    $ basename /path/to/foo.txt
-    foo.txt
-    $ basename /path/to/foo.txt .txt
-    foo
-
 awk
 ===
 
@@ -806,21 +712,6 @@ Print error message from a finished job:
 
     $ qacct -j job_id | grep "error"
 
-Parallel environment
-^^^^^^^^^^^^^^^^^^^^
-
-To list all parallel environments:
-
-.. code-block:: console
-
-    $ qconf -spl
-
-To print the configuration of a parallel environment:
-
-.. code-block:: console
-
-    $ qconf -sp pe_name
-
 Queue configuration
 ^^^^^^^^^^^^^^^^^^^
 
@@ -975,6 +866,53 @@ Usage monitoring
 | SWAPUS   | Swap usage            | '2.3M'      |
 +----------+-----------------------+-------------+
 
+Parallel environment (PE)
+-------------------------
+
+List avaialble PEs:
+
+.. code-block:: text
+
+    $ qconf -spl
+
+Print the configuration of a PE:
+
+.. code-block:: text
+
+    $ qconf -sp pe_name
+
+Allocation rules
+^^^^^^^^^^^^^^^^
+
+Users can set ``allocation_rule`` to define how to assign slots to a job:
+
+.. code-block:: text
+
+    $ qconf -sp openmp
+    pe_name            openmp
+    slots              99999
+    user_lists         NONE
+    xuser_lists        NONE
+    start_proc_args    NONE
+    stop_proc_args     NONE
+    allocation_rule    $fill_up
+    control_slaves     FALSE
+    job_is_first_task  TRUE
+    urgency_slots      min
+    accounting_summary FALSE
+
+SGE provides three rules:
+
+- ``$fill_up``: Use all of the job slots on a given host before moving to the next host.
+- ``$round_robin``: Select one slot from each host in a round-robin fashion until all job slots are assigned. This setting can result in more than one job slot per host.
+- ``$pe_slots``: Place all the job slots on a single machine. Grid Engine will only schedule such a job to a machine that can host the maximum number of slots requested by the job.
+
+For example, if we want to assign 100 slots to two separate nodes ("bdcm02" and "bdcm04"):
+
+.. code-block:: text
+
+    $ qlogin -l h="bdcm02|bdcm04" -pe openmp 100
+
 Ascp
 ====
 
@@ -1033,3 +971,94 @@ Miscellaneous
 =============
 
 A shebang is the character sequence consisting of the characters number sign and exclamation mark (#!) at the beginning of a script (``#!/bin/bash``).
+
+Rename part of a filename:
+
+.. code-block:: text
+
+    $ for file in *.txt ; do mv $file ${file//ABC/XYZ} ; done
+
+Remove file extension (e.g. ``.gz``):
+
+.. code-block:: text
+
+    $ mv -- "$file" "${file%%.gz}"
+
+Access hard drives:
+
+.. code-block:: text
+
+    $ cd /
+    $ cd Volumes
+    $ cd ls
+
+Extract lines repeated at least three times:
+
+.. code-block:: text
+
+    $ awk '++a[$0] == 3 { print $0 }' example.txt
+
+Print every fifth line:
+
+.. code-block:: text
+
+    $ awk 'NR % 5 == 0' example.txt
+
+Skip the first two lines of a file:
+
+.. code-block:: text
+
+    $ tail -n +3 example.txt
+
+Concatenate a string to each line of the ``ls`` command output:
+
+.. code-block:: text
+
+    $ ls | xargs -i echo "Hello World {}"
+
+Combine arrays as columns:
+
+.. code-block:: text
+
+    $ a=(A B C)
+    $ b=(1 2 3)
+    $ paste <(printf "%s\n" "${a[@]}") <(printf "%s\n" "${b[@]}")
+
+Echo tab characters:
+
+.. code-block:: text
+
+    $ echo Hello$'\t'World
+
+Read file names in the current directory into an array:
+
+.. code-block:: text
+
+    $ a=(*)
+
+Redirect stdout and stderr:
+
+.. code-block:: text
+
+    $ some_command > out_file 2>error_file
+
+Create a hard link or a symbolic link to an existing file or directory:
+
+.. code-block:: text
+
+    $ ln -s original_file new_file
+
+Change group ownership:
+
+.. code-block:: text
+
+    $ chgrp -R group_name *
+
+Get file basename:
+
+.. code-block:: text
+
+    $ basename /path/to/foo.txt
+    foo.txt
+    $ basename /path/to/foo.txt .txt
+    foo
