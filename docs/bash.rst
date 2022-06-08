@@ -440,6 +440,32 @@ Loop through an array:
     2
     3
 
+Check if an array contains a value (`reference <https://stackoverflow.com/questions/3685970/check-if-a-bash-array-contains-a-value>`__):
+
+.. code-block:: text
+
+    $ cat example.sh
+    array=('A' 'B' 'C')
+    if [[ " ${array[*]} " =~ " A " ]]; then
+      echo "Value found!"
+    fi
+    $ sh example.sh
+    Value found!
+
+Read lines from a file into an array (`reference <https://stackoverflow.com/questions/11393817/read-lines-from-a-file-into-a-bash-array>`__):
+
+.. code-block:: text
+
+    $ cat files.list
+    file1
+    file2
+    file3
+    $ cat example.sh
+    readarray -t files < files.list
+    echo ${files[@]}
+    $ sh example.sh
+    file1 file2 file3
+
 Bash configuration
 ==================
 
