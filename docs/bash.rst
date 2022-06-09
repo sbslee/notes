@@ -1088,3 +1088,20 @@ Get file basename:
     foo.txt
     $ basename /path/to/foo.txt .txt
     foo
+
+According to this `post <https://phoenixnap.com/kb/ulimit-linux-command#:~:text=ulimit%20is%20a%20built%2Din,users%20and%20system%20performance%20issues.>`__, ``ulimit`` is a built-in Linux shell command that allows viewing or limiting system resource amounts that individual users consume. Limiting resource usage is valuable in environments with multiple users and system performance issues.
+
+Show the maximum number of file descriptors:
+
+.. code-block:: text
+
+    $ ulimit -n
+    256
+
+Reset the maximum number of file descriptors:
+
+.. code-block:: text
+
+    $ ulimit -n 300
+    $ ulimit -n
+    300
