@@ -183,20 +183,20 @@ matplotlib
 Frequently used commands for matplotlib
 ---------------------------------------
 
-To set figure title:
+Set figure title:
 
 .. code:: python3
 
     fig.suptitle('This is a somewhat long figure title')
 
-To set figure title in tight layout:
+Set figure title in tight layout:
 
 .. code:: python3
 
     fig.suptitle('This is a somewhat long figure title')
     fig.tight_layout(rect=[0, 0.03, 1, 0.95])
 
-To remove a subplot:
+Remove a subplot:
 
 .. code:: python3
 
@@ -204,31 +204,31 @@ To remove a subplot:
     ax.axis('off')
     ax.set_visible(False)
 
-To set widths and heights of suplots:
+Set widths and heights of suplots:
 
 .. code:: python3
 
     fig, [ax1, ax2] = plt.subplots(1, 2, gridspec_kw={'width_ratios': [9, 1], 'height_ratios': [1, 3]})
 
-To remove legend title:
+Remove legend title:
 
 .. code:: python3
 
     plt.gca().legend().set_title('')
 
-To set default figure style:
+Set default figure style:
 
 .. code:: python3
 
     matplotlib.rc_file_defaults()
 
-To remove gaps between subplots:
+Remove gaps between subplots:
 
 .. code:: python3
 
     plt.subplots_adjust(wspace=0, hspace=0)
 
-To set font size:
+Set font size:
 
 .. code:: python3
 
@@ -236,14 +236,14 @@ To set font size:
     ax.yaxis.label.set_size(20)
     ax.set_title('My subplot title', fontsize=30)
 
-To move things:
+Move things:
 
 .. code:: python3
 
     ax.xaxis.tick_top()                # move xticks to top
     ax.xaxis.set_label_position('top') # move xlabel to top
 
-To add things:
+Add things:
 
 .. code:: python3
 
@@ -252,7 +252,7 @@ To add things:
     ax.axvline(x=5, color='red')  # add vertical line
     ax.axhline(y=5, color='red')  # add horizontal line
 
-To remove things:
+Remove things:
 
 .. code:: python3
 
@@ -285,25 +285,21 @@ Tick labels
     ax.tick_params(axis='x', which='major', labelsize=15)
     ax.tick_params(axis='y', which='major', labelsize=15)
     ax.tick_params(axis='both', which='major', labelsize=15)
-    
+
     # Remove tick labels only, leaving grid lines intact
     ax.yaxis.set_ticklabels([])
 
 Legend
 ------
 
-To update labels:
-
 .. code:: python3
 
+    # Update labels
     l = ax.legend()
     l.get_texts()[0].set_text('First label')
     l.get_texts()[0].set_text('Second label')
 
-To update font size:
-
-.. code:: python3
-
+    # Update font size
     # Method 1
     ax.legend(fontsize=20)
     ax.legend(fontsize='x-large')
@@ -316,16 +312,10 @@ To update font size:
     plt.setp(ax.get_legend().get_texts(), fontsize='20')
     plt.setp(ax.get_legend().get_title(), fontsize='20')
 
-To update marker scale:
-
-.. code:: python3
-
+    # Update marker scale
     ax.legend(markerscale=2)
 
-To remove legend:
-
-.. code:: python3
-
+    # Remove legend
     ax.get_legend().remove()
 
 Combining subplots
