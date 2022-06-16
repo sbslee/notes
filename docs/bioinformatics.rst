@@ -856,6 +856,11 @@ Quick links for Sleuth:
 - `Using p-value aggregation to obtain gene differential expression in datasets with multiple experimental conditions <https://pachterlab.github.io/sleuth_walkthroughs/pval_agg/analysis.html>`__
 - `Differential expression of transcripts using Sleuth <https://hbctraining.github.io/DGE_workshop_salmon/lessons/09_sleuth.html>`__
 
+Sleuth provides two methods for performing DEG analysis:
+
+- ``sleuth_wt``: This method computes the Wald test on one specific 'beta' coefficient on every transcript.
+- ``sleuth_lrt``: This method computes the likelihood ratio test for two competing models: the null (or "reduced") model vs. the alternate (or "full") model.
+
 Depending on the filesystem, one may encounter a situtation where Sleuth throws an error when reading HDF5 files. According to `this <https://github.com/pachterlab/kallisto/issues/197>`__ and `this <https://github.com/pachterlab/sleuth/issues/120>`__, the problem can be resolved with:
 
 .. code-block:: text
