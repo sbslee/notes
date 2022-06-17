@@ -100,7 +100,7 @@ Here's an example: Suppose there is a city of 1,000,000 residents with four neig
 +==============+=====+=====+=====+=====+=======+
 | White collar | 90  | 60  | 104 | 95  | 359   |
 +--------------+-----+-----+-----+-----+-------+
-| Blue collar  | 30  | 50  | 51  | 20  | 151   | 
+| Blue collar  | 30  | 50  | 51  | 20  | 151   |
 +--------------+-----+-----+-----+-----+-------+
 | No collar    | 30  | 40  | 45  | 35  | 150   |
 +--------------+-----+-----+-----+-----+-------+
@@ -169,6 +169,19 @@ According to the `website <https://www.investopedia.com/ask/answers/012615/whats
     Adjusted R-squared is a modified version of R-squared that has been adjusted for the number of predictors in the model. The adjusted R-squared increases when the new term improves the model more than would be expected by chance. It decreases when a predictor improves the model by less than expected. Typically, the adjusted R-squared is positive, not negative. It is always lower than the R-squared.
 
     Adding more independent variables or predictors to a regression model tends to increase the R-squared value, which tempts makers of the model to add even more variables. This is called overfitting and can return an unwarranted high R-squared value. Adjusted R-squared is used to determine how reliable the correlation is and how much it is determined by the addition of independent variables.
+
+Likelihood-ratio vs. Wald vs. Lagrange multiplier (score) tests
+---------------------------------------------------------------
+
+This `article <https://stats.oarc.ucla.edu/other/mult-pkg/faq/general/faqhow-are-the-likelihood-ratio-wald-and-lagrange-multiplier-score-tests-different-andor-similar/>`__ provides an excellent review on the topic.
+
+
+
+According to the article:
+
+    .. image:: https://stats.idre.ucla.edu/wp-content/uploads/2016/02/nested_tests.gif
+
+    One way to better understand how the three tests are related, and how they are different, is to look at a graphical representation of what they are testing. The figure above illustrates what each of the three tests does. Along the x-axis (labeled “a”) are possible values of the parameter ``a`` (in our example, this would be the regression coefficient for either ``math`` or ``science``). Along the y-axis are the values of the log likelihood corresponding to those values of ``a``. The LR test compares the log likelihoods of a model with values of the parameter ``a`` constrained to some value (in our example zero) to a model where ``a`` is freely estimated. It does this by comparing the height of the likelihoods for the two models to see if the difference is statistically significant (remember, higher values of the likelihood indicate better fit). In the figure above, this corresponds to the vertical distance between the two dotted lines. In contrast, the Wald test compares the parameter estimate ``a-hat`` to ``a_0``; ``a_0`` is the value of a under the null hypothesis, which generally states that ``a`` = 0. If ``a-hat`` is significantly different from ``a_0``, this suggests that freely estimating ``a`` (using ``a-hat``) significantly improves model fit. In the figure, this is shown as the distance between ``a_0`` and ``a-hat`` on the x-axis (highlighted by the solid lines). Finally, the score test looks at the slope of the log likelihood when ``a`` is constrained (in our example to zero). That is, it looks at how quickly the likelihood is changing at the (null) hypothesized value of ``a``. In the figure above this is shown as the tangent line at ``a_0``.
 
 Terminology
 ===========
