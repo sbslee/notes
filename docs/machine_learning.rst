@@ -75,7 +75,12 @@ In mathematical terms, a discriminative machine learning trains a model which is
      - Logistic regression, Scalar Vector Machine (SVMs), Traditional neural networks, Nearest neighbor, Conditional Random Fields (CRFs), Decision Trees and Random Forest
    * - Generative
      - Naïve Bayes, Bayesian networks, Markov random fields, Hidden Markov Models (HMMs), Latent Dirichlet Allocation (LDA), Generative Adversarial Networks (GANs), Autoregressive Model
-     
+
 References:
 
   - `Deep Understanding of Discriminative and Generative Models in Machine Learning <https://www.analyticsvidhya.com/blog/2021/07/deep-understanding-of-discriminative-and-generative-models-in-machine-learning/#:~:text=Discriminative%20models%20draw%20boundaries%20in,the%20labels%20of%20the%20data.>`__
+
+Loss functions
+==============
+
+https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html#
