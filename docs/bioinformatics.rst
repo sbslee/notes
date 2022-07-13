@@ -1005,6 +1005,11 @@ Scrublet
 Seurat
 ======
 
+.. code-block:: text
+
+    # View metadata data frame, stored in object@meta.data
+    pbmc[[]]
+
 - `Seurat - Guided Clustering Tutorial <https://satijalab.org/seurat/articles/pbmc3k_tutorial.html>`__
 - `Introduction to scRNA-seq integration <https://satijalab.org/seurat/articles/integration_introduction.html>`__
 - `[Seurat GitHub Issue] RunPCA returns different results <https://github.com/satijalab/seurat/issues/1793>`__
