@@ -84,3 +84,34 @@ Loss functions
 ==============
 
 https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html#
+
+Batch
+=====
+
+The batch size is a hyperparameter that defines the number of samples to work through before updating the internal model parameters.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Type
+     - Explanation
+   * - Batch Gradient Descent
+     - Batch Size = Size of Training Set
+   * - Stochastic Gradient Descent
+     - Batch Size = 1
+   * - Mini-Batch Gradient Descent
+     - 1 < Batch Size < Size of Training Set
+
+In the case of mini-batch gradient descent, popular batch sizes include 32, 64, and 128 samples. You may see these values used in models in the literature and in tutorials.
+
+Batch Gradient Descent involves calculations over the full training set at each step as a result of which it is very slow on very large training data. Thus, it becomes very computationally expensive to do Batch GD. However, this is great for convex or relatively smooth error manifolds. Also, Batch GD scales well with the number of features.
+
+SGD tries to solve the main problem in Batch Gradient descent which is the usage of whole training data to calculate gradients as each step. SGD is stochastic in nature i.e it picks up a “random” instance of training data at each step and then computes the gradient making it much faster as there is much fewer data to manipulate at a single time, unlike Batch GD. There is a downside of the Stochastic nature of SGD i.e once it reaches close to the minimum value then it doesn’t settle down, instead bounces around which gives us a good value for model parameters but not optimal which can ve solved by reducing the learning rate at each step which can reduce the bouncing and SGD might settle down at global minimum after some time.
+
+Mini-batch sizes, commonly called “batch sizes” for brevity, are often tuned to an aspect of the computational architecture on which the implementation is being executed. Such as a power of two that fits the memory requirements of the GPU or CPU hardware like 32, 64, 128, 256, and so on.
+
+References:
+
+  - `Difference Between a Batch and an Epoch in a Neural Network <https://machinelearningmastery.com/difference-between-a-batch-and-an-epoch/>`__
+  - `Difference between Batch Gradient Descent and Stochastic Gradient Descent <https://www.geeksforgeeks.org/difference-between-batch-gradient-descent-and-stochastic-gradient-descent/>`__
+  - `A Gentle Introduction to Mini-Batch Gradient Descent and How to Configure Batch Size <https://machinelearningmastery.com/gentle-introduction-mini-batch-gradient-descent-configure-batch-size/>`__
