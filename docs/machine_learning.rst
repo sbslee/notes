@@ -131,3 +131,13 @@ References:
 
   - `What is Distributed AI? <https://developer.ibm.com/learningpaths/get-started-distributed-ai-apis/what-is-distributed-ai/>`__
   - `Federated Learning: Collaborative Machine Learning without Centralized Training Data <https://ai.googleblog.com/2017/04/federated-learning-collaborative.html>`__
+
+Encoder-decoder models
+======================
+
+Encoder-Decoder models are a family of models which learn to map data-points from an input domain to an output domain via a two-stage network: The encoder, represented by an encoding function z = f(x), compresses the input into a latent-space representation; the decoder, y = g(z), aims to predict the output from the latent space representation.
+
+Autoencoder
+-----------
+
+Autoencoders are special cases of encoder-decoder models in which the input and output are the same.
