@@ -279,3 +279,11 @@ Markov chain Monte Carlo (MCMC)
 MCMC methods comprise a class of algorithms for sampling from a probability distribution. By constructing a Markov chain that has the desired distribution as its equilibrium distribution, one can obtain a sample of the desired distribution by recording states from the chain.
 
 `This <https://towardsdatascience.com/markov-chain-monte-carlo-in-python-44f7e609be98>`__ is one of the best MCMC tutorials out there.
+
+Hidden Markov model (HMM)
+=========================
+
+Forward–backward algorithm
+--------------------------
+
+The forward–backward algorithm is an inference algorithm for hidden Markov models which computes the posterior marginals of all hidden state variables given a sequence of observations/emissions.
