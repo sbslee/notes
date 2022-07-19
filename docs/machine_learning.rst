@@ -18,14 +18,57 @@ References:
   - `sklearn.svm.SVC <https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html>`__
   - `What is the Significance of C value in Support Vector Machine? <https://medium.com/@pushkarmandot/what-is-the-significance-of-c-value-in-support-vector-machine-28224e852c5a>`__
 
-Rectified Linear Unit (ReLU)
-============================
+Activation functions
+====================
+
+.. image:: https://miro.medium.com/max/1400/1*p_hyqAtyI8pbt2kEl6siOQ.png
+
+.. image:: https://machinelearningmastery.com/wp-content/uploads/2020/12/How-to-Choose-an-Output-Layer-Activation-Function.png
+
+Linear
+------
+
+The linear activation function is also called "identity" (multiplied by 1.0) or "no activation." This is because the linear activation function does not change the weighted sum of the input in any way and instead returns the value directly.
+
+Sigmoid
+-------
+
+.. image:: https://miro.medium.com/max/970/1*Xu7B5y9gp0iL5ooBj7LtWw.png
+
+The Sigmoid function curve looks like a S-shape.
+
+Tanh
+----
+
+.. image:: https://miro.medium.com/max/1190/1*f9erByySVjTjohfFdNkJYQ.jpeg
+
+The tanh or hyperbolic tangent function is also like logistic sigmoid but better. The range of the tanh function is from (-1 to 1). tanh is also sigmoidal (s - shaped).
+
+Softmax
+-------
+
+The softmax function outputs a vector of values that sum to 1.0 that can be interpreted as probabilities of class membership.
+
+e^x / sum(e^x)
+
+Rectified linear unit (ReLU)
+----------------------------
+
+.. image:: https://miro.medium.com/max/1400/1*XxxiA0jJvPrHEJHD4z893g.png
 
 The rectified linear activation function or ReLU for short is a piecewise linear function that will output the input directly if it is positive, otherwise, it will output zero. It has become the default activation function for many types of neural networks because a model that uses it is easier to train and often achieves better performance. For example, the sigmoid and hyperbolic tangent activation functions cannot be used in networks with many layers due to the vanishing gradient problem. The rectified linear activation function overcomes the vanishing gradient problem, allowing models to learn faster and perform better. Therefore, the rectified linear activation is the default activation when developing multilayer perceptron and convolutional neural networks.
 
 References:
 
+  - `Activation Functions in Neural Networks <https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6>`__
   - `A Gentle Introduction to the Rectified Linear Unit (ReLU) <https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/>`__
+
+Leaky ReLU
+----------
+
+.. image:: https://miro.medium.com/max/1400/1*A_Bzn0CjUgOXtPCJKnKLqA.jpeg
+
+It is an attempt to solve the dying ReLU problem.
 
 Multiclass and multioutput algorithms
 =====================================
