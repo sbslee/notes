@@ -23,6 +23,8 @@ Activation functions
 
 .. image:: https://miro.medium.com/max/1400/1*p_hyqAtyI8pbt2kEl6siOQ.png
 
+.. image:: https://miro.medium.com/max/1400/1*n1HFBpwv21FCAzGjmWt1sg.png
+
 .. image:: https://machinelearningmastery.com/wp-content/uploads/2020/12/How-to-Choose-an-Output-Layer-Activation-Function.png
 
 Linear
