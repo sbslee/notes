@@ -210,3 +210,8 @@ BiLingual Evaluation Understudy (BLEU)
 --------------------------------------
 
 BLEU (BiLingual Evaluation Understudy) is a metric for automatically evaluating machine-translated text. The BLEU score is a number between zero and one that measures the similarity of the machine-translated text to a set of high quality reference translations. A value of 0 means that the machine-translated output has no overlap with the reference translation (low quality) while a value of 1 means there is perfect overlap with the reference translations (high quality).
+
+Continuous bag of words (CBOW)
+==============================
+
+CBOW or Continous bag of words is to use embeddings in order to train a neural network where the context is represented by multiple words for a given target words.
