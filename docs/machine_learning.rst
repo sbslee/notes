@@ -226,3 +226,29 @@ Naive Bayes methods are a set of supervised learning algorithms based on applyin
 References:
 
   - `1.9. Naive Bayes <https://scikit-learn.org/stable/modules/naive_bayes.html#gaussian-naive-bayes>`__
+
+Popular architectures
+=====================
+
+Inception
+---------
+
+Visual Geometry Group (VGG)
+---------------------------
+
+VGG is a standard deep CNN architecture, with the "deep" referring to the number of layers with VGG-16 or VGG-19 consisting of 16 and 19 convolutional layers.
+
+.. image: https://viso.ai/wp-content/uploads/2021/10/vgg-neural-network-architecture.png
+
+Residual Network (ResNet)
+-------------------------
+
+ResNet is a CNN architecture that overcame the "vanishing gradient" problem, making it possible to construct networks with up to thousands of convolutional layers, which outperform shallower networks.
+
+NASNet
+------
+
+Xception
+--------
+
+[`ref <https://arxiv.org/pdf/1610.02357.pdf>`__]
