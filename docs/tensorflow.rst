@@ -4,16 +4,15 @@ TensorFlow
 Installation
 ============
 
-To install with ``conda``:
+Below is my typical TensorFlow setup:
 
-.. code-block:: console
+.. code-block:: text
 
-    $ conda create -n tensorflow -c anaconda tensorflow
-    $ conda activate tensorflow
-    $ conda install -c conda-forge notebook
-    $ conda install nomkl
+    $ conda create -n tf -c conda-forge tensorflow
+    $ conda activate tf
+    $ conda install notebook
+    $ conda install seaborn
     $ conda install pydot
-    $ conda install graphviz
 
 Frequently used commands for TensorFlow
 =======================================
