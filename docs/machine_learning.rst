@@ -215,3 +215,14 @@ Continuous bag of words (CBOW)
 ==============================
 
 CBOW or Continous bag of words is to use embeddings in order to train a neural network where the context is represented by multiple words for a given target words.
+
+Naive Bayes
+===========
+
+Naive Bayes methods are a set of supervised learning algorithms based on applying Bayes’ theorem with the “naive” assumption of conditional independence between every pair of features given the value of the class variable.
+
+:math:`P(y \mid x_1, \dots, x_n) = \frac{P(y) P(x_1, \dots, x_n \mid y)} {P(x_1, \dots, x_n)}`
+
+References:
+
+  - `1.9. Naive Bayes <https://scikit-learn.org/stable/modules/naive_bayes.html#gaussian-naive-bayes>`__
