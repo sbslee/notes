@@ -259,3 +259,30 @@ Xception
 --------
 
 [`ref <https://arxiv.org/pdf/1610.02357.pdf>`__]
+
+Symbols
+=======
+
+.. list-table::
+   :header-rows: 1
+
+   * - Symbol
+     - Name
+     - Description
+     - Example
+   * - ∀
+     - for all
+     - Universal Quantifier
+     - 2n is even ∀ n ∈ N
+   * - ∇
+     - nabla or del
+     - gradient or divergence operator
+     - ∇f(x,y,z)
+   * - ⊗
+     - Kronecker product
+     - element-wise product between matrices
+     - hl(X)=(X∗W+b)⊗σ(X∗V+c)
+
+References:
+
+  - `Mathematical Symbols <https://byjus.com/maths/math-symbols/>`__
