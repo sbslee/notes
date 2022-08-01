@@ -230,3 +230,8 @@ CPUs = Threads per core X cores per socket X sockets
 References:
 
    - `How to know number of cores of a system in Linux? <https://unix.stackexchange.com/questions/218074/how-to-know-number-of-cores-of-a-system-in-linux>`__
+
+Useful links
+============
+
+- `Online LaTeX Equation Editor <https://latex.codecogs.com/eqneditor/editor.php>`__

@@ -287,3 +287,25 @@ Forward–backward algorithm
 --------------------------
 
 The forward–backward algorithm is an inference algorithm for hidden Markov models which computes the posterior marginals of all hidden state variables given a sequence of observations/emissions.
+
+Canonical correlation analysis (CCA)
+====================================
+
+CCA is a way of inferring information from cross-covariance matrices. If we have two vectors :math:`X=(X_1,...,X_n)` and :math:`Y=(Y_1,...,Y_m)` of random variables, and there are correlations among the variables, then CCA will find linear combinations of :math:`X` and :math:`Y` which have maximum correlation with each other.
+
+Given two column vectors :math:`X=(x_1,...,x_n)^T` and :math:`Y=(y_1,...,y_m)^T` of random variables with finite second moments, one may define the cross-covariance :math:`{\sum}_{XY}=cov(X,Y)` to be the :math:`n \times m` matrix whose :math:`(i, j)` entry is the covariance :math:`cov(x_i, y_i)`.
+
+CCA seeks vectors :math:`a` (:math:`a \in \mathbb{R}^n`) and :math:`b` (:math:`b \in \mathbb{R}^m`) such that the random variables :math:`a^T X` and :math:`b^T Y` maximize the correlation :math:`\rho=corr(a^T X,b^T Y)`. The (scalar) random variables :math:`U=a^T X` and :math:`V=b^T Y` are the **first pair of canonical variables**. Then one seeks vectors maximizing the same correlation subject to the constrain that they are to be uncorrelated with the first pair of canonical variables; this gives the **second pair of canonical variables**. This procedure may be continued up to :math:`min\left \{ m,n \right \}` times.
+
+Sparse CCA
+----------
+
+The sparse variant of CCA approach seeks to penalize the canonical variables for producing sparse latent variables while achieving maximal correlation between the datasets.
+
+For example, `Part et al., 2022 <https://doi.org/10.1016/j.isci.2022.103956>`__ used sparse CCA to perform multiomics analysis of bulk RNAseq and 16S microbiome sequencing data from identical samples. To this end, they used an R package called 'PMA (Penalized Multivariate Analysis)' which performs sparse CCA using the penalized (i.e. lasso penalty) matrix decomposition. 
+
+References:
+
+- `Integrating multi-OMICS data through sparse canonical correlation analysis for the prediction of complex traits: a comparison study <https://doi.org/10.1093/bioinformatics/btaa530>`__
+- `R package 'PMA' <https://cran.r-project.org/web/packages/PMA/PMA.pdf>`__
+- `Multi-omics reveals microbiome, host gene expression, and immune landscape in gastric carcinogenesis <https://doi.org/10.1016/j.isci.2022.103956>`__
