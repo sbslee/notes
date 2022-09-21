@@ -248,3 +248,8 @@ According to Illumina's `technical note <https://www.illumina.com/content/dam/il
   fraction of molecules that become phased or prephased per cycle."
 
   "High GC samples typically show higher phasing rates."
+
+4- vs. 2- vs. 1-channel sequencing
+==================================
+
+.. image:: https://sapac.illumina.com/content/dam/illumina-marketing/images/science/evoliution-sequencing-chem-web-graphic.jpg 
