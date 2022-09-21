@@ -235,3 +235,16 @@ Useful links
 ============
 
 - `Online LaTeX Equation Editor <https://latex.codecogs.com/eqneditor/editor.php>`__
+
+Phasing and prephasing
+======================
+
+According to Illumina's `technical note <https://www.illumina.com/content/dam/illumina-support/documents/products/technotes/technote_phixcontrolv3.pdf>`__:
+
+  "During sequencing by synthesis, each DNA strand in a cluster extends by
+  one base per cycle. A small proportion of strands may become out of phase
+  with the current cycle, either falling a base behind (phasing) or jumping a
+  base ahead (prephasing). The phasing and prephasing rates define the
+  fraction of molecules that become phased or prephased per cycle."
+
+  "High GC samples typically show higher phasing rates."
