@@ -252,4 +252,13 @@ According to Illumina's `technical note <https://www.illumina.com/content/dam/il
 4- vs. 2- vs. 1-channel sequencing
 ==================================
 
-.. image:: https://sapac.illumina.com/content/dam/illumina-marketing/images/science/evoliution-sequencing-chem-web-graphic.jpg 
+.. image:: https://sapac.illumina.com/content/dam/illumina-marketing/images/science/evoliution-sequencing-chem-web-graphic.jpg
+
+Extract elements from a character vector in R
+=============================================
+
+Extract elements starting with 'M' only (upper and lower both) (`ref <https://stackoverflow.com/questions/54211332/extracting-specific-elements-from-a-character-vector>`__):
+
+.. code-block:: text
+
+    a[startsWith(toupper(a), "M")]
