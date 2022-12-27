@@ -4,71 +4,71 @@ Anaconda
 Frequently used commands for Anaconda
 =====================================
 
-* To create a new blank environment:
+Create a new blank environment:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ conda create --name env_name
+    $ conda create --name env_name
 
-* To create a new environment and install a package simultaneously:
+Create a new environment and install a package simultaneously:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ conda create --name env_name -c channel_name package_name
+    $ conda create --name env_name -c channel_name package_name
 
-* To create a new environment based on .yml file:
+Create a new environment based on .yml file:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ conda env create -n env_name --file conda.yml
+    $ conda env create -n env_name --file conda.yml
 
-* To create a new environment with specific Python version:
+Create a new environment with specific Python version:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ conda create -n env_name python=3.7 anaconda
+    $ conda create -n env_name python=3.7 anaconda
 
-* To create a new environment with R:
+Create a new environment with R:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ conda create -n env_name r-essentials r-base
+    $ conda create -n env_name r-essentials r-base
 
-* To activate an environment:
+Activate an environment:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ conda activate env_name
+    $ conda activate env_name
 
-* To deactivate the current environment:
+Deactivate the current environment:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ conda deactivate
+    $ conda deactivate
 
-* To list all existing environments:
+List all existing environments:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ conda info --envs
+    $ conda info --envs
 
-* To remove an environment:
+Remove an environment:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ conda env remove -n env_name
+    $ conda env remove -n env_name
 
-* To search available Python versions:
+Search available Python versions:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ conda search "^python$"
+    $ conda search "^python$"
 
-* To install a Python package in the development mode:
+Install a Python package in the development mode:
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ conda develop .
+    $ conda develop .
 
 Install on Linux
 ================

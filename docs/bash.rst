@@ -537,6 +537,8 @@ Restore writing permission:
 OpenSSH
 =======
 
+OpenSSH is a suite of secure networking utilities based on the SSH protocol, which provides a secure channel over an unsecured network in a client–server architecture. Importantly, OpenSSH is integrated into several operating systems including Windows, macOS, and Linux.
+
 Frequently used commands for OpenSSH
 ------------------------------------
 
