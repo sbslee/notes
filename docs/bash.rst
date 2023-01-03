@@ -362,7 +362,7 @@ Search and replace a pattern involving the ``/`` character:
 
     :%s#/foo#/bar#g
 
-Remove Windows line endings (type ``Ctrl-v`` ``Ctrl-m`` to input ``^M``):
+Remove Windows line endings (type ``Ctrl-v`` and ``Ctrl-m`` to input ``^M``):
 
 .. code-block:: text
 
@@ -371,8 +371,6 @@ Remove Windows line endings (type ``Ctrl-v`` ``Ctrl-m`` to input ``^M``):
 Move the cursor to end of the file:
 
     Press the ``Esc`` key and then press the ``Shift`` and ``G`` keys together.
-
-
 
 Looping through
 ===============
@@ -402,6 +400,17 @@ Print multiple columns:
     while read -r first second
     do
       echo "$first and $second"
+    done < input.txt
+
+Skip the first three lines:
+
+.. code-block:: text
+
+    i=3 n=0
+    while read -r first second
+    do
+      ((n >= i)) && echo "$first and $second"
+      ((n++))
     done < input.txt
 
 Arrays
