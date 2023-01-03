@@ -522,6 +522,12 @@ Give permissions for all files inside the directory:
 
     $ chmod 777 -R dir_name
 
+Restore default permissions for the home directory:
+
+.. code-block:: text
+
+    $ chmod 755 home_dir
+
 Make files read-only:
 
 .. code-block:: text
