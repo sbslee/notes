@@ -343,28 +343,36 @@ vi and vim
 Frequently used commands for vi and vim
 ---------------------------------------
 
-* To search a pattern:
+Search a pattern:
 
     * Press ``/``.
     * Type the search pattern.
     * Press ``Enter`` to perform the search.
     * Press ``n`` to find the next occurrence or ``N`` to find the previous occurrence.
 
-* To search and replace in the entire file:
+Search and replace in the entire file:
 
-    .. code-block:: text
+.. code-block:: text
 
-        :%s/foo/bar/g
+    :%s/foo/bar/g
 
-* To search and replace a pattern involving the ``/`` character:
+Search and replace a pattern involving the ``/`` character:
 
-    .. code-block:: text
+.. code-block:: text
 
-        :%s#/foo#/bar#g
+    :%s#/foo#/bar#g
 
-* To move the cursor to end of the file:
+Remove Windows line endings (type ``Ctrl-v`` ``Ctrl-m`` to input ``^M``):
+
+.. code-block:: text
+
+    :%s/^M//g
+
+Move the cursor to end of the file:
 
     Press the ``Esc`` key and then press the ``Shift`` and ``G`` keys together.
+
+
 
 Looping through
 ===============
