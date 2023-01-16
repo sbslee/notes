@@ -224,6 +224,22 @@ Load module or specify which dependencies have not been loaded:
 
     $ module load modulefile
 
+Internet
+--------
+
+Get IP address:
+
+.. code-block:: text
+
+    $ ip addr
+
+Configure IP networking:
+
+.. code-block:: text
+
+    $ vi /etc/sysconfig/network-scripts/ifconfig-em1
+    $ vi /etc/sysconfig/network-scripts/ifcfg-em1
+
 File transfer
 -------------
 
