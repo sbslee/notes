@@ -1018,6 +1018,28 @@ Quick links:
 
 - `Overriding system-repository Proxies by Using https_proxy and http_proxy <https://docs.oracle.com/cd/E36784_01/html/E37628/gmgas.html>`__
 
+
+PowerShell
+==========
+
+Create a new text file:
+
+.. code-block:: text
+
+    $ New-Item file.txt
+
+Edit a next file:
+
+.. code-block:: text
+
+    $ notepad file.txt
+
+Create a directory:
+
+.. code-block:: text
+
+    $ New-Item -Type Directory dir_name
+
 Miscellaneous
 =============
 
