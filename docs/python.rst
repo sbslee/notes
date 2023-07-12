@@ -4,21 +4,6 @@ Python
 Frequently used commands for Python
 ===================================
 
-Virtual environment
--------------------
-
-Create a virtual environment:
-
-.. code-block:: console
-
-    $ python3 -m venv ve_name
-
-Activate a virtual environment:
-
-.. code-block:: console
-
-    $ source ve_name/bin/activate
-
 pandas
 ------
 
@@ -62,50 +47,6 @@ If you saved that as foo.py, then you'd run it with:
 
 Package development
 ===================
-
-Set up a working environment:
-
-.. code-block:: console
-
-    $ conda install wheel
-    $ conda install twine
-    $ conda install setuptools
-
-Build package distribution files:
-
-.. code-block:: console
-
-    $ python3 setup.py sdist bdist_wheel
-
-Check distribution files before uploading to PyPI:
-
-.. code-block:: console
-
-    $ twine check dist/*
-
-Upload distribution files to PyPI:
-
-.. code-block:: console
-
-    $ twine upload dist/*
-
-Upload distribution files to Test PyPI:
-
-.. code-block:: console
-
-    $ twine upload --repository-url https://test.pypi.org/legacy/ dist/*
-
-Install a package:
-
-.. code-block:: console
-
-    $ pip install package_name
-
-Install a package in the development mode:
-
-.. code-block:: console
-
-    $ pip install -e .
 
 Some commands worth to remember:
 
