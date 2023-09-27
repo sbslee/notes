@@ -16,18 +16,6 @@ Extract regions from a BED file:
 
     $ awk '{print $1":"$2"-"$3}' example.bed | sed 's/chr//g' > regions.list
 
-Zip a VCF file:
-
-.. code-block:: text
-
-    $ bgzip -c sample.vcf > sample.vcf.gz
-
-Index a VCF file:
-
-.. code-block:: text
-
-    $ tabix -p vcf sample.vcf.gz
-
 Rename the ``chr`` string in a VCF file:
 
 .. code-block:: text
